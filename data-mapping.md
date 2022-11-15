@@ -16,10 +16,18 @@ It is likely that the source data being mapped won't have all data objects neede
 For example, a source database may have the collecting event and location merged into a single table. 
 This will require an object to be split, or possibly inferred during the mapping.
 
-> We strongly recommend using a UUID as a key for any object that needs to be inferred to ensure uniqueness (for this exercise)
-
-_Please always refer to the latest [data schema](./schema.sql) when mapping, whch may have evolved since this documentation was created_
+- All primary keys in tables shown be globally unique, to allow the data to be mixed with data from other sources
+- We recommend using a UUID as a key for any object inferred (for this exercise)
+- Please always refer to the latest [data schema](./schema.sql) when mapping; it may have evolved since this documentation was created
 
 ## Create the core `Entities`
 
-The database tables to be populated are shown
+The tables to populate are shown:
+
+![Entities](./_images/entity.png)
+
+Notes:
+
+- This uses inheritance, and so an `Entity` record must exist with the *same ID* as the entry for the sub-entity (and so on)
+- The `Entity` IDs should be globally unique as the records will be integrated with other 
+- The `datasetKey` should be a globally unique identifier. In the absence of one, we recommended to use a UUID
