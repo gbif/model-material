@@ -378,16 +378,6 @@ CREATE TABLE agent_relationship (
   PRIMARY KEY (subject_agent_id, relationship_to, object_agent_id)
 );
 
-CREATE TABLE collection_agent_role (
-  collection_id TEXT REFERENCES collection ON DELETE CASCADE,
-  agent_id TEXT REFERENCES agent ON DELETE CASCADE,
-  collection_agent_role TEXT NOT NULL,
-  collection_agent_role_began TEXT,
-  collection_agent_role_ended TEXT,
-  collection_agent_role_order SMALLINT NOT NULL CHECK (collection_agent_role_order >= 0) DEFAULT 0,
-  PRIMARY KEY (collection_id, agent_id, collection_agent_role_order)
-);
-
 CREATE TABLE entity_agent_role (
   entity_id TEXT REFERENCES entity ON DELETE CASCADE,
   agent_id TEXT REFERENCES agent ON DELETE CASCADE,
@@ -496,14 +486,6 @@ CREATE TABLE agent_identifier (
   agent_identifier TEXT NOT NULL,
   agent_identifier_type TEXT,
   PRIMARY KEY (agent_id, agent_identifier, agent_identifier_type)
-);
-
-
-CREATE TABLE collection_identifier (
-  collection_id TEXT REFERENCES collection ON DELETE CASCADE,
-  collection_identifier TEXT,
-  collection_identifier_type TEXT,
-  PRIMARY KEY (collection_id, collection_identifier, collection_identifier_type)
 );
 
 CREATE TABLE entity_identifier (
