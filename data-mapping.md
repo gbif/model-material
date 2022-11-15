@@ -64,7 +64,7 @@ Notes:
 
 For DNA based identification of a sequence, using a reference taxonomic database the tables are shown:
 
-![Entities](./_images/identification_sequence_.png)
+![Entities](./_images/identification_sequence.png)
 
 ## 5. Connect the `Agents` 
 
