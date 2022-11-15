@@ -29,5 +29,57 @@ The tables to populate are shown:
 Notes:
 
 - This uses inheritance, and so an `Entity` record must exist with the *same ID* as the entry for the sub-entity (and so on)
-- The `Entity` IDs should be globally unique as the records will be integrated with other 
+- The `Entity` IDs should be globally unique as the records will be integrated with other sources
 - The `datasetKey` should be a globally unique identifier. In the absence of one, we recommended to use a UUID
+
+## 2. Create the `EntityRelationships`
+
+The tables to populate are shown:
+
+![Entities](./_images/entity_relationship.png)
+
+Notes:
+
+- The `EntityRelationshipID`  should be globally unique as the records will be integrated with other sources
+
+## 3. Create the `Events` 
+
+The tables to populate are shown:
+
+![Entities](./_images/event.png)
+
+Notes:
+
+- The IDs should be globally unique as the records will be integrated with other sources
+
+## 4. Add the species `Identifications` 
+
+The tables to populate are shown for morphological identification:
+
+![Entities](./_images/identification.png)
+
+Notes:
+
+- The IDs should be globally unique as the records will be integrated with other sources
+
+For DNA based identification of a sequence, using a reference taxonomic database the tables are shown:
+
+![Entities](./_images/identification_sequence_.png)
+
+## 5. Connect the `Agents` 
+
+The tables to populate are shown:
+
+![Entities](./_images/agent.png)
+
+## 6. Add the `Assertions` 
+
+The tables to populate are shown:
+
+![Entities](./_images/assertion.png)
+
+## 7. Add the `Identifiers`
+
+The tables to populate are shown:
+
+![Entities](./_images/identifier.png)
