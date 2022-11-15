@@ -6,7 +6,7 @@ The summary view the data model is illustrated below which omits the [common mod
 
 <img width="1294" alt="Screenshot 2022-11-14 at 08 43 13" src="https://user-images.githubusercontent.com/237221/201602907-f8c1893e-3ba9-408e-a5d2-1dff3f626715.png">
 
-Participants in this process shape data from their collection onto the new data model and loaded into the PostgreSQL database (see [schema](./schema.sql)). A folder for each participant captures the data files, which may be further divided in subfolders per collection or dataset.
+Participants in this process shape data from their collection onto the new data model and load it into the PostgreSQL database (see [schema](./schema.sql)). A folder for each participant captures the data files, which may be further divided in subfolders per collection or dataset.
 
 Contributions through pull requests are preferred, but assistance will be given to those unfamiliar with GitHub. Contributions from external groups not participating in the open call are also very welcome through pull requests.
 
