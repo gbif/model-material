@@ -352,7 +352,7 @@ CREATE TABLE sequence_taxon (
 
 CREATE TABLE identification_citation (
   identification_id TEXT,
-  identification_reference_id TEXT,
+  identification_reference_id TEXT REFERENCES reference ON DELETE CASCADE,
   identification_citation_type TEXT,
   identification_citation_page_number TEXT,
   identification_citation_remarks TEXT,
