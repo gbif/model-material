@@ -20,7 +20,7 @@ This will require an object to be split, or possibly inferred during the mapping
 - We recommend using a UUID as a key for any object inferred (for this exercise)
 - Please always refer to the latest [data schema](./schema.sql) when mapping; it may have evolved since this documentation was created
 
-## Create the core `Entities`
+## 1. Create the core `Entities`
 
 The tables to populate are shown:
 
