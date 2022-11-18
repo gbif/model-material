@@ -69,6 +69,7 @@ CREATE TABLE geological_context (
 CREATE INDEX ON geological_context(location_id);
 
 CREATE TABLE georeference (
+  georeference_id TEXT PRIMARY KEY,
   location_id TEXT REFERENCES location ON DELETE CASCADE,
   decimal_latitude NUMERIC NOT NULL CHECK (decimal_latitude BETWEEN -90 AND 90),
   decimal_longitude NUMERIC NOT NULL CHECK (decimal_longitude BETWEEN -180 AND 180),
