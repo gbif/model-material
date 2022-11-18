@@ -443,8 +443,8 @@ CREATE TABLE entity_assertion (
 );
 
 CREATE TABLE event_assertion (
-  event_id TEXT PRIMARY KEY,
-  event_assertion_id TEXT NOT NULL REFERENCES event ON DELETE CASCADE,
+  event_assertion_id TEXT PRIMARY KEY,
+  event_id TEXT NOT NULL REFERENCES event ON DELETE CASCADE,
   event_parent_assertion_id TEXT REFERENCES event_assertion ON DELETE CASCADE,
   event_assertion_type TEXT NOT NULL,
   event_assertion_made_date TEXT,
@@ -460,8 +460,8 @@ CREATE TABLE event_assertion (
 );
 
 CREATE TABLE location_assertion (
-  location_id TEXT PRIMARY KEY,
-  location_assertion_id TEXT NOT NULL REFERENCES location ON DELETE CASCADE,
+  location_assertion_id TEXT PRIMARY KEY,
+  location_id TEXT NOT NULL REFERENCES location ON DELETE CASCADE,
   location_parent_assertion_id TEXT REFERENCES location_assertion ON DELETE CASCADE,
   location_assertion_type TEXT NOT NULL,
   location_assertion_made_date TEXT,
