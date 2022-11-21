@@ -162,6 +162,8 @@ CREATE INDEX ON event(protocol_id);
 -- Occurrence (https://dwc.tdwg.org/terms/#occurrence)
 --   A subtype of Event
 --   An Event in which an Organism and its properties at a place and time are established.
+--   Zero or one Organisms per Occurrence
+--   Zero or more Occurrences per Organism
 
 CREATE TYPE OCCURRENCE_STATUS AS ENUM ('PRESENT', 'ABSENT');
 
@@ -195,6 +197,7 @@ CREATE TYPE DEGREE_OF_ESTABLISHMENT AS ENUM (
 
 CREATE TABLE occurrence (
   occurrence_id TEXT PRIMARY KEY REFERENCES event ON DELETE CASCADE,
+  organism_id TEXT REFERENCES organism ON DELETE CASCADE,
   organismQuantity TEXT,
   organismQuantityType TEXT,
   sex TEXT,
@@ -215,7 +218,7 @@ CREATE TABLE occurrence (
   associatedOccurrences TEXT,
   associatedTaxa TEXT
 );
-
+CREATE INDEX ON occurrence(organism_id);
 
 ---
 -- Entity, sub-entities and their relationships.
