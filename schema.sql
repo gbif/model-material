@@ -347,7 +347,7 @@ CREATE TABLE chronometric_age (
   material_dated_relationship TEXT,
   chronometric_age_determined_by TEXT,
   chronometric_age_determined_date TEXT,
-  chronometric_age_refrences TEXT,
+  chronometric_age_references TEXT,
   chronometric_age_remarks TEXT
 );
 CREATE INDEX ON chronometric_age(material_entity_id);
