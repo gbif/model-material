@@ -136,8 +136,8 @@ CREATE TABLE event (
   field_number TEXT,
   event_date TEXT,
   year SMALLINT,
-  month SMALLINT CHECK (event_month BETWEEN 1 AND 12),
-  day SMALLINT CHECK (event_day BETWEEN 1 and 31), 
+  month SMALLINT CHECK (month BETWEEN 1 AND 12),
+  day SMALLINT CHECK (day BETWEEN 1 and 31), 
   verbatim_event_date TEXT,
   verbatim_locality TEXT,
   verbatim_elevation TEXT,
@@ -159,67 +159,6 @@ CREATE INDEX ON event(parent_event_id);
 CREATE INDEX ON event(location_id);
 CREATE INDEX ON event(protocol_id);
 
--- Occurrence (https://dwc.tdwg.org/terms/#occurrence)
---   A subtype of Event
---   An Event in which an Organism and its properties at a place and time are established.
---   Zero or one Organisms per Occurrence
---   Zero or more Occurrences per Organism
-
-CREATE TYPE OCCURRENCE_STATUS AS ENUM ('PRESENT', 'ABSENT');
-
-CREATE TYPE ESTABLISHMENT_MEANS AS ENUM (
-  'NATIVE_INDIGENOUS', 'NATIVE_REINTRODUCED', 'INTRODUCED',
-  'INTRODUCED_ASSISTED_RECOLONISATION', 'VAGRANT', 'UNCERTAIN'
-);
-
-CREATE TYPE PATHWAY AS ENUM (
-  'CORRIDOR_AND_DISPERSAL', 'UNAIDED', 'NATURAL_DISPERSAL', 'CORRIDOR',
-  'TUNNELS_BRIDGES', 'WATERWAYS_BASINS_SEAS', 'UNINTENTIONAL', 'TRANSPORT_STOWAWAY',
-  'OTHER_TRANSPORT', 'VEHICLES', 'HULL_FOULING', 'BALLAST_WATER', 'PACKING_MATERIAL',
-  'PEOPLE', 'MACHINERY_EQUIPMENT', 'HITCHHIKERS_SHIP', 'HITCHHIKERS_AIRPLANE',
-  'CONTAINER_BULK', 'FISHING_EQUIPMENT', 'TRANSPORT_CONTAMINANT',
-  'TRANSPORTATION_HABITAT_MATERIAL', 'TIMBER_TRADE', 'SEED_CONTAMINANT',
-  'PARASITES_ON_PLANTS', 'CONTAMINANT_ON_PLANTS', 'PARASITES_ON_ANIMALS',
-  'CONTAMINANT_ON_ANIMALS', 'FOOD_CONTAMINANT', 'CONTAMINATE_BAIT', 'CONTAMINANT_NURSERY',
-  'INTENTIONAL', 'ESCAPE_FROM_CONFINEMENT', 'OTHER_ESCAPE', 'LIVE_FOOD_LIVE_BAIT',
-  'RESEARCH', 'ORNAMENTAL_NON_HORTICULTURE', 'HORTICULTURE', 'FUR', 'FORESTRY',
-  'FARMED_ANIMALS', 'PET', 'PUBLIC_GARDEN_ZOO_AQUARIA', 'AQUACULTURE_MARICULTURE',
-  'AGRICULTURE', 'RELEASE_IN_NATURE', 'OTHER_INTENTIONAL_RELEASE', 'RELEASED_FOR_USE',
-  'CONSERVATION_OR_WILDLIFE_MANAGEMENT', 'LANDSCAPE_IMPROVEMENT', 'HUNTING',
-  'FISHERY_IN_THE_WILD', 'EROSION_CONTROL', 'BIOLOGICAL_CONTROL'
-);
-
-CREATE TYPE DEGREE_OF_ESTABLISHMENT AS ENUM (
-'MANAGED','CAPTIVE','CULTIVATED','RELEASED','UNESTABLISHED','FAILING','CASUAL',
-'NATURALIZED','REPRODUCING','ESTABLISHED','SPREADING','WIDESPREAD_INVASIVE','COLONISING',
-'INVASIVE','NATIVE'
-);
-
-CREATE TABLE occurrence (
-  occurrence_id TEXT PRIMARY KEY REFERENCES event ON DELETE CASCADE,
-  organism_id TEXT REFERENCES organism ON DELETE CASCADE,
-  organismQuantity TEXT,
-  organismQuantityType TEXT,
-  sex TEXT,
-  lifeStage TEXT,
-  reproductiveCondition TEXT,
-  behavior TEXT,
-  establishment_means ESTABLISHMENT_MEANS,
-  occurrence_status OCCURRENCE_STATUS DEFAULT 'PRESENT' NOT NULL,
-  pathway PATHWAY,
-  degree_of_establishment DEGREE_OF_ESTABLISHMENT,
-  georeferenceVerificationStatus TEXT,
-  occurrenceRemarks TEXT,
-  informationWithheld TEXT,
-  dataGeneralizations TEXT,
-  recordedBy TEXT,
-  recordedByID TEXT,
-  associatedMedia TEXT,
-  associatedOccurrences TEXT,
-  associatedTaxa TEXT
-);
-CREATE INDEX ON occurrence(organism_id);
-
 ---
 -- Entity, sub-entities and their relationships.
 --
@@ -234,10 +173,23 @@ CREATE INDEX ON occurrence(organism_id);
 --       Organism
 ---
 
+-- Entity (https://www.w3.org/TR/prov-o/#Entity)
+--   Anything that can be the target or result of an Event
+
+
 CREATE TYPE ENTITY_TYPE AS ENUM (
   'DIGITAL_ENTITY',
   'MATERIAL_ENTITY'
 );
+
+CREATE TABLE entity (
+  entity_id TEXT PRIMARY KEY,
+  entity_type ENTITY_TYPE NOT NULL,
+  dataset_id TEXT NOT NULL,
+  entity_name TEXT,
+  entity_remarks TEXT
+);
+CREATE INDEX ON entity(entity_type);
 
 CREATE TYPE DIGITAL_ENTITY_TYPE AS ENUM (
   'DATASET',
@@ -250,23 +202,6 @@ CREATE TYPE DIGITAL_ENTITY_TYPE AS ENUM (
   'TEXT',
   'GENETIC_SEQUENCE'
 );
-
-CREATE TYPE MATERIAL_ENTITY_TYPE AS ENUM (
-  'MATERIAL_GROUP',
-  'ORGANISM'
-);
-
--- Entity (https://www.w3.org/TR/prov-o/#Entity)
---   Anything that can be the target or result of an Event
-
-CREATE TABLE entity (
-  entity_id TEXT PRIMARY KEY,
-  entity_type ENTITY_TYPE NOT NULL,
-  dataset_id TEXT NOT NULL,
-  entity_name TEXT,
-  entity_remarks TEXT
-);
-CREATE INDEX ON entity(entity_type);
 
 -- DigitalEntity
 --   A subtype of Entity
@@ -306,6 +241,11 @@ CREATE TABLE genetic_sequence (
 --   A subtype of Entity
 --   A PhysicalObject.
 
+CREATE TYPE MATERIAL_ENTITY_TYPE AS ENUM (
+  'MATERIAL_GROUP',
+  'ORGANISM'
+);
+
 CREATE TABLE material_entity (
   material_entity_id TEXT PRIMARY KEY REFERENCES entity ON DELETE CASCADE,
   material_entity_type MATERIAL_ENTITY_TYPE NOT NULL,
@@ -324,6 +264,26 @@ CREATE TABLE material_entity (
   associatedSequences TEXT,
   otherCatalogNumbers TEXT
 );
+
+-- MaterialGroup
+--   A subtype of MaterialEntity
+--   A set of MaterialEntities
+
+CREATE TABLE material_group (
+  material_group_id TEXT PRIMARY KEY REFERENCES material_entity ON DELETE CASCADE,
+  material_group_type TEXT
+);
+
+-- Organism (https://dwc.tdwg.org/terms/#organism)
+--   A subtype of MaterialEntity
+--   A particular organism or defined group of organisms considered to be taxonomically 
+--   homogeneous.
+
+CREATE TABLE organism (
+  organism_id TEXT PRIMARY KEY REFERENCES material_entity ON DELETE CASCADE,
+  organism_scope TEXT
+);
+
 
 -- ChronometricAge (https://tdwg.github.io/chrono/terms/#chronometricage)
 --   Evidence-based temporal placement
@@ -352,24 +312,69 @@ CREATE TABLE chronometric_age (
 );
 CREATE INDEX ON chronometric_age(material_entity_id);
 
--- MaterialGroup
---   A subtype of MaterialEntity
---   A set of MaterialEntities
 
-CREATE TABLE material_group (
-  material_group_id TEXT PRIMARY KEY REFERENCES material_entity ON DELETE CASCADE,
-  material_group_type TEXT
+
+-- Occurrence (https://dwc.tdwg.org/terms/#occurrence)
+--   A subtype of Event
+--   An Event in which an Organism and its properties at a place and time are established.
+--   Zero or one Organisms per Occurrence
+--   Zero or more Occurrences per Organism
+
+CREATE TYPE OCCURRENCE_STATUS AS ENUM ('PRESENT', 'ABSENT');
+
+CREATE TYPE ESTABLISHMENT_MEANS AS ENUM (
+  'NATIVE_INDIGENOUS', 'NATIVE_REINTRODUCED', 'INTRODUCED',
+  'INTRODUCED_ASSISTED_RECOLONISATION', 'VAGRANT', 'UNCERTAIN'
 );
 
--- Organism (https://dwc.tdwg.org/terms/#organism)
---   A subtype of MaterialEntity
---   A particular organism or defined group of organisms considered to be taxonomically 
---   homogeneous.
-
-CREATE TABLE organism (
-  organism_id TEXT PRIMARY KEY REFERENCES material_entity ON DELETE CASCADE,
-  organism_scope TEXT
+CREATE TYPE PATHWAY AS ENUM (
+  'CORRIDOR_AND_DISPERSAL', 'UNAIDED', 'NATURAL_DISPERSAL', 'CORRIDOR',
+  'TUNNELS_BRIDGES', 'WATERWAYS_BASINS_SEAS', 'UNINTENTIONAL', 'TRANSPORT_STOWAWAY',
+  'OTHER_TRANSPORT', 'VEHICLES', 'HULL_FOULING', 'BALLAST_WATER', 'PACKING_MATERIAL',
+  'PEOPLE', 'MACHINERY_EQUIPMENT', 'HITCHHIKERS_SHIP', 'HITCHHIKERS_AIRPLANE',
+  'CONTAINER_BULK', 'FISHING_EQUIPMENT', 'TRANSPORT_CONTAMINANT',
+  'TRANSPORTATION_HABITAT_MATERIAL', 'TIMBER_TRADE', 'SEED_CONTAMINANT',
+  'PARASITES_ON_PLANTS', 'CONTAMINANT_ON_PLANTS', 'PARASITES_ON_ANIMALS',
+  'CONTAMINANT_ON_ANIMALS', 'FOOD_CONTAMINANT', 'CONTAMINATE_BAIT', 'CONTAMINANT_NURSERY',
+  'INTENTIONAL', 'ESCAPE_FROM_CONFINEMENT', 'OTHER_ESCAPE', 'LIVE_FOOD_LIVE_BAIT',
+  'RESEARCH', 'ORNAMENTAL_NON_HORTICULTURE', 'HORTICULTURE', 'FUR', 'FORESTRY',
+  'FARMED_ANIMALS', 'PET', 'PUBLIC_GARDEN_ZOO_AQUARIA', 'AQUACULTURE_MARICULTURE',
+  'AGRICULTURE', 'RELEASE_IN_NATURE', 'OTHER_INTENTIONAL_RELEASE', 'RELEASED_FOR_USE',
+  'CONSERVATION_OR_WILDLIFE_MANAGEMENT', 'LANDSCAPE_IMPROVEMENT', 'HUNTING',
+  'FISHERY_IN_THE_WILD', 'EROSION_CONTROL', 'BIOLOGICAL_CONTROL'
 );
+
+CREATE TYPE DEGREE_OF_ESTABLISHMENT AS ENUM (
+'MANAGED','CAPTIVE','CULTIVATED','RELEASED','UNESTABLISHED','FAILING','CASUAL',
+'NATURALIZED','REPRODUCING','ESTABLISHED','SPREADING','WIDESPREAD_INVASIVE','COLONISING',
+'INVASIVE','NATIVE'
+);
+
+
+CREATE TABLE occurrence (
+  occurrence_id TEXT PRIMARY KEY REFERENCES event ON DELETE CASCADE,
+  organism_id TEXT REFERENCES organism ON DELETE CASCADE,
+  organismQuantity TEXT,
+  organismQuantityType TEXT,
+  sex TEXT,
+  lifeStage TEXT,
+  reproductiveCondition TEXT,
+  behavior TEXT,
+  establishment_means ESTABLISHMENT_MEANS,
+  occurrence_status OCCURRENCE_STATUS DEFAULT 'PRESENT' NOT NULL,
+  pathway PATHWAY,
+  degree_of_establishment DEGREE_OF_ESTABLISHMENT,
+  georeferenceVerificationStatus TEXT,
+  occurrenceRemarks TEXT,
+  informationWithheld TEXT,
+  dataGeneralizations TEXT,
+  recordedBy TEXT,
+  recordedByID TEXT,
+  associatedMedia TEXT,
+  associatedOccurrences TEXT,
+  associatedTaxa TEXT
+);
+CREATE INDEX ON occurrence(organism_id);
 
 -- OcurrenceEvidence
 --   Any Entity that serves to support an assertion of an Occurrence of an Organism.
@@ -402,6 +407,17 @@ CREATE INDEX ON entity_relationship(depends_on_entity_relationship_id);
 CREATE INDEX ON entity_relationship(subject_entity_id);
 CREATE INDEX ON entity_relationship(object_entity_id);
 
+-- Reference
+--   A citable document
+
+CREATE TABLE reference (
+  reference_id TEXT PRIMARY KEY,
+  reference_type TEXT NOT NULL,
+  bibliographic_citation TEXT,
+  reference_year SMALLINT CHECK (reference_year BETWEEN 1600 AND 2022),
+  reference_doi TEXT,
+  is_peer_reviewed BOOLEAN
+);
 
 ---
 -- Identification including sequence-based identifications.
@@ -684,7 +700,7 @@ CREATE TABLE georeference_agent_role (
   georeference_agent_role TEXT,
   georefrence_agent_role_began TEXT,
   georeference_agent_role_ended TEXT,
-  georefrence_agent_role_order SMALLINT NOT NULL CHECK (georefrence_agent_role_order >= 0) DEFAULT 0,
+  georeference_agent_role_order SMALLINT NOT NULL CHECK (georeference_agent_role_order >= 0) DEFAULT 0,
   PRIMARY KEY (georeference_id, agent_id, georeference_agent_role_order)
 );
 
@@ -1084,21 +1100,21 @@ CREATE TABLE entity_identifier (
 
 CREATE TABLE material_entity_identifier (
   material_entity_id TEXT REFERENCES material_entity ON DELETE CASCADE,
-  matierial_entity_identifier TEXT NOT NULL,
+  material_entity_identifier TEXT NOT NULL,
   material_entity_identifier_type TEXT NOT NULL,
   PRIMARY KEY (material_entity_id, material_entity_identifier, material_entity_identifier_type)
 );
 
 CREATE TABLE material_group_identifier (
   material_group_id TEXT REFERENCES material_group ON DELETE CASCADE,
-  matierial_group_identifier TEXT NOT NULL,
+  material_group_identifier TEXT NOT NULL,
   material_group_identifier_type TEXT NOT NULL,
   PRIMARY KEY (material_group_id, material_group_identifier, material_group_identifier_type)
 );
 
 CREATE TABLE organism_identifier (
   organism_id TEXT REFERENCES organism ON DELETE CASCADE,
-  matierial_entity_identifier TEXT NOT NULL,
+  organism_identifier TEXT NOT NULL,
   organism_identifier_type TEXT NOT NULL,
   PRIMARY KEY (organism_id, organism_identifier, organism_identifier_type)
 );
@@ -1150,18 +1166,6 @@ CREATE TABLE taxon_identifier (
   taxon_identifier TEXT NOT NULL,
   taxon_identifier_type TEXT  NOT NULL,
   PRIMARY KEY (taxon_id, taxon_identifier, taxon_identifier_type)
-);
-
--- Reference
---   A citable document
-
-CREATE TABLE reference (
-  reference_id TEXT PRIMARY KEY,
-  reference_type TEXT NOT NULL,
-  bibliographic_citation TEXT,
-  reference_year SMALLINT CHECK (reference_year BETWEEN 1600 AND 2022),
-  reference_doi TEXT,
-  is_peer_reviewed BOOLEAN
 );
 
 -- [Class]]Citation
