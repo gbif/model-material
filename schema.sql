@@ -251,18 +251,18 @@ CREATE TABLE material_entity (
   material_entity_type MATERIAL_ENTITY_TYPE NOT NULL,
   preparations TEXT,
   disposition TEXT,
-  institutionCode TEXT, -- also on Collection
-  institutionID TEXT, 
-  collectionCode TEXT,  -- also on Collection
+  institution_code TEXT, -- also on Collection
+  institution_id TEXT, 
+  collection_code TEXT,  -- also on Collection
   collectionID TEXT,
-  ownerInstitutionCode TEXT,
-  catalogNumber TEXT,
-  recordNumber TEXT,
-  recordedBy TEXT,  -- also on Occurrence for Observations
-  recordedByID TEXT,  -- also on Occurrence for Observations
-  associatedReferences TEXT,
-  associatedSequences TEXT,
-  otherCatalogNumbers TEXT
+  owner_institution_code TEXT,
+  catalog_number TEXT,
+  record_number TEXT,
+  recorded_by TEXT,  -- also on Occurrence for Observations
+  recorded_by_id TEXT,  -- also on Occurrence for Observations
+  associated_references TEXT,
+  associated_sequences TEXT,
+  other_catalog_numbers TEXT
 );
 
 -- MaterialGroup
@@ -290,8 +290,8 @@ CREATE TABLE organism (
 --   Zero or more ChronometricAges per MaterialEntity
 
 CREATE TABLE chronometric_age (
+  chronometric_age_id TEXT PRIMARY KEY, 
   material_entity_id TEXT REFERENCES material_entity ON DELETE CASCADE,
-  chronometric_age_id TEXT, -- NOT a primary key, may be NULL
   verbatim_chronometric_age TEXT,
   verbatim_chronometric_age_protocol TEXT,
   uncalibrated_chronometric_age TEXT,
@@ -478,7 +478,6 @@ CREATE TABLE taxon (
   taxonomic_status TEXT,
 
   -- denormalized
-  higher_classification TEXT,
   kingdom TEXT,
   phylum TEXT,
   class TEXT,
@@ -486,15 +485,7 @@ CREATE TABLE taxon (
   family TEXT,
   subfamily TEXT,
   genus TEXT,
-  generic_name TEXT,
   subgenus TEXT,
-  infrageneric_epithet TEXT,
-  specific_epithet TEXT,
-  infraspecific_epithet TEXT,
-  cultivar_epithet TEXT,
-  nomenclatural_code TEXT,
-  nomenclatural_status TEXT,
-  verbatim_taxon_rank TEXT,
   accepted_scientific_name TEXT -- populated only when scientific name is a synonym
 );
 CREATE INDEX ON taxon(parent_taxon_id);
@@ -580,7 +571,7 @@ CREATE TABLE collection_agent_role (
   agent_name TEXT,
   collection_agent_role TEXT,
   collection_agent_role_began TEXT,
-  collction_agent_role_ended TEXT,
+  collection_agent_role_ended TEXT,
   collection_agent_role_order SMALLINT NOT NULL CHECK (collection_agent_role_order >= 0) DEFAULT 0,
   PRIMARY KEY (collection_id, agent_id, collection_agent_role_order)
 );
@@ -1322,4 +1313,3 @@ CREATE TABLE collection_citation (
   collection_citation_remarks TEXT,
   PRIMARY KEY (collection_id, collection_reference_id)
 );
-
