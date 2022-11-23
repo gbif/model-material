@@ -241,14 +241,9 @@ CREATE TABLE genetic_sequence (
 --   A subtype of Entity
 --   A PhysicalObject.
 
-CREATE TYPE MATERIAL_ENTITY_TYPE AS ENUM (
-  'MATERIAL_GROUP',
-  'ORGANISM'
-);
-
 CREATE TABLE material_entity (
   material_entity_id TEXT PRIMARY KEY REFERENCES entity ON DELETE CASCADE,
-  material_entity_type MATERIAL_ENTITY_TYPE NOT NULL,
+  material_entity_type TEXT NOT NULL,
   preparations TEXT,
   disposition TEXT,
   institution_code TEXT, -- also on Collection
