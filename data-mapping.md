@@ -1,9 +1,40 @@
 # Data mapping (working draft)
 
-The Unified Model ('UM' hereafter) is highly normalized and it may seem overwhelming at first. That is understandable. Below is a suggested stepwise approach to map your data to the tables in the UM. For this exercise, as a general rule when creating tables in the UM, use resolvable global unique identifiers if you have them. If you don't, use non-resolvable global unique identifiers if you have them. If you don't, generate UUIDS as identifiers in place of the identifiers that are unique only within the scope of your database. In cases where your database does not have identifiers for records that can be inferred for the UM, generate UUIDs for these identifiers.
+## Introduction
+
+The Unified Model ('UM' hereafter) is highly normalized and it may seem overwhelming at first. That is understandable. Remember that the UM is mean to be a comprehensive representation that accommodates all use cases. It may not seem the simplest way to represent the data you'll be mapping because it is meant to cover other prespectives as well. As such, please also keep in mind that this exercise is to test the capacity of the UM to faithfully represent the data in collection management systems in aggregate, not to determine a least common denominator publishing model, such as is the case with Darwin Core archives. 
+
+## Suggested steps
+
+Below is a suggested stepwise approach to map your data to the tables in the UM. As a general rule for his exercise, when creating tables in the UM, use resolvable global unique identifiers for the 'ID' fields if you have them. If you don't, use non-resolvable global unique identifiers if you have them. If you don't, generate UUIDS as identifiers in place of the identifiers that are unique only within the scope of your database. In cases where your database does not have identifiers for records that can be inferred for the UM, generate UUIDs for these identifiers.
+
+In this document there will be illustrative figures for parts of the UM and how they fit together. These figures take the form of Entity-Relationship (ER) diagrams whose primary purpose is to illustrate the structure of the UM. These diagrams do not necessarily show the full set of fields for the tables they represent, nor does it show data types and other constraints. The definitive version of the tables to populate is in the database creation script ([schema.sql](./schema.sql)).
+
+Most of the tables in the UM have fields that benefit from using controlled vocabularies. Some of these fields require that values strictly adhere to a controlled vocabulary. In the database creation script these can be found as 'ENUMS'. Following is a simple example:
+
+```
+CREATE TYPE ENTITY_TYPE AS ENUM (
+  'DIGITAL_ENTITY',
+  'MATERIAL_ENTITY'
+);
+```
+This is the controlled vocabulary for the `entity_type` field (no other values ar valid), as can be seen in the statement that creates the `entity` table:
+
+```
+CREATE TABLE entity (
+  entity_id TEXT PRIMARY KEY,
+  entity_type ENTITY_TYPE NOT NULL,
+  dataset_id TEXT NOT NULL,
+  entity_name TEXT,
+  entity_remarks TEXT
+);
+```
+
+Not every 'type' field in the UM is controlled by an ENUM. For some of these, suggestions will be given, but will not be limiting. You should feel free to use values for these that make sense for your data. Part of what this exercise will reveal is the diversity of data that are being managed in collection management systems. The vocabularies used will be a very interesting outcome.
 
 Throughout the UM there are four concepts (`AgentRole`, `Assertion`, `Citation`, and `Identifier`) that are repeated, except that they are attached to distinct classes in the model (e.g., `EventAgentRole`, `GeneticSequenceAssertion`, `MaterialEntityCitation`, `AgentIdentifier`). Explanations of how these "common model" tables work are given in [Appendix I](#appendix-i).
 
+##
 [1. Map Agents](#1-map-agents)
 
 [2. Map References](#2-map-references)
