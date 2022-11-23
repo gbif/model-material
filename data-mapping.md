@@ -4,9 +4,9 @@
 
 The Unified Model ('UM' hereafter) is highly normalized and it may seem overwhelming at first. That is understandable. Remember that the UM is mean to be a comprehensive representation that accommodates all use cases. It may not seem the simplest way to represent the data you'll be mapping because it is meant to cover other prespectives as well. As such, please also keep in mind that this exercise is to test the capacity of the UM to faithfully represent the data in collection management systems in aggregate, not to determine a least common denominator publishing model, such as is the case with Darwin Core archives. 
 
-## Suggested steps
+## General considerations
 
-Below is a suggested stepwise approach to map your data to the tables in the UM. As a general rule for his exercise, when creating tables in the UM, use resolvable global unique identifiers for the 'ID' fields if you have them. If you don't, use non-resolvable global unique identifiers if you have them. If you don't, generate UUIDS as identifiers in place of the identifiers that are unique only within the scope of your database. In cases where your database does not have identifiers for records that can be inferred for the UM, generate UUIDs for these identifiers.
+As a general rule for his exercise, when creating tables in the UM, use resolvable global unique identifiers for the 'ID' fields if you have them. If you don't, use non-resolvable global unique identifiers if you have them. If you don't, generate UUIDS as identifiers in place of the identifiers that are unique only within the scope of your database. In cases where your database does not have identifiers for records that can be inferred for the UM, generate UUIDs for these identifiers.
 
 In this document there will be illustrative figures for parts of the UM and how they fit together. These figures take the form of Entity-Relationship (ER) diagrams whose primary purpose is to illustrate the structure of the UM. These diagrams do not necessarily show the full set of fields for the tables they represent, nor does it show data types and other constraints. The definitive version of the tables to populate is in the database creation script ([schema.sql](./schema.sql)).
 
@@ -34,7 +34,10 @@ Not every 'type' field in the UM is controlled by an ENUM. For some of these, su
 
 Throughout the UM there are four concepts (`AgentRole`, `Assertion`, `Citation`, and `Identifier`) that are repeated, except that they are attached to distinct classes in the model (e.g., `EventAgentRole`, `GeneticSequenceAssertion`, `MaterialEntityCitation`, `AgentIdentifier`). Explanations of how these "common model" tables work are given in [Appendix I](#appendix-i).
 
-##
+## Suggested steps
+
+Following is an outline of the steps we suggest to following the exercise to map your collection management system data to the UM. Each step has a link to a more detailed description of what to do. The order of these steps was designed to make sure that you already have records for concepts that will be linked to in subsequent steps of the mapping process.
+
 [1. Map Agents](#1-map-agents)
 
 [2. Map References](#2-map-references)
@@ -85,6 +88,18 @@ It is recommended to map `Agent` first (see [Figure 1](#figure-1)), because thei
 
 <p align=center><img src="./_images/agents.png" alt="agents" width="50%"/>
 <p align=center>Figure 1. Agents in the Unified Model
+
+### `agent_type` vocabulary
+If an `Agent ` is a `Collection` or an `AgentGroup`, the `agent_type` MUST be `COLLECTION` or `AGENT_GROUP` respectively. However, the agent_type field is not controlled by an ENUM, because there are other possible values that are not subtypes of `Agent`, such as `ORGANIZATION`, `PERSON`, and even `ORGANISM`.
+
+### `collection_type` vocabulary
+We would expect to be informed here by work on the Latimer Core. For this exercise we suggest, for example, `MUSEUM`, `HERBARIUM`, `BOTANICAL_GARDEN`, `ZOO`.
+
+### `agent_group_type` vocabulary
+An `AgentGroup` is a way to refer to a single `Agent` entity that is composed of multiple `Agent`s. Thus, a group of `Collection`'s might be a `CONSORTIUM`, a group of university students might be a `CLASS`.
+  
+### `agent_relationship_type` vocabulary
+The range of possible relationships between `Agent`'s is vast. Note that the relationship has directionality. The `subject_agent_id` is related to the `object_agent_id` in the direction expressed in the `agent_relationship_type`. Even so, it helps to express the directionality in the `agent_relationship_type` term, for example, `DOCTORAL_ADVISOR_OF` instead of `DOCTORAL_ADVISOR`.
 
 ## 2. Map References
 
