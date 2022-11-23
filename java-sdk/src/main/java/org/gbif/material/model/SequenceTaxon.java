@@ -1,4 +1,4 @@
-package org.gbif.material.model.identification;
+package org.gbif.material.model;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -12,9 +12,9 @@ import org.hibernate.annotations.OnDeleteAction;
 @NoArgsConstructor
 @AllArgsConstructor
 @javax.persistence.Entity
-@Table(name = "taxon_identification")
-public class TaxonIdentification {
-  @EmbeddedId private TaxonIdentificationPK id;
+@Table(name = "sequence_taxon")
+public class SequenceTaxon {
+  @EmbeddedId private SequenceTaxonPK id;
 
   @MapsId("taxonId")
   @ManyToOne(fetch = FetchType.LAZY, optional = false)
@@ -22,16 +22,16 @@ public class TaxonIdentification {
   @JoinColumn(name = "taxon_id", nullable = false)
   private Taxon taxon;
 
-  @MapsId("identificationId")
+  @MapsId("geneticSequenceId")
   @ManyToOne(fetch = FetchType.LAZY, optional = false)
   @OnDelete(action = OnDeleteAction.CASCADE)
-  @JoinColumn(name = "identification_id", nullable = false)
-  private Identification identification;
+  @JoinColumn(name = "genetic_sequence_id", nullable = false)
+  private GeneticSequence geneticSequence;
 
-  @Column(name = "taxon_authority")
-  private String taxonAuthority;
+  @Column(name = "sequence_taxon_authority")
+  private String sequenceTaxonAuthority;
 
-  @Column(name = "taxon_confidence_percent")
+  @Column(name = "taxon_confidence_percent", nullable = false)
   private BigDecimal taxonConfidencePercent;
 
   @Data
@@ -39,16 +39,13 @@ public class TaxonIdentification {
   @NoArgsConstructor
   @AllArgsConstructor
   @Embeddable
-  public static class TaxonIdentificationPK implements Serializable {
-    private static final long serialVersionUID = -605408068414647622L;
+  public static class SequenceTaxonPK implements Serializable {
+    private static final long serialVersionUID = -4874589096924611455L;
 
     @Column(name = "taxon_id", nullable = false)
     private String taxonId;
 
-    @Column(name = "identification_id", nullable = false)
-    private String identificationId;
-
-    @Column(name = "taxon_order", nullable = false)
-    private Short taxonOrder;
+    @Column(name = "genetic_sequence_id", nullable = false)
+    private String geneticSequenceId;
   }
 }

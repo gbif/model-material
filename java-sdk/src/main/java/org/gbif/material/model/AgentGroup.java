@@ -1,7 +1,6 @@
-package org.gbif.material.model.agent;
+package org.gbif.material.model;
 
 import javax.persistence.Column;
-import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -19,7 +18,7 @@ import org.hibernate.annotations.OnDeleteAction;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
+@javax.persistence.Entity
 @Table(name = "agent_group")
 public class AgentGroup {
   @Id

@@ -1,4 +1,4 @@
-package org.gbif.material.model.identification;
+package org.gbif.material.model;
 
 import javax.persistence.*;
 import lombok.*;

@@ -3,6 +3,7 @@ package org.gbif.material;
 import static org.gbif.material.model.Entity.EntityType.DIGITAL_ENTITY;
 
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -12,11 +13,10 @@ import org.gbif.dwc.DwcFiles;
 import org.gbif.dwc.record.Record;
 import org.gbif.dwc.record.StarRecord;
 import org.gbif.dwc.terms.DwcTerm;
+import org.gbif.material.model.Assertion;
+import org.gbif.material.model.Common;
 import org.gbif.material.model.Entity;
 import org.gbif.material.model.Event;
-import org.gbif.material.model.agent.Agent;
-import org.gbif.material.model.assertion.EventAssertion;
-import org.gbif.material.model.identifier.AgentIdentifier;
 import org.gbif.material.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -38,20 +38,15 @@ public class DwCATransform implements CommandLineRunner {
 
   public void run(String... args) throws IOException {
 
-    Agent agent = Agent.builder().id("1").agentType("cleaner").preferredAgentName("Tom").build();
-    AgentIdentifier thomasOrcid =
-        AgentIdentifier.builder()
-            .agent(agent)
-            .id(
-                AgentIdentifier.AgentIdentifierPK.builder()
-                    .agentId(agent.getId())
-                    .agentIdentifier("xyz")
-                    .agentIdentifierType("ORCID")
-                    .build())
-            .build();
-
-    dao.save(agent);
-    dao.save(thomasOrcid);
+    dao.save(
+        Assertion.builder()
+            .id("A1")
+            .assertionTargetId("A")
+            .assertionTargetType(Common.CommonTargetType.AGENT)
+            .assertionType("age")
+            .assertionValueNumeric(BigDecimal.valueOf(43))
+            .assertionUnit("years")
+            .build());
 
     dao.save(Entity.builder().id("A").entityType(DIGITAL_ENTITY).datasetId("B").build());
 
@@ -88,21 +83,6 @@ public class DwCATransform implements CommandLineRunner {
         }
       }
     }
-
-    agent = Agent.builder().id("1").agentType("cleaner").preferredAgentName("Tom").build();
-
-    Event event = Event.builder().id("3").datasetId("A").eventType("cascade").build();
-
-    EventAssertion eventAssertion =
-        EventAssertion.builder()
-            .eventAssertionId("1")
-            .eventAssertionType("measurement")
-            .eventAssertionValue("parent")
-            .event(event)
-            .build();
-
-    dao.save(event);
-    dao.save(eventAssertion);
 
     dao.save(Entity.builder().id("A").entityType(DIGITAL_ENTITY).datasetId("B").build());
   }

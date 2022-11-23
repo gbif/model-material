@@ -15,7 +15,7 @@ import org.hibernate.annotations.OnDeleteAction;
 public class DigitalEntity {
   public enum DigitalEntityType {
     DATASET,
-    NTERACTIVE_RESOURCE,
+    INTERACTIVE_RESOURCE,
     MOVING_IMAGE,
     SERVICE,
     SOFTWARE,

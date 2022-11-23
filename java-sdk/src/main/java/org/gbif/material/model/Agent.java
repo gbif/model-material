@@ -1,4 +1,4 @@
-package org.gbif.material.model.agent;
+package org.gbif.material.model;
 
 import javax.persistence.*;
 import lombok.*;

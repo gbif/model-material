@@ -1,4 +1,4 @@
-package org.gbif.material.model.agent;
+package org.gbif.material.model;
 
 import java.io.Serializable;
 import javax.persistence.*;
