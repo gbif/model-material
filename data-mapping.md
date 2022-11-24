@@ -77,9 +77,9 @@ Following is an outline of the steps we suggest to following the exercise to map
 
 [5. Map MaterialEntities](#5-map-materialentities)
 
-[6. Map Agent Roles, Assertions, Citations, ChronometricAges, and Identifiers for MaterialEntities and their subtypes](#)
+[6. Map EntityRelationships between MaterialEntities](#6-map-entityrelationships-between-materialentities)
 
-[7. Map EntityRelationships between MaterialEntities](#)
+[7. Map Agent Roles, Assertions, Citations, Identifiers and ChronometricAges for MaterialEntities and their subtypes](#7-map-agent-roles-assertions-citations-identifiers-and-chronometricages-for-materialentities-and-their-subtypes)
 
 [8. Map DigitalEntities](#)
 
@@ -169,14 +169,19 @@ A `MaterialGroup` is any set of `MaterialEntity`'s and its utility is to be able
 
 An Organism (same as [dwc:Organism](https://dwc.tdwg.org/terms/#organism)) is modeled in the UM as a `MaterialEntity`, even if none of the material remains accessible (such as in the case of some observations, or a specimens that were lost or destroyed). In the most basic case, a cataloged item consists of the entire existing material remains of a single organism. These may be separated into "parts", which may or may not be tracked separately. When they are tracked separately, the `Entity` that unites them is the `Organism`. The derivation of the "parts" from the Organism (or from each other) are [expressed through `EntityRelatiosnhip`s](#7-map-entityrelationships-between-materialentities).
   
-Map all physical objects that are tracked separately in your database to `MaterialEntity`s in the UM. For each `MaterialEntity`, create an `Entity` record as well using the same unique identifier for the `materialEntityID` and the `entityID`.  If the `MaterialEntity` one of the subtypes of `MaterialEntity` (`MaterialGroup` or `Organism`), use the same identifier for these as for the corresponding `MaterialEntity` and `Entity`. 
+Map all physical objects that are tracked separately in your database to `MaterialEntity`s in the UM. For each `MaterialEntity`, create an `Entity` record as well using the same unique identifier for the `materialEntityID` and the `entityID`.  If the `MaterialEntity` is one of the subtypes of `MaterialEntity` (`MaterialGroup` or `Organism`), use the same identifier for these as for the corresponding `MaterialEntity` and `Entity`. 
   
-## 6. Map AgentRoles, Assertions, Citations, ChronometricAges, and Identifiers for MaterialEntities and their subtypes
+## 6. Map EntityRelationships between MaterialEntities
+
+## 7. Map Agent Roles, Assertions, Citations, Identifiers and ChronometricAges for MaterialEntities and their subtypes
+
+Figure 3 shows the relationships between `MaterialEntity` and associated tables, including the common model tables. The relationships between `MaterialEntity` and other `Entity ` tables was shown in Figure 2. Each of the `Entity` tables can be connected to the common model tables. The important thing is to make sure that the connections happen at the appropriate, most specific level in the hierarchy. For example, suppose a blood sample was taken from an `Organism` and its volume was measured. The blood sample is a `MaterialEntity` (NOT and `Organism`). There should be an `EntityRelationship` showing the subject `MaterialEntity` had the relationship `extractedFrom` the object `Organism`. The blood sample volume should result in an `Assertion` for the `MaterialEntity`, not an `Assertion` for the corresponding parent `Entity` record, nor the related `Organism` record. Specifically, the `assertionTargetID` should be the same as the `materialEntityID` for the blood sample, the `assertionTargetType` MUST be `MATERIAL_ENTITY`, the `assertionType` should be `VOLUME`, the `assertionValue` should be left empty, the `assertionValueNumeric` should have the numerical value of the volume, and the `assertionUnit` should have an appropriate SI unit (e.g., 'ml'). The same principles apply to relationships to the `Citation`, `AgentRole` and `Identifier` tables - they should be associated with the correct `Entity`.
+ 
+A `ChronometricAge`'s MUST only be related directly to a `MaterialEntity`. 
 
 <p align=center><img src="./_images/materialentities.png" alt="agents"/>
-<p align=center>Figure 3. MaterialEntities and associated common model tables in the Unified Model
+<p align=center>Figure 3. MaterialEntities and related tables in the Unified Model
   
-## 7. Map EntityRelationships between MaterialEntities
 ## 8. Map DigitalEntities
 ## 9. Map AgentRoles, Assertions, Citations, and Identifiers for DigitalEntities and their subtypes
 ## 10. Map EntityRelationships between DigitalEntities and between MaterialEntities and Digital Entities
