@@ -114,7 +114,7 @@ NOTE: Skip if your agents are identified only by name.
 It is recommended to map `Agent` first (see [Figure 1](#figure-1)), because their identifiers will be used in the construction of many of the other tables in the UM. If you track agents (e.g., people, groups of people, organizations, collections) with identifiers other than just their names in your database, use them to create the agent tables in the UM, including `AgentRelationship`, if you have those. If you don't track agents separately in your database, don't worry about it, they can be designated by their names where appropriate in the UM. 
 
 <p align=center><img src="./_images/agents.png" alt="agents" width="50%"/>
-<p align=center>Figure 1. Agents in the Unified Model
+<p align=center>Figure 1. Agents and their relationships in the Unified Model
 
 ### `agent_type` vocabulary
 If an `Agent ` is a `Collection` or an `AgentGroup`, the `agent_type` MUST be `COLLECTION` or `AGENT_GROUP` respectively. However, the agent_type field is not controlled by an ENUM, because there are other possible values that are not subtypes of `Agent`, such as `ORGANIZATION`, `PERSON`, and even `ORGANISM`.
@@ -141,7 +141,7 @@ Here are some suggestions, but feel free to suggest others if none of these suff
 
 NOTE: Skip if you created no `Agent` records in [Step 1](#1-map-agents)
 
-It is possible to create Agent `Assertion`'s, `Citation`'s, and `Identifier`'s. See [Common Model tables](#common-model-tables) for general discussions about how to map to these three types of tables.
+It is possible to create Agent `Assertion`'s, `Citation`'s, and `Identifier`'s. See [GBIF Common Models](https://docs.google.com/document/d/1ZTMt-V3U0D0761bqqogeN58MjuHhIs_Kisu6CRtl-uA/edit?usp=sharing) for general discussions about how to map to these three types of tables.
 
 ### `assertion_target_type` vocabulary
 The value for this term MUST be one of `AGENT`, `AGENT_GROUP`, or `COLLECTION` and MUST match the table to which the Assertion applies.
@@ -160,8 +160,8 @@ A `Protocol` can be used by the classes `Event`, `ChronometricAge`, and the vari
 
 ## 5. Map MaterialEntities
 
-![Entities](./_images/entities.png)
-<p align=center>Figure 2. Entities in the Unified Model
+<p align=center><img src="./_images/entities.png" alt="agents" width="75%"/>
+<p align=center>Figure 2. Entities and their relationships in the Unified Model
 
 A `MaterialEntity` can be any physical object (same as [dcterms:PhysicalResource](http://purl.org/dc/terms/PhysicalResource)). In the UM there can be many types of `MaterialEntity`s (distinguished by `materialEntityType`. These can be as specific as desired, but there are two `MaterialEntity` subtype classes to distinguish two important concepts, a `MaterialGroup` and an `Organism`. 
   
