@@ -29,8 +29,7 @@ public class MaterialEntity {
   private org.gbif.material.model.Entity entity;
 
   @Column(name = "material_entity_type", columnDefinition = "material_entity_type not null")
-  @Enumerated(EnumType.STRING)
-  private MaterialEntityType materialEntityType;
+  private String materialEntityType;
 
   @Column(name = "preparations")
   private String preparations;

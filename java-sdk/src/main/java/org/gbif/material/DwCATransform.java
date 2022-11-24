@@ -14,11 +14,15 @@ import org.gbif.dwc.record.Record;
 import org.gbif.dwc.record.StarRecord;
 import org.gbif.dwc.terms.DcElement;
 import org.gbif.dwc.terms.DcTerm;
+import org.gbif.dwc.terms.DwcTerm;
 import org.gbif.dwc.terms.Term;
 import org.gbif.dwc.terms.TermFactory;
 import org.gbif.material.model.Agent;
 import org.gbif.material.model.Common;
+import org.gbif.material.model.Entity;
 import org.gbif.material.model.Identifier;
+import org.gbif.material.model.MaterialEntity;
+import org.gbif.material.model.Organism;
 import org.gbif.material.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -43,6 +47,8 @@ public class DwCATransform implements CommandLineRunner {
   private static Term AUDUBON_CORE =
       TermFactory.instance().findClassTerm("http://rs.tdwg.org/ac/terms/Multimedia");
 
+  private static String DATASET_ID = "koldingensis";
+
   public static void main(String[] args) {
     SpringApplication app = new SpringApplication(DwCATransform.class);
     app.setWebApplicationType(WebApplicationType.NONE);
@@ -59,45 +65,102 @@ public class DwCATransform implements CommandLineRunner {
     // the process in order multiple passes are taken as we don't have the ability to query
     // directly.
 
-    // Step 1: Map agents
+    // cache objects for subsequent writing
     Map<String, Agent> agentCache = new HashMap<>();
+    Map<String, Identifier> identifierCache = new HashMap<>();
+    Map<String, Entity> entityCache = new HashMap<>();
+    Map<String, Entity> materialEntityCache = new HashMap<>();
+    Map<String, Entity> digitalEntityCache = new HashMap<>();
+    Map<String, Entity> geneticSequenceCache = new HashMap<>();
+
+
+    // Step 1: Map agents
+    mapAgents(dwca, agentCache);
+
+    // Step 2: Map References
+    // Skip as we only have  bibliographic citations
+
+    // Step 3: Map Assertions, Citations, and Identifiers for Agents
+    // Here we add our ORCIDS
+    mapAgentIDs(agentCache, identifierCache);
+
+    // Step 4: Map protocols
+    // Skip as omitted
+
+    // Step 5: Map entities
     for (StarRecord rec : dwca) {
       Record core = rec.core();
+
+      String basisOfRecord = core.value(DwcTerm.basisOfRecord);
+      String occurrenceID = core.value(DwcTerm.occurrenceID);
+      if ("Observation".equalsIgnoreCase(basisOfRecord)) {
+        // TODO add all extra fields
+        dao.save(Entity.builder().id(occurrenceID).entityType(Entity.EntityType.MATERIAL_ENTITY).datasetId(DATASET_ID).build());
+        dao.save(MaterialEntity.builder().id(occurrenceID).materialEntityType("ORGANISM").build());
+        dao.save(org.gbif.material.model.Organism.builder().id(occurrenceID).build());
+      } else if ("PreservedSpecimen".equalsIgnoreCase(basisOfRecord)) {
+        // TODO add all extra fields
+        dao.save(Entity.builder().id(occurrenceID).entityType(Entity.EntityType.MATERIAL_ENTITY).datasetId(DATASET_ID).build());
+        dao.save(MaterialEntity.builder().id(occurrenceID).materialEntityType("PRESERVED_SPECIMEN").build());
+      } else if ("PreservedSpecimen".equalsIgnoreCase(basisOfRecord)) {
+        // TODO add all extra fields
+        dao.save(Entity.builder().id(occurrenceID).entityType(Entity.EntityType.MATERIAL_ENTITY).datasetId(DATASET_ID).build());
+        dao.save(MaterialEntity.builder().id(occurrenceID).materialEntityType("PRESERVED_SPECIMEN").build());
+      }
+
+
       log.info("Starting {}", core.value(occurrenceID));
 
-      log.info("ID {}", core.value(recordedByID));
+
       agentCache.put(
           core.value(recordedByID),
           new Agent(core.value(recordedByID), "PERSON", core.value(recordedBy)));
-      log.info("ID {}", core.value(identifiedByID));
       agentCache.put(
           core.value(identifiedByID),
           new Agent(core.value(identifiedByID), "PERSON", core.value(identifiedBy)));
 
       for (Record extRec : rec.extension(AUDUBON_CORE)) {
-        log.info("ID {}", extRec.value(DcTerm.creator));
         agentCache.put(
             extRec.value(DcTerm.creator),
             new Agent(extRec.value(DcTerm.creator), "PERSON", extRec.value(DcElement.creator)));
       }
+    }
 
-      // Step 2: Map References
-      // Skip as we only have  bibliographic citations
 
-      // Step 3: Map Assertions, Citations, and Identifiers for Agents
-      // Here we add our ORCIDS
-      Map<String, Identifier> identifierCache = new HashMap<>();
-      for (Map.Entry<String, Agent> e : agentCache.entrySet()) {
-        Agent a = e.getValue();
-        identifierCache.put(
-            a.getId(),
-            new Identifier(
-                new Identifier.IdentifierPK(a.getId(), Common.CommonTargetType.AGENT, a.getId())));
-      }
 
-      // Write it all to the DB
-      agentCache.values().forEach(dao::save);
-      identifierCache.values().forEach(dao::save);
+
+    // Write it all to the DB
+    agentCache.values().forEach(dao::save);
+    identifierCache.values().forEach(dao::save);
+  }
+
+  private void mapAgentIDs(Map<String, Agent> agentCache, Map<String, Identifier> identifierCache) {
+    for (Map.Entry<String, Agent> e : agentCache.entrySet()) {
+      Agent a = e.getValue();
+      identifierCache.put(
+          a.getId(),
+          new Identifier(
+              new Identifier.IdentifierPK(a.getId(), Common.CommonTargetType.AGENT, a.getId())));
     }
   }
+
+  private void mapAgents(Archive dwca, Map<String, Agent> agentCache) {
+    for (StarRecord rec : dwca) {
+      Record core = rec.core();
+      log.info("Starting {}", core.value(occurrenceID));
+      agentCache.put(
+          core.value(recordedByID),
+          new Agent(core.value(recordedByID), "PERSON", core.value(recordedBy)));
+      agentCache.put(
+          core.value(identifiedByID),
+          new Agent(core.value(identifiedByID), "PERSON", core.value(identifiedBy)));
+
+      for (Record extRec : rec.extension(AUDUBON_CORE)) {
+        agentCache.put(
+            extRec.value(DcTerm.creator),
+            new Agent(extRec.value(DcTerm.creator), "PERSON", extRec.value(DcElement.creator)));
+      }
+    }
+  }
+
 }
