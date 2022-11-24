@@ -62,12 +62,12 @@ public class DAO {
         ChronometricAge.class.getName(), context.getBean(ChronometricAgeRepository.class));
   }
 
-  public <T extends Object> void save(T o) {
+  public <T extends Object> T save(T o) {
     JpaRepository jpa = repositories.get(o.getClass().getName());
     if (jpa == null) {
       throw new IllegalArgumentException(o.getClass().getName() + " is not registered");
     }
     log.info("Saving {}: {}", o.getClass(), o);
-    jpa.save(o);
+    return (T) jpa.save(o);
   }
 }

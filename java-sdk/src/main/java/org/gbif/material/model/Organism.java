@@ -16,10 +16,9 @@ public class Organism {
   @Column(name = "organism_id", nullable = false)
   private String id;
 
-  @MapsId
-  @OneToOne(fetch = FetchType.LAZY, optional = false)
+  @OneToOne(cascade = CascadeType.MERGE)
   @OnDelete(action = OnDeleteAction.CASCADE)
-  @JoinColumn(name = "organism_id", nullable = false)
+  @PrimaryKeyJoinColumn(name = "organism_id", referencedColumnName = "material_entity_id")
   private org.gbif.material.model.Entity entity;
 
   @Column(name = "organism_scope")

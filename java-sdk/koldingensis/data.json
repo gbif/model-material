@@ -1,0 +1,327 @@
+[ {
+  "language" : "da",
+  "decimalLatitude" : "5.549.949",
+  "occurrenceID" : "1",
+  "decimalLongitude" : "948.942",
+  "identifiedByID" : "https://orcid.org/0000-0002-3530-013X",
+  "country" : "Denmark",
+  "eventDate" : "06/10/2013",
+  "typeStatus" : null,
+  "scientificName" : "Cortinarius koldingensis Frøslev & T.S. Jeppesen",
+  "habitat" : "Deciduous woodland",
+  "county" : null,
+  "catalogNumber" : null,
+  "associatedTaxa" : "bøg (Fagus)",
+  "fieldNumber" : "TF2013-640926",
+  "vernacularName" : "strågul slørhat",
+  "recordedBy" : "Tobias Frøslev",
+  "locationAccordingTo" : "Danish Mycological Society",
+  "otherCatalogNumbers" : null,
+  "bibliographicCitation" : "Danish Mycological Society, Fungal Records Database (https://svampe.databasen.org), contributed by Frøslev, T., Heilmann-Clausen, J., Jeppesen, T.S., Lange, C., Læssøe, T., Petersen, J.H., Søchting, U., Vesterholt, J.",
+  "coordinateUncertaintyInMeters" : "10",
+  "identifiedBy" : "Tobias Frøslev",
+  "taxonRank" : "sp.",
+  "geodeticDatum" : "WGS84",
+  "associatedSequences" : "https://orcid.org/0000-0002-3530-013X",
+  "countryCode" : "DK",
+  "taxonID" : "66577",
+  "recordedByID" : "https://orcid.org/0000-0002-3530-013X",
+  "dynamicProperties" : "\"{\"\"Substrate\"\":\"\"soil\"\"}\"",
+  "modified" : "15/12/2020 12.36",
+  "locationID" : "16823",
+  "basisOfRecord" : "Observation",
+  "license" : "https://creativecommons.org/licenses/by-nc/4.0/",
+  "verbatimLocality" : null,
+  "scientificNameID" : "urn:lsid:indexfungorum.org:names:812989",
+  "locality" : "Kolding, Marielund",
+  "DNADerivedData" : [ ],
+  "ResourceRelationship" : [ ],
+  "Multimedia" : [ {
+    "type" : "StillImage",
+    "creator" : "Thomas Stjernegaard Jeppesen",
+    "format" : "image/jpeg",
+    "identifier" : "https://svampe.databasen.org/uploads/2013-640926_Bys5jgKIj.JPG",
+    "rights" : "Thomas Stjernegaard Jeppesen"
+  }, {
+    "type" : "StillImage",
+    "creator" : "Thomas Stjernegaard Jeppesen",
+    "format" : "image/jpeg",
+    "identifier" : "https://svampe.databasen.org/uploads/2013-640926_HyxhsgFLi.JPG",
+    "rights" : "Thomas Stjernegaard Jeppesen"
+  }, {
+    "type" : "StillImage",
+    "creator" : "Thomas Stjernegaard Jeppesen",
+    "format" : "image/jpeg",
+    "identifier" : "https://svampe.databasen.org/uploads/2013-640926_rJJAieYUi.JPG",
+    "rights" : "Thomas Stjernegaard Jeppesen"
+  }, {
+    "type" : "StillImage",
+    "creator" : "Tobias Frøslev",
+    "format" : "image/jpeg",
+    "identifier" : "https://svampe.databasen.org/uploads/TF2013-640926_B1sPYTWZg.JPG",
+    "rights" : "Tobias Frøslev"
+  } ],
+  "Identification" : [ {
+    "identificationID" : "1",
+    "identificationQualifier" : "cf.",
+    "identifiedByID" : null,
+    "scientificName" : null,
+    "verbatimIdentification" : "Cortinarius sulphurinus var. fageticola",
+    "identifiedBy" : "Tobias Frøslev",
+    "dateIdentified" : "2013-10-06",
+    "scientificNameID" : "urn:lsid:indexfungorum.org:names:259339",
+    "namePublishedInID" : "Cortinarius sulfurinus var. fageticola Brandrud",
+    "typeStatus" : null
+  }, {
+    "identificationID" : "2",
+    "identificationQualifier" : null,
+    "identifiedByID" : "https://orcid.org/0000-0002-3530-013X|https://orcid.org/0000-0003-1691-239X",
+    "scientificName" : null,
+    "verbatimIdentification" : "Cortinarius koldingensis",
+    "identifiedBy" : "Tobias Frøslev|Thomas Stjernegaard Jeppesen",
+    "dateIdentified" : "2015-08-21",
+    "scientificNameID" : "urn:lsid:indexfungorum.org:names:812989",
+    "namePublishedInID" : "Cortinarius koldingensis Frøslev & T.S. Jeppesen",
+    "typeStatus" : null
+  } ],
+  "MeasurementOrFact" : [ {
+    "measurementUnit" : null,
+    "measurementValue" : null,
+    "measurementType" : "brownish",
+    "measurementID" : "MACROCHEMICAL REACTION (10 % KOH) in context"
+  }, {
+    "measurementUnit" : null,
+    "measurementValue" : null,
+    "measurementType" : "negative",
+    "measurementID" : "MACROCHEMICAL REACTION (10 % KOH) on bulbipellis"
+  }, {
+    "measurementUnit" : null,
+    "measurementValue" : null,
+    "measurementType" : "brownish",
+    "measurementID" : "MACROCHEMICAL REACTION (10 % KOH) on pileus"
+  }, {
+    "measurementUnit" : null,
+    "measurementValue" : null,
+    "measurementType" : "strongly blood red to pink-red",
+    "measurementID" : "MACROCHEMICAL REACTION (10 % KOH) on rhizomorphs"
+  }, {
+    "measurementUnit" : null,
+    "measurementValue" : null,
+    "measurementType" : "dark brownish to almost blackish",
+    "measurementID" : "MACROCHEMICAL REACTION (10 % KOH) on veil at bulb margin"
+  } ]
+}, {
+  "language" : "da",
+  "decimalLatitude" : "5.549.949",
+  "occurrenceID" : "2",
+  "decimalLongitude" : "948.942",
+  "identifiedByID" : "https://orcid.org/0000-0002-3530-013X",
+  "country" : "Denmark",
+  "eventDate" : "06/10/2013",
+  "typeStatus" : "HOLOTYPE",
+  "scientificName" : "Cortinarius koldingensis Frøslev & T.S. Jeppesen",
+  "habitat" : "Deciduous woodland",
+  "county" : null,
+  "catalogNumber" : "C-F-100309",
+  "associatedTaxa" : "bøg (Fagus)",
+  "fieldNumber" : "TF2013-640926",
+  "vernacularName" : "strågul slørhat",
+  "recordedBy" : "Tobias Frøslev",
+  "locationAccordingTo" : "Danish Mycological Society",
+  "otherCatalogNumbers" : "TF2013-640926",
+  "bibliographicCitation" : "Danish Mycological Society, Fungal Records Database (https://svampe.databasen.org), contributed by Frøslev, T., Heilmann-Clausen, J., Jeppesen, T.S., Lange, C., Læssøe, T., Petersen, J.H., Søchting, U., Vesterholt, J.",
+  "coordinateUncertaintyInMeters" : "10",
+  "identifiedBy" : "Tobias Frøslev",
+  "taxonRank" : "sp.",
+  "geodeticDatum" : "WGS84",
+  "associatedSequences" : "https://orcid.org/0000-0002-3530-013X",
+  "countryCode" : "DK",
+  "taxonID" : "66577",
+  "recordedByID" : "https://orcid.org/0000-0002-3530-013X",
+  "dynamicProperties" : "\"{\"\"Substrate\"\":\"\"soil\"\"}\"",
+  "modified" : "15/12/2020 12.36",
+  "locationID" : "16823",
+  "basisOfRecord" : "PreservedSpecimen",
+  "license" : "https://creativecommons.org/licenses/by-nc/4.0/",
+  "verbatimLocality" : null,
+  "scientificNameID" : "urn:lsid:indexfungorum.org:names:812989",
+  "locality" : "Kolding, Marielund",
+  "DNADerivedData" : [ ],
+  "ResourceRelationship" : [ {
+    "relationshipOfResource" : "Specimen evidence of",
+    "resourceRelationshipID" : "1",
+    "relatedResourceID" : "1",
+    "resourceID" : "2"
+  }, {
+    "relationshipOfResource" : "Specimen evidence of",
+    "resourceRelationshipID" : "2",
+    "relatedResourceID" : "3",
+    "resourceID" : "2"
+  } ],
+  "Multimedia" : [ {
+    "type" : "StillImage",
+    "creator" : "Tobias Frøslev",
+    "format" : "image/jpeg",
+    "identifier" : "https://svampe.databasen.org/uploads/TF2013-640926_B1sPYTWZg.JPG",
+    "rights" : "Tobias Frøslev"
+  } ],
+  "Identification" : [ {
+    "identificationID" : "3",
+    "identificationQualifier" : "cf.",
+    "identifiedByID" : null,
+    "scientificName" : null,
+    "verbatimIdentification" : "Cortinarius sulphurinus var. fageticola",
+    "identifiedBy" : "Tobias Frøslev",
+    "dateIdentified" : "2013-10-06",
+    "scientificNameID" : "urn:lsid:indexfungorum.org:names:259339",
+    "namePublishedInID" : "Cortinarius sulfurinus var. fageticola Brandrud",
+    "typeStatus" : null
+  }, {
+    "identificationID" : "4",
+    "identificationQualifier" : null,
+    "identifiedByID" : "https://orcid.org/0000-0002-3530-013X|https://orcid.org/0000-0003-1691-239X",
+    "scientificName" : null,
+    "verbatimIdentification" : "Cortinarius koldingensis",
+    "identifiedBy" : "Tobias Frøslev|Thomas Stjernegaard Jeppesen",
+    "dateIdentified" : "2015-08-21",
+    "scientificNameID" : "urn:lsid:indexfungorum.org:names:812989",
+    "namePublishedInID" : "Cortinarius koldingensis Frøslev & T.S. Jeppesen",
+    "typeStatus" : null
+  } ],
+  "MeasurementOrFact" : [ {
+    "measurementUnit" : null,
+    "measurementValue" : "µm",
+    "measurementType" : "11",
+    "measurementID" : "Spore length"
+  }, {
+    "measurementUnit" : null,
+    "measurementValue" : "µm",
+    "measurementType" : "11.5",
+    "measurementID" : "Spore length"
+  }, {
+    "measurementUnit" : null,
+    "measurementValue" : "µm",
+    "measurementType" : "11.5",
+    "measurementID" : "Spore length"
+  }, {
+    "measurementUnit" : null,
+    "measurementValue" : "µm",
+    "measurementType" : "11.5",
+    "measurementID" : "Spore length"
+  }, {
+    "measurementUnit" : null,
+    "measurementValue" : "µm",
+    "measurementType" : "11.5",
+    "measurementID" : "Spore length"
+  }, {
+    "measurementUnit" : null,
+    "measurementValue" : "µm",
+    "measurementType" : "11.5",
+    "measurementID" : "Spore length"
+  }, {
+    "measurementUnit" : null,
+    "measurementValue" : "µm",
+    "measurementType" : "12",
+    "measurementID" : "Spore length"
+  }, {
+    "measurementUnit" : null,
+    "measurementValue" : "µm",
+    "measurementType" : "12",
+    "measurementID" : "Spore length"
+  }, {
+    "measurementUnit" : null,
+    "measurementValue" : "µm",
+    "measurementType" : "12.5",
+    "measurementID" : "Spore length"
+  }, {
+    "measurementUnit" : null,
+    "measurementValue" : "µm",
+    "measurementType" : "12.5",
+    "measurementID" : "Spore length"
+  }, {
+    "measurementUnit" : null,
+    "measurementValue" : "µm",
+    "measurementType" : "12.5",
+    "measurementID" : "Spore length"
+  }, {
+    "measurementUnit" : null,
+    "measurementValue" : "µm",
+    "measurementType" : "13",
+    "measurementID" : "Spore length"
+  }, {
+    "measurementUnit" : null,
+    "measurementValue" : "µm",
+    "measurementType" : "13",
+    "measurementID" : "Spore length"
+  }, {
+    "measurementUnit" : null,
+    "measurementValue" : "µm",
+    "measurementType" : "13",
+    "measurementID" : "Spore length"
+  }, {
+    "measurementUnit" : null,
+    "measurementValue" : "µm",
+    "measurementType" : "13.5",
+    "measurementID" : "Spore length"
+  } ]
+}, {
+  "language" : "da",
+  "decimalLatitude" : "5.549.949",
+  "occurrenceID" : "3",
+  "decimalLongitude" : "948.942",
+  "identifiedByID" : "https://orcid.org/0000-0002-3530-013X",
+  "country" : "Denmark",
+  "eventDate" : "06/10/2013",
+  "typeStatus" : null,
+  "scientificName" : "Cortinarius koldingensis Frøslev & T.S. Jeppesen",
+  "habitat" : "Deciduous woodland",
+  "county" : null,
+  "catalogNumber" : "C-F-100309",
+  "associatedTaxa" : "bøg (Fagus)",
+  "fieldNumber" : null,
+  "vernacularName" : "strågul slørhat",
+  "recordedBy" : "Tobias Frøslev",
+  "locationAccordingTo" : "Danish Mycological Society",
+  "otherCatalogNumbers" : null,
+  "bibliographicCitation" : "Danish Mycological Society, Fungal Records Database (https://svampe.databasen.org), contributed by Frøslev, T., Heilmann-Clausen, J., Jeppesen, T.S., Lange, C., Læssøe, T., Petersen, J.H., Søchting, U., Vesterholt, J.",
+  "coordinateUncertaintyInMeters" : "10",
+  "identifiedBy" : "Tobias Frøslev",
+  "taxonRank" : "sp.",
+  "geodeticDatum" : "WGS84",
+  "associatedSequences" : "https://orcid.org/0000-0002-3530-013X",
+  "countryCode" : "DK",
+  "taxonID" : "66577",
+  "recordedByID" : "https://orcid.org/0000-0002-3530-013X",
+  "dynamicProperties" : "\"{\"\"Substrate\"\":\"\"soil\"\"}\"",
+  "modified" : "15/12/2020 12.36",
+  "locationID" : "16823",
+  "basisOfRecord" : "MaterialSample",
+  "license" : "https://creativecommons.org/licenses/by-nc/4.0/",
+  "verbatimLocality" : null,
+  "scientificNameID" : "urn:lsid:indexfungorum.org:names:812989",
+  "locality" : "Kolding, Marielund",
+  "DNADerivedData" : [ {
+    "MIXS:0000044" : "ITS",
+    "dna_sequence" : "AGGAAGTAAAAGTCGTAACAAGGTTTCCGTAGGTGAACCTGCGGAAGGATCATTATTGAAATTAAACTTGATAAGTTGTTGCTGGTTCTCTAGGGAGCATGTGCACACTTGTCATCTTTGTATTTCCACCTGTGCACTTTTTGTAGGCCTGATTATCTCTCTGAATGCTTAGCCATTCAGGATTGAGGATTGACTTTCAGTCTCTTCCTTACATTTTCGGGTCTATGTTCATTCATATACCCTATGTATGTTTATAGAATGTTGCTAATGGGCCTTTGTGCCTACAAATCTATACAACTTTCAGCAACGGATCTCTTGGCTCTCGCATCGATGAAGAACGCAGCGAAATGCGATAAGTAATGTGAATTGCAGAATTCAGTGAATCATCGAATCTTTGAACGCACCTTGCGCTCCTTGGTATTCCGAGGAGCATGCCTGTTTGAGTGTCATTAATATATCAACCTCTTTGGTTGGATGTGGGTTTGCTGGCCTCTTAAGGTCAGCTCCCCTTAAATGCATTAGCGGACAACATTTTGCCAACCGTTCATTAGTGTGATAATTATCTACGCTATTGACGTGAAGCATGGTTCAGCTTCTAACAGTCCATTGACTTGGACAAATTTCTTATTAATGTGACCTCAAATCAG"
+  } ],
+  "ResourceRelationship" : [ {
+    "relationshipOfResource" : "Material sample of",
+    "resourceRelationshipID" : "3",
+    "relatedResourceID" : "2",
+    "resourceID" : "3"
+  } ],
+  "Multimedia" : [ ],
+  "Identification" : [ {
+    "identificationID" : "5",
+    "identificationQualifier" : null,
+    "identifiedByID" : "https://orcid.org/0000-0002-3530-013X|https://orcid.org/0000-0003-1691-239X",
+    "scientificName" : null,
+    "verbatimIdentification" : "Cortinarius koldingensis",
+    "identifiedBy" : "Tobias Frøslev|Thomas Stjernegaard Jeppesen",
+    "dateIdentified" : "2015-08-21",
+    "scientificNameID" : "urn:lsid:indexfungorum.org:names:812989",
+    "namePublishedInID" : "Cortinarius koldingensis Frøslev & T.S. Jeppesen",
+    "typeStatus" : null
+  } ],
+  "MeasurementOrFact" : [ ]
+} ]

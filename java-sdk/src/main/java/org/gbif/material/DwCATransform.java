@@ -2,13 +2,15 @@ package org.gbif.material;
 
 import static org.gbif.dwc.terms.DwcTerm.*;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 import lombok.extern.slf4j.Slf4j;
 import org.gbif.dwc.Archive;
+import org.gbif.dwc.ArchiveFile;
 import org.gbif.dwc.DwcFiles;
 import org.gbif.dwc.record.Record;
 import org.gbif.dwc.record.StarRecord;
@@ -17,13 +19,9 @@ import org.gbif.dwc.terms.DcTerm;
 import org.gbif.dwc.terms.DwcTerm;
 import org.gbif.dwc.terms.Term;
 import org.gbif.dwc.terms.TermFactory;
-import org.gbif.material.model.Agent;
-import org.gbif.material.model.Common;
-import org.gbif.material.model.Entity;
-import org.gbif.material.model.Identifier;
-import org.gbif.material.model.MaterialEntity;
-import org.gbif.material.model.Organism;
+import org.gbif.material.model.*;
 import org.gbif.material.repository.*;
+import org.gbif.utils.file.ClosableIterator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -60,6 +58,66 @@ public class DwCATransform implements CommandLineRunner {
     // Open the source
     Path input = Paths.get("./koldingensis");
     Archive dwca = DwcFiles.fromLocation(input);
+    log.info(toJson(dwca));
+
+    ArchiveFile core = dwca.getCore();
+    for (ClosableIterator<Record> it = core.iterator(); it.hasNext(); ) {
+      Record record = it.next();
+
+      // key our entities on the occurrence ID which we know to be unique
+      String occurrenceID = record.value(DwcTerm.occurrenceID);
+      log.info("Starting entities {}", occurrenceID);
+
+      String basisOfRecord = record.value(DwcTerm.basisOfRecord);
+
+      if ("Observation".equalsIgnoreCase(basisOfRecord)) {
+        Entity e =
+            dao.save(
+                Entity.builder()
+                    .id(occurrenceID)
+                    .entityType(Entity.EntityType.MATERIAL_ENTITY)
+                    .datasetId(DATASET_ID)
+                    .build());
+        MaterialEntity m =
+            dao.save(
+                MaterialEntity.builder()
+                    .id(occurrenceID)
+                    .materialEntityType("ORGANISM")
+                    .entity(e)
+                    .build());
+        dao.save(org.gbif.material.model.Organism.builder().id(occurrenceID).entity(e).build());
+
+      } else if ("PreservedSpecimen".equalsIgnoreCase(basisOfRecord)) {
+        Entity e =
+            dao.save(
+                Entity.builder()
+                    .id(occurrenceID)
+                    .entityType(Entity.EntityType.MATERIAL_ENTITY)
+                    .datasetId(DATASET_ID)
+                    .build());
+        dao.save(
+            MaterialEntity.builder()
+                .id(occurrenceID)
+                .materialEntityType("PRESERVED_SPECIMEN")
+                .entity(e)
+                .build());
+
+      } else if ("MaterialSample".equalsIgnoreCase(basisOfRecord)) {
+        Entity e =
+            dao.save(
+                Entity.builder()
+                    .id(occurrenceID)
+                    .entityType(Entity.EntityType.MATERIAL_ENTITY)
+                    .datasetId(DATASET_ID)
+                    .build());
+        dao.save(
+            MaterialEntity.builder()
+                .id(occurrenceID)
+                .materialEntityType("PRESERVED_SPECIMEN")
+                .entity(e)
+                .build());
+      }
+    }
 
     // What follows could be optimised with a single pass of the archive. However, to demonstrate
     // the process in order multiple passes are taken as we don't have the ability to query
@@ -72,7 +130,6 @@ public class DwCATransform implements CommandLineRunner {
     Map<String, Entity> materialEntityCache = new HashMap<>();
     Map<String, Entity> digitalEntityCache = new HashMap<>();
     Map<String, Entity> geneticSequenceCache = new HashMap<>();
-
 
     // Step 1: Map agents
     mapAgents(dwca, agentCache);
@@ -89,49 +146,107 @@ public class DwCATransform implements CommandLineRunner {
 
     // Step 5: Map entities
     for (StarRecord rec : dwca) {
-      Record core = rec.core();
+      Record c = rec.core();
+      Map<String, EntityRelationship> relationshipsCache = new HashMap<>();
 
-      String basisOfRecord = core.value(DwcTerm.basisOfRecord);
-      String occurrenceID = core.value(DwcTerm.occurrenceID);
+      String basisOfRecord = c.value(DwcTerm.basisOfRecord);
+      String occurrenceID = c.value(DwcTerm.occurrenceID);
+
+      log.info("Starting entities {}", occurrenceID);
+
       if ("Observation".equalsIgnoreCase(basisOfRecord)) {
-        // TODO add all extra fields
-        dao.save(Entity.builder().id(occurrenceID).entityType(Entity.EntityType.MATERIAL_ENTITY).datasetId(DATASET_ID).build());
-        dao.save(MaterialEntity.builder().id(occurrenceID).materialEntityType("ORGANISM").build());
-        dao.save(org.gbif.material.model.Organism.builder().id(occurrenceID).build());
+        Entity e =
+            dao.save(
+                Entity.builder()
+                    .id(occurrenceID)
+                    .entityType(Entity.EntityType.MATERIAL_ENTITY)
+                    .datasetId(DATASET_ID)
+                    .build());
+        MaterialEntity m =
+            dao.save(
+                MaterialEntity.builder()
+                    .id(occurrenceID)
+                    .materialEntityType("ORGANISM")
+                    .entity(e)
+                    .build());
+        dao.save(org.gbif.material.model.Organism.builder().id(occurrenceID).entity(e).build());
+
       } else if ("PreservedSpecimen".equalsIgnoreCase(basisOfRecord)) {
-        // TODO add all extra fields
-        dao.save(Entity.builder().id(occurrenceID).entityType(Entity.EntityType.MATERIAL_ENTITY).datasetId(DATASET_ID).build());
-        dao.save(MaterialEntity.builder().id(occurrenceID).materialEntityType("PRESERVED_SPECIMEN").build());
-      } else if ("PreservedSpecimen".equalsIgnoreCase(basisOfRecord)) {
-        // TODO add all extra fields
-        dao.save(Entity.builder().id(occurrenceID).entityType(Entity.EntityType.MATERIAL_ENTITY).datasetId(DATASET_ID).build());
-        dao.save(MaterialEntity.builder().id(occurrenceID).materialEntityType("PRESERVED_SPECIMEN").build());
+        Entity e =
+            dao.save(
+                Entity.builder()
+                    .id(occurrenceID)
+                    .entityType(Entity.EntityType.MATERIAL_ENTITY)
+                    .datasetId(DATASET_ID)
+                    .build());
+        dao.save(
+            MaterialEntity.builder()
+                .id(occurrenceID)
+                .materialEntityType("PRESERVED_SPECIMEN")
+                .entity(e)
+                .build());
+
+      } else if ("MaterialSample".equalsIgnoreCase(basisOfRecord)) {
+        Entity e =
+            dao.save(
+                Entity.builder()
+                    .id(occurrenceID)
+                    .entityType(Entity.EntityType.MATERIAL_ENTITY)
+                    .datasetId(DATASET_ID)
+                    .build());
+        dao.save(
+            MaterialEntity.builder()
+                .id(occurrenceID)
+                .materialEntityType("PRESERVED_SPECIMEN")
+                .entity(e)
+                .build());
       }
 
-
-      log.info("Starting {}", core.value(occurrenceID));
-
-
-      agentCache.put(
-          core.value(recordedByID),
-          new Agent(core.value(recordedByID), "PERSON", core.value(recordedBy)));
-      agentCache.put(
-          core.value(identifiedByID),
-          new Agent(core.value(identifiedByID), "PERSON", core.value(identifiedBy)));
-
-      for (Record extRec : rec.extension(AUDUBON_CORE)) {
-        agentCache.put(
-            extRec.value(DcTerm.creator),
-            new Agent(extRec.value(DcTerm.creator), "PERSON", extRec.value(DcElement.creator)));
+      // Step 6. Map EntityRelationships between MaterialEntities
+      for (Record extRec : rec.extension(ResourceRelationship)) {
+        relationshipsCache.put(
+            extRec.value(DwcTerm.resourceRelationshipID),
+            EntityRelationship.builder()
+                .id(extRec.value(DwcTerm.resourceRelationshipID))
+                .subjectEntity(extRec.value(DwcTerm.resourceID))
+                .objectEntity(extRec.value(relatedResourceID))
+                .entityRelationshipType(extRec.value(DwcTerm.relationshipOfResource))
+                .entityRelationshipOrder((short) 0)
+                .build());
       }
+
+      relationshipsCache.values().forEach(dao::save);
     }
 
-
-
-
     // Write it all to the DB
+
     agentCache.values().forEach(dao::save);
     identifierCache.values().forEach(dao::save);
+  }
+
+  private String toJson(Archive dwca) throws JsonProcessingException {
+    List<Object> json = new ArrayList<>();
+    for (StarRecord rec : dwca) {
+      Map<String, Object> record = new LinkedHashMap<>();
+      json.add(record);
+
+      for (Term t : rec.core().terms()) {
+        record.put(t.simpleName(), rec.core().value(t));
+      }
+
+      for (Map.Entry<Term, List<Record>> e : rec.extensions().entrySet()) {
+        List<Object> extRecords = new ArrayList<>();
+        record.put(e.getKey().simpleName(), extRecords);
+        for (Record extRecord : e.getValue()) {
+          Map<String, Object> ext = new LinkedHashMap<>();
+          extRecords.add(ext);
+          for (Term et : extRecord.terms()) {
+            ext.put(et.simpleName(), extRecord.value(et));
+          }
+        }
+      }
+    }
+    return (new ObjectMapper().writerWithDefaultPrettyPrinter().writeValueAsString(json));
   }
 
   private void mapAgentIDs(Map<String, Agent> agentCache, Map<String, Identifier> identifierCache) {
@@ -147,7 +262,7 @@ public class DwCATransform implements CommandLineRunner {
   private void mapAgents(Archive dwca, Map<String, Agent> agentCache) {
     for (StarRecord rec : dwca) {
       Record core = rec.core();
-      log.info("Starting {}", core.value(occurrenceID));
+      log.info("Starting agents {}", core.value(occurrenceID));
       agentCache.put(
           core.value(recordedByID),
           new Agent(core.value(recordedByID), "PERSON", core.value(recordedBy)));
@@ -162,5 +277,4 @@ public class DwCATransform implements CommandLineRunner {
       }
     }
   }
-
 }

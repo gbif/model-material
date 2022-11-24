@@ -13,19 +13,13 @@ import org.hibernate.annotations.OnDeleteAction;
 @Table(name = "material_entity")
 public class MaterialEntity {
 
-  public enum MaterialEntityType {
-    MATERIAL_GROUP,
-    ORGANISM
-  }
-
   @Id
   @Column(name = "material_entity_id", nullable = false)
   private String id;
 
-  @MapsId
-  @OneToOne(fetch = FetchType.LAZY, optional = false)
+  @OneToOne(cascade = CascadeType.MERGE)
   @OnDelete(action = OnDeleteAction.CASCADE)
-  @JoinColumn(name = "material_entity_id", nullable = false)
+  @PrimaryKeyJoinColumn(name = "material_entity_id", referencedColumnName = "entity_id")
   private org.gbif.material.model.Entity entity;
 
   @Column(name = "material_entity_type", columnDefinition = "material_entity_type not null")

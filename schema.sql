@@ -249,7 +249,7 @@ CREATE TABLE material_entity (
   institution_code TEXT, -- also on Collection
   institution_id TEXT, 
   collection_code TEXT,  -- also on Collection
-  collectionID TEXT,
+  collection_id TEXT,
   owner_institution_code TEXT,
   catalog_number TEXT,
   record_number TEXT,

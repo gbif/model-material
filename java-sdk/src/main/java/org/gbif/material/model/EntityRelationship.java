@@ -21,18 +21,14 @@ public class EntityRelationship {
   @JoinColumn(name = "depends_on_entity_relationship_id")
   private EntityRelationship dependsOnEntityRelationship;
 
-  @ManyToOne(fetch = FetchType.LAZY)
-  @OnDelete(action = OnDeleteAction.CASCADE)
-  @JoinColumn(name = "subject_entity_id")
-  private org.gbif.material.model.Entity subjectEntity;
+  @Column(name = "subject_entity_id", nullable = false)
+  private String subjectEntity;
 
   @Column(name = "entity_relationship_type", nullable = false)
   private String entityRelationshipType;
 
-  @ManyToOne(fetch = FetchType.LAZY)
-  @OnDelete(action = OnDeleteAction.CASCADE)
-  @JoinColumn(name = "object_entity_id")
-  private org.gbif.material.model.Entity objectEntity;
+  @Column(name = "object_entity_id", nullable = false)
+  private String objectEntity;
 
   @Column(name = "object_entity_iri")
   private String objectEntityIri;
