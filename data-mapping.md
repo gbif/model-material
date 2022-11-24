@@ -85,7 +85,7 @@ Following is an outline of the steps we suggest to following the exercise to map
 
 [9. Map EntityRelationships between Entities](#9-map-entityrelationships-between-entities)
 
-[10. Map Locations, Georeferences, and GeologicalContexts](#)
+[10. Map Locations, Georeferences, and GeologicalContexts](#10-map-locations-georeferences-and-geologicalcontexts)
 
 [11. Map AgentRoles, Assertions, Citations, and Identifiers for Locations, Georeferences, and GeologicalContexts](#)
 
@@ -192,7 +192,7 @@ One of these, the `GENETIC_SEQUENCE` is a formal subtype of `DigitalEntity` (see
 
 ## 8. Map AgentRoles, Assertions, Citations, and Identifiers for DigitalEntities
 
-The same kinds of common model associations shown in Figure 3 for `MaterialEntity`s can be made for `DigitalEntity`s, except that each `targetID` MUST be the same as the identifier (`digitalEntityID` or `geneticSequenceID`) for the `DigitalEntity` or `GeneticSequence` it is directly associated with. 
+The same kinds of common model associations shown in Figure 3 for `MaterialEntity`s can be made for `DigitalEntity`s, except that each `targetID` MUST be the same as the identifier (`digitalEntityID` or `geneticSequenceID`) for the `DigitalEntity` or `GeneticSequence` it is directly associated with. The values for the `targetType` fields MUST be `DIGITAL_ENTITY` or `GENETIC_SEQUENCE`, depending on the table they are to be directly related to.
 
 ## 9. Map EntityRelationships between Entities
 
@@ -201,12 +201,21 @@ At this stage in the process, all of the `Entity` records will have been created
 
 ## 10. Map Locations, Georeferences, and GeologicalContexts
 
-`Location`s in the UM are used to provide both textual and geospatial context. In particular, they are used to describe where `Event`s happened. Georeferences are special assertions of the geospatial interpretation of a `Location`s. As assertions, the model supports zero, one, or multiple interpretations per `Location`, whether current, historical, accepted, or disputed. `GeologicalContext`s are also modeled with the same cardinality. Meanwhile, a 'best' `Georeference` and a best `GeologicalContext` can be designated. Figure 4 shows the structural relationships between the Location-related tables in the UM.
+`Location`s in the UM are used to provide both textual and geospatial context. In particular, they are used to describe where `Event`s happened. Figure 4 shows the structural relationships between the Location-related tables in the UM. 
+  
+Georeferences are special assertions of the geospatial interpretation of a `Location`s. As assertions, the model supports zero, one, or multiple interpretations per `Location`, whether current, historical, accepted, or disputed. The UM also supports the designation of zero or one accepted georeferences by populating `accepted_georeference_id` in the `Location` table with the `georeference_id` of the corresponding `Georeference`, if any. 
+  
+`GeologicalContext`s is modeled similarly to a `Georeference`, but with an ``accepted_geological_context_id` in the `Location` table that MUST match the `geological_context_id` of the corresponding `GeologicalContext`, if any. 
+  
+The values for the `targetType` fields MUST be `LOCATION`, `GEOREFERENCE` or `GEOLOGICAL_CONTEXT`, depending on the table they are to be directly related to.
 
 <p align=center><img src="./_images/locations.png" alt="locations" width="50%"/>
 <p align=center>Figure 4. Locations, Georeferences and GeologicalContexts in the Unified Model
 
 ## 11. Map AgentRoles, Assertions, Citations, and Identifiers for Locations, Georeferences, and GeologicalContexts
+
+The 'common model' tables associated with the three Location-related tables can be populated. 
+
 ## 12. Map Occurrences and other Events
 
 <p align=center><img src="./_images/events.png" alt="events" width="75%"/>
