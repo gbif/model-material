@@ -30,9 +30,11 @@ CREATE TABLE entity (
 );
 ```
 
-Not every 'type' field in the UM is controlled by an ENUM. For some of these, suggestions will be given, but will not be limiting. You should feel free to use values for these that make sense for your data. Part of what this exercise will reveal is the diversity of data that are being managed in collection management systems. The vocabularies used will be a very interesting outcome.
+Not every 'type' field in the UM is controlled by an ENUM. For some 'type' fields, and any other fields for which a controlled vocabulary is suggested, any requirements will be given in the [Suggested steps](#suggested-steps). Other than the requirements given, feel free to use values that make sense for your data. However, please do follow the [recommendations for `assertionUnits`](https://docs.google.com/document/d/1ZTMt-V3U0D0761bqqogeN58MjuHhIs_Kisu6CRtl-uA/edit#heading=h.a8fhzgvypuhh)
 
-Throughout the UM there are four concepts (`AgentRole`, `Assertion`, `Citation`, and `Identifier`) that are repeated, except that they are attached to distinct classes in the model (e.g., `EventAgentRole`, `GeneticSequenceAssertion`, `MaterialEntityCitation`, `AgentIdentifier`). Explanations of how these "common model" tables work are given in [Appendix I](#appendix-i).
+ Principles of controlled vocabularies. Part of what this exercise will reveal is the diversity of data that are being managed in collection management systems. The aggregation of vocabulary values used will be a very interesting outcome.
+
+Throughout the UM there are four concepts (`AgentRole`, `Assertion`, `Citation`, and `Identifier`) that are repeated, except that they are attached to distinct classes in the model (e.g., `EventAgentRole`, `GeneticSequenceAssertion`, `MaterialEntityCitation`, `AgentIdentifier`). Explanations of how these tables work are given in the section [Common Model tables](#common-model-tables).
 
 ## Suggested steps
 
@@ -42,13 +44,13 @@ Following is an outline of the steps we suggest to following the exercise to map
 
 [2. Map References](#2-map-references)
 
-[3. Map AgentAssertions, AgentCitations, and AgentIdentifiers](#3-map-agentassertions-agentcitations-and-agentidentifiers)
+[3. Map Assertions, Citations, and Identifiers for Agents](#3-map-assertions-citations-and-identifiers-for-agents)
 
 [4. Map Protocols](#4-map-protocols)
 
 [5. Map MaterialEntities](#5-map-materialentities)
 
-[6. Map AgentRoles, Assertions, Citations, ChronometricAges, and Identifiers for MaterialEntities and their subtypes](#)
+[6. Map Agent Roles, Assertions, Citations, ChronometricAges, and Identifiers for MaterialEntities and their subtypes](#)
 
 [7. Map EntityRelationships between MaterialEntities](#)
 
@@ -78,8 +80,6 @@ Following is an outline of the steps we suggest to following the exercise to map
 
 [20. Map IdentificationEvidence](#)
 
-[Appendix I](#appendix-i)
-
 ## 1. Map Agents
 
 NOTE: Skip if your agents are identified only by name.
@@ -107,11 +107,23 @@ NOTE: Skip if your `Reference`'s are identified only by bibliographic citations 
 
 A `Reference`, like an `Agent`, has the potential to be related to many different kinds of things (e.g., `MaterialEntity`, `Event`, `Taxon`) in the UM, through `Citation`'s. So, if you track references with identifiers, create `Reference` records for them so that they can be connected when the other tables they are related to are created. If you don't track reference separately in your database, don't worry about it, they can be designated by their bibliographic citations where appropriate in the UM. 
 
-## 3. Map AgentAssertions, AgentCitations, and AgentIdentifiers
+### `reference_type` vocabulary
+Here are some suggestions, but feel free to suggest others if none of these suffices: `JOURNAL_ARTICLE`, `BOOK`, `BOOK_SECTION`, `DISSERTATION`,  `FIELD_NOTEBOOK`, `WEB_PAGE`, `OTHER`.
+
+## 3. Map Assertions, Citations, and Identifiers for Agents
 
 NOTE: Skip if you created no `Agent` records in [Step 1](#1-map-agents)
 
-We wouldn't expect any of these to be common, but it is possible to create `AgentAssertion`'s, `AgentCitation`'s, and `AgentIdentifier`'s. See [Appendix I](#appendix-i) for general discussions about how to tables work.
+It is possible to create Agent `Assertion`'s, `Citation`'s, and `Identifier`'s. See [Common Model tables](#common-model-tables) for general discussions about how to map to these three types of tables.
+
+### `assertion_target_type` vocabulary
+The value for this term MUST be one of `AGENT`, `AGENT_GROUP`, or `COLLECTION` and MUST match the table to which the Assertion applies.
+
+### `assertion_type` vocabulary
+No specific controlled vocabulary is suggested, but please see the [Principles of vocabulary terms](principles-of-vocabulary-terms) when inventing them. 
+
+### `assertion_unit` vocabulary
+Suggestions for unit vocabulary are given in [Principles of vocabulary terms](principles-of-vocabulary-terms). 
 
 ## 4. Map Protocols
 
@@ -165,7 +177,36 @@ Map all physical objects that are tracked separately in your database to `Materi
 ## 19. Map AgentRoles, Assertions, Citations, and Identifiers for Identifications
 ## 20. Map IdentificationEvidence
 
-## Appendix I
+## Common Model tables
+
+The UM provides four special tables to supplement the core information of other tables with `AgentRole`s, `Assertion`s, `Citation`s and alternative `Identifier`s. The document [GBIF Common Models](https://docs.google.com/document/d/1ZTMt-V3U0D0761bqqogeN58MjuHhIs_Kisu6CRtl-uA/edit?usp=sharing) describes how these concepts fit into the UM.
+
+Each of the common model tables can be linked to the set of tables given in the COMMON_TARGETS enumeration, which is defined as follows in the database creation script [schema.sql](./schema.sql):
+```
+CREATE TYPE COMMON_TARGETS AS ENUM (
+  'ENTITY',
+  'MATERIAL_ENTITY',
+  'MATERIAL_GROUP',
+  'ORGANISM',
+  'DIGITAL_ENTITY',
+  'GENETIC_SEQUENCE',
+  'EVENT',
+  'OCCURRENCE',
+  'LOCATION',
+  'GEOREFERENCE',
+  'GEOLOGICAL_CONTEXT',
+  'PROTOCOL',
+  'AGENT',
+  'COLLECTION',
+  'ENTITY_RELATIONSHIP',
+  'IDENTIFICATION',
+  'TAXON',
+  'REFERENCE',
+  'AGENT_GROUP',
+  'ASSERTION',
+  'CHRONOMETRIC_AGE'
+);
+```
 
 
 ## Data Mapping (previous draft)
