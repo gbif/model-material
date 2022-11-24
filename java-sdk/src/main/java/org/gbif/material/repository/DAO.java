@@ -1,61 +1,19 @@
 package org.gbif.material.repository;
 
-import static org.gbif.material.repository.Repositories.AgentRelationshipRepository;
-import static org.gbif.material.repository.Repositories.AgentRepository;
-import static org.gbif.material.repository.Repositories.AssertionRepository;
-import static org.gbif.material.repository.Repositories.CollectionRepository;
-import static org.gbif.material.repository.Repositories.DigitalEntityRepository;
-import static org.gbif.material.repository.Repositories.EntityRelationshipRepository;
-import static org.gbif.material.repository.Repositories.EntityRepository;
-import static org.gbif.material.repository.Repositories.EventRepository;
-import static org.gbif.material.repository.Repositories.GeneticSequenceRepository;
-import static org.gbif.material.repository.Repositories.GeologicalContextRepository;
-import static org.gbif.material.repository.Repositories.GeoreferenceRepository;
-import static org.gbif.material.repository.Repositories.IdentificationEntityRepository;
-import static org.gbif.material.repository.Repositories.IdentificationRepository;
-import static org.gbif.material.repository.Repositories.LocationRepository;
-import static org.gbif.material.repository.Repositories.MaterialEntityRepository;
-import static org.gbif.material.repository.Repositories.MaterialGroupRepository;
-import static org.gbif.material.repository.Repositories.OrganismRepository;
-import static org.gbif.material.repository.Repositories.ProtocolCitationRepository;
-import static org.gbif.material.repository.Repositories.ProtocolRepository;
-import static org.gbif.material.repository.Repositories.ReferenceRepository;
-import static org.gbif.material.repository.Repositories.SequenceTaxonRepository;
-import static org.gbif.material.repository.Repositories.TaxonIdentificationRepository;
-import static org.gbif.material.repository.Repositories.TaxonRepository;
+import static org.gbif.material.repository.Repositories.*;
 
 import java.util.HashMap;
 import java.util.Map;
 import javax.annotation.PostConstruct;
-import org.gbif.material.model.Agent;
-import org.gbif.material.model.AgentRelationship;
-import org.gbif.material.model.Assertion;
-import org.gbif.material.model.Collection;
-import org.gbif.material.model.DigitalEntity;
-import org.gbif.material.model.Entity;
-import org.gbif.material.model.EntityRelationship;
-import org.gbif.material.model.Event;
-import org.gbif.material.model.GeneticSequence;
-import org.gbif.material.model.GeologicalContext;
-import org.gbif.material.model.Georeference;
-import org.gbif.material.model.Identification;
-import org.gbif.material.model.IdentificationEvidence;
-import org.gbif.material.model.Location;
-import org.gbif.material.model.MaterialEntity;
-import org.gbif.material.model.MaterialGroup;
-import org.gbif.material.model.Organism;
-import org.gbif.material.model.Protocol;
-import org.gbif.material.model.ProtocolCitation;
-import org.gbif.material.model.Reference;
-import org.gbif.material.model.SequenceTaxon;
-import org.gbif.material.model.Taxon;
-import org.gbif.material.model.TaxonIdentification;
+import lombok.extern.slf4j.Slf4j;
+import org.gbif.material.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Component;
 
 @Component
+@Slf4j
 public class DAO {
   @Autowired private ApplicationContext context;
 
@@ -98,6 +56,10 @@ public class DAO {
     repositories.put(Agent.class.getName(), context.getBean(AgentRepository.class));
     repositories.put(
         AgentRelationship.class.getName(), context.getBean(AgentRelationshipRepository.class));
+    repositories.put(Identifier.class.getName(), context.getBean(IdentifierRepository.class));
+    repositories.put(AgentGroup.class.getName(), context.getBean(AgentGroupRepository.class));
+    repositories.put(
+        ChronometricAge.class.getName(), context.getBean(ChronometricAgeRepository.class));
   }
 
   public <T extends Object> void save(T o) {
@@ -105,6 +67,7 @@ public class DAO {
     if (jpa == null) {
       throw new IllegalArgumentException(o.getClass().getName() + " is not registered");
     }
+    log.info("Saving {}: {}", o.getClass(), o);
     jpa.save(o);
   }
 }

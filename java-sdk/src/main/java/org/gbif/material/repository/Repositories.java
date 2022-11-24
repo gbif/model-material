@@ -15,6 +15,7 @@ import org.gbif.material.model.GeologicalContext;
 import org.gbif.material.model.Georeference;
 import org.gbif.material.model.Identification;
 import org.gbif.material.model.IdentificationEvidence;
+import org.gbif.material.model.Identifier;
 import org.gbif.material.model.Location;
 import org.gbif.material.model.MaterialEntity;
 import org.gbif.material.model.MaterialGroup;
@@ -87,4 +88,7 @@ public class Repositories {
   public interface AgentGroupRepository extends JpaRepository<AgentGroup, String> {}
 
   public interface ChronometricAgeRepository extends JpaRepository<ChronometricAge, String> {}
+
+  public interface IdentifierRepository
+      extends JpaRepository<Identifier, Identifier.IdentifierPK> {}
 }
