@@ -17,45 +17,13 @@
 -- Location and support tables
 ---
 
--- Location (https://dwc.tdwg.org/terms/#Location)
---   Information about a place
---   Zero or one parent Location per Location
---   Zero or one higher_geography_id per Location
-
-CREATE TABLE location (
-  location_id TEXT PRIMARY KEY,
-  parent_location_id TEXT REFERENCES location ON DELETE CASCADE,
-  higher_geography_id TEXT,
-  higher_geography TEXT,
-  continent TEXT,
-  water_body TEXT,
-  island_group TEXT,
-  island TEXT,
-  country TEXT,
-  country_code CHAR(2),
-  state_province TEXT,
-  county TEXT,
-  municipality TEXT,
-  locality TEXT,
-  minimum_elevation_in_meters NUMERIC CHECK (minimum_elevation_in_meters BETWEEN -430 AND 8850),
-  maximum_elevation_in_meters NUMERIC CHECK (maximum_elevation_in_meters BETWEEN -430 AND 8850),
-  minimum_distance_above_surface_in_meters NUMERIC,
-  maximum_distance_above_surface_in_meters NUMERIC,
-  minimum_depth_in_meters NUMERIC CHECK (minimum_depth_in_meters BETWEEN 0 AND 11000),
-  maximum_depth_in_meters NUMERIC CHECK (maximum_depth_in_meters BETWEEN 0 AND 11000),
-  vertical_datum TEXT,
-  location_according_to TEXT,
-  location_remarks TEXT
-);
-CREATE INDEX ON location(parent_location_id);
-
 -- GeologicalContext (https://dwc.tdwg.org/terms/#geologicalcontext)
 --   Information about a place
 --   Zero or more GeologicalContexts per Location
 
 CREATE TABLE geological_context (
   geological_context_id TEXT PRIMARY KEY,
-  location_id TEXT REFERENCES location ON DELETE CASCADE,
+  location_id TEXT,
   earliest_eon_or_lowest_eonothem TEXT,
   latest_eon_or_highest_eonothem TEXT,
   earliest_era_or_lowest_erathem TEXT,
@@ -82,7 +50,7 @@ CREATE INDEX ON geological_context(location_id);
 
 CREATE TABLE georeference (
   georeference_id TEXT PRIMARY KEY,
-  location_id TEXT REFERENCES location ON DELETE CASCADE,
+  location_id TEXT,
   decimal_latitude NUMERIC NOT NULL CHECK (decimal_latitude BETWEEN -90 AND 90),
   decimal_longitude NUMERIC NOT NULL CHECK (decimal_longitude BETWEEN -180 AND 180),
   geodetic_datum TEXT NOT NULL,
@@ -100,6 +68,45 @@ CREATE TABLE georeference (
   preferred_spatial_representation TEXT
 );
 CREATE INDEX ON georeference(location_id);
+
+-- Location (https://dwc.tdwg.org/terms/#Location)
+--   Information about a place
+--   Zero or one parent Location per Location
+--   Zero or one higher_geography_id per Location
+--   Zero or one accepted_georeference_id
+--   Zero or one accepted_geological_context_id
+
+CREATE TABLE location (
+  location_id TEXT PRIMARY KEY,
+  parent_location_id TEXT REFERENCES location ON DELETE CASCADE,
+  higher_geography_id TEXT,
+  higher_geography TEXT,
+  continent TEXT,
+  water_body TEXT,
+  island_group TEXT,
+  island TEXT,
+  country TEXT,
+  country_code CHAR(2),
+  state_province TEXT,
+  county TEXT,
+  municipality TEXT,
+  locality TEXT,
+  minimum_elevation_in_meters NUMERIC CHECK (minimum_elevation_in_meters BETWEEN -430 AND 8850),
+  maximum_elevation_in_meters NUMERIC CHECK (maximum_elevation_in_meters BETWEEN -430 AND 8850),
+  minimum_distance_above_surface_in_meters NUMERIC,
+  maximum_distance_above_surface_in_meters NUMERIC,
+  minimum_depth_in_meters NUMERIC CHECK (minimum_depth_in_meters BETWEEN 0 AND 11000),
+  maximum_depth_in_meters NUMERIC CHECK (maximum_depth_in_meters BETWEEN 0 AND 11000),
+  vertical_datum TEXT,
+  location_according_to TEXT,
+  location_remarks TEXT,
+  accepted_georeference_id TEXT REFERENCES georeference ON DELETE SET NULL,
+  accepted_geological_context_id TEXT REFERENCES geological_context ON DELETE SET NULL
+);
+CREATE INDEX ON location(parent_location_id);
+
+ALTER TABLE geological_context ADD FOREIGN KEY (location_id) REFERENCES location ON DELETE CASCADE;
+ALTER TABLE georeference ADD FOREIGN KEY (location_id) REFERENCES location ON DELETE CASCADE;
 
 ---
 -- Event and support tables
@@ -269,14 +276,44 @@ CREATE TABLE material_group (
   material_group_type TEXT
 );
 
+---
+-- Identification including sequence-based identifications.
+-- An identification connects an Entity to one or more Taxa through a taxon formula.
+-- The identification may involve genetic material and a sequence.
+---
+
+-- Identification (https://dwc.tdwg.org/terms/#identification)
+--    A assignment of a taxon to an Organism.
+--    Zero or one Agent as identified_by (may be an AgentGroup)
+
+CREATE TABLE identification (
+  identification_id TEXT PRIMARY KEY,
+  identification_type TEXT NOT NULL,
+  taxon_formula TEXT NOT NULL,
+  verbatim_identification TEXT,
+  type_status TEXT,
+  identified_by TEXT,
+  identified_by_id TEXT,
+  date_identified TEXT,
+  identification_references TEXT,
+  identification_verification_status TEXT,
+  identification_remarks TEXT,
+  type_designation_type TEXT,
+  type_designated_by TEXT
+--  is_accepted_identification BOOLEAN -- accomplished by foreign key on organism table
+);
+
+
 -- Organism (https://dwc.tdwg.org/terms/#organism)
 --   A subtype of MaterialEntity
 --   A particular organism or defined group of organisms considered to be taxonomically 
 --   homogeneous.
+--   Zero or one accepted_identification_id
 
 CREATE TABLE organism (
   organism_id TEXT PRIMARY KEY REFERENCES material_entity ON DELETE CASCADE,
-  organism_scope TEXT
+  organism_scope TEXT,
+  accepted_identification_id TEXT REFERENCES identification ON DELETE SET NULL
 );
 
 
@@ -306,7 +343,6 @@ CREATE TABLE chronometric_age (
   chronometric_age_remarks TEXT
 );
 CREATE INDEX ON chronometric_age(material_entity_id);
-
 
 
 -- Occurrence (https://dwc.tdwg.org/terms/#occurrence)
@@ -412,33 +448,6 @@ CREATE TABLE reference (
   reference_year SMALLINT CHECK (reference_year BETWEEN 1600 AND 2022),
   reference_doi TEXT,
   is_peer_reviewed BOOLEAN
-);
-
----
--- Identification including sequence-based identifications.
--- An identification connects an Entity to one or more Taxa through a taxon formula.
--- The identification may involve genetic material and a sequence.
----
-
--- Identification (https://dwc.tdwg.org/terms/#identification)
---    A assignment of a taxon to an Organism.
---    Zero or one Agent as identified_by (may be an AgentGroup)
-
-CREATE TABLE identification (
-  identification_id TEXT PRIMARY KEY,
-  identification_type TEXT NOT NULL,
-  taxon_formula TEXT NOT NULL,
-  verbatim_identification TEXT,
-  type_status TEXT,
-  identified_by TEXT,
-  identified_by_id TEXT,
-  date_identified TEXT,
-  identification_references TEXT,
-  identification_verification_status TEXT,
-  identification_remarks TEXT,
-  type_designation_type TEXT,
-  type_designated_by TEXT,
-  is_accepted_identification BOOLEAN
 );
 
 -- IdentificationEvidence
@@ -630,13 +639,14 @@ CREATE INDEX ON "assertion"(assertion_target_type, assertion_target_id);
 
 -- [Class]Identifier
 --    An alternate identifier for a thing. Identifiers are separated by the specific 
---    classes they identify.
+--    classes they identify and the type of identifier (e.g., 'DOI', 'ORCID').
 
 CREATE TABLE identifier (
   identifier_target_id TEXT NOT NULL,
   identifier_target_type COMMON_TARGETS NOT NULL,
+  identifier_type TEXT NOT NULL,
   identifier_value TEXT NOT NULL,
-  PRIMARY KEY (identifier_target_id, identifier_target_type, identifier_value)
+  PRIMARY KEY (identifier_target_id, identifier_target_type, identifier_type, identifier_value)
 );
 
 -- [Class]]Citation
