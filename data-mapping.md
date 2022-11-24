@@ -173,6 +173,8 @@ Map all physical objects that are tracked separately in your database to `Materi
   
 ## 6. Map AgentRoles, Assertions, Citations, ChronometricAges, and Identifiers for MaterialEntities and their subtypes
 
+<p align=center><img src="./_images/materialentities.png" alt="agents"/>
+<p align=center>Figure 3. MaterialEntities and associated common model tables in the Unified Model
   
 ## 7. Map EntityRelationships between MaterialEntities
 ## 8. Map DigitalEntities
@@ -181,16 +183,16 @@ Map all physical objects that are tracked separately in your database to `Materi
 ## 11. Map Locations, Georeferences, and GeologicalContexts
 
 <p align=center><img src="./_images/locations.png" alt="locations" width="50%"/>
-<p align=center>Figure 3. Locations in the Unified Model
+<p align=center>Figure 4. Locations in the Unified Model
 
 ## 12. Map AgentRoles, Assertions, Citations, and Identifiers for Locations, Georeferences, and GeologicalContexts
 ## 13. Map Occurrences and other Events
 
 <p align=center><img src="./_images/events.png" alt="events" width="75%"/>
-<p align=center>Figure 4. Events in the Unified Model
+<p align=center>Figure 5. Events in the Unified Model
 
 ![Entities](./_images/occurrences.png)
-<p align=center>Figure 5. Occurrences in the Unified Model
+<p align=center>Figure 6. Occurrences in the Unified Model
 
 ## 14. Map AgentRoles, Assertions, Citations, and Identifiers for Occurrences and other Events
 ## 15. Map OccurrenceEvidence
@@ -199,7 +201,7 @@ Map all physical objects that are tracked separately in your database to `Materi
 ## 18. Map Identifications
 
 ![Entities](./_images/identifications.png)
-<p align=center>Figure 6. Identifications in the Unified Model
+<p align=center>Figure 7. Identifications in the Unified Model
 
 ## 19. Map AgentRoles, Assertions, Citations, and Identifiers for Identifications
 ## 20. Map IdentificationEvidence
