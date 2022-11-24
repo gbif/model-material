@@ -85,11 +85,11 @@ Following is an outline of the steps we suggest to following the exercise to map
 
 [9. Map EntityRelationships between Entities](#9-map-entityrelationships-between-entities)
 
-[10. Map Locations, Georeferences, and GeologicalContexts](#10-map-locations-georeferences-and-geologicalcontexts)
+[10. Map Locations, Georeferences, and GeologicalContexts]([#10-map-locations-georeferences-and-geologicalcontexts))
 
 [11. Map AgentRoles, Assertions, Citations, and Identifiers for Locations, Georeferences, and GeologicalContexts](#)
 
-[12. Map Occurrences and other Events](#)
+[12. Map Occurrences and other Events](#12-map-occurrences-and-other-events)
 
 [13. Map AgentRoles, Assertions, Citations, and Identifiers for Occurrences and other Events](#)
 
@@ -207,16 +207,17 @@ Georeferences are special assertions of the geospatial interpretation of a `Loca
   
 `GeologicalContext`s is modeled similarly to a `Georeference`, but with an ``accepted_geological_context_id` in the `Location` table that MUST match the `geological_context_id` of the corresponding `GeologicalContext`, if any. 
   
-The values for the `targetType` fields MUST be `LOCATION`, `GEOREFERENCE` or `GEOLOGICAL_CONTEXT`, depending on the table they are to be directly related to.
-
 <p align=center><img src="./_images/locations.png" alt="locations" width="50%"/>
 <p align=center>Figure 4. Locations, Georeferences and GeologicalContexts in the Unified Model
 
 ## 11. Map AgentRoles, Assertions, Citations, and Identifiers for Locations, Georeferences, and GeologicalContexts
 
-The 'common model' tables associated with the three Location-related tables can be populated. 
+The 'common model' tables associated with the three Location-related tables can be populated at this point. The values for the `targetType` fields of the commn model tables MUST be `LOCATION`, `GEOREFERENCE` or `GEOLOGICAL_CONTEXT`, depending on the table they are to be directly related to.
+
 
 ## 12. Map Occurrences and other Events
+
+An `Event` is something that happens within a place during a period of time. The spatial scale and temporal duration may be as specific or vague as necessary, and may or may not be provided. `Event`s are hierarchical in the UM, with a parent `Event` containing all of its child `Event`s both spatially and temporally. A project (or any other higher organizational initiative) might be a parent-most `Event`, the spatial and temporal limits of which encompass all of the `Event`s within it. The next level down might consist of collecting expeditions launched as part of the parent project, for example. Each `Event` can likewise encompass sub-`Event`s to an arbitrary hierarchical depth, each with the same or distinct `Location` and temporal boundsas its parent (under the limitation of being contained).
 
 <p align=center><img src="./_images/events.png" alt="events" width="75%"/>
 <p align=center>Figure 5. Events in the Unified Model
