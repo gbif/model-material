@@ -34,8 +34,35 @@ Not every 'type' field in the UM is controlled by an ENUM. For some 'type' field
 
  Principles of controlled vocabularies. Part of what this exercise will reveal is the diversity of data that are being managed in collection management systems. The aggregation of vocabulary values used will be a very interesting outcome.
 
-Throughout the UM there are four concepts (`AgentRole`, `Assertion`, `Citation`, and `Identifier`) that are repeated, except that they are attached to distinct classes in the model (e.g., `EventAgentRole`, `GeneticSequenceAssertion`, `MaterialEntityCitation`, `AgentIdentifier`). Explanations of how these tables work are given in the section [Common Model tables](#common-model-tables).
+Throughout the UM there are four concepts (`AgentRole`, `Assertion`, `Citation`, and `Identifier`) that are repeated, except that they are attached to distinct classes in the model (e.g., `EventAgentRole`, `GeneticSequenceAssertion`, `MaterialEntityCitation`, `AgentIdentifier`). 
+The UM provides four special tables (`AgentRole`, `Assertion`, `Citation`, and `Identifier`) to supplement the core information of other tables (e.g., `Organism AgentRole`, `Event Assertion`, `GeneticSequence Citation`, `Agent Identifier`). The document [GBIF Common Models](https://docs.google.com/document/d/1ZTMt-V3U0D0761bqqogeN58MjuHhIs_Kisu6CRtl-uA/edit?usp=sharing) describes how these concepts fit into the UM.
 
+Each of the common model tables can be linked to the set of tables given in the COMMON_TARGETS enumeration, which is defined as follows in the database creation script [schema.sql](./schema.sql):
+```
+CREATE TYPE COMMON_TARGETS AS ENUM (
+  'ENTITY',
+  'MATERIAL_ENTITY',
+  'MATERIAL_GROUP',
+  'ORGANISM',
+  'DIGITAL_ENTITY',
+  'GENETIC_SEQUENCE',
+  'EVENT',
+  'OCCURRENCE',
+  'LOCATION',
+  'GEOREFERENCE',
+  'GEOLOGICAL_CONTEXT',
+  'PROTOCOL',
+  'AGENT',
+  'COLLECTION',
+  'ENTITY_RELATIONSHIP',
+  'IDENTIFICATION',
+  'TAXON',
+  'REFERENCE',
+  'AGENT_GROUP',
+  'ASSERTION',
+  'CHRONOMETRIC_AGE'
+);
+```
 ## Suggested steps
 
 Following is an outline of the steps we suggest to following the exercise to map your collection management system data to the UM. Each step has a link to a more detailed description of what to do. The order of these steps was designed to make sure that you already have records for concepts that will be linked to in subsequent steps of the mapping process.
@@ -176,37 +203,6 @@ Map all physical objects that are tracked separately in your database to `Materi
 
 ## 19. Map AgentRoles, Assertions, Citations, and Identifiers for Identifications
 ## 20. Map IdentificationEvidence
-
-## Common Model tables
-
-The UM provides four special tables to supplement the core information of other tables with `AgentRole`s, `Assertion`s, `Citation`s and alternative `Identifier`s. The document [GBIF Common Models](https://docs.google.com/document/d/1ZTMt-V3U0D0761bqqogeN58MjuHhIs_Kisu6CRtl-uA/edit?usp=sharing) describes how these concepts fit into the UM.
-
-Each of the common model tables can be linked to the set of tables given in the COMMON_TARGETS enumeration, which is defined as follows in the database creation script [schema.sql](./schema.sql):
-```
-CREATE TYPE COMMON_TARGETS AS ENUM (
-  'ENTITY',
-  'MATERIAL_ENTITY',
-  'MATERIAL_GROUP',
-  'ORGANISM',
-  'DIGITAL_ENTITY',
-  'GENETIC_SEQUENCE',
-  'EVENT',
-  'OCCURRENCE',
-  'LOCATION',
-  'GEOREFERENCE',
-  'GEOLOGICAL_CONTEXT',
-  'PROTOCOL',
-  'AGENT',
-  'COLLECTION',
-  'ENTITY_RELATIONSHIP',
-  'IDENTIFICATION',
-  'TAXON',
-  'REFERENCE',
-  'AGENT_GROUP',
-  'ASSERTION',
-  'CHRONOMETRIC_AGE'
-);
-```
 
 
 ## Data Mapping (previous draft)
