@@ -201,8 +201,10 @@ At this stage in the process, all of the `Entity` records will have been created
 
 ## 10. Map Locations, Georeferences, and GeologicalContexts
 
+`Location`s in the UM are used to provide both textual and geospatial context. In particular, they are used to describe where `Event`s happened. Georeferences are special assertions of the geospatial interpretation of a `Location`s. As assertions, the model supports zero, one, or multiple interpretations per `Location`, whether current, historical, accepted, or disputed. `GeologicalContext`s are also modeled with the same cardinality. Meanwhile, a 'best' `Georeference` and a best `GeologicalContext` can be designated. Figure 4 shows the structural relationships between the Location-related tables in the UM.
+
 <p align=center><img src="./_images/locations.png" alt="locations" width="50%"/>
-<p align=center>Figure 4. Locations in the Unified Model
+<p align=center>Figure 4. Locations, Georeferences and GeologicalContexts in the Unified Model
 
 ## 11. Map AgentRoles, Assertions, Citations, and Identifiers for Locations, Georeferences, and GeologicalContexts
 ## 12. Map Occurrences and other Events
