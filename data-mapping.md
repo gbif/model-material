@@ -83,7 +83,7 @@ Following is an outline of the steps we suggest to following the exercise to map
 
 [8. Map AgentRoles, Assertions, Citations, and Identifiers for DigitalEntities](#8-map-agentroles-assertions-citations-and-identifiers-for-digitalentities)
 
-[9. Map EntityRelationships between DigitalEntities and between MaterialEntities and Digital Entities](#9-map-entityrelationships-between-digitalentities-and-between-materialentities-and-digital-entities)
+[9. Map EntityRelationships between Entities](#9-map-entityrelationships-between-entities)
 
 [10. Map Locations, Georeferences, and GeologicalContexts](#)
 
@@ -139,16 +139,10 @@ Here are some suggestions, but feel free to suggest others if none of these suff
 
 NOTE: Skip if you created no `Agent` records in [Step 1](#1-map-agents)
 
-It is possible to create Agent `Assertion`s, `Citation`s, and `Identifier`s. See [GBIF Common Models](https://docs.google.com/document/d/1ZTMt-V3U0D0761bqqogeN58MjuHhIs_Kisu6CRtl-uA/edit?usp=sharing) for general discussions about how to map to these three types of tables.
+It is possible to create Agent `Assertion`s, `Citation`s, and `Identifier`s. See [GBIF Common Models](https://docs.google.com/document/d/1ZTMt-V3U0D0761bqqogeN58MjuHhIs_Kisu6CRtl-uA/edit?usp=sharing) for general discussions about how to map to these three types of tables and considerations when developing the vocabularies for `assertion_type` and `assertion_unit`.
 
 ### `assertion_target_type` vocabulary
 The value for this term MUST be one of `AGENT`, `AGENT_GROUP`, or `COLLECTION` and MUST match the table to which the Assertion applies.
-
-### `assertion_type` vocabulary
-No specific controlled vocabulary is suggested, but please see the [Principles of vocabulary terms](principles-of-vocabulary-terms) when inventing them. 
-
-### `assertion_unit` vocabulary
-Suggestions for unit vocabulary are given in [Principles of vocabulary terms](principles-of-vocabulary-terms). 
 
 ## 4. Map Protocols
 
@@ -198,11 +192,12 @@ One of these, the `GENETIC_SEQUENCE` is a formal subtype of `DigitalEntity` (see
 
 ## 8. Map AgentRoles, Assertions, Citations, and Identifiers for DigitalEntities
 
-The same kinds of common model associations shown in Figure 3 for `MaterialEntity`s can be made for `DigitalEntity`s except that the `targetID`s MUST all point to the DigitalEntity and the `targetType`s MUST be either `DIGITAL_ENTITY` or `GENETIC_SEQUENCE`, as appropriate. 
+The same kinds of common model associations shown in Figure 3 for `MaterialEntity`s can be made for `DigitalEntity`s, except that each `targetID` MUST be the same as the identifier (`digitalEntityID` or `geneticSequenceID`) for the `DigitalEntity` or `GeneticSequence` it is directly associated with. 
 
-## 9. Map EntityRelationships between DigitalEntities and between MaterialEntities and Digital Entities
+## 9. Map EntityRelationships between Entities
 
-The relationships between `Entity` tables was shown in Figure 2. Here we will concentrate not on the subtype relationships, which were covered above, but on the associations tha can be catured in the `EntityRelationship` table.
+At this stage in the process, all of the `Entity` records will have been created, providing the prerequisite for being able to create the relationships between them. The supertype/subtype relationships between `Entity` tables were shown above in Figure 2, and should already heve been created at this point. Here we will concentrate on other associations, ones that can be captured in the `EntityRelationship` table. The `EntityRelationship` table is a powerful way to make just about any connection between Entities in the UM. Any Entity can be related to any other one with any relationship. There are two things to keep in mind here. The first is that the subtype relationships should be strictly relegated to the correspondence of the values of identifier fields (e.g., `entityID` and `materialEntityID` for a `MaterialEntity`). This would be the equivalent of an `EntityRelationship` stating that a particular `Entity` `isA` `MaterialEntity`, which would be superfluous. The second thing to keep in mind is that the semantics of the relationships is entirely dependent on the clear understanding of the predicate (the `entityRelationshipType`) and the correct assignment of `Entities` to the subject and object roles. The relationships should always be read as 'subject predicate object' - that is, the relationship has a direction. Each relationship can have a complementary one where the subject/object roles are reversed and the predicate shows what the relationship looks like from the opposite direction. For example, if `Organism` 'A' was `eaten by` another `Organism` 'B', it follows that `Organism` 'B' `ate` `Organism` 'A'. It is not clear at the time of developing this documentation whether reverse roles are necessary. We leave that decision to your discretion when populating `EntityRelationship`s.
+
 
 ## 10. Map Locations, Georeferences, and GeologicalContexts
 
