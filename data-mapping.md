@@ -8,7 +8,7 @@ Your task is to populate a postgresql database using the UM structure we have pr
 
 ## General considerations
 
-In this document we will use figures to illustrate the structure of the UM. These figures take the form of Entity-Relationship (ER) diagrams. The figures do not necessarily show the full set of fields for the tables they represent, nor do they show data types and other constraints. At times we will show snippets of the schema (such as table definitions) for reference. The definitive version of the tables to populate is in [schema.sql](./schema.sql). 
+In this document we will use figures to illustrate the structure of the UM. These figures take the form of Entity-Relationship (ER) diagrams. The figures do not necessarily show the full set of fields for the tables they represent, nor do they show data types and other constraints. At times we will show snippets of the schema (such as table definitions) for reference. The definitive version of the tables to populate is in [schema.sql](./schema.sql). The term names in the figures are given in lowerCamelCase (e.g., `eventType`) and correspond to their equivalents in lower_snake_case in the database (e.g., `event_type`).
 
 You will not be expected to parse the data in your database to make it fit into the UM, but you will be asked in some cases to provide explicit data in the UM that are only implicit in your data. For example, you may have database records based on material in your collection, but no field that identifies the event during which that material was collected. In the UM those would be non-overlapping and required concepts, and each MUST be identified separately.
 
@@ -25,7 +25,7 @@ CREATE TABLE identifier (
 ```
 The `Identifier` and other 'common model' tables are described in [GBIF Common Models document](https://docs.google.com/document/d/1ZTMt-V3U0D0761bqqogeN58MjuHhIs_Kisu6CRtl-uA/edit?usp=sharing) and will be discussed in context as we proceed through the [Suggested steps](#suggested-steps) for data mapping.
 
-Most of the tables in the UM have fields that benefit from using controlled vocabularies. Some of these fields MUST use values from a specific controlled vocabulary. In the database creation script these can be found as 'ENUM's. Following is a simple example for the strictly controlled vocabulary for the `entity_type` field in the `entity` table (no other values are valid):
+Most of the tables in the UM have fields that benefit from using controlled vocabularies. Some of these fields MUST use values from a specific controlled vocabulary. In the database creation script these can be found as 'ENUM's where the values are in UPPER_SNAKE_CASE. Following is a simple example for the strictly controlled vocabulary for the `entity_type` field in the `entity` table (no other values are valid):
 
 ```
 CREATE TYPE ENTITY_TYPE AS ENUM (
@@ -114,24 +114,24 @@ Below is a list of the steps we suggest to follow to map your collection managem
 
 ## 1. Agents
 
-NOTE: Skip if your agents are identified only by name.
+NOTE: Skip this step if your agents are identified only by name (i.e., not with a separate agent identifier).
 
-It is recommended to map `Agent` first (see [Figure 1](#figure-1)), because their identifiers will be used in the construction of many of the other tables in the UM. If you track agents (e.g., people, groups of people, organizations, collections) with identifiers other than just their names in your database, use them to create the agent tables in the UM, including `AgentRelationship`, if you have those. If you don't track agents separately in your database, don't worry about it, they can be designated by their names where appropriate in the UM. 
+We recommend to map `Agent`s ((e.g., people, groups of people, organizations, collections, see [Figure 1](#figure-1)) first, if you have them, because their identifiers will be used in the construction of many of the other tables in the UM. If you don't track agents separately in your database, don't worry about it, they can be designated by their names where appropriate in the UM. 
 
 <p align=center><img src="./_images/agents.png" alt="agents" width="50%"/>
 <p align=center>Figure 1. Agents and their relationships in the Unified Model
 
 ### `agentType` vocabulary
-If an `Agent ` is a `Collection` or an `AgentGroup`, the `agent_type` MUST be `COLLECTION` or `AGENT_GROUP` respectively. However, the agent_type field is not controlled by an ENUM, because there are other possible values that are not subtypes of `Agent`, such as `ORGANIZATION`, `PERSON`, and even `ORGANISM`.
+If an `Agent` is a `Collection` or an `AgentGroup`, the `agentType` MUST be `COLLECTION` or `AGENT_GROUP` respectively. However, the `agentType` field is not controlled by an ENUM, because there are other possible values that are not subtypes of `Agent`, such as `ORGANIZATION`, `PERSON`, and even `ORGANISM`. If you need to use an `agentType` we haven't mentioned here, please create it in UPPER_SNAKE_CASE.
 
 ### `collectionType` vocabulary
-We would expect to be informed here by work on the Latimer Core. For this exercise we suggest, for example, `MUSEUM`, `HERBARIUM`, `BOTANICAL_GARDEN`, `ZOO`.
+For this exercise, We suggest values such as `MUSEUM`, `HERBARIUM`, `BOTANICAL_GARDEN`, `ZOO`. If you need to use an `collectionType` we haven't mentioned here, please create it in UPPER_SNAKE_CASE.
 
 ### `agentGroupType` vocabulary
-An `AgentGroup` is a way to refer to a single `Agent` entity that is composed of multiple `Agent`s. Thus, a group of `Collection`s might be a `CONSORTIUM`, a group of university students might be a `CLASS`.
+An `AgentGroup` is a way to refer to a single `Agent` entity that is composed of multiple other `Agent`s. Thus, a group of `Collection`s might be a `CONSORTIUM`, a group of university students might be a `CLASS`. If you need to create an `agentGroupType`, please use UPPER_SNAKE_CASE.
   
 ### `agentRelationshipType` vocabulary
-The range of possible relationships between `Agent`s is vast. Note that the relationship has directionality. The `subjectAgentID` is related to the `objectAgentID` in the direction expressed in the `agentRelationshipType`. Even so, it helps to express the directionality in the `agentRelationshipType` term, for example, `DOCTORAL_ADVISOR_OF` instead of `DOCTORAL_ADVISOR`.
+The range of possible relationships between `Agent`s is vast. Note that the relationship has directionality. The `subjectAgentID` is related to the `objectAgentID` in the direction expressed in the `agentRelationshipType`, thus it helps to express the directionality in the `agentRelationshipType` term itself, for example, `DOCTORAL_ADVISOR_OF` instead of `DOCTORAL_ADVISOR`, which would be ambiguous to interpret. If you need to create an `agentRelationshipType`, please use UPPER_SNAKE_CASE.
 
 ## 2. References
 
