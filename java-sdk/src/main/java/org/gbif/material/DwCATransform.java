@@ -2,6 +2,7 @@ package org.gbif.material;
 
 import static org.gbif.dwc.terms.DwcTerm.*;
 import static org.gbif.dwc.terms.DwcTerm.recordedBy;
+import static org.gbif.material.model.DigitalEntity.DigitalEntityType.GENETIC_SEQUENCE;
 import static org.gbif.material.model.DigitalEntity.DigitalEntityType.STILL_IMAGE;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -54,6 +55,13 @@ public class DwCATransform implements CommandLineRunner {
 
   private static Term AUDUBON_CORE =
       TermFactory.instance().findClassTerm("http://rs.tdwg.org/ac/terms/Multimedia");
+  private static Term DNA = TermFactory.instance().findClassTerm("http://rs.gbif.org/terms/1.0/DNADerivedData");
+
+  private static Term DNA_MIX_44 = TermFactory.instance().findClassTerm("https://w3id.org/gensc/terms/MIXS:0000044");
+  private static Term DNA_SEQUENCE = TermFactory.instance().findClassTerm("http://rs.gbif.org/terms/dna_sequence");
+
+
+
 
   private static String DATASET_ID = "koldingensis";
 
@@ -139,6 +147,23 @@ public class DwCATransform implements CommandLineRunner {
       }
 
       // Genetic Sequence entities
+      order = 0;
+      for (Record dna : record.extension(DNA)) {
+        String dnaEntityID = guid(); // every record is new
+        createGeneticSequence(dna, dnaEntityID, record.core().value(associatedSequences));
+
+        // sequences relate to the core they hang off
+        relationshipsCache.put(
+                dna.value(DwcTerm.resourceRelationshipID),
+                EntityRelationship.builder()
+                        .id(guid())
+                        .subjectEntity(guid("Entity", record.core().value(occurrenceID)))
+                        .objectEntity(dnaEntityID)
+                        .entityRelationshipType("SEQUENCE OF")
+                        .entityRelationshipOrder((short) order++)
+                        .build());
+
+      }
     }
   }
 
@@ -167,6 +192,25 @@ public class DwCATransform implements CommandLineRunner {
                     .agentRoleOrder((short) 0)
                     .build()).build());
 
+  }
+
+  private void createGeneticSequence(Record dna, String entityID, String associatedSequencesURI) {
+    Entity e =
+            dao.save(
+                    Entity.builder()
+                            .id(entityID)
+                            .entityType(Entity.EntityType.DIGITAL_ENTITY)
+                            .datasetId(DATASET_ID)
+                            .build());
+    dao.save(
+            DigitalEntity.builder().id(entityID).digitalEntityType(GENETIC_SEQUENCE).accessUri(associatedSequencesURI).entity(e)
+                    .build());
+
+    dao.save(
+            GeneticSequence.builder().id(entityID).sequence(dna.value(DNA_SEQUENCE))
+                    .geneticSequenceType(dna.value(DNA_MIX_44))
+                    .build());
+    
   }
 
   /** Create the organism with all it's data, returning the entity ID */
