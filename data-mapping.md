@@ -2,13 +2,28 @@
 
 ## Introduction
 
-The Unified Model ('UM' hereafter) is highly normalized and it may seem overwhelming at first. That is understandable. Remember that the UM is mean to be a comprehensive representation that accommodates all use cases. It may not seem the simplest way to represent the data you'll be mapping because it is meant to cover other prespectives as well. As such, please also keep in mind that this exercise is to test the capacity of the UM to faithfully represent the data in collection management systems in aggregate, not to determine a least common denominator publishing model, such as is the case with Darwin Core archives. 
+The Unified Model ('UM' hereafter) is highly normalized and it may seem overwhelming at first. That is understandable. Remember that the UM is meant to be a comprehensive representation that accommodates all use cases. It may not seem the simplest way to represent the data you'll be mapping, but that is because it has to cover other prespectives as well. As such, please also keep in mind that this exercise is to test the capacity of the UM to faithfully represent the data in collection management systems in aggregate, not to determine a least common denominator publishing model, such as is the case with Darwin Core archives. 
+
+Your task is to populate a postgresql database using the structure we have provided in the creation script [schema.sql](./schema.sql), using data from your database as a source. This will require "mapping" between your structure and that of the UM. 
 
 ## General considerations
 
-As a general rule for his exercise, when creating tables in the UM, use resolvable global unique identifiers for the 'ID' fields if you have them. If you don't, use non-resolvable global unique identifiers if you have them. If you don't, generate UUIDS as identifiers in place of the identifiers that are unique only within the scope of your database. In cases where your database does not have identifiers for records that can be inferred for the UM, generate UUIDs for these identifiers.
+In this document we will use figures to illustrate the structure of the UM. These figures take the form of Entity-Relationship (ER). The figures do not necessarily show the full set of fields for the tables they represent, nor do they show data types and other constraints. At times we will show snippets of the schema (such as table definitions) for reference. The definitive version of the tables to populate is in the database creation script ([schema.sql](./schema.sql)). 
 
-In this document there will be illustrative figures for parts of the UM and how they fit together. These figures take the form of Entity-Relationship (ER) diagrams whose primary purpose is to illustrate the structure of the UM. These diagrams do not necessarily show the full set of fields for the tables they represent, nor does it show data types and other constraints. The definitive version of the tables to populate is in the database creation script ([schema.sql](./schema.sql)).
+You will not be expected to parse the data in your database to make it fit into the UM, but you will be asked in some cases to provide explicit data in the UM model that are only implicit in your data. For example, you may have database records based on material in your collection, but no field that identifies the event during which that material was collected. In the UM those are non-overlapping and required concepts, and each MUST be identified separately.
+
+The use of record identifiers for concepts in the UM is ubiquitous, and required whenever you have data that correspond to a given concept. For this exercise, when creating tables in the UM, use resolvable global unique identifiers for the 'ID' fields if you have them. If you don't, use non-resolvable global unique identifiers if you have them. If you don't, generate UUIDS as identifiers in place of the identifiers that are unique only within the scope of your database. In cases where your database does not have identifiers for records that can be inferred for the UM, generate UUIDs for these identifiers. For every identifier you have to create in the place of a local one in your database, you CAN also create an `Identifier` record that translates between your local identifier and the one you created for sharing via the UM. If you do this, set the `identifierType` to 'local'. Here is the statement from [schema.sql](./schema.sql) that creates the structure of the `Identifier` table. 
+
+```
+CREATE TABLE identifier (
+  identifier_target_id TEXT NOT NULL,
+  identifier_target_type COMMON_TARGETS NOT NULL,
+  identifier_type TEXT NOT NULL,
+  identifier_value TEXT NOT NULL,
+  PRIMARY KEY (identifier_target_id, identifier_target_type, identifier_type, identifier_value)
+);
+```
+The `Identifier` and other 'common model' tables are described in [GBIF Common Models document](https://docs.google.com/document/d/1ZTMt-V3U0D0761bqqogeN58MjuHhIs_Kisu6CRtl-uA/edit?usp=sharing) and will be discussed in context as we proceed through the [Suggested steps](#suggested-steps) for data mapping.
 
 Most of the tables in the UM have fields that benefit from using controlled vocabularies. Some of these fields require that values strictly adhere to a controlled vocabulary. In the database creation script these can be found as 'ENUMS'. Following is a simple example:
 
@@ -18,7 +33,7 @@ CREATE TYPE ENTITY_TYPE AS ENUM (
   'MATERIAL_ENTITY'
 );
 ```
-This is the controlled vocabulary for the `entity_type` field (no other values ar valid), as can be seen in the statement that creates the `entity` table:
+This is the controlled vocabulary for the `entity_type` field (no other values are valid), as can be seen in the statement that creates the `entity` table:
 
 ```
 CREATE TABLE entity (
@@ -30,14 +45,13 @@ CREATE TABLE entity (
 );
 ```
 
-Not every 'type' field in the UM is controlled by an ENUM. For some 'type' fields, and any other fields for which a controlled vocabulary is suggested, any requirements will be given in the [Suggested steps](#suggested-steps). Other than the requirements given, feel free to use values that make sense for your data. However, please do follow the [recommendations for `assertionUnits`](https://docs.google.com/document/d/1ZTMt-V3U0D0761bqqogeN58MjuHhIs_Kisu6CRtl-uA/edit#heading=h.a8fhzgvypuhh)
+Most 'type' fields in the UM are not controlled by an ENUM. For these 'type' fields, and any other fields for which a controlled vocabulary is suggested, any requirements will be given in the [Suggested steps](#suggested-steps) as they are encountered. Other than the requirements encountered, feel free to use values that make sense for your data. 
 
- Principles of controlled vocabularies. Part of what this exercise will reveal is the diversity of data that are being managed in collection management systems. The aggregation of vocabulary values used will be a very interesting outcome.
+Part of what this exercise will reveal is the diversity of data that are being stored in collection management systems. The aggregation of vocabulary values used will be a very interesting outcome of this project that may help to inform future work on vocabularies of values that help us all translate to concept we have in common with different labels.
 
-Throughout the UM there are four concepts (`AgentRole`, `Assertion`, `Citation`, and `Identifier`) that are repeated, except that they are attached to distinct classes in the model (e.g., `EventAgentRole`, `GeneticSequenceAssertion`, `MaterialEntityCitation`, `AgentIdentifier`). 
 The UM provides four special tables (`AgentRole`, `Assertion`, `Citation`, and `Identifier`) to supplement the core information of other tables (e.g., `Organism AgentRole`, `Event Assertion`, `GeneticSequence Citation`, `Agent Identifier`). The document [GBIF Common Models](https://docs.google.com/document/d/1ZTMt-V3U0D0761bqqogeN58MjuHhIs_Kisu6CRtl-uA/edit?usp=sharing) describes how these concepts fit into the UM.
 
-Each of the common model tables can be linked to the set of tables given in the COMMON_TARGETS enumeration, which is defined as follows in the database creation script [schema.sql](./schema.sql):
+Each of the 'common model' tables can be linked to the set of tables given in the COMMON_TARGETS enumeration, which is defined as follows in the database creation script [schema.sql](./schema.sql):
 ```
 CREATE TYPE COMMON_TARGETS AS ENUM (
   'ENTITY',
