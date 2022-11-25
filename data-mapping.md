@@ -83,7 +83,7 @@ Following is an outline of the steps we suggest to following the exercise to map
 
 [8. AgentRoles, Assertions, Citations, and Identifiers for DigitalEntities](#8-agentroles-assertions-citations-and-identifiers-for-digitalentities)
 
-[9. EntityRelationships between Entities](#9-entityrelationships-between-entities)
+[9. EntityRelationships](#9-entityrelationships)
 
 [10. Locations, Georeferences, and GeologicalContexts]([#10-locations-georeferences-and-geologicalcontexts))
 
@@ -110,7 +110,7 @@ It is recommended to map `Agent` first (see [Figure 1](#figure-1)), because thei
 <p align=center><img src="./_images/agents.png" alt="agents" width="50%"/>
 <p align=center>Figure 1. Agents and their relationships in the Unified Model
 
-### `agent_type` vocabulary
+### `agentType` vocabulary
 If an `Agent ` is a `Collection` or an `AgentGroup`, the `agent_type` MUST be `COLLECTION` or `AGENT_GROUP` respectively. However, the agent_type field is not controlled by an ENUM, because there are other possible values that are not subtypes of `Agent`, such as `ORGANIZATION`, `PERSON`, and even `ORGANISM`.
 
 ### `collectionType` vocabulary
@@ -190,7 +190,7 @@ One of these, the `GENETIC_SEQUENCE` is a formal subtype of `DigitalEntity` (see
 
 The same kinds of common model associations shown in Figure 3 for `MaterialEntity`s can be made for `DigitalEntity`s, except that each `targetID` MUST be the same as the identifier (`digitalEntityID` or `geneticSequenceID`) for the `DigitalEntity` or `GeneticSequence` it is directly associated with. The values for the `targetType` fields MUST be `DIGITAL_ENTITY` or `GENETIC_SEQUENCE`, depending on the table they are to be directly related to.
 
-## 9. EntityRelationships between Entities
+## 9. EntityRelationships
 
 At this stage in the process, all of the `Entity` records will have been created, providing the prerequisite for being able to create the relationships between them. The supertype/subtype relationships between `Entity` tables were shown above in Figure 2, and should already heve been created at this point. Here we will concentrate on other associations, ones that can be captured in the `EntityRelationship` table. The `EntityRelationship` table is a powerful way to make just about any connection between Entities in the UM. Any Entity can be related to any other one with any relationship. There are two things to keep in mind here. The first is that the subtype relationships should be strictly relegated to the correspondence of the values of identifier fields (e.g., `entityID` and `materialEntityID` for a `MaterialEntity`). This would be the equivalent of an `EntityRelationship` stating that a particular `Entity` `isA` `MaterialEntity`, which would be superfluous. The second thing to keep in mind is that the semantics of the relationships is entirely dependent on the clear understanding of the predicate (the `entityRelationshipType`) and the correct assignment of `Entities` to the subject and object roles. The relationships should always be read as 'subject predicate object' - that is, the relationship has a direction. Each relationship can have a complementary one where the subject/object roles are reversed and the predicate shows what the relationship looks like from the opposite direction. For example, if `Organism` 'A' was `eaten by` another `Organism` 'B', it follows that `Organism` 'B' `ate` `Organism` 'A'. It is not clear at the time of developing this documentation whether reverse roles are necessary. We leave that decision to your discretion when populating `EntityRelationship`s.
 
@@ -270,7 +270,7 @@ The 'common model' tables associated with `Taxon` can now be populated. The valu
 
 ## 16. Identifications
 
-In the UM, an `Identification` applies to an `Organism`, though the `IdentificationEvidence` may consist of any number of `MaterialEntity`s and/or `DigitalEntity`s. An `Organism` can also have multiple `Identification`s, though only zero or one of these can be marked as 'accepted'. The `Identification` record itself consists of the `verbatimIdentification` string applied to the `Organism` and a `taxonFormula` from a controlled vocabulary that indicates the pattern of taxon names mixed with `[identificationQualifier](https://dwc.tdwg.org/terms/#dwc:identificationQualifier)`s in the `Identification` string. This allows for `Identification`s that are not strictly `[scientificName](https://dwc.tdwg.org/terms/#dwc:scientificName)`s. For reference, here is the statement to create the `Identification` table:
+In the UM, an `Identification` applies to an `Organism`, though the `IdentificationEvidence` may consist of any number of `MaterialEntity`s and/or `DigitalEntity`s. An `Organism` can also have multiple `Identification`s, though only zero or one of these can be marked as 'accepted'. The `Identification` record itself consists of the `verbatimIdentification` string applied to the `Organism` and a `taxonFormula` from a controlled vocabulary that indicates the pattern of taxon names mixed with qualifiers in the `verbatimIdentification`. This allows for `Identification`s that are not strictly scientific names, but that can point to all of the real scientific names involved. For example, the hybrid `verbatimIdentification` 'Canis latrans x Canis lupus familiaris' (see example below). For reference, here is the statement to create the `Identification` table:
   
 ```
 CREATE TABLE identification (
@@ -292,6 +292,27 @@ CREATE TABLE identification (
 
 ![Entities](./_images/identifications.png)
 <p align=center>Figure 7. Identifications in the Unified Model
+
+### `taxonFormula` vocabulary
+  
+The recommended controlled vocabulary for `taxonFormula` can be found in the [Arctos taxa_formula code table documentation](https://arctos.database.museum/info/ctDocumentation.cfm?table=cttaxa_formula), repeated here for convenience:
+
+```
+A
+A / B intergrade
+A ?
+A aff.
+A and B
+A cf.
+A or B
+A ssp.
+A x B
+A {string}
+```
+
+### Identification Example
+
+For the hybrid `verbatimIdentification` 'Canis latrans x Canis lupus familiaris', the `taxonFormula` would be 'A x B'. There are two `taxon_id`s involved, one for 'Canis latrans' (the A in the `taxonFormula`) and one for 'Canis lupus familiaris' (the B in the `taxonFormula`). We would expect to find `Taxon` records for these two taxa, and their `taxonID`s would be used in two records of `TaxonIdentification`. The `TaxonIdentification` record corresponding to 'Canis latrans' would include the `identificationID` for the `Identification` record that has `verbatimIdentification` ''Canis latrans x Canis lupus familiaris'' and `taxonFormula` 'A x B'. That same `TaxonIdentification` record would have the `taxonID` for 'Canis latrans' and the `taxonOrder` would be '1' (because it is the first taxon that appears in the formula). The `TaxonIdentification` record corresponding to 'Canis lupus familiaris' would include the `identificationID` for the `Identification` record that has `verbatimIdentification` ''Canis latrans x Canis lupus familiaris'' and `taxonFormula` 'A x B'. That same `TaxonIdentification` record would have the `taxonID` for 'Canis lupus familiaris' and the `taxonOrder` would be '2' (because it is the second taxon that appears in the formula). 
 
 ## 17. AgentRoles, Assertions, Citations, and Identifiers for Identifications
 
