@@ -217,24 +217,35 @@ The 'common model' tables associated with the three Location-related tables can 
 
 ## 12. Map Occurrences and other Events
 
-An `Event` is something that happens within a place during a period of time. The spatial scale and temporal duration may be as specific or vague as necessary, and may or may not be provided. `Event`s are hierarchical in the UM, with a parent `Event` containing all of its child `Event`s both spatially and temporally. A project (or any other higher organizational initiative) might be a parent-most `Event`, the spatial and temporal limits of which encompass all of the `Event`s within it. The next level down might consist of collecting expeditions launched as part of the parent project, for example. Each `Event` can likewise encompass sub-`Event`s to an arbitrary hierarchical depth, each with the same or distinct `Location` and temporal boundsas its parent (under the limitation of being contained).
+An `Event` is something that happens within a place during a period of time. The spatial scale and temporal duration may be as specific or vague as necessary, and may or may not be provided. `Event`s are hierarchical in the UM, with a parent `Event` containing all of its child `Event`s both spatially and temporally. A project (or any other higher organizational initiative) might be a parent-most `Event`, the spatial and temporal limits of which encompass all of the `Event`s within it. The next level down might consist of collecting expeditions launched as part of the parent project, for example. Each `Event` can likewise encompass sub-`Event`s to an arbitrary hierarchical depth, each with the same or distinct `Location` and temporal bounds as its parent (under the limitation of being contained).
 
 <p align=center><img src="./_images/events.png" alt="events" width="75%"/>
 <p align=center>Figure 5. Events in the Unified Model
 
+In the UM, an `Occurrence` is a subtype of `Event` in which the activity (observing, collecting, sampling) established the existence of an `Organism` within a spatiotemporal context, usually with accompanying evidence. The `OccurrenceEvidence` table serves to connect the `Occurrence` with digital and/or material evidence, such as images, material samples or whole organisms, and genetic sequences. In collections, an `Organism` is often effectively the `Entity` that gets cataloged, with an accompanying list of 'preparations' that represent the parts of the `Organism` that are or were present in the collection. If you do not track 'parts' separtely with their own characteristics, the `Organism` record would be the one used for the `OccurrenceEvidence`. Note that the `organismID` is not an `occurrenceID` - the former is an identifer for an `Organism` (a `MaterialEntity`), while the latter is an identifier for the `Occurrence` (an `Event`), and `MaterialEntity`s are not `Event`s. In the absence of unique (and distinct) identifers for `Organism`s and `Occurrence`s, they will have to be generated to populate the UM correctly, as described in the [General considerations](#general-considerations) section.
+
+The `Occurrence` carries with it the ephemeral characteristics of the Organism at the place and time of the `Event`. Thus, for example, an `Organism` that had blood samples taken over its lifetime may have had a `reproductiveCondition` of `juvenile` in an early `Occurrence` and a `reproductiveCondition` of `adult` in later one. 
+  
+Each `Occurrence` has its own `occurrenceID`. The `Occurrence`s associated with a given `Organism` can be discovered by the `organismID` they have in common. Every `Occurrence` must have a corresponding `Event` record in which the `eventID` is the same is the `occurrenceID` and the `eventType` for the `Event` record MUST be `OCCURRENCE`.
+  
 ![Entities](./_images/occurrences.png)
-<p align=center>Figure 6. Occurrences in the Unified Model
+<p align=center>Figure 6. Occurrences and their evidence in the Unified Model
 
 ## 13. Map AgentRoles, Assertions, Citations, and Identifiers for Occurrences and other Events
+
 ## 14. Map OccurrenceEvidence
+
 ## 15. Map Taxa
+
 ## 16. Map AgentRoles, Assertions, Citations, and Identifiers for Taxa
+
 ## 17. Map Identifications
 
 ![Entities](./_images/identifications.png)
 <p align=center>Figure 7. Identifications in the Unified Model
 
 ## 18. Map AgentRoles, Assertions, Citations, and Identifiers for Identifications
+
 ## 19. Map IdentificationEvidence
 
 
