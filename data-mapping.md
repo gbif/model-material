@@ -8,7 +8,7 @@ Your task is to populate a postgresql database using the UM structure we have pr
 
 ## General considerations
 
-In this document we will use figures to illustrate the structure of the UM. These figures take the form of Entity-Relationship (ER) diagrams. The figures do not necessarily show the full set of fields for the tables they represent, nor do they show data types and other constraints. At times we will show snippets of the schema (such as table definitions) for reference. The definitive version of the tables to populate is in the database creation script ([schema.sql](./schema.sql)). 
+In this document we will use figures to illustrate the structure of the UM. These figures take the form of Entity-Relationship (ER) diagrams. The figures do not necessarily show the full set of fields for the tables they represent, nor do they show data types and other constraints. At times we will show snippets of the schema (such as table definitions) for reference. The definitive version of the tables to populate is in [schema.sql](./schema.sql). 
 
 You will not be expected to parse the data in your database to make it fit into the UM, but you will be asked in some cases to provide explicit data in the UM that are only implicit in your data. For example, you may have database records based on material in your collection, but no field that identifies the event during which that material was collected. In the UM those would be non-overlapping and required concepts, and each MUST be identified separately.
 
@@ -48,7 +48,7 @@ Part of what this exercise will reveal is the diversity of data that are being s
 
 The UM provides four special tables (`AgentRole`, `Assertion`, `Citation`, and `Identifier`) to supplement the core information of other tables (e.g., `Organism AgentRole`, `Event Assertion`, `GeneticSequence Citation`, `Agent Identifier`). The document [GBIF Common Models](https://docs.google.com/document/d/1ZTMt-V3U0D0761bqqogeN58MjuHhIs_Kisu6CRtl-uA/edit?usp=sharing) describes how these concepts fit into the UM.
 
-Each of the 'common model' tables can be linked to the set of tables given in the `COMMON_TARGETS` enumeration, which is defined in the database creation script [schema.sql](./schema.sql) as shown below. How to use the `COMMON_TARGETS` enumeration for the various `targetType` fields of the 'common model' tables will be explained in context throughout the [Suggested steps](#suggested-steps).
+Each of the 'common model' tables can be linked to the set of tables given in the `COMMON_TARGETS` enumeration, which is defined in [schema.sql](./schema.sql) as shown below. How to use the `COMMON_TARGETS` enumeration for the various `targetType` fields of the 'common model' tables will be explained in context throughout the [Suggested steps](#suggested-steps).
 ```
 CREATE TYPE COMMON_TARGETS AS ENUM (
   'ENTITY',
@@ -76,7 +76,7 @@ CREATE TYPE COMMON_TARGETS AS ENUM (
 ```
 ## Suggested steps
 
-Following is an outline of the steps we suggest to following the exercise to map your collection management system data to the UM. Each step has a link to a more detailed description of what to do. The order of these steps was designed to make sure that you already have records for concepts that will be linked to in subsequent steps of the mapping process.
+Below is a list of the steps we suggest to follow to map your collection management system data to the UM. Each step has a link to a more detailed description of what to do. The order of these steps was designed to make sure that you will already have records for concepts that will be linked to in subsequent steps of the mapping process.
 
 [1. Agents](#1-agents)
 
@@ -88,7 +88,7 @@ Following is an outline of the steps we suggest to following the exercise to map
 
 [5. MaterialEntities](#5-materialentities)
 
-[6. AgentRoles, Assertions, Citations, Identifiers and ChronometricAges for MaterialEntities and their subtypes](#6-agent-roles-assertions-citations-identifiers-and-chronometricages-for-materialentities-and-their-subtypes))
+[6. AgentRoles, Assertions, Citations, Identifiers and ChronometricAges for MaterialEntities and their subtypes](#6-agentroles-assertions-citations-identifiers-and-chronometricages-for-materialentities-and-their-subtypes)
 
 [7. DigitalEntities](#7-digitalentities)
 
@@ -96,7 +96,7 @@ Following is an outline of the steps we suggest to following the exercise to map
 
 [9. EntityRelationships](#9-entityrelationships)
 
-[10. Locations, Georeferences, and GeologicalContexts]([#10-locations-georeferences-and-geologicalcontexts))
+[10. Locations, Georeferences, and GeologicalContexts](#10-locations-georeferences-and-geologicalcontexts)
 
 [11. AgentRoles, Assertions, Citations, and Identifiers for Locations, Georeferences, and GeologicalContexts](#11-agentroles-assertions-citations-and-identifiers-for-locations-georeferences-and-geologicalcontexts)
 
