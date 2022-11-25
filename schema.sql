@@ -23,7 +23,7 @@
 
 CREATE TABLE geological_context (
   geological_context_id TEXT PRIMARY KEY,
-  location_id TEXT,
+  location_id TEXT, -- foreign key declared after location table
   earliest_eon_or_lowest_eonothem TEXT,
   latest_eon_or_highest_eonothem TEXT,
   earliest_era_or_lowest_erathem TEXT,
@@ -50,7 +50,7 @@ CREATE INDEX ON geological_context(location_id);
 
 CREATE TABLE georeference (
   georeference_id TEXT PRIMARY KEY,
-  location_id TEXT,
+  location_id TEXT, -- foreign key declared after location table
   decimal_latitude NUMERIC NOT NULL CHECK (decimal_latitude BETWEEN -90 AND 90),
   decimal_longitude NUMERIC NOT NULL CHECK (decimal_longitude BETWEEN -180 AND 180),
   geodetic_datum TEXT NOT NULL,
@@ -192,7 +192,7 @@ CREATE TYPE ENTITY_TYPE AS ENUM (
 CREATE TABLE entity (
   entity_id TEXT PRIMARY KEY,
   entity_type ENTITY_TYPE NOT NULL,
-  dataset_id TEXT NOT NULL,
+  dataset_id TEXT NOT NULL, -- no foreign key, just an identifier
   entity_name TEXT,
   entity_remarks TEXT
 );
@@ -233,6 +233,7 @@ CREATE TABLE digital_entity (
   language TEXT,
   bibliographic_citation TEXT
 );
+CREATE INDEX ON digital_entity(digital_entity_type);
 
 -- GeneticSequence
 --   A subtype of DigitalEntity
@@ -288,6 +289,7 @@ CREATE TABLE material_group (
 
 CREATE TABLE identification (
   identification_id TEXT PRIMARY KEY,
+  organism_id TEXT, -- foreign key declared after organism table
   identification_type TEXT NOT NULL,
   taxon_formula TEXT NOT NULL,
   verbatim_identification TEXT,
@@ -300,7 +302,6 @@ CREATE TABLE identification (
   identification_remarks TEXT,
   type_designation_type TEXT,
   type_designated_by TEXT
---  is_accepted_identification BOOLEAN -- accomplished by foreign key on organism table
 );
 
 
@@ -315,6 +316,7 @@ CREATE TABLE organism (
   organism_scope TEXT,
   accepted_identification_id TEXT REFERENCES identification ON DELETE SET NULL
 );
+ALTER TABLE identification ADD FOREIGN KEY (organism_id) REFERENCES organism ON DELETE CASCADE;
 
 
 -- ChronometricAge (https://tdwg.github.io/chrono/terms/#chronometricage)
@@ -335,7 +337,7 @@ CREATE TABLE chronometric_age (
   chronometric_age_uncertainty_in_years INTEGER,
   chronometric_age_uncertainty_method TEXT,
   material_dated TEXT,
-  material_dated_id TEXT,
+  material_dated_id TEXT, -- not a foreign key, just an identifier
   material_dated_relationship TEXT,
   chronometric_age_determined_by TEXT,
   chronometric_age_determined_date TEXT,
@@ -385,27 +387,28 @@ CREATE TYPE DEGREE_OF_ESTABLISHMENT AS ENUM (
 CREATE TABLE occurrence (
   occurrence_id TEXT PRIMARY KEY REFERENCES event ON DELETE CASCADE,
   organism_id TEXT REFERENCES organism ON DELETE CASCADE,
-  organismQuantity TEXT,
-  organismQuantityType TEXT,
+  organism_quantity TEXT,
+  organism_quantity_type TEXT,
   sex TEXT,
-  lifeStage TEXT,
-  reproductiveCondition TEXT,
+  life_stage TEXT,
+  reproductive_condition TEXT,
   behavior TEXT,
   establishment_means ESTABLISHMENT_MEANS,
   occurrence_status OCCURRENCE_STATUS DEFAULT 'PRESENT' NOT NULL,
   pathway PATHWAY,
   degree_of_establishment DEGREE_OF_ESTABLISHMENT,
-  georeferenceVerificationStatus TEXT,
-  occurrenceRemarks TEXT,
-  informationWithheld TEXT,
-  dataGeneralizations TEXT,
-  recordedBy TEXT,
-  recordedByID TEXT,
-  associatedMedia TEXT,
-  associatedOccurrences TEXT,
-  associatedTaxa TEXT
+  georeference_verification_status TEXT,
+  occurrence_remarks TEXT,
+  information_withheld TEXT,
+  data_generalizations TEXT,
+  recorded_by TEXT,
+  recorded_by_id TEXT,
+  associated_media TEXT,
+  associated_occurrences TEXT,
+  associated_taxa TEXT
 );
 CREATE INDEX ON occurrence(organism_id);
+CREATE INDEX ON occurrence(occurrence_status);
 
 -- OcurrenceEvidence
 --   Any Entity that serves to support an assertion of an Occurrence of an Organism.
@@ -446,7 +449,7 @@ CREATE TABLE reference (
   reference_type TEXT NOT NULL,
   bibliographic_citation TEXT,
   reference_year SMALLINT CHECK (reference_year BETWEEN 1600 AND 2022),
-  reference_doi TEXT,
+  reference_iri TEXT,
   is_peer_reviewed BOOLEAN
 );
 
@@ -605,6 +608,7 @@ CREATE TABLE agent_role (
   agent_role_order SMALLINT NOT NULL CHECK (agent_role_order >= 0) DEFAULT 0,
   PRIMARY KEY (agent_role_target_id, agent_role_target_type, agent_role_agent_id, agent_role_order)
 );
+CREATE INDEX ON agent_role(agent_role_target_type);
 
 ---
 --   Assertions for all relevant content
@@ -632,6 +636,7 @@ CREATE TABLE "assertion" (
   assertion_remarks TEXT
 );
 CREATE INDEX ON "assertion"(assertion_target_type, assertion_target_id);
+CREATE INDEX ON "assertion"(assertion_target_type);
 
 ---
 --   Identifiers for all relevant content
@@ -648,6 +653,7 @@ CREATE TABLE identifier (
   identifier_value TEXT NOT NULL,
   PRIMARY KEY (identifier_target_id, identifier_target_type, identifier_type, identifier_value)
 );
+CREATE INDEX ON identifier(identifier_target_type);
 
 -- [Class]]Citation
 --   A specific citation of a thing in a Reference. Citations are separated by the 
@@ -663,3 +669,4 @@ CREATE TABLE citation (
   PRIMARY KEY (citation_target_id, citation_target_type,  citation_reference_id)
 );
 CREATE INDEX ON citation(citation_target_id, citation_reference_id);
+CREATE INDEX ON citation(citation_target_type);
