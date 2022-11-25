@@ -87,23 +87,19 @@ Following is an outline of the steps we suggest to following the exercise to map
 
 [10. Map Locations, Georeferences, and GeologicalContexts]([#10-map-locations-georeferences-and-geologicalcontexts))
 
-[11. Map AgentRoles, Assertions, Citations, and Identifiers for Locations, Georeferences, and GeologicalContexts](#)
+[11. Map AgentRoles, Assertions, Citations, and Identifiers for Locations, Georeferences, and GeologicalContexts](#11-map-agentroles-assertions-citations-and-identifiers-for-locations-georeferences-and-geologicalcontexts)
 
 [12. Map Occurrences and other Events](#12-map-occurrences-and-other-events)
 
-[13. Map AgentRoles, Assertions, Citations, and Identifiers for Occurrences and other Events](#)
+[13. Map AgentRoles, Assertions, Citations, and Identifiers for Occurrences and other Events](#13-map-agentroles-assertions-citations-and-identifiers-for-occurrences-and-other-events)
 
-[14. Map OccurrenceEvidence](#)
+[14. Map Taxa](#14-map-taxa)
 
-[15. Map Taxa](#)
+[15. Map AgentRoles, Assertions, Citations, and Identifiers for Taxa](#)
 
-[16. Map AgentRoles, Assertions, Citations, and Identifiers for Taxa](#)
+[16. Map Identifications](#)
 
-[17. Map Identifications](#)
-
-[18. Map AgentRoles, Assertions, Citations, and Identifiers for Identifications](#)
-
-[19. Map IdentificationEvidence](#)
+[17. Map AgentRoles, Assertions, Citations, and Identifiers for Identifications](#)
 
 ## 1. Map Agents
 
@@ -233,20 +229,16 @@ Each `Occurrence` has its own `occurrenceID`. The `Occurrence`s associated with 
 
 ## 13. Map AgentRoles, Assertions, Citations, and Identifiers for Occurrences and other Events
 
-## 14. Map OccurrenceEvidence
+## 14. Map Taxa
 
-## 15. Map Taxa
+## 15. Map AgentRoles, Assertions, Citations, and Identifiers for Taxa
 
-## 16. Map AgentRoles, Assertions, Citations, and Identifiers for Taxa
-
-## 17. Map Identifications
+## 16. Map Identifications
 
 ![Entities](./_images/identifications.png)
 <p align=center>Figure 7. Identifications in the Unified Model
 
-## 18. Map AgentRoles, Assertions, Citations, and Identifiers for Identifications
-
-## 19. Map IdentificationEvidence
+## 17. Map AgentRoles, Assertions, Citations, and Identifiers for Identifications
 
 
 ## Data Mapping (previous draft)
