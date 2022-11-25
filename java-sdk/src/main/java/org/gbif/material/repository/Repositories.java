@@ -68,4 +68,6 @@ public class Repositories {
 
   public interface IdentifierRepository
       extends JpaRepository<Identifier, Identifier.IdentifierPK> {}
+
+  public interface OccurrenceRepository extends JpaRepository<Occurrence, String> {}
 }

@@ -61,6 +61,7 @@ public class DAO {
     repositories.put(AgentRole.class.getName(), context.getBean(AgentRoleRepository.class));
     repositories.put(
         ChronometricAge.class.getName(), context.getBean(ChronometricAgeRepository.class));
+    repositories.put(Occurrence.class.getName(), context.getBean(OccurrenceRepository.class));
   }
 
   public <T extends Object> T save(T o) {

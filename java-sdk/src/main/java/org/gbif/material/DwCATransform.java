@@ -51,10 +51,11 @@ public class DwCATransform implements CommandLineRunner {
   private static Map<String, Agent> agentCache = new HashMap<>();
   private static Map<String, EntityRelationship> relationshipsCache = new HashMap<>();
 
-  private static Term AUDUBON_CORE =
-      TermFactory.instance().findClassTerm("http://rs.tdwg.org/ac/terms/Multimedia");
   private static Term DNA =
       TermFactory.instance().findClassTerm("http://rs.gbif.org/terms/1.0/DNADerivedData");
+
+  private static Term AUDUBON_CORE =
+      TermFactory.instance().findClassTerm("http://rs.tdwg.org/ac/terms/Multimedia");
 
   private static Term DNA_MIX_44 =
       TermFactory.instance().findClassTerm("https://w3id.org/gensc/terms/MIXS:0000044");
@@ -97,6 +98,38 @@ public class DwCATransform implements CommandLineRunner {
 
     // Step 10: Locations, Georeferences, and GeologicalContexts
     // Step 11: AgentRoles, Asserts etc for Location (skipped, no data)
+    mapLocations(dwca);
+
+    // 12. Occurrences and other Events
+    // 13. AgentRoles, Assertions, Citations, and Identifiers for Occurrences and other Events
+    for (StarRecord record : dwca) {
+      String basisOfRecord = record.core().value(DwcTerm.basisOfRecord);
+      if ("Observation".equalsIgnoreCase(basisOfRecord)) {
+        String eventID = guid("EVENT", record.core().value(occurrenceID));
+        org.gbif.material.model.Event event =
+            org.gbif.material.model.Event.builder()
+                .id(eventID)
+                .datasetId(DATASET_ID)
+                .eventDate(record.core().value(eventDate))
+                .eventType("OCCURRENCE")
+                .habitat(record.core().value(habitat))
+                .build();
+        dao.save(event);
+        String organismID = guid("ENTITY", record.core().value(DwcTerm.occurrenceID));
+        dao.save(
+            org.gbif.material.model.Occurrence.builder()
+                .id(eventID)
+                .associatedTaxa(record.core().value(associatedTaxa))
+                .recordedBy(record.core().value(recordedBy))
+                .occurrenceStatus(org.gbif.material.model.Occurrence.OccurrenceStatus.PRESENT)
+                .event(event)
+                .organismId(organismID)
+                .build());
+      }
+    }
+  }
+
+  private void mapLocations(Archive dwca) {
     for (StarRecord record : dwca) {
       String locID = guid("LOCATION", record.core().value(locationID));
       Location location =
@@ -145,7 +178,6 @@ public class DwCATransform implements CommandLineRunner {
       else if ("MaterialSample".equalsIgnoreCase(basisOfRecord)) createMaterial(record);
 
       for (Record extRec : record.extension(ResourceRelationship)) {
-        log.info(extRec.value(DwcTerm.resourceID) + " to " + extRec.value(relatedResourceID));
         relationshipsCache.put(
             extRec.value(DwcTerm.resourceRelationshipID),
             EntityRelationship.builder()
@@ -170,14 +202,13 @@ public class DwCATransform implements CommandLineRunner {
       for (Record media : record.extension(AUDUBON_CORE)) {
         String entityID = guid("ENTITY", media.value(DcTerm.identifier));
         createMedia(media, entityID);
-
         relationshipsCache.put(
-            media.value(DwcTerm.resourceRelationshipID),
+            guid(),
             EntityRelationship.builder()
                 .id(guid())
                 .subjectEntity(entityID)
                 .objectEntity(guid("ENTITY", record.core().value(occurrenceID)))
-                .entityRelationshipType("IMAGE_OF")
+                .entityRelationshipType("IMAGE OF")
                 .entityRelationshipOrder((short) order++)
                 .build());
       }

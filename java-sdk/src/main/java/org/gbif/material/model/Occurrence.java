@@ -104,16 +104,13 @@ public class Occurrence {
   @Column(name = "occurrence_id", nullable = false)
   private String id;
 
-  @MapsId
-  @OneToOne(fetch = FetchType.LAZY, optional = false)
+  @OneToOne(cascade = CascadeType.MERGE)
   @OnDelete(action = OnDeleteAction.CASCADE)
-  @JoinColumn(name = "occurrence_id", nullable = false)
+  @PrimaryKeyJoinColumn(name = "occurrence_id", referencedColumnName = "entity_id")
   private Event event;
 
-  @ManyToOne(fetch = FetchType.LAZY)
-  @OnDelete(action = OnDeleteAction.CASCADE)
-  @JoinColumn(name = "organism_id")
-  private Organism organism;
+  @Column(name = "organism_id")
+  private String organismId;
 
   @Lob
   @Column(name = "organism_quantity")
