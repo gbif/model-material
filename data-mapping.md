@@ -113,14 +113,14 @@ It is recommended to map `Agent` first (see [Figure 1](#figure-1)), because thei
 ### `agent_type` vocabulary
 If an `Agent ` is a `Collection` or an `AgentGroup`, the `agent_type` MUST be `COLLECTION` or `AGENT_GROUP` respectively. However, the agent_type field is not controlled by an ENUM, because there are other possible values that are not subtypes of `Agent`, such as `ORGANIZATION`, `PERSON`, and even `ORGANISM`.
 
-### `collection_type` vocabulary
+### `collectionType` vocabulary
 We would expect to be informed here by work on the Latimer Core. For this exercise we suggest, for example, `MUSEUM`, `HERBARIUM`, `BOTANICAL_GARDEN`, `ZOO`.
 
-### `agent_group_type` vocabulary
+### `agentGroupType` vocabulary
 An `AgentGroup` is a way to refer to a single `Agent` entity that is composed of multiple `Agent`s. Thus, a group of `Collection`s might be a `CONSORTIUM`, a group of university students might be a `CLASS`.
   
-### `agent_relationship_type` vocabulary
-The range of possible relationships between `Agent`s is vast. Note that the relationship has directionality. The `subject_agent_id` is related to the `object_agent_id` in the direction expressed in the `agent_relationship_type`. Even so, it helps to express the directionality in the `agent_relationship_type` term, for example, `DOCTORAL_ADVISOR_OF` instead of `DOCTORAL_ADVISOR`.
+### `agentRelationshipType` vocabulary
+The range of possible relationships between `Agent`s is vast. Note that the relationship has directionality. The `subjectAgentID` is related to the `objectAgentID` in the direction expressed in the `agentRelationshipType`. Even so, it helps to express the directionality in the `agentRelationshipType` term, for example, `DOCTORAL_ADVISOR_OF` instead of `DOCTORAL_ADVISOR`.
 
 ## 2. Map References
 
@@ -128,7 +128,7 @@ NOTE: Skip if your `Reference`s are identified only by bibliographic citations o
 
 A `Reference`, like an `Agent`, has the potential to be related to many different kinds of things (e.g., `MaterialEntity`, `Event`, `Taxon`) in the UM, through `Citation`s. So, if you track references with identifiers, create `Reference` records for them so that they can be connected when the other tables they are related to are created. If you don't track reference separately in your database, don't worry about it, they can be designated by their bibliographic citations where appropriate in the UM. 
 
-### `reference_type` vocabulary
+### `referenceType` vocabulary
 Here are some suggestions, but feel free to suggest others if none of these suffices: `JOURNAL_ARTICLE`, `BOOK`, `BOOK_SECTION`, `DISSERTATION`,  `FIELD_NOTEBOOK`, `WEB_PAGE`, `OTHER`.
 
 ## 3. Map Assertions, Citations, and Identifiers for Agents
@@ -137,7 +137,7 @@ NOTE: Skip if you created no `Agent` records in [Step 1](#1-map-agents)
 
 It is possible to create Agent `Assertion`s, `Citation`s, and `Identifier`s. See [GBIF Common Models](https://docs.google.com/document/d/1ZTMt-V3U0D0761bqqogeN58MjuHhIs_Kisu6CRtl-uA/edit?usp=sharing) for general discussions about how to map to these three types of tables and considerations when developing the vocabularies for `assertion_type` and `assertion_unit`.
 
-### `assertion_target_type` vocabulary
+### `assertionTargetType` vocabulary
 The value for this term MUST be one of `AGENT`, `AGENT_GROUP`, or `COLLECTION` and MUST match the table to which the Assertion applies.
 
 ## 4. Map Protocols
@@ -197,18 +197,18 @@ At this stage in the process, all of the `Entity` records will have been created
 
 ## 10. Map Locations, Georeferences, and GeologicalContexts
 
-`Location`s in the UM are used to provide both textual and geospatial context. In particular, they are used to describe where `Event`s happened. Figure 4 shows the structural relationships between the Location-related tables in the UM. 
+`Location`s in the UM are used to provide both textual and geospatial context. In particular, they are used to describe where `Event`s happened. Figure 4 shows the structural relationships between the `Location`-related tables in the UM. 
   
-Georeferences are special assertions of the geospatial interpretation of a `Location`s. As assertions, the model supports zero, one, or multiple interpretations per `Location`, whether current, historical, accepted, or disputed. The UM also supports the designation of zero or one accepted georeferences by populating `accepted_georeference_id` in the `Location` table with the `georeference_id` of the corresponding `Georeference`, if any. 
+Georeferences are special assertions of the geospatial interpretation of a `Location`s. As assertions, the model supports zero, one, or multiple interpretations per `Location`, whether current, historical, accepted, or disputed. The UM also supports the designation of zero or one accepted georeferences by populating `acceptedGeoreferenceID` in the `Location` table with the `georeferenceID` of the corresponding `Georeference`, if any. 
   
-`GeologicalContext`s is modeled similarly to a `Georeference`, but with an ``accepted_geological_context_id` in the `Location` table that MUST match the `geological_context_id` of the corresponding `GeologicalContext`, if any. 
+`GeologicalContext`s is modeled similarly to a `Georeference`, but with an `acceptedGeologicalContextID` in the `Location` table that MUST match the `geologicalContextID` of the corresponding `GeologicalContext`, if any. 
   
 <p align=center><img src="./_images/locations.png" alt="locations" width="50%"/>
 <p align=center>Figure 4. Locations, Georeferences and GeologicalContexts in the Unified Model
 
 ## 11. Map AgentRoles, Assertions, Citations, and Identifiers for Locations, Georeferences, and GeologicalContexts
 
-The 'common model' tables associated with the three Location-related tables can be populated at this point. The values for the `targetType` fields of the commn model tables MUST be `LOCATION`, `GEOREFERENCE` or `GEOLOGICAL_CONTEXT`, depending on the table they are to be directly related to.
+The 'common model' tables associated with the three `Location`-related tables can be populated at this point. The values for the `targetType` fields of the common model tables MUST be `LOCATION`, `GEOREFERENCE` or `GEOLOGICAL_CONTEXT`, and their `targetID`s MUST correspond to the `locationID`, `georeferenceID` or `geologicalContextID`, depending on the table they are to be directly related to.
 
 
 ## 12. Map Occurrences and other Events
@@ -229,9 +229,44 @@ Each `Occurrence` has its own `occurrenceID`. The `Occurrence`s associated with 
 
 ## 13. Map AgentRoles, Assertions, Citations, and Identifiers for Occurrences and other Events
 
+With Locations, Protocols, and Events now in place, the 'common model' tables associated with the `Event`-related tables can be populated. The values for the `targetType` fields of the common model tables MUST be `EVENT` or `OCCURRENCE` and their `targetID`s MUST correspond to the `eventID` or `occurrenceID`, depending on the table they are to be directly related to. Remember that Assertions about ephemeral characterics of the `Organism` should be attached to `Occurrence` rather than `Organism`.
+
 ## 14. Map Taxa
 
+In the UM, a `Taxon` can be expressed as a denormalized (flattened) construct with the (Darwin Core part of a) taxonomic classification in the same record, or as a normalized construct with the classification built of parent/child relationships of taxa of successive ranks. Feel free to use the construct that best matches how your data are structured. The table definition for `Taxon` from [schema.sql](./schema.sql) is:
+
+```
+CREATE TABLE taxon (
+  -- common to all
+  taxon_id TEXT PRIMARY KEY,
+  scientific_name TEXT NOT NULL,
+  scientific_name_authorship TEXT,
+  name_according_to TEXT,
+  taxon_rank TEXT,
+  taxon_source TEXT, -- From what taxonomic authority is the information taken
+  scientific_name_id TEXT,
+  taxon_remarks TEXT,  
+  
+  -- normalized view
+  parent_taxon_id TEXT REFERENCES taxon ON DELETE CASCADE,
+  taxonomic_status TEXT,
+
+  -- denormalized
+  kingdom TEXT,
+  phylum TEXT,
+  class TEXT,
+  "order" TEXT,
+  family TEXT,
+  subfamily TEXT,
+  genus TEXT,
+  subgenus TEXT,
+  accepted_scientific_name TEXT -- populated only when scientific name is a synonym
+);
+```
+
 ## 15. Map AgentRoles, Assertions, Citations, and Identifiers for Taxa
+
+The 'common model' tables associated with `Taxon` can now be populated. The values for the `targetType` fields of the common model tables MUST be `TAXON` and their `targetID`s MUST correspond to the `taxonID`of the `Taxon` they are to be directly related to.
 
 ## 16. Map Identifications
 
