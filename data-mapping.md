@@ -67,41 +67,41 @@ CREATE TYPE COMMON_TARGETS AS ENUM (
 
 Following is an outline of the steps we suggest to following the exercise to map your collection management system data to the UM. Each step has a link to a more detailed description of what to do. The order of these steps was designed to make sure that you already have records for concepts that will be linked to in subsequent steps of the mapping process.
 
-[1. Map Agents](#1-map-agents)
+[1. Agents](#1-agents)
 
-[2. Map References](#2-map-references)
+[2. References](#2-references)
 
-[3. Map Assertions, Citations, and Identifiers for Agents](#3-map-assertions-citations-and-identifiers-for-agents)
+[3. Assertions, Citations, and Identifiers for Agents](#3-assertions-citations-and-identifiers-for-agents)
 
-[4. Map Protocols](#4-map-protocols)
+[4. Protocols](#4-protocols)
 
-[5. Map MaterialEntities](#5-map-materialentities)
+[5. MaterialEntities](#5-materialentities)
 
-[6. Map Agent Roles, Assertions, Citations, Identifiers and ChronometricAges for MaterialEntities and their subtypes](#6-map-agent-roles-assertions-citations-identifiers-and-chronometricages-for-materialentities-and-their-subtypes))
+[6. AgentRoles, Assertions, Citations, Identifiers and ChronometricAges for MaterialEntities and their subtypes](#6-agent-roles-assertions-citations-identifiers-and-chronometricages-for-materialentities-and-their-subtypes))
 
-[7. Map DigitalEntities](#7-map-digitalentities)
+[7. DigitalEntities](#7-digitalentities)
 
-[8. Map AgentRoles, Assertions, Citations, and Identifiers for DigitalEntities](#8-map-agentroles-assertions-citations-and-identifiers-for-digitalentities)
+[8. AgentRoles, Assertions, Citations, and Identifiers for DigitalEntities](#8-agentroles-assertions-citations-and-identifiers-for-digitalentities)
 
-[9. Map EntityRelationships between Entities](#9-map-entityrelationships-between-entities)
+[9. EntityRelationships between Entities](#9-entityrelationships-between-entities)
 
-[10. Map Locations, Georeferences, and GeologicalContexts]([#10-map-locations-georeferences-and-geologicalcontexts))
+[10. Locations, Georeferences, and GeologicalContexts]([#10-locations-georeferences-and-geologicalcontexts))
 
-[11. Map AgentRoles, Assertions, Citations, and Identifiers for Locations, Georeferences, and GeologicalContexts](#11-map-agentroles-assertions-citations-and-identifiers-for-locations-georeferences-and-geologicalcontexts)
+[11. AgentRoles, Assertions, Citations, and Identifiers for Locations, Georeferences, and GeologicalContexts](#11-agentroles-assertions-citations-and-identifiers-for-locations-georeferences-and-geologicalcontexts)
 
-[12. Map Occurrences and other Events](#12-map-occurrences-and-other-events)
+[12. Occurrences and other Events](#12-occurrences-and-other-events)
 
-[13. Map AgentRoles, Assertions, Citations, and Identifiers for Occurrences and other Events](#13-map-agentroles-assertions-citations-and-identifiers-for-occurrences-and-other-events)
+[13. AgentRoles, Assertions, Citations, and Identifiers for Occurrences and other Events](#13-agentroles-assertions-citations-and-identifiers-for-occurrences-and-other-events)
 
-[14. Map Taxa](#14-map-taxa)
+[14. Taxa](#14-taxa)
 
-[15. Map AgentRoles, Assertions, Citations, and Identifiers for Taxa](#15-map-agentroles-assertions-citations-and-identifiers-for-taxa)
+[15. AgentRoles, Assertions, Citations, and Identifiers for Taxa](#15-agentroles-assertions-citations-and-identifiers-for-taxa)
 
-[16. Map Identifications](#16-map-identifications)
+[16. Identifications](#16-identifications)
 
-[17. Map AgentRoles, Assertions, Citations, and Identifiers for Identifications](#17-map-agentroles-assertions-citations-and-identifiers-for-identifications)
+[17. AgentRoles, Assertions, Citations, and Identifiers for Identifications](#17-agentroles-assertions-citations-and-identifiers-for-identifications)
 
-## 1. Map Agents
+## 1. Agents
 
 NOTE: Skip if your agents are identified only by name.
 
@@ -122,7 +122,7 @@ An `AgentGroup` is a way to refer to a single `Agent` entity that is composed of
 ### `agentRelationshipType` vocabulary
 The range of possible relationships between `Agent`s is vast. Note that the relationship has directionality. The `subjectAgentID` is related to the `objectAgentID` in the direction expressed in the `agentRelationshipType`. Even so, it helps to express the directionality in the `agentRelationshipType` term, for example, `DOCTORAL_ADVISOR_OF` instead of `DOCTORAL_ADVISOR`.
 
-## 2. Map References
+## 2. References
 
 NOTE: Skip if your `Reference`s are identified only by bibliographic citations or if you do not have `Reference`s in your data.
 
@@ -131,22 +131,22 @@ A `Reference`, like an `Agent`, has the potential to be related to many differen
 ### `referenceType` vocabulary
 Here are some suggestions, but feel free to suggest others if none of these suffices: `JOURNAL_ARTICLE`, `BOOK`, `BOOK_SECTION`, `DISSERTATION`,  `FIELD_NOTEBOOK`, `WEB_PAGE`, `OTHER`.
 
-## 3. Map Assertions, Citations, and Identifiers for Agents
+## 3. Assertions, Citations, and Identifiers for Agents
 
-NOTE: Skip if you created no `Agent` records in [Step 1](#1-map-agents)
+NOTE: Skip if you created no `Agent` records in [Step 1](#1-agents)
 
 It is possible to create Agent `Assertion`s, `Citation`s, and `Identifier`s. See [GBIF Common Models](https://docs.google.com/document/d/1ZTMt-V3U0D0761bqqogeN58MjuHhIs_Kisu6CRtl-uA/edit?usp=sharing) for general discussions about how to map to these three types of tables and considerations when developing the vocabularies for `assertion_type` and `assertion_unit`.
 
 ### `assertionTargetType` vocabulary
 The value for this term MUST be one of `AGENT`, `AGENT_GROUP`, or `COLLECTION` and MUST match the table to which the Assertion applies.
 
-## 4. Map Protocols
+## 4. Protocols
 
 NOTE: Skip if your `Protocol`s are identified only by simple strings (names or descriptions) or if you do not have `Protocol`s mentioned in your data.
 
 A `Protocol` can be used by the classes `Event`, `ChronometricAge`, and the various `Assertion`s. If you track protocols with identifiers, create `Protocol` records for them so that they can be connected when the tables they are related to are created.
 
-## 5. Map MaterialEntities
+## 5. MaterialEntities
 
 <p align=center><img src="./_images/entities.png" alt="agents" width="75%"/>
 <p align=center>Figure 2. Entities and their relationships in the Unified Model
@@ -155,9 +155,9 @@ A `MaterialEntity` can be any physical object (same as [bco:material entity](htt
   
 A `MaterialGroup` is any set of `MaterialEntity`s and its utility is to be able to make `Assertion`s about the group as a whole, distinct from `Assertion`s about its individual members (e.g., the weight of an entire catch as opposed to the weights of selected individuals in the catch). A `MaterialGroup` record MUST have a corresponding `MaterialEntity` record, which in turn MUST have `MATERIAL_GROUP` as its `materialEntityType`.
 
-An Organism (same as [dwc:Organism](https://dwc.tdwg.org/terms/#organism)) is modeled in the UM as a `MaterialEntity`, even if none of the material remains accessible (such as in the case of some observations, or the case of a specimen that was lost or destroyed). In the most basic case, a cataloged item consists of the entire existing material remains of a single `Organism`. These may be separated into "parts", which may or may not be tracked separately. When they are tracked separately, the `Entity` that unites them is the `Organism`. The derivation of the "parts" from the `Organism` (or from each other) are [expressed through `EntityRelatiosnhip`s](#7-map-entityrelationships-between-materialentities). An `Organism` record MUST have a corresponding `MaterialEntity` record, which in turn MUST have `ORGANISM` as its `materialEntityType`.
+An Organism (same as [dwc:Organism](https://dwc.tdwg.org/terms/#organism)) is modeled in the UM as a `MaterialEntity`, even if none of the material remains accessible (such as in the case of some observations, or the case of a specimen that was lost or destroyed). In the most basic case, a cataloged item consists of the entire existing material remains of a single `Organism`. These may be separated into "parts", which may or may not be tracked separately. When they are tracked separately, the `Entity` that unites them is the `Organism`. The derivation of the "parts" from the `Organism` (or from each other) are [expressed through `EntityRelatiosnhip`s](#7-entityrelationships-between-materialentities). An `Organism` record MUST have a corresponding `MaterialEntity` record, which in turn MUST have `ORGANISM` as its `materialEntityType`.
 
-## 6. Map Agent Roles, Assertions, Citations, Identifiers and ChronometricAges for MaterialEntities and their subtypes
+## 6. AgentRoles, Assertions, Citations, Identifiers and ChronometricAges for MaterialEntities and their subtypes
 
 Figure 3 shows the relationships between `MaterialEntity` and associated tables, including the common model tables. The relationships between `MaterialEntity` and other `Entity ` tables was shown in Figure 2. Each of the `Entity` tables can be connected to the common model tables. The important thing is to make sure that the connections happen at the appropriate, most specific level in the hierarchy. For example, suppose a blood sample was taken from an `Organism` and its volume was measured. The blood sample is a `MaterialEntity` (NOT and `Organism`). There should be an `EntityRelationship` showing the subject `MaterialEntity` had the relationship `extractedFrom` the object `Organism`. The blood sample volume should result in an `Assertion` for the `MaterialEntity`, not an `Assertion` for the corresponding parent `Entity` record, nor the related `Organism` record. Specifically, the `assertionTargetID` should be the same as the `materialEntityID` for the blood sample, the `assertionTargetType` MUST be `MATERIAL_ENTITY`, the `assertionType` should be `VOLUME`, the `assertionValue` should be left empty, the `assertionValueNumeric` should have the numerical value of the volume, and the `assertionUnit` should have an appropriate SI unit (e.g., 'ml'). The same principles apply to relationships to the `Citation`, `AgentRole` and `Identifier` tables - they should be associated with the correct `Entity`.
  
@@ -166,7 +166,7 @@ A `ChronometricAge`s MUST only be related directly to a `MaterialEntity`.
 <p align=center><img src="./_images/materialentities.png" alt="agents"/>
 <p align=center>Figure 3. MaterialEntities and related tables in the Unified Model
   
-## 7. Map DigitalEntities
+## 7. DigitalEntities
 
 In the UM there can be many types of `DigitalEntity`. These are distinguished by the `digitalEntityType` field, which has a strictly controlled vocabulary consisting of the values in the following enumeration:
 
@@ -186,16 +186,16 @@ CREATE TYPE DIGITAL_ENTITY_TYPE AS ENUM (
   
 One of these, the `GENETIC_SEQUENCE` is a formal subtype of `DigitalEntity` (see Figure 2). This means that when a `GENETIC_SEQUENCE` record is created, a corresponding `MaterialEntity` record MUST also be created, and the `digitalEntityType` for it MUST be `GENETIC_SEQUENCE`. For each `DigitalEntity`, also create an `Entity` record using the same unique identifier for the `entityID` as for the `digitalEntityID`. The `entityType` for the `Entity` MUST be `DIGITAL_ENTITY`.
 
-## 8. Map AgentRoles, Assertions, Citations, and Identifiers for DigitalEntities
+## 8. AgentRoles, Assertions, Citations, and Identifiers for DigitalEntities
 
 The same kinds of common model associations shown in Figure 3 for `MaterialEntity`s can be made for `DigitalEntity`s, except that each `targetID` MUST be the same as the identifier (`digitalEntityID` or `geneticSequenceID`) for the `DigitalEntity` or `GeneticSequence` it is directly associated with. The values for the `targetType` fields MUST be `DIGITAL_ENTITY` or `GENETIC_SEQUENCE`, depending on the table they are to be directly related to.
 
-## 9. Map EntityRelationships between Entities
+## 9. EntityRelationships between Entities
 
 At this stage in the process, all of the `Entity` records will have been created, providing the prerequisite for being able to create the relationships between them. The supertype/subtype relationships between `Entity` tables were shown above in Figure 2, and should already heve been created at this point. Here we will concentrate on other associations, ones that can be captured in the `EntityRelationship` table. The `EntityRelationship` table is a powerful way to make just about any connection between Entities in the UM. Any Entity can be related to any other one with any relationship. There are two things to keep in mind here. The first is that the subtype relationships should be strictly relegated to the correspondence of the values of identifier fields (e.g., `entityID` and `materialEntityID` for a `MaterialEntity`). This would be the equivalent of an `EntityRelationship` stating that a particular `Entity` `isA` `MaterialEntity`, which would be superfluous. The second thing to keep in mind is that the semantics of the relationships is entirely dependent on the clear understanding of the predicate (the `entityRelationshipType`) and the correct assignment of `Entities` to the subject and object roles. The relationships should always be read as 'subject predicate object' - that is, the relationship has a direction. Each relationship can have a complementary one where the subject/object roles are reversed and the predicate shows what the relationship looks like from the opposite direction. For example, if `Organism` 'A' was `eaten by` another `Organism` 'B', it follows that `Organism` 'B' `ate` `Organism` 'A'. It is not clear at the time of developing this documentation whether reverse roles are necessary. We leave that decision to your discretion when populating `EntityRelationship`s.
 
 
-## 10. Map Locations, Georeferences, and GeologicalContexts
+## 10. Locations, Georeferences, and GeologicalContexts
 
 `Location`s in the UM are used to provide both textual and geospatial context. In particular, they are used to describe where `Event`s happened. Figure 4 shows the structural relationships between the `Location`-related tables in the UM. 
   
@@ -206,12 +206,12 @@ Georeferences are special assertions of the geospatial interpretation of a `Loca
 <p align=center><img src="./_images/locations.png" alt="locations" width="50%"/>
 <p align=center>Figure 4. Locations, Georeferences and GeologicalContexts in the Unified Model
 
-## 11. Map AgentRoles, Assertions, Citations, and Identifiers for Locations, Georeferences, and GeologicalContexts
+## 11. AgentRoles, Assertions, Citations, and Identifiers for Locations, Georeferences, and GeologicalContexts
 
 The 'common model' tables associated with the three `Location`-related tables can be populated at this point. The values for the `targetType` fields of the common model tables MUST be `LOCATION`, `GEOREFERENCE` or `GEOLOGICAL_CONTEXT`, and their `targetID`s MUST correspond to the `locationID`, `georeferenceID` or `geologicalContextID`, depending on the table they are to be directly related to.
 
 
-## 12. Map Occurrences and other Events
+## 12. Occurrences and other Events
 
 An `Event` is something that happens within a place during a period of time. The spatial scale and temporal duration may be as specific or vague as necessary, and may or may not be provided. `Event`s are hierarchical in the UM, with a parent `Event` containing all of its child `Event`s both spatially and temporally. A project (or any other higher organizational initiative) might be a parent-most `Event`, the spatial and temporal limits of which encompass all of the `Event`s within it. The next level down might consist of collecting expeditions launched as part of the parent project, for example. Each `Event` can likewise encompass sub-`Event`s to an arbitrary hierarchical depth, each with the same or distinct `Location` and temporal bounds as its parent (under the limitation of being contained).
 
@@ -227,11 +227,11 @@ Each `Occurrence` has its own `occurrenceID`. The `Occurrence`s associated with 
 ![Entities](./_images/occurrences.png)
 <p align=center>Figure 6. Occurrences and their evidence in the Unified Model
 
-## 13. Map AgentRoles, Assertions, Citations, and Identifiers for Occurrences and other Events
+## 13. AgentRoles, Assertions, Citations, and Identifiers for Occurrences and other Events
 
 With Locations, Protocols, and Events now in place, the 'common model' tables associated with the `Event`-related tables can be populated. The values for the `targetType` fields of the common model tables MUST be `EVENT` or `OCCURRENCE` and their `targetID`s MUST correspond to the `eventID` or `occurrenceID`, depending on the table they are to be directly related to. Remember that Assertions about ephemeral characterics of the `Organism` should be attached to `Occurrence` rather than `Organism`.
 
-## 14. Map Taxa
+## 14. Taxa
 
 In the UM, a `Taxon` can be expressed as a denormalized (flattened) construct with the (Darwin Core part of a) taxonomic classification in the same record, or as a normalized construct with the classification built of parent/child relationships of taxa of successive ranks. Feel free to use the construct that best matches how your data are structured. The table definition for `Taxon` from [schema.sql](./schema.sql) is:
 
@@ -264,16 +264,36 @@ CREATE TABLE taxon (
 );
 ```
 
-## 15. Map AgentRoles, Assertions, Citations, and Identifiers for Taxa
+## 15. AgentRoles, Assertions, Citations, and Identifiers for Taxa
 
 The 'common model' tables associated with `Taxon` can now be populated. The values for the `targetType` fields of the common model tables MUST be `TAXON` and their `targetID`s MUST correspond to the `taxonID`of the `Taxon` they are to be directly related to.
 
-## 16. Map Identifications
+## 16. Identifications
+
+In the UM, an `Identification` applies to an `Organism`, though the `IdentificationEvidence` may consist of any number of `MaterialEntity`s and/or `DigitalEntity`s. An `Organism` can also have multiple `Identification`s, though only zero or one of these can be marked as 'accepted'. The `Identification` record itself consists of the `verbatimIdentification` string applied to the `Organism` and a `taxonFormula` from a controlled vocabulary that indicates the pattern of taxon names mixed with `[identificationQualifier](https://dwc.tdwg.org/terms/#dwc:identificationQualifier)`s in the `Identification` string. This allows for `Identification`s that are not strictly `[scientificName](https://dwc.tdwg.org/terms/#dwc:scientificName)`s. For reference, here is the statement to create the `Identification` table:
+  
+```
+CREATE TABLE identification (
+  identification_id TEXT PRIMARY KEY,
+  identification_type TEXT NOT NULL,
+  taxon_formula TEXT NOT NULL,
+  verbatim_identification TEXT,
+  type_status TEXT,
+  identified_by TEXT,
+  identified_by_id TEXT,
+  date_identified TEXT,
+  identification_references TEXT,
+  identification_verification_status TEXT,
+  identification_remarks TEXT,
+  type_designation_type TEXT,
+  type_designated_by TEXT
+);
+```
 
 ![Entities](./_images/identifications.png)
 <p align=center>Figure 7. Identifications in the Unified Model
 
-## 17. Map AgentRoles, Assertions, Citations, and Identifiers for Identifications
+## 17. AgentRoles, Assertions, Citations, and Identifiers for Identifications
 
 
 ## Data Mapping (previous draft)
