@@ -95,11 +95,11 @@ Following is an outline of the steps we suggest to following the exercise to map
 
 [14. Map Taxa](#14-map-taxa)
 
-[15. Map AgentRoles, Assertions, Citations, and Identifiers for Taxa](#)
+[15. Map AgentRoles, Assertions, Citations, and Identifiers for Taxa](#15-map-agentroles-assertions-citations-and-identifiers-for-taxa)
 
-[16. Map Identifications](#)
+[16. Map Identifications](#16-map-identifications)
 
-[17. Map AgentRoles, Assertions, Citations, and Identifiers for Identifications](#)
+[17. Map AgentRoles, Assertions, Citations, and Identifiers for Identifications](#17-map-agentroles-assertions-citations-and-identifiers-for-identifications)
 
 ## 1. Map Agents
 
