@@ -84,4 +84,10 @@ public class Location {
 
   @Column(name = "location_remarks")
   private String locationRemarks;
+
+  @Column(name = "accepted_georeference_id")
+  private String acceptedGeorefenceId;
+
+  @Column(name = "accepted_geological_context_id")
+  private String acceptedGeologicalContextId;
 }

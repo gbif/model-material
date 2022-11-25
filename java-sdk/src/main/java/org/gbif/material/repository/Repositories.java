@@ -64,8 +64,7 @@ public class Repositories {
 
   public interface ChronometricAgeRepository extends JpaRepository<ChronometricAge, String> {}
 
-  public interface AgentRoleRepository
-          extends JpaRepository<AgentRole, AgentRole.AgentRolePK> {}
+  public interface AgentRoleRepository extends JpaRepository<AgentRole, AgentRole.AgentRolePK> {}
 
   public interface IdentifierRepository
       extends JpaRepository<Identifier, Identifier.IdentifierPK> {}

@@ -23,8 +23,8 @@ public class Reference {
   @Column(name = "reference_year")
   private Short referenceYear;
 
-  @Column(name = "reference_doi")
-  private String referenceDoi;
+  @Column(name = "reference_uri")
+  private String referenceIri;
 
   @Column(name = "is_peer_reviewed")
   private Boolean isPeerReviewed;

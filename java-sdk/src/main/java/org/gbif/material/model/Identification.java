@@ -14,6 +14,9 @@ public class Identification {
   @Column(name = "identification_id", nullable = false)
   private String id;
 
+  @Column(name = "organism_id", nullable = false)
+  private String organismId;
+
   @Column(name = "identification_type", nullable = false)
   private String identificationType;
 

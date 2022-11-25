@@ -14,7 +14,6 @@ import java.nio.file.Paths;
 import java.util.*;
 import lombok.extern.slf4j.Slf4j;
 import org.gbif.dwc.Archive;
-import org.gbif.dwc.ArchiveFile;
 import org.gbif.dwc.DwcFiles;
 import org.gbif.dwc.record.Record;
 import org.gbif.dwc.record.StarRecord;
@@ -25,7 +24,6 @@ import org.gbif.dwc.terms.Term;
 import org.gbif.dwc.terms.TermFactory;
 import org.gbif.material.model.*;
 import org.gbif.material.repository.*;
-import org.gbif.utils.file.ClosableIterator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -55,13 +53,13 @@ public class DwCATransform implements CommandLineRunner {
 
   private static Term AUDUBON_CORE =
       TermFactory.instance().findClassTerm("http://rs.tdwg.org/ac/terms/Multimedia");
-  private static Term DNA = TermFactory.instance().findClassTerm("http://rs.gbif.org/terms/1.0/DNADerivedData");
+  private static Term DNA =
+      TermFactory.instance().findClassTerm("http://rs.gbif.org/terms/1.0/DNADerivedData");
 
-  private static Term DNA_MIX_44 = TermFactory.instance().findClassTerm("https://w3id.org/gensc/terms/MIXS:0000044");
-  private static Term DNA_SEQUENCE = TermFactory.instance().findClassTerm("http://rs.gbif.org/terms/dna_sequence");
-
-
-
+  private static Term DNA_MIX_44 =
+      TermFactory.instance().findClassTerm("https://w3id.org/gensc/terms/MIXS:0000044");
+  private static Term DNA_SEQUENCE =
+      TermFactory.instance().findClassTerm("http://rs.gbif.org/terms/dna_sequence");
 
   private static String DATASET_ID = "koldingensis";
 
@@ -96,9 +94,47 @@ public class DwCATransform implements CommandLineRunner {
 
     // Step 9: Map Relationships (we've already tracked them, just persist them)
     relationshipsCache.values().forEach(dao::save);
+
+    // Step 10: Locations, Georeferences, and GeologicalContexts
+    // Step 11: AgentRoles, Asserts etc for Location (skipped, no data)
+    for (StarRecord record : dwca) {
+      String locID = guid("LOCATION", record.core().value(locationID));
+      Location location =
+          Location.builder()
+              .id(locID)
+              .country(record.core().value(country))
+              .countryCode(record.core().value(countryCode))
+              .locationAccordingTo(record.core().value(locationAccordingTo))
+              .locality(record.core().value(locality))
+              .county(record.core().value(county))
+              .build();
+      dao.save(location);
+      // only one georeference exists per site in this dataset
+      String geolocationID =
+          guid(
+              "GEOREFERENCE",
+              locID + record.core().value(decimalLatitude) + record.core().value(decimalLongitude));
+      dao.save(
+          Georeference.builder()
+              .id(geolocationID)
+              .location(location)
+              .decimalLatitude(
+                  BigDecimal.valueOf(Double.valueOf(record.core().value(decimalLatitude))))
+              .decimalLongitude(
+                  BigDecimal.valueOf(Double.valueOf(record.core().value(decimalLongitude))))
+              .coordinateUncertaintyInMeters(
+                  BigDecimal.valueOf(
+                      Double.valueOf(record.core().value(coordinateUncertaintyInMeters))))
+              .geodeticDatum(record.core().value(geodeticDatum))
+              .build());
+      // To avoid FK constraint issues, update the location
+      location.setAcceptedGeorefenceId(geolocationID);
+      dao.save(location);
+    }
   }
 
-  private void mapMaterialEntities(Archive dwca, Map<String, EntityRelationship> relationshipsCache) {
+  private void mapMaterialEntities(
+      Archive dwca, Map<String, EntityRelationship> relationshipsCache) {
     log.info("Starting Material Entities");
     for (StarRecord record : dwca) {
       log.info("Starting entity with occurrenceID: {}", record.core().value(DwcTerm.occurrenceID));
@@ -123,7 +159,8 @@ public class DwCATransform implements CommandLineRunner {
     }
   }
 
-  private void mapDigitalEntities(Archive dwca, Map<String, EntityRelationship> relationshipsCache) {
+  private void mapDigitalEntities(
+      Archive dwca, Map<String, EntityRelationship> relationshipsCache) {
     log.info("Starting Digital Entities");
     for (StarRecord record : dwca) {
       log.info("Starting entity with occurrenceID: {}", record.core().value(DwcTerm.occurrenceID));
@@ -135,15 +172,14 @@ public class DwCATransform implements CommandLineRunner {
         createMedia(media, entityID);
 
         relationshipsCache.put(
-                media.value(DwcTerm.resourceRelationshipID),
-                EntityRelationship.builder()
-                        .id(guid())
-                        .subjectEntity(entityID)
-                        .objectEntity(guid("ENTITY", record.core().value(occurrenceID)))
-                        .entityRelationshipType("IMAGE_OF")
-                        .entityRelationshipOrder((short) order++)
-                        .build());
-
+            media.value(DwcTerm.resourceRelationshipID),
+            EntityRelationship.builder()
+                .id(guid())
+                .subjectEntity(entityID)
+                .objectEntity(guid("ENTITY", record.core().value(occurrenceID)))
+                .entityRelationshipType("IMAGE_OF")
+                .entityRelationshipOrder((short) order++)
+                .build());
       }
 
       // Genetic Sequence entities
@@ -154,63 +190,72 @@ public class DwCATransform implements CommandLineRunner {
 
         // sequences relate to the core they hang off
         relationshipsCache.put(
-                dna.value(DwcTerm.resourceRelationshipID),
-                EntityRelationship.builder()
-                        .id(guid())
-                        .subjectEntity(guid("Entity", record.core().value(occurrenceID)))
-                        .objectEntity(dnaEntityID)
-                        .entityRelationshipType("SEQUENCE OF")
-                        .entityRelationshipOrder((short) order++)
-                        .build());
-
+            dna.value(DwcTerm.resourceRelationshipID),
+            EntityRelationship.builder()
+                .id(guid())
+                .subjectEntity(guid("Entity", record.core().value(occurrenceID)))
+                .objectEntity(dnaEntityID)
+                .entityRelationshipType("SEQUENCE OF")
+                .entityRelationshipOrder((short) order++)
+                .build());
       }
     }
   }
 
   private void createMedia(Record media, String entityID) {
     Entity e =
-            dao.save(
-                    Entity.builder()
-                            .id(entityID)
-                            .entityType(Entity.EntityType.DIGITAL_ENTITY)
-                            .datasetId(DATASET_ID)
-                            .build());
+        dao.save(
+            Entity.builder()
+                .id(entityID)
+                .entityType(Entity.EntityType.DIGITAL_ENTITY)
+                .datasetId(DATASET_ID)
+                .build());
     dao.save(
-                    DigitalEntity.builder().id(entityID).digitalEntityType(STILL_IMAGE).entity(e)
-                            .creator(media.value(DcElement.creator))
-                            .rights(media.value(DcElement.creator))
-                            .accessUri(media.value(DcTerm.identifier))
-                            .build());
+        DigitalEntity.builder()
+            .id(entityID)
+            .digitalEntityType(STILL_IMAGE)
+            .entity(e)
+            .creator(media.value(DcElement.creator))
+            .rights(media.value(DcElement.creator))
+            .accessUri(media.value(DcTerm.identifier))
+            .build());
 
     // link media to the creator
-    dao.save(AgentRole.builder()
+    dao.save(
+        AgentRole.builder()
             .agentRoleAgentName(media.value(DcElement.creator))
-            .id(AgentRole.AgentRolePK.builder()
+            .id(
+                AgentRole.AgentRolePK.builder()
                     .agentRoleAgentId(media.value(DcTerm.creator))
                     .agentRoleTargetId(entityID)
                     .agentRoleTargetType(Common.CommonTargetType.DIGITAL_ENTITY)
                     .agentRoleOrder((short) 0)
-                    .build()).build());
-
+                    .build())
+            .build());
   }
 
   private void createGeneticSequence(Record dna, String entityID, String associatedSequencesURI) {
     Entity e =
-            dao.save(
-                    Entity.builder()
-                            .id(entityID)
-                            .entityType(Entity.EntityType.DIGITAL_ENTITY)
-                            .datasetId(DATASET_ID)
-                            .build());
+        dao.save(
+            Entity.builder()
+                .id(entityID)
+                .entityType(Entity.EntityType.DIGITAL_ENTITY)
+                .datasetId(DATASET_ID)
+                .build());
     dao.save(
-            DigitalEntity.builder().id(entityID).digitalEntityType(GENETIC_SEQUENCE).accessUri(associatedSequencesURI).entity(e)
-                    .build());
+        DigitalEntity.builder()
+            .id(entityID)
+            .digitalEntityType(GENETIC_SEQUENCE)
+            .accessUri(associatedSequencesURI)
+            .entity(e)
+            .build());
 
     dao.save(
-            GeneticSequence.builder().id(entityID).sequence(dna.value(DNA_SEQUENCE))
-                    .geneticSequenceType(dna.value(DNA_MIX_44))
-                    .build());
-    
+        GeneticSequence.builder()
+            .id(entityID)
+            .sequence(dna.value(DNA_SEQUENCE))
+            .geneticSequenceType(dna.value(DNA_MIX_44))
+            .build());
   }
 
   /** Create the organism with all it's data, returning the entity ID */
@@ -238,14 +283,18 @@ public class DwCATransform implements CommandLineRunner {
   private String createMaterial(StarRecord record) {
     String entityID = guid("ENTITY", record.core().value(DwcTerm.occurrenceID));
     Entity e =
-            dao.save(
-                    Entity.builder()
-                            .id(entityID)
-                            .entityType(Entity.EntityType.MATERIAL_ENTITY)
-                            .datasetId(DATASET_ID)
-                            .build());
-            dao.save(
-                    MaterialEntity.builder().id(entityID).materialEntityType(record.core().value(basisOfRecord).toUpperCase()).entity(e).build());
+        dao.save(
+            Entity.builder()
+                .id(entityID)
+                .entityType(Entity.EntityType.MATERIAL_ENTITY)
+                .datasetId(DATASET_ID)
+                .build());
+    dao.save(
+        MaterialEntity.builder()
+            .id(entityID)
+            .materialEntityType(record.core().value(basisOfRecord).toUpperCase())
+            .entity(e)
+            .build());
 
     // add our measurements taken against the material
     saveMeasurements(record, entityID, Common.CommonTargetType.MATERIAL_ENTITY);
@@ -253,29 +302,30 @@ public class DwCATransform implements CommandLineRunner {
   }
 
   /** Extracts and persists measurements against the entityID */
-  private void saveMeasurements(StarRecord record, String entityID, Common.CommonTargetType targetType) {
+  private void saveMeasurements(
+      StarRecord record, String entityID, Common.CommonTargetType targetType) {
     for (Record measurement : record.extension(MeasurementOrFact)) {
       String value = measurement.value(measurementValue);
       if (isBigDecimal(value)) {
         dao.save(
-                Assertion.builder()
-                        .id(guid())
-                        .assertionTargetId(entityID)
-                        .assertionTargetType(targetType)
-                        .assertionType(measurement.value(measurementType))
-                        .assertionValueNumeric(BigDecimal.valueOf(Double.valueOf(value)))
-                        .assertionUnit(measurement.value(measurementUnit))
-                        .build());
+            Assertion.builder()
+                .id(guid())
+                .assertionTargetId(entityID)
+                .assertionTargetType(targetType)
+                .assertionType(measurement.value(measurementType))
+                .assertionValueNumeric(BigDecimal.valueOf(Double.valueOf(value)))
+                .assertionUnit(measurement.value(measurementUnit))
+                .build());
       } else {
         dao.save(
-                Assertion.builder()
-                        .id(guid())
-                        .assertionTargetId(entityID)
-                        .assertionTargetType(targetType)
-                        .assertionType(measurement.value(measurementType))
-                        .assertionValue(value)
-                        .assertionUnit(measurement.value(measurementUnit))
-                        .build());
+            Assertion.builder()
+                .id(guid())
+                .assertionTargetId(entityID)
+                .assertionTargetType(targetType)
+                .assertionType(measurement.value(measurementType))
+                .assertionValue(value)
+                .assertionUnit(measurement.value(measurementUnit))
+                .build());
       }
     }
   }

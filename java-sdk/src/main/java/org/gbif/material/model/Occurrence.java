@@ -116,64 +116,64 @@ public class Occurrence {
   private Organism organism;
 
   @Lob
-  @Column(name = "organismquantity")
-  private String organismquantity;
+  @Column(name = "organism_quantity")
+  private String organismQuantity;
 
   @Lob
-  @Column(name = "organismquantitytype")
-  private String organismquantitytype;
+  @Column(name = "organism_quantity_type")
+  private String organismQuantityType;
 
   @Lob
   @Column(name = "sex")
   private String sex;
 
   @Lob
-  @Column(name = "lifestage")
-  private String lifestage;
+  @Column(name = "life_stage")
+  private String lifeStage;
 
   @Lob
-  @Column(name = "reproductivecondition")
-  private String reproductivecondition;
+  @Column(name = "reproductive_condition")
+  private String reproductiveCondition;
 
   @Lob
   @Column(name = "behavior")
   private String behavior;
 
   @Lob
-  @Column(name = "georeferenceverificationstatus")
-  private String georeferenceverificationstatus;
+  @Column(name = "georeference_verification_status")
+  private String georeferenceVerificationStatus;
 
   @Lob
-  @Column(name = "occurrenceremarks")
-  private String occurrenceremarks;
+  @Column(name = "occurrence_remarks")
+  private String occurrenceRemarks;
 
   @Lob
-  @Column(name = "recordedbyid")
-  private String recordedbyid;
+  @Column(name = "recorded_by_id")
+  private String recordedById;
 
   @Lob
-  @Column(name = "informationwithheld")
-  private String informationwithheld;
+  @Column(name = "information_withheld")
+  private String informationWithheld;
 
   @Lob
-  @Column(name = "associatedmedia")
-  private String associatedmedia;
+  @Column(name = "associatedMedia")
+  private String associated_media;
 
   @Lob
-  @Column(name = "datageneralizations")
-  private String datageneralizations;
+  @Column(name = "data_generalizations")
+  private String dataGeneralizations;
 
   @Lob
-  @Column(name = "associatedoccurrences")
-  private String associatedoccurrences;
+  @Column(name = "associated_occurrences")
+  private String associatedOccurrences;
 
   @Lob
-  @Column(name = "recordedby")
-  private String recordedby;
+  @Column(name = "recorded_by")
+  private String recordedBy;
 
   @Lob
-  @Column(name = "associatedtaxa")
-  private String associatedtaxa;
+  @Column(name = "associated_taxa")
+  private String associatedTaxa;
 
   @Column(name = "occurrence_status", columnDefinition = "occurrence_status not null")
   @Enumerated(EnumType.STRING)
