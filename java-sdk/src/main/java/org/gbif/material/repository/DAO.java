@@ -58,6 +58,7 @@ public class DAO {
         AgentRelationship.class.getName(), context.getBean(AgentRelationshipRepository.class));
     repositories.put(Identifier.class.getName(), context.getBean(IdentifierRepository.class));
     repositories.put(AgentGroup.class.getName(), context.getBean(AgentGroupRepository.class));
+    repositories.put(AgentRole.class.getName(), context.getBean(AgentRoleRepository.class));
     repositories.put(
         ChronometricAge.class.getName(), context.getBean(ChronometricAgeRepository.class));
   }

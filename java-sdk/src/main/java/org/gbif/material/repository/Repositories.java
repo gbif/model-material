@@ -1,31 +1,6 @@
 package org.gbif.material.repository;
 
-import org.gbif.material.model.Agent;
-import org.gbif.material.model.AgentGroup;
-import org.gbif.material.model.AgentRelationship;
-import org.gbif.material.model.Assertion;
-import org.gbif.material.model.ChronometricAge;
-import org.gbif.material.model.Collection;
-import org.gbif.material.model.DigitalEntity;
-import org.gbif.material.model.Entity;
-import org.gbif.material.model.EntityRelationship;
-import org.gbif.material.model.Event;
-import org.gbif.material.model.GeneticSequence;
-import org.gbif.material.model.GeologicalContext;
-import org.gbif.material.model.Georeference;
-import org.gbif.material.model.Identification;
-import org.gbif.material.model.IdentificationEvidence;
-import org.gbif.material.model.Identifier;
-import org.gbif.material.model.Location;
-import org.gbif.material.model.MaterialEntity;
-import org.gbif.material.model.MaterialGroup;
-import org.gbif.material.model.Organism;
-import org.gbif.material.model.Protocol;
-import org.gbif.material.model.ProtocolCitation;
-import org.gbif.material.model.Reference;
-import org.gbif.material.model.SequenceTaxon;
-import org.gbif.material.model.Taxon;
-import org.gbif.material.model.TaxonIdentification;
+import org.gbif.material.model.*;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Component;
 
@@ -88,6 +63,9 @@ public class Repositories {
   public interface AgentGroupRepository extends JpaRepository<AgentGroup, String> {}
 
   public interface ChronometricAgeRepository extends JpaRepository<ChronometricAge, String> {}
+
+  public interface AgentRoleRepository
+          extends JpaRepository<AgentRole, AgentRole.AgentRolePK> {}
 
   public interface IdentifierRepository
       extends JpaRepository<Identifier, Identifier.IdentifierPK> {}

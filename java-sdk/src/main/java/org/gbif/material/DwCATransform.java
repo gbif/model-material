@@ -1,10 +1,13 @@
 package org.gbif.material;
 
 import static org.gbif.dwc.terms.DwcTerm.*;
+import static org.gbif.dwc.terms.DwcTerm.recordedBy;
+import static org.gbif.material.model.DigitalEntity.DigitalEntityType.STILL_IMAGE;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.*;
@@ -42,6 +45,13 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 public class DwCATransform implements CommandLineRunner {
   @Autowired private DAO dao;
 
+  // A simple identifier mapping of local to global IDs
+  private static Map<String, String> GUID = new HashMap<>();
+
+  // Caches hold objects we may refer back to in the process
+  private static Map<String, Agent> agentCache = new HashMap<>();
+  private static Map<String, EntityRelationship> relationshipsCache = new HashMap<>();
+
   private static Term AUDUBON_CORE =
       TermFactory.instance().findClassTerm("http://rs.tdwg.org/ac/terms/Multimedia");
 
@@ -54,176 +64,199 @@ public class DwCATransform implements CommandLineRunner {
   }
 
   public void run(String... args) throws IOException {
-
     // Open the source
     Path input = Paths.get("./koldingensis");
     Archive dwca = DwcFiles.fromLocation(input);
     log.info(toJson(dwca));
 
-    ArchiveFile core = dwca.getCore();
-    for (ClosableIterator<Record> it = core.iterator(); it.hasNext(); ) {
-      Record record = it.next();
-
-      // key our entities on the occurrence ID which we know to be unique
-      String occurrenceID = record.value(DwcTerm.occurrenceID);
-      log.info("Starting entities {}", occurrenceID);
-
-      String basisOfRecord = record.value(DwcTerm.basisOfRecord);
-
-      if ("Observation".equalsIgnoreCase(basisOfRecord)) {
-        Entity e =
-            dao.save(
-                Entity.builder()
-                    .id(occurrenceID)
-                    .entityType(Entity.EntityType.MATERIAL_ENTITY)
-                    .datasetId(DATASET_ID)
-                    .build());
-        MaterialEntity m =
-            dao.save(
-                MaterialEntity.builder()
-                    .id(occurrenceID)
-                    .materialEntityType("ORGANISM")
-                    .entity(e)
-                    .build());
-        dao.save(org.gbif.material.model.Organism.builder().id(occurrenceID).entity(e).build());
-
-      } else if ("PreservedSpecimen".equalsIgnoreCase(basisOfRecord)) {
-        Entity e =
-            dao.save(
-                Entity.builder()
-                    .id(occurrenceID)
-                    .entityType(Entity.EntityType.MATERIAL_ENTITY)
-                    .datasetId(DATASET_ID)
-                    .build());
-        dao.save(
-            MaterialEntity.builder()
-                .id(occurrenceID)
-                .materialEntityType("PRESERVED_SPECIMEN")
-                .entity(e)
-                .build());
-
-      } else if ("MaterialSample".equalsIgnoreCase(basisOfRecord)) {
-        Entity e =
-            dao.save(
-                Entity.builder()
-                    .id(occurrenceID)
-                    .entityType(Entity.EntityType.MATERIAL_ENTITY)
-                    .datasetId(DATASET_ID)
-                    .build());
-        dao.save(
-            MaterialEntity.builder()
-                .id(occurrenceID)
-                .materialEntityType("PRESERVED_SPECIMEN")
-                .entity(e)
-                .build());
-      }
-    }
-
-    // What follows could be optimised with a single pass of the archive. However, to demonstrate
-    // the process in order multiple passes are taken as we don't have the ability to query
-    // directly.
-
-    // cache objects for subsequent writing
-    Map<String, Agent> agentCache = new HashMap<>();
-    Map<String, Identifier> identifierCache = new HashMap<>();
-    Map<String, Entity> entityCache = new HashMap<>();
-    Map<String, Entity> materialEntityCache = new HashMap<>();
-    Map<String, Entity> digitalEntityCache = new HashMap<>();
-    Map<String, Entity> geneticSequenceCache = new HashMap<>();
+    // What follows could be optimised with fewer passes of the archive. However, to demonstrate
+    // the process multiple passes are taken as we don't have the ability to query directly.
 
     // Step 1: Map agents
-    mapAgents(dwca, agentCache);
-
-    // Step 2: Map References
-    // Skip as we only have  bibliographic citations
-
+    // Step 2: Map References (skipped, as only bibliographic citations
     // Step 3: Map Assertions, Citations, and Identifiers for Agents
-    // Here we add our ORCIDS
-    mapAgentIDs(agentCache, identifierCache);
+    mapAgents(dwca);
 
-    // Step 4: Map protocols
-    // Skip as omitted
+    // Step 4: Map protocols (None present)
+    // Step 5: Map MaterialEntities (track relationships as we go for ease)
+    // Step 6: Map Assertions, Agents (etc) to MaterialEntities
+    mapMaterialEntities(dwca, relationshipsCache);
 
-    // Step 5: Map entities
-    for (StarRecord rec : dwca) {
-      Record c = rec.core();
-      Map<String, EntityRelationship> relationshipsCache = new HashMap<>();
+    // Step 7: Map DigitalEntities (track relationships as we go for ease)
+    // Step 8: Map Assertions, Agents (etc) to DigitalEntities
+    mapDigitalEntities(dwca, relationshipsCache);
 
-      String basisOfRecord = c.value(DwcTerm.basisOfRecord);
-      String occurrenceID = c.value(DwcTerm.occurrenceID);
+    // Step 9: Map Relationships (we've already tracked them, just persist them)
+    relationshipsCache.values().forEach(dao::save);
+  }
 
-      log.info("Starting entities {}", occurrenceID);
+  private void mapMaterialEntities(Archive dwca, Map<String, EntityRelationship> relationshipsCache) {
+    log.info("Starting Material Entities");
+    for (StarRecord record : dwca) {
+      log.info("Starting entity with occurrenceID: {}", record.core().value(DwcTerm.occurrenceID));
 
-      if ("Observation".equalsIgnoreCase(basisOfRecord)) {
-        Entity e =
-            dao.save(
-                Entity.builder()
-                    .id(occurrenceID)
-                    .entityType(Entity.EntityType.MATERIAL_ENTITY)
-                    .datasetId(DATASET_ID)
-                    .build());
-        MaterialEntity m =
-            dao.save(
-                MaterialEntity.builder()
-                    .id(occurrenceID)
-                    .materialEntityType("ORGANISM")
-                    .entity(e)
-                    .build());
-        dao.save(org.gbif.material.model.Organism.builder().id(occurrenceID).entity(e).build());
+      String basisOfRecord = record.core().value(DwcTerm.basisOfRecord);
+      if ("Observation".equalsIgnoreCase(basisOfRecord)) createOrganism(record);
+      else if ("PreservedSpecimen".equalsIgnoreCase(basisOfRecord)) createMaterial(record);
+      else if ("MaterialSample".equalsIgnoreCase(basisOfRecord)) createMaterial(record);
 
-      } else if ("PreservedSpecimen".equalsIgnoreCase(basisOfRecord)) {
-        Entity e =
-            dao.save(
-                Entity.builder()
-                    .id(occurrenceID)
-                    .entityType(Entity.EntityType.MATERIAL_ENTITY)
-                    .datasetId(DATASET_ID)
-                    .build());
-        dao.save(
-            MaterialEntity.builder()
-                .id(occurrenceID)
-                .materialEntityType("PRESERVED_SPECIMEN")
-                .entity(e)
-                .build());
-
-      } else if ("MaterialSample".equalsIgnoreCase(basisOfRecord)) {
-        Entity e =
-            dao.save(
-                Entity.builder()
-                    .id(occurrenceID)
-                    .entityType(Entity.EntityType.MATERIAL_ENTITY)
-                    .datasetId(DATASET_ID)
-                    .build());
-        dao.save(
-            MaterialEntity.builder()
-                .id(occurrenceID)
-                .materialEntityType("PRESERVED_SPECIMEN")
-                .entity(e)
-                .build());
-      }
-
-      // Step 6. Map EntityRelationships between MaterialEntities
-      for (Record extRec : rec.extension(ResourceRelationship)) {
+      for (Record extRec : record.extension(ResourceRelationship)) {
+        log.info(extRec.value(DwcTerm.resourceID) + " to " + extRec.value(relatedResourceID));
         relationshipsCache.put(
             extRec.value(DwcTerm.resourceRelationshipID),
             EntityRelationship.builder()
-                .id(extRec.value(DwcTerm.resourceRelationshipID))
-                .subjectEntity(extRec.value(DwcTerm.resourceID))
-                .objectEntity(extRec.value(relatedResourceID))
-                .entityRelationshipType(extRec.value(DwcTerm.relationshipOfResource))
+                .id(guid("RELATIONSHIP", extRec.value(DwcTerm.resourceRelationshipID)))
+                .subjectEntity(guid("ENTITY", extRec.value(DwcTerm.resourceID)))
+                .objectEntity(guid("ENTITY", extRec.value(relatedResourceID)))
+                .entityRelationshipType(extRec.value(DwcTerm.relationshipOfResource).toUpperCase())
                 .entityRelationshipOrder((short) 0)
                 .build());
       }
-
-      relationshipsCache.values().forEach(dao::save);
     }
-
-    // Write it all to the DB
-
-    agentCache.values().forEach(dao::save);
-    identifierCache.values().forEach(dao::save);
   }
 
+  private void mapDigitalEntities(Archive dwca, Map<String, EntityRelationship> relationshipsCache) {
+    log.info("Starting Digital Entities");
+    for (StarRecord record : dwca) {
+      log.info("Starting entity with occurrenceID: {}", record.core().value(DwcTerm.occurrenceID));
+
+      // Media digital entities
+      int order = 0;
+      for (Record media : record.extension(AUDUBON_CORE)) {
+        String entityID = guid("ENTITY", media.value(DcTerm.identifier));
+        createMedia(media, entityID);
+
+        relationshipsCache.put(
+                media.value(DwcTerm.resourceRelationshipID),
+                EntityRelationship.builder()
+                        .id(guid())
+                        .subjectEntity(entityID)
+                        .objectEntity(guid("ENTITY", record.core().value(occurrenceID)))
+                        .entityRelationshipType("IMAGE_OF")
+                        .entityRelationshipOrder((short) order++)
+                        .build());
+
+      }
+
+      // Genetic Sequence entities
+    }
+  }
+
+  private void createMedia(Record media, String entityID) {
+    Entity e =
+            dao.save(
+                    Entity.builder()
+                            .id(entityID)
+                            .entityType(Entity.EntityType.DIGITAL_ENTITY)
+                            .datasetId(DATASET_ID)
+                            .build());
+    dao.save(
+                    DigitalEntity.builder().id(entityID).digitalEntityType(STILL_IMAGE).entity(e)
+                            .creator(media.value(DcElement.creator))
+                            .rights(media.value(DcElement.creator))
+                            .accessUri(media.value(DcTerm.identifier))
+                            .build());
+
+    // link media to the creator
+    dao.save(AgentRole.builder()
+            .agentRoleAgentName(media.value(DcElement.creator))
+            .id(AgentRole.AgentRolePK.builder()
+                    .agentRoleAgentId(media.value(DcTerm.creator))
+                    .agentRoleTargetId(entityID)
+                    .agentRoleTargetType(Common.CommonTargetType.DIGITAL_ENTITY)
+                    .agentRoleOrder((short) 0)
+                    .build()).build());
+
+  }
+
+  /** Create the organism with all it's data, returning the entity ID */
+  private String createOrganism(StarRecord record) {
+    String entityID = guid("ENTITY", record.core().value(DwcTerm.occurrenceID));
+    Entity e =
+        dao.save(
+            Entity.builder()
+                .id(entityID)
+                .entityType(Entity.EntityType.MATERIAL_ENTITY)
+                .datasetId(DATASET_ID)
+                .build());
+    MaterialEntity m =
+        dao.save(
+            MaterialEntity.builder().id(entityID).materialEntityType("ORGANISM").entity(e).build());
+    Organism o =
+        dao.save(org.gbif.material.model.Organism.builder().id(entityID).entity(e).build());
+
+    // add our measurements taken against the organism
+    saveMeasurements(record, entityID, Common.CommonTargetType.ORGANISM);
+    return entityID;
+  }
+
+  /** Create the material with all it's data, returning the entity ID */
+  private String createMaterial(StarRecord record) {
+    String entityID = guid("ENTITY", record.core().value(DwcTerm.occurrenceID));
+    Entity e =
+            dao.save(
+                    Entity.builder()
+                            .id(entityID)
+                            .entityType(Entity.EntityType.MATERIAL_ENTITY)
+                            .datasetId(DATASET_ID)
+                            .build());
+            dao.save(
+                    MaterialEntity.builder().id(entityID).materialEntityType(record.core().value(basisOfRecord).toUpperCase()).entity(e).build());
+
+    // add our measurements taken against the material
+    saveMeasurements(record, entityID, Common.CommonTargetType.MATERIAL_ENTITY);
+    return entityID;
+  }
+
+  /** Extracts and persists measurements against the entityID */
+  private void saveMeasurements(StarRecord record, String entityID, Common.CommonTargetType targetType) {
+    for (Record measurement : record.extension(MeasurementOrFact)) {
+      String value = measurement.value(measurementValue);
+      if (isBigDecimal(value)) {
+        dao.save(
+                Assertion.builder()
+                        .id(guid())
+                        .assertionTargetId(entityID)
+                        .assertionTargetType(targetType)
+                        .assertionType(measurement.value(measurementType))
+                        .assertionValueNumeric(BigDecimal.valueOf(Double.valueOf(value)))
+                        .assertionUnit(measurement.value(measurementUnit))
+                        .build());
+      } else {
+        dao.save(
+                Assertion.builder()
+                        .id(guid())
+                        .assertionTargetId(entityID)
+                        .assertionTargetType(targetType)
+                        .assertionType(measurement.value(measurementType))
+                        .assertionValue(value)
+                        .assertionUnit(measurement.value(measurementUnit))
+                        .build());
+      }
+    }
+  }
+
+  private static boolean isBigDecimal(String s) {
+    try {
+      BigDecimal.valueOf(Double.valueOf(s));
+      return true;
+    } catch (Exception e) {
+      return false;
+    }
+  }
+
+  // Mints a new GUID, without any ability to subsequently look it up
+  private static synchronized String guid() {
+    return UUID.randomUUID().toString();
+  }
+  // Mints a new GUID, or returns the previously minted one for the given local ID and type
+  private static synchronized String guid(String type, String local) {
+    String k = type.toUpperCase() + ":" + local.toUpperCase();
+    if (!GUID.containsKey(k)) GUID.put(k, UUID.randomUUID().toString());
+    return GUID.get(k);
+  }
+
+  /** Utility to generate a JSON from DwC-A. */
   private String toJson(Archive dwca) throws JsonProcessingException {
     List<Object> json = new ArrayList<>();
     for (StarRecord rec : dwca) {
@@ -249,32 +282,34 @@ public class DwCATransform implements CommandLineRunner {
     return (new ObjectMapper().writerWithDefaultPrettyPrinter().writeValueAsString(json));
   }
 
-  private void mapAgentIDs(Map<String, Agent> agentCache, Map<String, Identifier> identifierCache) {
-    for (Map.Entry<String, Agent> e : agentCache.entrySet()) {
-      Agent a = e.getValue();
-      identifierCache.put(
-          a.getId(),
-          new Identifier(
-              new Identifier.IdentifierPK(a.getId(), Common.CommonTargetType.AGENT, a.getId())));
-    }
-  }
+  private void mapAgents(Archive dwca) {
+    log.info("Map agents");
 
-  private void mapAgents(Archive dwca, Map<String, Agent> agentCache) {
+    // extract all agents, add to cache to refer to later
     for (StarRecord rec : dwca) {
       Record core = rec.core();
-      log.info("Starting agents {}", core.value(occurrenceID));
-      agentCache.put(
-          core.value(recordedByID),
-          new Agent(core.value(recordedByID), "PERSON", core.value(recordedBy)));
-      agentCache.put(
-          core.value(identifiedByID),
-          new Agent(core.value(identifiedByID), "PERSON", core.value(identifiedBy)));
+      Agent recorder = new Agent(core.value(recordedByID), "PERSON", core.value(recordedBy));
+      Agent identifier = new Agent(core.value(identifiedByID), "PERSON", core.value(identifiedBy));
+      agentCache.put(core.value(recordedByID), recorder);
+      agentCache.put(core.value(identifiedByID), identifier);
 
       for (Record extRec : rec.extension(AUDUBON_CORE)) {
-        agentCache.put(
-            extRec.value(DcTerm.creator),
-            new Agent(extRec.value(DcTerm.creator), "PERSON", extRec.value(DcElement.creator)));
+        Agent imageCreator =
+            new Agent(extRec.value(DcTerm.creator), "PERSON", extRec.value(DcElement.creator));
+        agentCache.put(extRec.value(DcTerm.creator), imageCreator);
       }
     }
+
+    // persist agents, adding the identifier (ORCID here) for each
+    agentCache
+        .values()
+        .forEach(
+            a -> {
+              dao.save(a);
+              dao.save(
+                  new Identifier(
+                      new Identifier.IdentifierPK(
+                          a.getId(), Common.CommonTargetType.AGENT, "ORCID", a.getId())));
+            });
   }
 }

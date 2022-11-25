@@ -28,12 +28,6 @@ import org.hibernate.annotations.OnDeleteAction;
 public class AgentRole {
   @EmbeddedId private AgentRolePK id;
 
-  @MapsId("agentRoleAgentId")
-  @ManyToOne(fetch = FetchType.LAZY, optional = false)
-  @OnDelete(action = OnDeleteAction.CASCADE)
-  @JoinColumn(name = "agent_role_agent_id", nullable = false)
-  private Agent agentRoleAgent;
-
   @Column(name = "agent_role_agent_name")
   private String agentRoleAgentName;
 

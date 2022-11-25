@@ -16,10 +16,9 @@ public class GeneticSequence {
   @Column(name = "genetic_sequence_id", nullable = false)
   private String id;
 
-  @MapsId
-  @OneToOne(fetch = FetchType.LAZY, optional = false)
+  @OneToOne(cascade = CascadeType.MERGE)
   @OnDelete(action = OnDeleteAction.CASCADE)
-  @JoinColumn(name = "genetic_sequence_id", nullable = false)
+  @PrimaryKeyJoinColumn(name = "genetic_sequence_id", referencedColumnName = "digital_entity_id")
   private DigitalEntity digitalEntity;
 
   @Column(name = "genetic_sequence_type", nullable = false)

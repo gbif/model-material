@@ -92,10 +92,9 @@
       <location>MeasurementsAndFacts.tsv</location>
     </files>
     <coreid index="0" />
-    <field index="1" term="http://rs.tdwg.org/dwc/terms/measurementID"/>
-    <field index="2" term="http://rs.tdwg.org/dwc/terms/measurementType"/>
-    <field index="3" term="http://rs.tdwg.org/dwc/terms/measurementValue"/>
-    <field index="4" term="http://rs.tdwg.org/dwc/terms/measurementUnit"/>
+    <field index="1" term="http://rs.tdwg.org/dwc/terms/measurementType"/>
+    <field index="2" term="http://rs.tdwg.org/dwc/terms/measurementValue"/>
+    <field index="3" term="http://rs.tdwg.org/dwc/terms/measurementUnit"/>
   </extension>
 </archive>
 

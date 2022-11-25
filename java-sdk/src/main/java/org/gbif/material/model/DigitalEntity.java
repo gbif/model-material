@@ -29,10 +29,9 @@ public class DigitalEntity {
   @Column(name = "digital_entity_id", nullable = false)
   private String id;
 
-  @MapsId
-  @OneToOne(fetch = FetchType.LAZY, optional = false)
+  @OneToOne(cascade = CascadeType.MERGE)
   @OnDelete(action = OnDeleteAction.CASCADE)
-  @JoinColumn(name = "digital_entity_id", nullable = false)
+  @PrimaryKeyJoinColumn(name = "digital_entity_id", referencedColumnName = "entity_id")
   private Entity entity;
 
   @Column(name = "digital_entity_type", columnDefinition = "entity_type not null")

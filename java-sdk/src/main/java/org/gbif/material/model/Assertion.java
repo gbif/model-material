@@ -71,11 +71,6 @@ public class Assertion {
   @Column(name = "assertion_protocol")
   private String assertionProtocol;
 
-  @ManyToOne(fetch = FetchType.LAZY)
-  @OnDelete(action = OnDeleteAction.CASCADE)
-  @JoinColumn(name = "assertion_protocol_id")
-  private Protocol assertionProtocol1;
-
   @Column(name = "assertion_remarks")
   private String assertionRemarks;
 

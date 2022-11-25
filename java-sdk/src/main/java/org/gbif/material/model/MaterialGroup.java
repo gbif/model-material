@@ -16,10 +16,9 @@ public class MaterialGroup {
   @Column(name = "material_group_id", nullable = false)
   private String id;
 
-  @MapsId
-  @OneToOne(fetch = FetchType.LAZY, optional = false)
+  @OneToOne(cascade = CascadeType.MERGE)
   @OnDelete(action = OnDeleteAction.CASCADE)
-  @JoinColumn(name = "material_group_id", nullable = false)
+  @PrimaryKeyJoinColumn(name = "material_group_id", referencedColumnName = "material_entity_id")
   private MaterialEntity materialEntity;
 
   @Column(name = "material_group_type")

@@ -38,6 +38,9 @@ public class Identifier {
     @Enumerated(EnumType.STRING)
     private Common.CommonTargetType identifierTargetType;
 
+    @Column(name = "identifier_type", nullable = false)
+    private String identifierType;
+
     @NotNull
     @Column(name = "identifier_value", nullable = false)
     private String identifierValue;
