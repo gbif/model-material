@@ -114,7 +114,7 @@ Below is a list of the steps we suggest to follow to map your collection managem
 
 ## 1. Agents
 
-NOTE: Skip this step if your agents are identified only by name (i.e., not with a separate agent identifier).
+NOTE: Skip this step if your `Agent`s are identified only by name (i.e., not with a separate agent identifier).
 
 We recommend to map `Agent`s ((e.g., people, groups of people, organizations, collections, see [Figure 1](#figure-1)) first, if you have them, because their identifiers will be used in the construction of many of the other tables in the UM. If you don't track agents separately in your database, don't worry about it, they can be designated by their names where appropriate in the UM. 
 
@@ -135,12 +135,15 @@ The range of possible relationships between `Agent`s is vast. Note that the rela
 
 ## 2. References
 
-NOTE: Skip if your `Reference`s are identified only by bibliographic citations or if you do not have `Reference`s in your data.
+NOTE: Skip this step if do not have `Reference`s in your data or if your `Reference`s are identified only by bibliographic citations.
 
-A `Reference`, like an `Agent`, has the potential to be related to many different kinds of things (e.g., `MaterialEntity`, `Event`, `Taxon`) in the UM, through `Citation`s. So, if you track references with identifiers, create `Reference` records for them so that they can be connected when the other tables they are related to are created. If you don't track reference separately in your database, don't worry about it, they can be designated by their bibliographic citations where appropriate in the UM. 
+In the UM, a `Reference`, like an `Agent`, has the potential to be related to many different kinds of things (e.g., `MaterialEntity`, `Event`, `Taxon`) through `Citation`s. If you track references with identifiers, create `Reference` records for them so that they can be connected in later steps when the other tables they are related to are created. If you don't track reference separately in your database, don't worry about it, they can be designated by their bibliographic citations where appropriate in the UM. 
+
+<p align=center><img src="./_images/citations.png" alt="citations" width="75%"/>
+<p align=center>Figure 2. Citations of References in the Unified Model
 
 ### `referenceType` vocabulary
-Here are some suggestions, but feel free to suggest others if none of these suffices: `JOURNAL_ARTICLE`, `BOOK`, `BOOK_SECTION`, `DISSERTATION`,  `FIELD_NOTEBOOK`, `WEB_PAGE`, `OTHER`.
+Here are some suggestions for values of `referenceType`, but feel free to use others if none of these suffices: `JOURNAL_ARTICLE`, `BOOK`, `BOOK_SECTION`, `DISSERTATION`,  `FIELD_NOTEBOOK`, `WEB_PAGE`, `OTHER`.
 
 ## 3. Assertions, Citations, and Identifiers for Agents
 
@@ -160,7 +163,7 @@ A `Protocol` can be used by the classes `Event`, `ChronometricAge`, and the vari
 ## 5. MaterialEntities
 
 <p align=center><img src="./_images/entities.png" alt="agents" width="75%"/>
-<p align=center>Figure 2. Entities and their relationships in the Unified Model
+<p align=center>Figure 3. Entities and their relationships in the Unified Model
 
 A `MaterialEntity` can be any physical object (same as [bco:material entity](http://purl.obolibrary.org/obo/BFO_0000040) and [dcterms:PhysicalResource](http://purl.org/dc/terms/PhysicalResource)). In the UM there can be many types of `MaterialEntity`s, which are distinguished by the value of `materialEntityType`. These can be as specific as desired, but there are two `MaterialEntity` subtype classes to distinguish two important concepts, `MaterialGroup` and `Organism`. For each `MaterialEntity`, also create an `Entity` record using the same identifier for the `entityID` as for the `digitalEntityID`. The `entityType` for the `Entity` MUST be `MATERIAL_ENTITY`. 
   
@@ -170,12 +173,12 @@ An Organism (same as [dwc:Organism](https://dwc.tdwg.org/terms/#organism)) is mo
 
 ## 6. AgentRoles, Assertions, Citations, Identifiers and ChronometricAges for MaterialEntities and their subtypes
 
-Figure 3 shows the relationships between `MaterialEntity` and associated tables, including the common model tables. The relationships between `MaterialEntity` and other `Entity ` tables was shown in Figure 2. Each of the `Entity` tables can be connected to the common model tables. The important thing is to make sure that the connections happen at the appropriate, most specific level in the hierarchy. For example, suppose a blood sample was taken from an `Organism` and its volume was measured. The blood sample is a `MaterialEntity` (NOT and `Organism`). There should be an `EntityRelationship` showing the subject `MaterialEntity` had the relationship `extractedFrom` the object `Organism`. The blood sample volume should result in an `Assertion` for the `MaterialEntity`, not an `Assertion` for the corresponding parent `Entity` record, nor the related `Organism` record. Specifically, the `assertionTargetID` should be the same as the `materialEntityID` for the blood sample, the `assertionTargetType` MUST be `MATERIAL_ENTITY`, the `assertionType` should be `VOLUME`, the `assertionValue` should be left empty, the `assertionValueNumeric` should have the numerical value of the volume, and the `assertionUnit` should have an appropriate SI unit (e.g., 'ml'). The same principles apply to relationships to the `Citation`, `AgentRole` and `Identifier` tables - they should be associated with the correct `Entity`.
+Figure 4 shows the relationships between `MaterialEntity` and associated tables, including the common model tables. The relationships between `MaterialEntity` and other `Entity ` tables was shown in Figure 3. Each of the `Entity` tables can be connected to the common model tables. The important thing is to make sure that the connections happen at the appropriate, most specific level in the hierarchy. For example, suppose a blood sample was taken from an `Organism` and its volume was measured. The blood sample is a `MaterialEntity` (NOT and `Organism`). There should be an `EntityRelationship` showing the subject `MaterialEntity` had the relationship `extractedFrom` the object `Organism`. The blood sample volume should result in an `Assertion` for the `MaterialEntity`, not an `Assertion` for the corresponding parent `Entity` record, nor the related `Organism` record. Specifically, the `assertionTargetID` should be the same as the `materialEntityID` for the blood sample, the `assertionTargetType` MUST be `MATERIAL_ENTITY`, the `assertionType` should be `VOLUME`, the `assertionValue` should be left empty, the `assertionValueNumeric` should have the numerical value of the volume, and the `assertionUnit` should have an appropriate SI unit (e.g., 'ml'). The same principles apply to relationships to the `Citation`, `AgentRole` and `Identifier` tables - they should be associated with the correct `Entity`.
  
 A `ChronometricAge`s MUST only be related directly to a `MaterialEntity`. 
 
 <p align=center><img src="./_images/materialentities.png" alt="agents"/>
-<p align=center>Figure 3. MaterialEntities and related tables in the Unified Model
+<p align=center>Figure 4. MaterialEntities and related tables in the Unified Model
   
 ## 7. DigitalEntities
 
@@ -195,27 +198,27 @@ CREATE TYPE DIGITAL_ENTITY_TYPE AS ENUM (
 );
 ```
   
-One of these, the `GENETIC_SEQUENCE` is a formal subtype of `DigitalEntity` (see Figure 2). This means that when a `GENETIC_SEQUENCE` record is created, a corresponding `MaterialEntity` record MUST also be created, and the `digitalEntityType` for it MUST be `GENETIC_SEQUENCE`. For each `DigitalEntity`, also create an `Entity` record using the same unique identifier for the `entityID` as for the `digitalEntityID`. The `entityType` for the `Entity` MUST be `DIGITAL_ENTITY`.
+One of these, the `GENETIC_SEQUENCE` is a formal subtype of `DigitalEntity` (see Figure 3). This means that when a `GENETIC_SEQUENCE` record is created, a corresponding `MaterialEntity` record MUST also be created, and the `digitalEntityType` for it MUST be `GENETIC_SEQUENCE`. For each `DigitalEntity`, also create an `Entity` record using the same unique identifier for the `entityID` as for the `digitalEntityID`. The `entityType` for the `Entity` MUST be `DIGITAL_ENTITY`.
 
 ## 8. AgentRoles, Assertions, Citations, and Identifiers for DigitalEntities
 
-The same kinds of common model associations shown in Figure 3 for `MaterialEntity`s can be made for `DigitalEntity`s, except that each `targetID` MUST be the same as the identifier (`digitalEntityID` or `geneticSequenceID`) for the `DigitalEntity` or `GeneticSequence` it is directly associated with. The values for the `targetType` fields MUST be `DIGITAL_ENTITY` or `GENETIC_SEQUENCE`, depending on the table they are to be directly related to.
+The same kinds of common model associations shown in Figure 4 for `MaterialEntity`s can be made for `DigitalEntity`s, except that each `targetID` MUST be the same as the identifier (`digitalEntityID` or `geneticSequenceID`) for the `DigitalEntity` or `GeneticSequence` it is directly associated with. The values for the `targetType` fields MUST be `DIGITAL_ENTITY` or `GENETIC_SEQUENCE`, depending on the table they are to be directly related to.
 
 ## 9. EntityRelationships
 
-At this stage in the process, all of the `Entity` records will have been created, providing the prerequisite for being able to create the relationships between them. The supertype/subtype relationships between `Entity` tables were shown above in Figure 2, and should already heve been created at this point. Here we will concentrate on other associations, ones that can be captured in the `EntityRelationship` table. The `EntityRelationship` table is a powerful way to make just about any connection between Entities in the UM. Any Entity can be related to any other one with any relationship. There are two things to keep in mind here. The first is that the subtype relationships should be strictly relegated to the correspondence of the values of identifier fields (e.g., `entityID` and `materialEntityID` for a `MaterialEntity`). This would be the equivalent of an `EntityRelationship` stating that a particular `Entity` `isA` `MaterialEntity`, which would be superfluous. The second thing to keep in mind is that the semantics of the relationships is entirely dependent on the clear understanding of the predicate (the `entityRelationshipType`) and the correct assignment of `Entities` to the subject and object roles. The relationships should always be read as 'subject predicate object' - that is, the relationship has a direction. Each relationship can have a complementary one where the subject/object roles are reversed and the predicate shows what the relationship looks like from the opposite direction. For example, if `Organism` 'A' was `eaten by` another `Organism` 'B', it follows that `Organism` 'B' `ate` `Organism` 'A'. It is not clear at the time of developing this documentation whether reverse roles are necessary. We leave that decision to your discretion when populating `EntityRelationship`s.
+At this stage in the process, all of the `Entity` records will have been created, providing the prerequisite for being able to create the relationships between them. The supertype/subtype relationships between `Entity` tables were shown above in Figure 3, and should already heve been created at this point. Here we will concentrate on other associations, ones that can be captured in the `EntityRelationship` table. The `EntityRelationship` table is a powerful way to make just about any connection between Entities in the UM. Any Entity can be related to any other one with any relationship. There are two things to keep in mind here. The first is that the subtype relationships should be strictly relegated to the correspondence of the values of identifier fields (e.g., `entityID` and `materialEntityID` for a `MaterialEntity`). This would be the equivalent of an `EntityRelationship` stating that a particular `Entity` `isA` `MaterialEntity`, which would be superfluous. The second thing to keep in mind is that the semantics of the relationships is entirely dependent on the clear understanding of the predicate (the `entityRelationshipType`) and the correct assignment of `Entities` to the subject and object roles. The relationships should always be read as 'subject predicate object' - that is, the relationship has a direction. Each relationship can have a complementary one where the subject/object roles are reversed and the predicate shows what the relationship looks like from the opposite direction. For example, if `Organism` 'A' was `eaten by` another `Organism` 'B', it follows that `Organism` 'B' `ate` `Organism` 'A'. It is not clear at the time of developing this documentation whether reverse roles are necessary. We leave that decision to your discretion when populating `EntityRelationship`s.
 
 
 ## 10. Locations, Georeferences, and GeologicalContexts
 
-`Location`s in the UM are used to provide both textual and geospatial context. In particular, they are used to describe where `Event`s happened. Figure 4 shows the structural relationships between the `Location`-related tables in the UM. 
+`Location`s in the UM are used to provide both textual and geospatial context. In particular, they are used to describe where `Event`s happened. Figure 5 shows the structural relationships between the `Location`-related tables in the UM. 
   
 Georeferences are special assertions of the geospatial interpretation of a `Location`s. As assertions, the model supports zero, one, or multiple interpretations per `Location`, whether current, historical, accepted, or disputed. The UM also supports the designation of zero or one accepted georeferences by populating `acceptedGeoreferenceID` in the `Location` table with the `georeferenceID` of the corresponding `Georeference`, if any. 
   
 `GeologicalContext`s is modeled similarly to a `Georeference`, but with an `acceptedGeologicalContextID` in the `Location` table that MUST match the `geologicalContextID` of the corresponding `GeologicalContext`, if any. 
   
 <p align=center><img src="./_images/locations.png" alt="locations" width="50%"/>
-<p align=center>Figure 4. Locations, Georeferences and GeologicalContexts in the Unified Model
+<p align=center>Figure 5. Locations, Georeferences and GeologicalContexts in the Unified Model
 
 ## 11. AgentRoles, Assertions, Citations, and Identifiers for Locations, Georeferences, and GeologicalContexts
 
@@ -227,7 +230,7 @@ The 'common model' tables associated with the three `Location`-related tables ca
 An `Event` is something that happens within a place during a period of time. The spatial scale and temporal duration may be as specific or vague as necessary, and may or may not be provided. `Event`s are hierarchical in the UM, with a parent `Event` containing all of its child `Event`s both spatially and temporally. A project (or any other higher organizational initiative) might be a parent-most `Event`, the spatial and temporal limits of which encompass all of the `Event`s within it. The next level down might consist of collecting expeditions launched as part of the parent project, for example. Each `Event` can likewise encompass sub-`Event`s to an arbitrary hierarchical depth, each with the same or distinct `Location` and temporal bounds as its parent (under the limitation of being contained).
 
 <p align=center><img src="./_images/events.png" alt="events" width="75%"/>
-<p align=center>Figure 5. Events in the Unified Model
+<p align=center>Figure 6. Events in the Unified Model
 
 In the UM, an `Occurrence` is a subtype of `Event` in which the activity (observing, collecting, sampling) established the existence of an `Organism` within a spatiotemporal context, usually with accompanying evidence. The `OccurrenceEvidence` table serves to connect the `Occurrence` with digital and/or material evidence, such as images, material samples or whole organisms, and genetic sequences. In collections, an `Organism` is often effectively the `Entity` that gets cataloged, with an accompanying list of 'preparations' that represent the parts of the `Organism` that are or were present in the collection. If you do not track 'parts' separtely with their own characteristics, the `Organism` record would be the one used for the `OccurrenceEvidence`. Note that the `organismID` is not an `occurrenceID` - the former is an identifer for an `Organism` (a `MaterialEntity`), while the latter is an identifier for the `Occurrence` (an `Event`), and `MaterialEntity`s are not `Event`s. In the absence of unique (and distinct) identifers for `Organism`s and `Occurrence`s, they will have to be generated to populate the UM correctly, as described in the [General considerations](#general-considerations) section.
 
@@ -236,7 +239,7 @@ The `Occurrence` carries with it the ephemeral characteristics of the Organism a
 Each `Occurrence` has its own `occurrenceID`. The `Occurrence`s associated with a given `Organism` can be discovered by the `organismID` they have in common. Every `Occurrence` must have a corresponding `Event` record in which the `eventID` is the same is the `occurrenceID` and the `eventType` for the `Event` record MUST be `OCCURRENCE`.
   
 ![Entities](./_images/occurrences.png)
-<p align=center>Figure 6. Occurrences and their evidence in the Unified Model
+<p align=center>Figure 7. Occurrences and their evidence in the Unified Model
 
 ## 13. AgentRoles, Assertions, Citations, and Identifiers for Occurrences and other Events
 
@@ -302,7 +305,7 @@ CREATE TABLE identification (
 ```
 
 ![Entities](./_images/identifications.png)
-<p align=center>Figure 7. Identifications in the Unified Model
+<p align=center>Figure 8. Identifications in the Unified Model
 
 ### `taxonFormula` vocabulary
   
