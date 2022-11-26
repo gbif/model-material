@@ -147,16 +147,16 @@ Here are some suggestions for values of `referenceType`, but feel free to use ot
 
 ## 3. Assertions, Citations, and Identifiers for Agents
 
-NOTE: Skip if you created no `Agent` records in [Step 1](#1-agents)
+NOTE: Skip this step if you created no `Agent` records in [Step 1](#1-agents)
 
-It is possible to create Agent `Assertion`s, `Citation`s, and `Identifier`s. See [GBIF Common Models](https://docs.google.com/document/d/1ZTMt-V3U0D0761bqqogeN58MjuHhIs_Kisu6CRtl-uA/edit?usp=sharing) for general discussions about how to map to these three types of tables and considerations when developing the vocabularies for `assertion_type` and `assertion_unit`.
+It is possible to create `Assertion`s, `Citation`s, and `Identifier`s for `Agent`s. See [GBIF Common Models](https://docs.google.com/document/d/1ZTMt-V3U0D0761bqqogeN58MjuHhIs_Kisu6CRtl-uA/edit?usp=sharing) for general discussions about how to map to these three types of tables and considerations when developing the vocabularies for `assertionType` and `assertionUnit`.
 
 ### `assertionTargetType` vocabulary
-The value for this term MUST be one of `AGENT`, `AGENT_GROUP`, or `COLLECTION` and MUST match the table to which the Assertion applies.
+The value for this term MUST be one of `AGENT`, `AGENT_GROUP`, or `COLLECTION` and MUST match the table to which the `Assertion` applies.
 
 ## 4. Protocols
 
-NOTE: Skip if your `Protocol`s are identified only by simple strings (names or descriptions) or if you do not have `Protocol`s mentioned in your data.
+NOTE: Skip this step if your `Protocol`s are identified only by simple strings (names or descriptions) or if you do not have `Protocol`s mentioned in your data.
 
 A `Protocol` can be used by the classes `Event`, `ChronometricAge`, and the various `Assertion`s. If you track protocols with identifiers, create `Protocol` records for them so that they can be connected when the tables they are related to are created.
 
@@ -165,11 +165,11 @@ A `Protocol` can be used by the classes `Event`, `ChronometricAge`, and the vari
 <p align=center><img src="./_images/entities.png" alt="agents" width="75%"/>
 <p align=center>Figure 3. Entities and their relationships in the Unified Model
 
-A `MaterialEntity` can be any physical object (same as [bco:material entity](http://purl.obolibrary.org/obo/BFO_0000040) and [dcterms:PhysicalResource](http://purl.org/dc/terms/PhysicalResource)). In the UM there can be many types of `MaterialEntity`s, which are distinguished by the value of `materialEntityType`. These can be as specific as desired, but there are two `MaterialEntity` subtype classes to distinguish two important concepts, `MaterialGroup` and `Organism`. For each `MaterialEntity`, also create an `Entity` record using the same identifier for the `entityID` as for the `digitalEntityID`. The `entityType` for the `Entity` MUST be `MATERIAL_ENTITY`. 
-  
-A `MaterialGroup` is any set of `MaterialEntity`s and its utility is to be able to make `Assertion`s about the group as a whole, distinct from `Assertion`s about its individual members (e.g., the weight of an entire catch as opposed to the weights of selected individuals in the catch). A `MaterialGroup` record MUST have a corresponding `MaterialEntity` record, which in turn MUST have `MATERIAL_GROUP` as its `materialEntityType`.
+A `MaterialEntity` can be any physical object (same as [bco:material entity](http://purl.obolibrary.org/obo/BFO_0000040) and [dcterms:PhysicalResource](http://purl.org/dc/terms/PhysicalResource)). In the UM there can be many types of `MaterialEntity`s, which are distinguished by the value of `materialEntityType`. These can be as specific as desired, but there are two `MaterialEntity` subtype classes to distinguish two important concepts, `MaterialGroup` and `Organism`. For each `MaterialEntity` record you create, also create an `Entity` record using the same identifier for the `entityID` as for the `materialEntityID`. The `entityType` for the `Entity` MUST be `MATERIAL_ENTITY`. 
 
-An Organism (same as [dwc:Organism](https://dwc.tdwg.org/terms/#organism)) is modeled in the UM as a `MaterialEntity`, even if none of the material remains accessible (such as in the case of some observations, or the case of a specimen that was lost or destroyed). In the most basic case, a cataloged item consists of the entire existing material remains of a single `Organism`. These may be separated into "parts", which may or may not be tracked separately. When they are tracked separately, the `Entity` that unites them is the `Organism`. The derivation of the "parts" from the `Organism` (or from each other) are [expressed through `EntityRelatiosnhip`s](#7-entityrelationships-between-materialentities). An `Organism` record MUST have a corresponding `MaterialEntity` record, which in turn MUST have `ORGANISM` as its `materialEntityType`.
+A `MaterialGroup` is any set of `MaterialEntity`s and the utility of this concept is to be able to make `Assertion`s about the group as a whole, distinct from `Assertion`s about its individual members (e.g., the weight of an entire catch as opposed to the weights of selected individuals in the catch). A `MaterialGroup` record MUST have a corresponding `MaterialEntity` record, which in turn MUST have `MATERIAL_GROUP` as its `materialEntityType`. Potential vocabulary terms for `materialGroupType` are `HAUL` and `LOT`. Feel free to create others as needed.
+
+An Organism (same as [dwc:Organism](https://dwc.tdwg.org/terms/#organism)) is modeled in the UM as a `MaterialEntity`, even if none of the material remains accessible (such as in the case of some observations, or the case of a specimen that was lost or destroyed). Even though an `Organism` might also act as an `Agent`, we do not currently model it in this way. In the most basic case, a cataloged item consists of the entire existing accessible material remains of a single `Organism`. These may be separated into "parts" in a database, which may or may not be tracked separately. When they are tracked separately, the `Entity` that unites them is the `Organism`. The derivation of the "parts" from the `Organism` (or from each other) are expressed through [`EntityRelationship`](#9-entityrelationships)s. An `Organism` record MUST have a corresponding `MaterialEntity` record with its `materialEntityID` the same as the `organismID`. The `materialEntityType` of of the `MaterialEntity` record MUST be `ORGANISM`. The `MaterialEntity` record for the `Organism` must in turn have a corresponding `Entity` record with its `entityID` the same as the `organismID` an `materialEntityID`. The `entityType` of the `Entity` record MUST be `MATERIAL_ENTITY`.
 
 ## 6. AgentRoles, Assertions, Citations, Identifiers and ChronometricAges for MaterialEntities and their subtypes
 
