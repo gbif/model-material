@@ -6,8 +6,6 @@ A overview of the structure of the UM is given in the figure below, which omits 
 
 <p align=center><img src="./_images/um_4.5.png" alt="um" width="100%"/>
 
-<img width="1294" alt="um_4.5" src="">
-
 Participants in this process shape data from their collections onto the UM and load it into the PostgreSQL database (see [schema](./schema.sql)). A folder for each participant captures the data files, which may be further divided in subfolders per collection or dataset.
 
 Contributions through pull requests are preferred, but assistance will be given to those unfamiliar with GitHub. Contributions from external groups not participating in the open call are also very welcome through pull requests. 
