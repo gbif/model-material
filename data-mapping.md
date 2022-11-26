@@ -213,18 +213,18 @@ The `EntityRelationship` table is a powerful way to make just about any connecti
 
 ## 10. Locations, Georeferences, and GeologicalContexts
 
-`Location`s in the UM are used to provide both textual and geospatial context. In particular, they are used to describe where `Event`s happened. Figure 5 shows the structural relationships between the `Location`-related tables in the UM. 
+`Location`s in the UM are used to provide both textual and geospatial context to `Event`s. `Location` can be expressed as a denormalized (flattened) construct with the (Darwin Core part of a) geographic classification in the same record, or as a normalized construct with the geography built of parent/child relationships of successive administrative regions. Figure 5 shows the structural relationships between the `Location`-related tables in the UM. 
   
-Georeferences are special assertions of the geospatial interpretation of a `Location`s. As assertions, the model supports zero, one, or multiple interpretations per `Location`, whether current, historical, accepted, or disputed. The UM also supports the designation of zero or one accepted georeferences by populating `acceptedGeoreferenceID` in the `Location` table with the `georeferenceID` of the corresponding `Georeference`, if any. 
+`Georeference`s are special assertions of the geospatial interpretation of a `Location`s. As assertions, the model supports zero, one, or multiple georeferences per `Location`, whether current or historical, accepted or disputed. The UM also supports the designation of zero or one accepted `Georeference`s by populating `acceptedGeoreferenceID` in the `Location` table with the `georeferenceID` of the corresponding accepted `Georeference`, if any. 
   
-`GeologicalContext`s is modeled similarly to a `Georeference`, but with an `acceptedGeologicalContextID` in the `Location` table that MUST match the `geologicalContextID` of the corresponding `GeologicalContext`, if any. 
+`GeologicalContext` is modeled similarly to a `Georeference`, but with an `acceptedGeologicalContextID` in the `Location` table that MUST match the `geologicalContextID` of the corresponding `GeologicalContext`, if any. 
   
 <p align=center><img src="./_images/locations.png" alt="locations" width="50%"/>
 <p align=center>Figure 5. Locations, Georeferences and GeologicalContexts in the Unified Model
 
 ## 11. AgentRoles, Assertions, Citations, and Identifiers for Locations, Georeferences, and GeologicalContexts
 
-The 'common model' tables associated with the three `Location`-related tables can be populated at this point. The values for the `targetType` fields of the common model tables MUST be `LOCATION`, `GEOREFERENCE` or `GEOLOGICAL_CONTEXT`, and their `targetID`s MUST correspond to the `locationID`, `georeferenceID` or `geologicalContextID`, depending on the table they are to be directly related to.
+The 'common model' tables associated with the three `Location`-related tables can be populated at this point. The values for the `targetType` fields of the 'common model' tables MUST be `LOCATION`, `GEOREFERENCE` or `GEOLOGICAL_CONTEXT`, and their `targetID`s MUST correspond to the `locationID`, `georeferenceID` or `geologicalContextID`, depending on the table they are to be directly related to.
 
 
 ## 12. Occurrences and other Events
