@@ -103,6 +103,10 @@ public class DwCATransform implements CommandLineRunner {
 
     // 12. Occurrences and other Events
     // 13. AgentRoles, Assertions, Citations, and Identifiers for Occurrences and other Events
+    mapOccurrences(dwca);
+  }
+
+  private void mapOccurrences(Archive dwca) {
     for (StarRecord record : dwca) {
       String basisOfRecord = record.core().value(DwcTerm.basisOfRecord);
       if ("Observation".equalsIgnoreCase(basisOfRecord)) {
