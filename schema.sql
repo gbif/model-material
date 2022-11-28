@@ -1,5 +1,5 @@
 ---
--- Schema for the specimen-related contracts.
+-- Schema for the specimen-related exploration.
 -- 
 --  To aid readability, this file is structured as:
 -- 
