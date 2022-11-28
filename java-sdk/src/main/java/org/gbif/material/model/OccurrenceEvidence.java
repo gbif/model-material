@@ -15,16 +15,14 @@ import org.hibernate.annotations.OnDeleteAction;
 public class OccurrenceEvidence {
   @EmbeddedId private OccurrenceEvidencePK id;
 
-  @MapsId("occurrenceId")
-  @ManyToOne(fetch = FetchType.LAZY, optional = false)
+  @OneToOne(cascade = CascadeType.MERGE)
   @OnDelete(action = OnDeleteAction.CASCADE)
-  @JoinColumn(name = "occurrence_id", nullable = false)
+  @PrimaryKeyJoinColumn(name = "occurrence_id", referencedColumnName = "occurrence_id")
   private Occurrence occurrence;
 
-  @MapsId("entityId")
-  @ManyToOne(fetch = FetchType.LAZY, optional = false)
+  @OneToOne(cascade = CascadeType.MERGE)
   @OnDelete(action = OnDeleteAction.CASCADE)
-  @JoinColumn(name = "entity_id", nullable = false)
+  @PrimaryKeyJoinColumn(name = "entity_id", referencedColumnName = "entity_id")
   private org.gbif.material.model.Entity entity;
 
   @Data

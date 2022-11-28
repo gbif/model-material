@@ -3,6 +3,7 @@ package org.gbif.material.repository;
 import static org.gbif.material.repository.Repositories.*;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import javax.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
@@ -17,7 +18,7 @@ import org.springframework.stereotype.Component;
 public class DAO {
   @Autowired private ApplicationContext context;
 
-  private Map<String, JpaRepository<?, ?>> repositories = new HashMap();
+  public Map<String, JpaRepository<?, ?>> repositories = new HashMap();
 
   @PostConstruct
   public void init() {
@@ -62,6 +63,7 @@ public class DAO {
     repositories.put(
         ChronometricAge.class.getName(), context.getBean(ChronometricAgeRepository.class));
     repositories.put(Occurrence.class.getName(), context.getBean(OccurrenceRepository.class));
+    repositories.put(OccurrenceEvidence.class.getName(), context.getBean(OccurrenceEvidenceRepository.class));
   }
 
   public <T extends Object> T save(T o) {
@@ -71,5 +73,16 @@ public class DAO {
     }
     log.info("Saving {}: {}", o.getClass(), o);
     return (T) jpa.save(o);
+  }
+
+  public <T> List<T> findAll(Class<T> o) {
+    log.info("LISTING" + o.getName());
+
+    JpaRepository jpa = repositories.get(o.getName());
+    if (jpa == null) {
+      throw new IllegalArgumentException(o.getName() + " is not registered");
+    }
+    log.info("Listing {}: {}", o.getName());
+    return (List<T>) jpa.findAll();
   }
 }

@@ -12,6 +12,7 @@ import java.math.BigDecimal;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.*;
+import java.util.stream.Collectors;
 import lombok.extern.slf4j.Slf4j;
 import org.gbif.dwc.Archive;
 import org.gbif.dwc.DwcFiles;
@@ -116,7 +117,7 @@ public class DwCATransform implements CommandLineRunner {
                 .build();
         dao.save(event);
         String organismID = guid("ENTITY", record.core().value(DwcTerm.occurrenceID));
-        dao.save(
+        Occurrence occurrence =
             org.gbif.material.model.Occurrence.builder()
                 .id(eventID)
                 .associatedTaxa(record.core().value(associatedTaxa))
@@ -124,9 +125,56 @@ public class DwCATransform implements CommandLineRunner {
                 .occurrenceStatus(org.gbif.material.model.Occurrence.OccurrenceStatus.PRESENT)
                 .event(event)
                 .organismId(organismID)
-                .build());
+                .build();
+        dao.save(occurrence);
+
+        // Extract the occurrence evidence from the relationships created on the entities.
+        // This hack(!!!) to find all nested entities works here because we only have a single
+        // organism
+        List<String> evidenceRelationships =
+            Arrays.asList("MATERIAL SAMPLE OF", "IMAGE OF", "SEQUENCE OF");
+        Set<String> evidenceIDs =
+                dao.findAll(EntityRelationship.class).stream()
+                .filter(a -> evidenceRelationships.contains(a.getEntityRelationshipType()))
+                .map(EntityRelationship::getSubjectEntity)
+                .collect(Collectors.toSet());
+        for (String id : evidenceIDs) {
+          dao.save(
+              OccurrenceEvidence.builder()
+                  .occurrence(occurrence)
+                  .id(
+                      OccurrenceEvidence.OccurrenceEvidencePK.builder()
+                          .occurrenceId(occurrence.getId())
+                          .entityId(id)
+                          .build()).build());
+        }
+
+        // From the guidelines: "Assertions about ephemeral characterics of the Organism should be attached to Occurrence rather than Organism."
+        saveMeasurements(record, eventID, Common.CommonTargetType.OCCURRENCE);
+
+        // add our collector and identifier events
+        addAgent(record.core().value(recordedBy), record.core().value(recordedByID), eventID, Common.CommonTargetType.OCCURRENCE, (short) 0);
+        addAgent(record.core().value(identifiedBy), record.core().value(identifiedByID), eventID, Common.CommonTargetType.OCCURRENCE, (short) 0);
+
       }
     }
+  }
+
+  /**
+   * Creates an agent for the role given
+   */
+  private void addAgent(String agentName, String agentID, String targetID, Common.CommonTargetType targetType, short order) {
+    dao.save(
+            AgentRole.builder()
+                    .agentRoleAgentName(agentName)
+                    .id(
+                            AgentRole.AgentRolePK.builder()
+                                    .agentRoleAgentId(agentID)
+                                    .agentRoleTargetId(targetID)
+                                    .agentRoleTargetType(targetType)
+                                    .agentRoleOrder(order)
+                                    .build())
+                    .build());
   }
 
   private void mapLocations(Archive dwca) {
@@ -252,17 +300,7 @@ public class DwCATransform implements CommandLineRunner {
             .build());
 
     // link media to the creator
-    dao.save(
-        AgentRole.builder()
-            .agentRoleAgentName(media.value(DcElement.creator))
-            .id(
-                AgentRole.AgentRolePK.builder()
-                    .agentRoleAgentId(media.value(DcTerm.creator))
-                    .agentRoleTargetId(entityID)
-                    .agentRoleTargetType(Common.CommonTargetType.DIGITAL_ENTITY)
-                    .agentRoleOrder((short) 0)
-                    .build())
-            .build());
+    addAgent(media.value(DcElement.creator), media.value(DcTerm.creator), entityID, Common.CommonTargetType.DIGITAL_ENTITY, (short) 0);
   }
 
   private void createGeneticSequence(Record dna, String entityID, String associatedSequencesURI) {
@@ -305,8 +343,6 @@ public class DwCATransform implements CommandLineRunner {
     Organism o =
         dao.save(org.gbif.material.model.Organism.builder().id(entityID).entity(e).build());
 
-    // add our measurements taken against the organism
-    saveMeasurements(record, entityID, Common.CommonTargetType.ORGANISM);
     return entityID;
   }
 
@@ -327,21 +363,20 @@ public class DwCATransform implements CommandLineRunner {
             .entity(e)
             .build());
 
-    // add our measurements taken against the material
     saveMeasurements(record, entityID, Common.CommonTargetType.MATERIAL_ENTITY);
     return entityID;
   }
 
   /** Extracts and persists measurements against the entityID */
   private void saveMeasurements(
-      StarRecord record, String entityID, Common.CommonTargetType targetType) {
+      StarRecord record, String targetID, Common.CommonTargetType targetType) {
     for (Record measurement : record.extension(MeasurementOrFact)) {
       String value = measurement.value(measurementValue);
       if (isBigDecimal(value)) {
         dao.save(
             Assertion.builder()
                 .id(guid())
-                .assertionTargetId(entityID)
+                .assertionTargetId(targetID)
                 .assertionTargetType(targetType)
                 .assertionType(measurement.value(measurementType))
                 .assertionValueNumeric(BigDecimal.valueOf(Double.valueOf(value)))
@@ -351,7 +386,7 @@ public class DwCATransform implements CommandLineRunner {
         dao.save(
             Assertion.builder()
                 .id(guid())
-                .assertionTargetId(entityID)
+                .assertionTargetId(targetID)
                 .assertionTargetType(targetType)
                 .assertionType(measurement.value(measurementType))
                 .assertionValue(value)

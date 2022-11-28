@@ -70,4 +70,5 @@ public class Repositories {
       extends JpaRepository<Identifier, Identifier.IdentifierPK> {}
 
   public interface OccurrenceRepository extends JpaRepository<Occurrence, String> {}
+  public interface OccurrenceEvidenceRepository extends JpaRepository<OccurrenceEvidence, OccurrenceEvidence.OccurrenceEvidencePK> {};
 }
