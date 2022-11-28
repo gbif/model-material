@@ -101,8 +101,8 @@ public class DwCATransform implements CommandLineRunner {
     // Step 11: AgentRoles, Asserts etc for Location (skipped, no data)
     mapLocations(dwca);
 
-    // 12. Occurrences and other Events
-    // 13. AgentRoles, Assertions, Citations, and Identifiers for Occurrences and other Events
+    // Step 12. Occurrences and other Events
+    // Step 13. AgentRoles, Assertions, Citations, and Identifiers for Occurrences and other Events
     mapOccurrences(dwca);
   }
 
