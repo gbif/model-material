@@ -138,7 +138,7 @@ public class DwCATransform implements CommandLineRunner {
         List<String> evidenceRelationships =
             Arrays.asList("MATERIAL SAMPLE OF", "IMAGE OF", "SEQUENCE OF");
         Set<String> evidenceIDs =
-                dao.findAll(EntityRelationship.class).stream()
+            dao.findAll(EntityRelationship.class).stream()
                 .filter(a -> evidenceRelationships.contains(a.getEntityRelationshipType()))
                 .map(EntityRelationship::getSubjectEntity)
                 .collect(Collectors.toSet());
@@ -150,35 +150,53 @@ public class DwCATransform implements CommandLineRunner {
                       OccurrenceEvidence.OccurrenceEvidencePK.builder()
                           .occurrenceId(occurrence.getId())
                           .entityId(id)
-                          .build()).build());
+                          .build())
+                  .build());
         }
 
-        // From the guidelines: "Assertions about ephemeral characterics of the Organism should be attached to Occurrence rather than Organism."
+        // From the guidelines: "Assertions about ephemeral characterics of the Organism should be
+        // attached to Occurrence rather than Organism."
         saveMeasurements(record, eventID, Common.CommonTargetType.OCCURRENCE);
 
         // add our collector and identifier events
-        addAgent(record.core().value(recordedBy), record.core().value(recordedByID), eventID, Common.CommonTargetType.OCCURRENCE, (short) 0);
-        addAgent(record.core().value(identifiedBy), record.core().value(identifiedByID), eventID, Common.CommonTargetType.OCCURRENCE, (short) 0);
-
+        addAgent(
+            record.core().value(recordedBy),
+            record.core().value(recordedByID),
+            eventID,
+            Common.CommonTargetType.OCCURRENCE,
+            (short) 0,
+            "RECORDED BY");
+        addAgent(
+            record.core().value(identifiedBy),
+            record.core().value(identifiedByID),
+            eventID,
+            Common.CommonTargetType.OCCURRENCE,
+            (short) 0,
+            "IDENTIFIED BY");
       }
     }
   }
 
-  /**
-   * Creates an agent for the role given
-   */
-  private void addAgent(String agentName, String agentID, String targetID, Common.CommonTargetType targetType, short order) {
+  /** Creates an agent for the role given */
+  private void addAgent(
+      String agentName,
+      String agentID,
+      String targetID,
+      Common.CommonTargetType targetType,
+      short order,
+      String role) {
     dao.save(
-            AgentRole.builder()
-                    .agentRoleAgentName(agentName)
-                    .id(
-                            AgentRole.AgentRolePK.builder()
-                                    .agentRoleAgentId(agentID)
-                                    .agentRoleTargetId(targetID)
-                                    .agentRoleTargetType(targetType)
-                                    .agentRoleOrder(order)
-                                    .build())
-                    .build());
+        AgentRole.builder()
+            .agentRoleAgentName(agentName)
+            .agentRoleRole(role)
+            .id(
+                AgentRole.AgentRolePK.builder()
+                    .agentRoleAgentId(agentID)
+                    .agentRoleTargetId(targetID)
+                    .agentRoleTargetType(targetType)
+                    .agentRoleOrder(order)
+                    .build())
+            .build());
   }
 
   private void mapLocations(Archive dwca) {
@@ -304,7 +322,13 @@ public class DwCATransform implements CommandLineRunner {
             .build());
 
     // link media to the creator
-    addAgent(media.value(DcElement.creator), media.value(DcTerm.creator), entityID, Common.CommonTargetType.DIGITAL_ENTITY, (short) 0);
+    addAgent(
+        media.value(DcElement.creator),
+        media.value(DcTerm.creator),
+        entityID,
+        Common.CommonTargetType.DIGITAL_ENTITY,
+        (short) 0,
+        "CREATOR");
   }
 
   private void createGeneticSequence(Record dna, String entityID, String associatedSequencesURI) {
