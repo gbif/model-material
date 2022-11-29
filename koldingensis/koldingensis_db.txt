@@ -705,17 +705,17 @@ CREATE TABLE public.taxon_identification (
 
 
 --
--- Name: 74411; Type: BLOB; Schema: -; Owner: -
+-- Name: 75723; Type: BLOB; Schema: -; Owner: -
 --
 
-SELECT pg_catalog.lo_create('74411');
+SELECT pg_catalog.lo_create('75723');
 
 
 --
--- Name: 74412; Type: BLOB; Schema: -; Owner: -
+-- Name: 75724; Type: BLOB; Schema: -; Owner: -
 --
 
-SELECT pg_catalog.lo_create('74412');
+SELECT pg_catalog.lo_create('75724');
 
 
 --
@@ -749,11 +749,11 @@ COPY public.agent_relationship (subject_agent_id, relationship_to, object_agent_
 --
 
 COPY public.agent_role (agent_role_target_id, agent_role_target_type, agent_role_agent_id, agent_role_agent_name, agent_role_role, agent_role_began, agent_role_ended, agent_role_order) FROM stdin;
-6f473129-afb7-4b53-8861-34110e9fad44	DIGITAL_ENTITY	https://orcid.org/0000-0003-1691-239X	Thomas Stjernegaard Jeppesen	\N	\N	\N	0
-745e879d-f347-47f3-aa65-75f0cc59fc2c	DIGITAL_ENTITY	https://orcid.org/0000-0003-1691-239X	Thomas Stjernegaard Jeppesen	\N	\N	\N	0
-0d5ee3ab-7362-4ebb-9d3b-7f77c1d841d4	DIGITAL_ENTITY	https://orcid.org/0000-0003-1691-239X	Thomas Stjernegaard Jeppesen	\N	\N	\N	0
-252f2cc1-afe0-4bb7-8b2b-731d42dde41b	DIGITAL_ENTITY	https://orcid.org/0000-0002-3530-013X	Tobias Frøslev	\N	\N	\N	0
-8f6acf6b-1cac-4448-9d52-641ff2167a84	OCCURRENCE	https://orcid.org/0000-0002-3530-013X	Tobias Frøslev	\N	\N	\N	0
+dc04a8dd-f73e-41c3-9d5a-4f96e2d59feb	DIGITAL_ENTITY	https://orcid.org/0000-0003-1691-239X	Thomas Stjernegaard Jeppesen	CREATOR	\N	\N	0
+c558c451-d4bd-4449-8f2f-a3d0bf8b7667	DIGITAL_ENTITY	https://orcid.org/0000-0003-1691-239X	Thomas Stjernegaard Jeppesen	CREATOR	\N	\N	0
+2428b3d3-b2ee-470c-952f-fb99b871dd08	DIGITAL_ENTITY	https://orcid.org/0000-0003-1691-239X	Thomas Stjernegaard Jeppesen	CREATOR	\N	\N	0
+7982c131-93da-48d8-b84f-b543790ef4f7	DIGITAL_ENTITY	https://orcid.org/0000-0002-3530-013X	Tobias Frøslev	CREATOR	\N	\N	0
+ff3c4518-d18d-4673-99f5-3a80fa1ce066	OCCURRENCE	https://orcid.org/0000-0002-3530-013X	Tobias Frøslev	IDENTIFIED BY	\N	\N	0
 \.
 
 
@@ -762,26 +762,26 @@ COPY public.agent_role (agent_role_target_id, agent_role_target_type, agent_role
 --
 
 COPY public.assertion (assertion_id, assertion_target_id, assertion_target_type, assertion_parent_assertion_id, assertion_type, assertion_made_date, assertion_effective_date, assertion_value, assertion_value_numeric, assertion_unit, assertion_by_agent_name, assertion_by_agent_id, assertion_protocol, assertion_protocol_id, assertion_remarks) FROM stdin;
-ce459b2e-5ba0-4ba7-84b8-5c358ba92cea	e9c0aff0-dfd5-4002-a536-fc7e82c83571	MATERIAL_ENTITY	\N	Spore length	\N	\N	\N	11.0	µm	\N	\N	\N	\N	\N
-8c1125ff-bc77-461b-895d-9452a8ecf046	e9c0aff0-dfd5-4002-a536-fc7e82c83571	MATERIAL_ENTITY	\N	Spore length	\N	\N	\N	11.5	µm	\N	\N	\N	\N	\N
-d597e55e-6a18-45f5-9d5e-af8013b8a511	e9c0aff0-dfd5-4002-a536-fc7e82c83571	MATERIAL_ENTITY	\N	Spore length	\N	\N	\N	11.5	µm	\N	\N	\N	\N	\N
-142530b3-ff6c-4888-ba14-609e5aeb212c	e9c0aff0-dfd5-4002-a536-fc7e82c83571	MATERIAL_ENTITY	\N	Spore length	\N	\N	\N	11.5	µm	\N	\N	\N	\N	\N
-a478310e-a591-4cf4-b33b-b992131360ef	e9c0aff0-dfd5-4002-a536-fc7e82c83571	MATERIAL_ENTITY	\N	Spore length	\N	\N	\N	11.5	µm	\N	\N	\N	\N	\N
-759483a7-9ebb-4c97-b099-96afe604c845	e9c0aff0-dfd5-4002-a536-fc7e82c83571	MATERIAL_ENTITY	\N	Spore length	\N	\N	\N	11.5	µm	\N	\N	\N	\N	\N
-b40922a8-d767-4ea9-a6c7-0a83f5241c63	e9c0aff0-dfd5-4002-a536-fc7e82c83571	MATERIAL_ENTITY	\N	Spore length	\N	\N	\N	12.0	µm	\N	\N	\N	\N	\N
-9b046b42-08dd-4605-a853-e068b4663b8d	e9c0aff0-dfd5-4002-a536-fc7e82c83571	MATERIAL_ENTITY	\N	Spore length	\N	\N	\N	12.0	µm	\N	\N	\N	\N	\N
-eae26bf0-7397-4a78-a9f7-e61a08054655	e9c0aff0-dfd5-4002-a536-fc7e82c83571	MATERIAL_ENTITY	\N	Spore length	\N	\N	\N	12.5	µm	\N	\N	\N	\N	\N
-d3b9cbab-e8cd-4ad6-93c4-a8decfd663c1	e9c0aff0-dfd5-4002-a536-fc7e82c83571	MATERIAL_ENTITY	\N	Spore length	\N	\N	\N	12.5	µm	\N	\N	\N	\N	\N
-2ce99358-86f3-495f-8803-e970ec4bb383	e9c0aff0-dfd5-4002-a536-fc7e82c83571	MATERIAL_ENTITY	\N	Spore length	\N	\N	\N	12.5	µm	\N	\N	\N	\N	\N
-cf43365f-632a-4a87-8f83-2cea1bf7053c	e9c0aff0-dfd5-4002-a536-fc7e82c83571	MATERIAL_ENTITY	\N	Spore length	\N	\N	\N	13.0	µm	\N	\N	\N	\N	\N
-800a5024-aee7-4045-b28d-cb9a6585862b	e9c0aff0-dfd5-4002-a536-fc7e82c83571	MATERIAL_ENTITY	\N	Spore length	\N	\N	\N	13.0	µm	\N	\N	\N	\N	\N
-fea6a7fa-eb81-4626-8968-adee9d2fb0bf	e9c0aff0-dfd5-4002-a536-fc7e82c83571	MATERIAL_ENTITY	\N	Spore length	\N	\N	\N	13.0	µm	\N	\N	\N	\N	\N
-87d2ba60-a572-4b7d-9fbf-e92aaa53c94f	e9c0aff0-dfd5-4002-a536-fc7e82c83571	MATERIAL_ENTITY	\N	Spore length	\N	\N	\N	13.5	µm	\N	\N	\N	\N	\N
-3bce3eb2-d457-4b2c-91e1-64081b1d375f	8f6acf6b-1cac-4448-9d52-641ff2167a84	OCCURRENCE	\N	MACROCHEMICAL REACTION (10 % KOH) in context	\N	\N	brownish	\N	\N	\N	\N	\N	\N	\N
-77140b39-a536-42ef-aeae-e46da018afb5	8f6acf6b-1cac-4448-9d52-641ff2167a84	OCCURRENCE	\N	MACROCHEMICAL REACTION (10 % KOH) on bulbipellis	\N	\N	negative	\N	\N	\N	\N	\N	\N	\N
-47d826eb-7243-4a26-8e47-6c72e8de0ea0	8f6acf6b-1cac-4448-9d52-641ff2167a84	OCCURRENCE	\N	MACROCHEMICAL REACTION (10 % KOH) on pileus	\N	\N	brownish	\N	\N	\N	\N	\N	\N	\N
-4350b1f8-dca7-481c-ae4c-b8b8c8dfb634	8f6acf6b-1cac-4448-9d52-641ff2167a84	OCCURRENCE	\N	MACROCHEMICAL REACTION (10 % KOH) on rhizomorphs	\N	\N	strongly blood red to pink-red	\N	\N	\N	\N	\N	\N	\N
-e39268d8-a7d1-4a2c-9587-28ef9623c61e	8f6acf6b-1cac-4448-9d52-641ff2167a84	OCCURRENCE	\N	MACROCHEMICAL REACTION (10 % KOH) on veil at bulb margin	\N	\N	dark brownish to almost blackish	\N	\N	\N	\N	\N	\N	\N
+e6b90f50-2fa9-46f4-8844-16708626d6f6	5c488c08-8cab-444a-9598-806dd0abec85	MATERIAL_ENTITY	\N	Spore length	\N	\N	\N	11.0	µm	\N	\N	\N	\N	\N
+a797a72a-334c-4ca4-8308-ff7d6df05e81	5c488c08-8cab-444a-9598-806dd0abec85	MATERIAL_ENTITY	\N	Spore length	\N	\N	\N	11.5	µm	\N	\N	\N	\N	\N
+ceb894c4-8558-4130-9270-acf70c11ce5e	5c488c08-8cab-444a-9598-806dd0abec85	MATERIAL_ENTITY	\N	Spore length	\N	\N	\N	11.5	µm	\N	\N	\N	\N	\N
+8af1084c-2b25-4d3c-b087-a9c0a446a8d3	5c488c08-8cab-444a-9598-806dd0abec85	MATERIAL_ENTITY	\N	Spore length	\N	\N	\N	11.5	µm	\N	\N	\N	\N	\N
+2a6d2695-a2c5-4701-b018-966f11d0dd21	5c488c08-8cab-444a-9598-806dd0abec85	MATERIAL_ENTITY	\N	Spore length	\N	\N	\N	11.5	µm	\N	\N	\N	\N	\N
+8efa7f79-ed29-4e8f-9ea1-36eddad25228	5c488c08-8cab-444a-9598-806dd0abec85	MATERIAL_ENTITY	\N	Spore length	\N	\N	\N	11.5	µm	\N	\N	\N	\N	\N
+0fb9fe51-6b9a-438d-b36a-df3811b2e8b5	5c488c08-8cab-444a-9598-806dd0abec85	MATERIAL_ENTITY	\N	Spore length	\N	\N	\N	12.0	µm	\N	\N	\N	\N	\N
+aefe13b4-859f-4d73-ab59-7a9016823618	5c488c08-8cab-444a-9598-806dd0abec85	MATERIAL_ENTITY	\N	Spore length	\N	\N	\N	12.0	µm	\N	\N	\N	\N	\N
+abebbb2a-8143-4702-9727-79c86303b452	5c488c08-8cab-444a-9598-806dd0abec85	MATERIAL_ENTITY	\N	Spore length	\N	\N	\N	12.5	µm	\N	\N	\N	\N	\N
+abac43a1-918a-4e11-8785-700e6c460857	5c488c08-8cab-444a-9598-806dd0abec85	MATERIAL_ENTITY	\N	Spore length	\N	\N	\N	12.5	µm	\N	\N	\N	\N	\N
+431bef2d-d722-4d6b-bb5b-c283b54b6245	5c488c08-8cab-444a-9598-806dd0abec85	MATERIAL_ENTITY	\N	Spore length	\N	\N	\N	12.5	µm	\N	\N	\N	\N	\N
+e06031fa-d0e2-48cb-9ff7-aeab659a4868	5c488c08-8cab-444a-9598-806dd0abec85	MATERIAL_ENTITY	\N	Spore length	\N	\N	\N	13.0	µm	\N	\N	\N	\N	\N
+dfbc03a2-8696-4a3d-9a06-895e9264a07d	5c488c08-8cab-444a-9598-806dd0abec85	MATERIAL_ENTITY	\N	Spore length	\N	\N	\N	13.0	µm	\N	\N	\N	\N	\N
+259b7c43-abe7-4850-af87-60e011f776ae	5c488c08-8cab-444a-9598-806dd0abec85	MATERIAL_ENTITY	\N	Spore length	\N	\N	\N	13.0	µm	\N	\N	\N	\N	\N
+3fc4acfd-4bf0-46a9-9558-a1c6720d9ae8	5c488c08-8cab-444a-9598-806dd0abec85	MATERIAL_ENTITY	\N	Spore length	\N	\N	\N	13.5	µm	\N	\N	\N	\N	\N
+e7f81312-ba27-4163-b4ad-1d6ad1336eb8	ff3c4518-d18d-4673-99f5-3a80fa1ce066	OCCURRENCE	\N	MACROCHEMICAL REACTION (10 % KOH) in context	\N	\N	brownish	\N	\N	\N	\N	\N	\N	\N
+caca049c-1eee-404d-ae09-6372ceb24f9a	ff3c4518-d18d-4673-99f5-3a80fa1ce066	OCCURRENCE	\N	MACROCHEMICAL REACTION (10 % KOH) on bulbipellis	\N	\N	negative	\N	\N	\N	\N	\N	\N	\N
+d07391ab-a27c-4ca0-a66f-28de069458c8	ff3c4518-d18d-4673-99f5-3a80fa1ce066	OCCURRENCE	\N	MACROCHEMICAL REACTION (10 % KOH) on pileus	\N	\N	brownish	\N	\N	\N	\N	\N	\N	\N
+70d6306c-1d52-458b-b4be-44c441390a77	ff3c4518-d18d-4673-99f5-3a80fa1ce066	OCCURRENCE	\N	MACROCHEMICAL REACTION (10 % KOH) on rhizomorphs	\N	\N	strongly blood red to pink-red	\N	\N	\N	\N	\N	\N	\N
+26207188-6e7f-4a56-95e8-f1cda99483fb	ff3c4518-d18d-4673-99f5-3a80fa1ce066	OCCURRENCE	\N	MACROCHEMICAL REACTION (10 % KOH) on veil at bulb margin	\N	\N	dark brownish to almost blackish	\N	\N	\N	\N	\N	\N	\N
 \.
 
 
@@ -814,11 +814,11 @@ COPY public.collection (collection_id, collection_type, collection_code, institu
 --
 
 COPY public.digital_entity (digital_entity_id, digital_entity_type, access_uri, web_statement, format, license, rights, rights_uri, access_rights, rights_holder, source, source_uri, creator, created, modified, language, bibliographic_citation) FROM stdin;
-6f473129-afb7-4b53-8861-34110e9fad44	STILL_IMAGE	https://svampe.databasen.org/uploads/2013-640926_Bys5jgKIj.JPG	\N	\N	\N	Thomas Stjernegaard Jeppesen	\N	\N	\N	\N	\N	Thomas Stjernegaard Jeppesen	\N	\N	\N	\N
-745e879d-f347-47f3-aa65-75f0cc59fc2c	STILL_IMAGE	https://svampe.databasen.org/uploads/2013-640926_HyxhsgFLi.JPG	\N	\N	\N	Thomas Stjernegaard Jeppesen	\N	\N	\N	\N	\N	Thomas Stjernegaard Jeppesen	\N	\N	\N	\N
-0d5ee3ab-7362-4ebb-9d3b-7f77c1d841d4	STILL_IMAGE	https://svampe.databasen.org/uploads/2013-640926_rJJAieYUi.JPG	\N	\N	\N	Thomas Stjernegaard Jeppesen	\N	\N	\N	\N	\N	Thomas Stjernegaard Jeppesen	\N	\N	\N	\N
-252f2cc1-afe0-4bb7-8b2b-731d42dde41b	STILL_IMAGE	https://svampe.databasen.org/uploads/TF2013-640926_B1sPYTWZg.JPG	\N	\N	\N	Tobias Frøslev	\N	\N	\N	\N	\N	Tobias Frøslev	\N	\N	\N	\N
-82a4e8d9-aae9-4105-81f8-2567746b33a0	GENETIC_SEQUENCE	https://www.ncbi.nlm.nih.gov/nuccore/KT222912	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N
+dc04a8dd-f73e-41c3-9d5a-4f96e2d59feb	STILL_IMAGE	https://svampe.databasen.org/uploads/2013-640926_Bys5jgKIj.JPG	\N	\N	\N	Thomas Stjernegaard Jeppesen	\N	\N	\N	\N	\N	Thomas Stjernegaard Jeppesen	\N	\N	\N	\N
+c558c451-d4bd-4449-8f2f-a3d0bf8b7667	STILL_IMAGE	https://svampe.databasen.org/uploads/2013-640926_HyxhsgFLi.JPG	\N	\N	\N	Thomas Stjernegaard Jeppesen	\N	\N	\N	\N	\N	Thomas Stjernegaard Jeppesen	\N	\N	\N	\N
+2428b3d3-b2ee-470c-952f-fb99b871dd08	STILL_IMAGE	https://svampe.databasen.org/uploads/2013-640926_rJJAieYUi.JPG	\N	\N	\N	Thomas Stjernegaard Jeppesen	\N	\N	\N	\N	\N	Thomas Stjernegaard Jeppesen	\N	\N	\N	\N
+7982c131-93da-48d8-b84f-b543790ef4f7	STILL_IMAGE	https://svampe.databasen.org/uploads/TF2013-640926_B1sPYTWZg.JPG	\N	\N	\N	Tobias Frøslev	\N	\N	\N	\N	\N	Tobias Frøslev	\N	\N	\N	\N
+2c79e965-273d-4b6e-945d-f62a1acd3ea5	GENETIC_SEQUENCE	https://www.ncbi.nlm.nih.gov/nuccore/KT222912	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N
 \.
 
 
@@ -827,14 +827,14 @@ COPY public.digital_entity (digital_entity_id, digital_entity_type, access_uri, 
 --
 
 COPY public.entity (entity_id, entity_type, dataset_id, entity_name, entity_remarks) FROM stdin;
-2d7c29f9-761b-4f0e-8e6a-982c2d0fb3af	MATERIAL_ENTITY	koldingensis	\N	\N
-e9c0aff0-dfd5-4002-a536-fc7e82c83571	MATERIAL_ENTITY	koldingensis	\N	\N
-7a8174e6-358b-46cf-a570-b3c9ea4ba82f	MATERIAL_ENTITY	koldingensis	\N	\N
-6f473129-afb7-4b53-8861-34110e9fad44	DIGITAL_ENTITY	koldingensis	\N	\N
-745e879d-f347-47f3-aa65-75f0cc59fc2c	DIGITAL_ENTITY	koldingensis	\N	\N
-0d5ee3ab-7362-4ebb-9d3b-7f77c1d841d4	DIGITAL_ENTITY	koldingensis	\N	\N
-252f2cc1-afe0-4bb7-8b2b-731d42dde41b	DIGITAL_ENTITY	koldingensis	\N	\N
-82a4e8d9-aae9-4105-81f8-2567746b33a0	DIGITAL_ENTITY	koldingensis	\N	\N
+ccc3f96a-ce5f-4b90-9b37-ef2227e46aab	MATERIAL_ENTITY	koldingensis	\N	\N
+5c488c08-8cab-444a-9598-806dd0abec85	MATERIAL_ENTITY	koldingensis	\N	\N
+57e3dca9-4ebb-4ea2-a845-405398ab73b3	MATERIAL_ENTITY	koldingensis	\N	\N
+dc04a8dd-f73e-41c3-9d5a-4f96e2d59feb	DIGITAL_ENTITY	koldingensis	\N	\N
+c558c451-d4bd-4449-8f2f-a3d0bf8b7667	DIGITAL_ENTITY	koldingensis	\N	\N
+2428b3d3-b2ee-470c-952f-fb99b871dd08	DIGITAL_ENTITY	koldingensis	\N	\N
+7982c131-93da-48d8-b84f-b543790ef4f7	DIGITAL_ENTITY	koldingensis	\N	\N
+2c79e965-273d-4b6e-945d-f62a1acd3ea5	DIGITAL_ENTITY	koldingensis	\N	\N
 \.
 
 
@@ -843,16 +843,16 @@ e9c0aff0-dfd5-4002-a536-fc7e82c83571	MATERIAL_ENTITY	koldingensis	\N	\N
 --
 
 COPY public.entity_relationship (entity_relationship_id, depends_on_entity_relationship_id, subject_entity_id, entity_relationship_type, object_entity_id, object_entity_iri, entity_relationship_date, entity_relationship_order) FROM stdin;
-005daa6f-863e-4138-b6d2-409565dbc530	\N	745e879d-f347-47f3-aa65-75f0cc59fc2c	IMAGE OF	2d7c29f9-761b-4f0e-8e6a-982c2d0fb3af	\N	\N	1
-8ff3d176-ae52-4957-b04c-4fb87a9fc92e	\N	7a8174e6-358b-46cf-a570-b3c9ea4ba82f	SEQUENCE OF	82a4e8d9-aae9-4105-81f8-2567746b33a0	\N	\N	0
-2644a61c-7ca8-4594-94be-f92d68f1a354	\N	e9c0aff0-dfd5-4002-a536-fc7e82c83571	MATERIAL SAMPLE OF	2d7c29f9-761b-4f0e-8e6a-982c2d0fb3af	\N	\N	0
-37643a9a-b8b1-464b-8b9c-00600fc98698	\N	252f2cc1-afe0-4bb7-8b2b-731d42dde41b	IMAGE OF	2d7c29f9-761b-4f0e-8e6a-982c2d0fb3af	\N	\N	3
-0cc8d5d2-a076-4065-a353-bed343151760	\N	e9c0aff0-dfd5-4002-a536-fc7e82c83571	SOURCE MATERIAL OF	7a8174e6-358b-46cf-a570-b3c9ea4ba82f	\N	\N	0
-20bbe82a-2a3f-4a5b-8264-3e521744419b	\N	252f2cc1-afe0-4bb7-8b2b-731d42dde41b	IMAGE OF	e9c0aff0-dfd5-4002-a536-fc7e82c83571	\N	\N	0
-db0c5b17-fdf9-4945-b4dd-d313a29ca3f7	\N	7a8174e6-358b-46cf-a570-b3c9ea4ba82f	MATERIAL SAMPLE OF	e9c0aff0-dfd5-4002-a536-fc7e82c83571	\N	\N	0
-8c9dfce1-db5b-4127-a08b-a3a55a097108	\N	7a8174e6-358b-46cf-a570-b3c9ea4ba82f	MATERIAL SAMPLE OF	2d7c29f9-761b-4f0e-8e6a-982c2d0fb3af	\N	\N	0
-6d74a82b-ac43-4c0f-9c1d-42216d8f96f5	\N	0d5ee3ab-7362-4ebb-9d3b-7f77c1d841d4	IMAGE OF	2d7c29f9-761b-4f0e-8e6a-982c2d0fb3af	\N	\N	2
-d2f1b550-3da9-4422-99b6-8767fa4d5cf1	\N	6f473129-afb7-4b53-8861-34110e9fad44	IMAGE OF	2d7c29f9-761b-4f0e-8e6a-982c2d0fb3af	\N	\N	0
+f46aac4b-47ef-4f30-93b2-874d82ef2505	\N	57e3dca9-4ebb-4ea2-a845-405398ab73b3	SEQUENCE OF	2c79e965-273d-4b6e-945d-f62a1acd3ea5	\N	\N	0
+2e636dc0-9541-41e4-8091-52dcc8a74d45	\N	5c488c08-8cab-444a-9598-806dd0abec85	MATERIAL SAMPLE OF	ccc3f96a-ce5f-4b90-9b37-ef2227e46aab	\N	\N	0
+3044b4a0-7303-4ace-805c-d764080b6e35	\N	5c488c08-8cab-444a-9598-806dd0abec85	SOURCE MATERIAL OF	57e3dca9-4ebb-4ea2-a845-405398ab73b3	\N	\N	0
+597f2181-31a7-450d-b5d5-d90866170c7a	\N	57e3dca9-4ebb-4ea2-a845-405398ab73b3	MATERIAL SAMPLE OF	5c488c08-8cab-444a-9598-806dd0abec85	\N	\N	0
+5b43eb3f-0f9d-4a13-b7f9-4c7e0692b34d	\N	57e3dca9-4ebb-4ea2-a845-405398ab73b3	MATERIAL SAMPLE OF	ccc3f96a-ce5f-4b90-9b37-ef2227e46aab	\N	\N	0
+bd554496-0d19-42c7-b8af-7535bd5fc288	\N	c558c451-d4bd-4449-8f2f-a3d0bf8b7667	IMAGE OF	ccc3f96a-ce5f-4b90-9b37-ef2227e46aab	\N	\N	1
+2b1e1304-9404-4a50-9d6c-f5bc346543ee	\N	7982c131-93da-48d8-b84f-b543790ef4f7	IMAGE OF	ccc3f96a-ce5f-4b90-9b37-ef2227e46aab	\N	\N	3
+23b40f20-8050-4011-914c-45fc999e3571	\N	dc04a8dd-f73e-41c3-9d5a-4f96e2d59feb	IMAGE OF	ccc3f96a-ce5f-4b90-9b37-ef2227e46aab	\N	\N	0
+d7e873f1-5687-4288-b07f-fb37073f9a62	\N	2428b3d3-b2ee-470c-952f-fb99b871dd08	IMAGE OF	ccc3f96a-ce5f-4b90-9b37-ef2227e46aab	\N	\N	2
+3c572c27-9188-4640-a239-d02f4a5dd936	\N	7982c131-93da-48d8-b84f-b543790ef4f7	IMAGE OF	5c488c08-8cab-444a-9598-806dd0abec85	\N	\N	0
 \.
 
 
@@ -861,7 +861,7 @@ d2f1b550-3da9-4422-99b6-8767fa4d5cf1	\N	6f473129-afb7-4b53-8861-34110e9fad44	IMA
 --
 
 COPY public.event (event_id, parent_event_id, dataset_id, location_id, protocol_id, event_type, event_name, field_number, event_date, year, month, day, verbatim_event_date, verbatim_locality, verbatim_elevation, verbatim_depth, verbatim_coordinates, verbatim_latitude, verbatim_longitude, verbatim_coordinate_system, verbatim_srs, habitat, protocol_description, sample_size_value, sample_size_unit, event_effort, field_notes, event_remarks) FROM stdin;
-8f6acf6b-1cac-4448-9d52-641ff2167a84	\N	koldingensis	\N	\N	OCCURRENCE	\N	\N	06/10/2013	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	Deciduous woodland	\N	\N	\N	\N	\N	\N
+ff3c4518-d18d-4673-99f5-3a80fa1ce066	\N	koldingensis	\N	\N	OCCURRENCE	\N	\N	06/10/2013	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	Deciduous woodland	\N	\N	\N	\N	\N	\N
 \.
 
 
@@ -870,7 +870,7 @@ COPY public.event (event_id, parent_event_id, dataset_id, location_id, protocol_
 --
 
 COPY public.genetic_sequence (genetic_sequence_id, genetic_sequence_type, sequence) FROM stdin;
-82a4e8d9-aae9-4105-81f8-2567746b33a0	ITS	AGGAAGTAAAAGTCGTAACAAGGTTTCCGTAGGTGAACCTGCGGAAGGATCATTATTGAAATTAAACTTGATAAGTTGTTGCTGGTTCTCTAGGGAGCATGTGCACACTTGTCATCTTTGTATTTCCACCTGTGCACTTTTTGTAGGCCTGATTATCTCTCTGAATGCTTAGCCATTCAGGATTGAGGATTGACTTTCAGTCTCTTCCTTACATTTTCGGGTCTATGTTCATTCATATACCCTATGTATGTTTATAGAATGTTGCTAATGGGCCTTTGTGCCTACAAATCTATACAACTTTCAGCAACGGATCTCTTGGCTCTCGCATCGATGAAGAACGCAGCGAAATGCGATAAGTAATGTGAATTGCAGAATTCAGTGAATCATCGAATCTTTGAACGCACCTTGCGCTCCTTGGTATTCCGAGGAGCATGCCTGTTTGAGTGTCATTAATATATCAACCTCTTTGGTTGGATGTGGGTTTGCTGGCCTCTTAAGGTCAGCTCCCCTTAAATGCATTAGCGGACAACATTTTGCCAACCGTTCATTAGTGTGATAATTATCTACGCTATTGACGTGAAGCATGGTTCAGCTTCTAACAGTCCATTGACTTGGACAAATTTCTTATTAATGTGACCTCAAATCAG
+2c79e965-273d-4b6e-945d-f62a1acd3ea5	ITS	AGGAAGTAAAAGTCGTAACAAGGTTTCCGTAGGTGAACCTGCGGAAGGATCATTATTGAAATTAAACTTGATAAGTTGTTGCTGGTTCTCTAGGGAGCATGTGCACACTTGTCATCTTTGTATTTCCACCTGTGCACTTTTTGTAGGCCTGATTATCTCTCTGAATGCTTAGCCATTCAGGATTGAGGATTGACTTTCAGTCTCTTCCTTACATTTTCGGGTCTATGTTCATTCATATACCCTATGTATGTTTATAGAATGTTGCTAATGGGCCTTTGTGCCTACAAATCTATACAACTTTCAGCAACGGATCTCTTGGCTCTCGCATCGATGAAGAACGCAGCGAAATGCGATAAGTAATGTGAATTGCAGAATTCAGTGAATCATCGAATCTTTGAACGCACCTTGCGCTCCTTGGTATTCCGAGGAGCATGCCTGTTTGAGTGTCATTAATATATCAACCTCTTTGGTTGGATGTGGGTTTGCTGGCCTCTTAAGGTCAGCTCCCCTTAAATGCATTAGCGGACAACATTTTGCCAACCGTTCATTAGTGTGATAATTATCTACGCTATTGACGTGAAGCATGGTTCAGCTTCTAACAGTCCATTGACTTGGACAAATTTCTTATTAATGTGACCTCAAATCAG
 \.
 
 
@@ -887,7 +887,7 @@ COPY public.geological_context (geological_context_id, location_id, earliest_eon
 --
 
 COPY public.georeference (georeference_id, location_id, decimal_latitude, decimal_longitude, geodetic_datum, coordinate_uncertainty_in_meters, coordinate_precision, point_radius_spatial_fit, footprint_wkt, footprint_srs, footprint_spatial_fit, georeferenced_by, georeferenced_date, georeference_protocol, georeference_sources, georeference_remarks, preferred_spatial_representation) FROM stdin;
-0376ceba-c97e-4e31-9875-a4e451e23ef2	72929e65-05a7-4b26-b504-93fd41d9d112	55.49949	9.48942	WGS84	10.0	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N
+5adc62f7-7b1d-48ec-9913-8b433056b6f9	965a6502-4451-44d3-820b-89ee84e81352	55.49949	9.48942	WGS84	10.0	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N
 \.
 
 
@@ -922,7 +922,7 @@ https://orcid.org/0000-0002-3530-013X	AGENT	ORCID	https://orcid.org/0000-0002-35
 --
 
 COPY public.location (location_id, parent_location_id, higher_geography_id, higher_geography, continent, water_body, island_group, island, country, country_code, state_province, county, municipality, locality, minimum_elevation_in_meters, maximum_elevation_in_meters, minimum_distance_above_surface_in_meters, maximum_distance_above_surface_in_meters, minimum_depth_in_meters, maximum_depth_in_meters, vertical_datum, location_according_to, location_remarks, accepted_georeference_id, accepted_geological_context_id) FROM stdin;
-72929e65-05a7-4b26-b504-93fd41d9d112	\N	\N	\N	\N	\N	\N	\N	Denmark	DK	\N	\N	\N	Kolding, Marielund	\N	\N	\N	\N	\N	\N	\N	Danish Mycological Society	\N	0376ceba-c97e-4e31-9875-a4e451e23ef2	\N
+965a6502-4451-44d3-820b-89ee84e81352	\N	\N	\N	\N	\N	\N	\N	Denmark	DK	\N	\N	\N	Kolding, Marielund	\N	\N	\N	\N	\N	\N	\N	Danish Mycological Society	\N	5adc62f7-7b1d-48ec-9913-8b433056b6f9	\N
 \.
 
 
@@ -931,9 +931,9 @@ COPY public.location (location_id, parent_location_id, higher_geography_id, high
 --
 
 COPY public.material_entity (material_entity_id, material_entity_type, preparations, disposition, institution_code, institution_id, collection_code, collection_id, owner_institution_code, catalog_number, record_number, recorded_by, recorded_by_id, associated_references, associated_sequences, other_catalog_numbers) FROM stdin;
-2d7c29f9-761b-4f0e-8e6a-982c2d0fb3af	ORGANISM	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N
-e9c0aff0-dfd5-4002-a536-fc7e82c83571	PRESERVEDSPECIMEN	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N
-7a8174e6-358b-46cf-a570-b3c9ea4ba82f	MATERIALSAMPLE	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N
+ccc3f96a-ce5f-4b90-9b37-ef2227e46aab	ORGANISM	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N
+5c488c08-8cab-444a-9598-806dd0abec85	PRESERVEDSPECIMEN	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N
+57e3dca9-4ebb-4ea2-a845-405398ab73b3	MATERIALSAMPLE	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N
 \.
 
 
@@ -950,7 +950,7 @@ COPY public.material_group (material_group_id, material_group_type) FROM stdin;
 --
 
 COPY public.occurrence (occurrence_id, organism_id, organism_quantity, organism_quantity_type, sex, life_stage, reproductive_condition, behavior, establishment_means, occurrence_status, pathway, degree_of_establishment, georeference_verification_status, occurrence_remarks, information_withheld, data_generalizations, recorded_by, recorded_by_id, associated_media, associated_occurrences, associated_taxa) FROM stdin;
-8f6acf6b-1cac-4448-9d52-641ff2167a84	2d7c29f9-761b-4f0e-8e6a-982c2d0fb3af	\N	\N	\N	\N	\N	\N	\N	PRESENT	\N	\N	\N	\N	\N	\N	74412	\N	\N	\N	74411
+ff3c4518-d18d-4673-99f5-3a80fa1ce066	ccc3f96a-ce5f-4b90-9b37-ef2227e46aab	\N	\N	\N	\N	\N	\N	\N	PRESENT	\N	\N	\N	\N	\N	\N	75724	\N	\N	\N	75723
 \.
 
 
@@ -959,12 +959,12 @@ COPY public.occurrence (occurrence_id, organism_id, organism_quantity, organism_
 --
 
 COPY public.occurrence_evidence (occurrence_id, entity_id) FROM stdin;
-8f6acf6b-1cac-4448-9d52-641ff2167a84	0d5ee3ab-7362-4ebb-9d3b-7f77c1d841d4
-8f6acf6b-1cac-4448-9d52-641ff2167a84	6f473129-afb7-4b53-8861-34110e9fad44
-8f6acf6b-1cac-4448-9d52-641ff2167a84	7a8174e6-358b-46cf-a570-b3c9ea4ba82f
-8f6acf6b-1cac-4448-9d52-641ff2167a84	745e879d-f347-47f3-aa65-75f0cc59fc2c
-8f6acf6b-1cac-4448-9d52-641ff2167a84	252f2cc1-afe0-4bb7-8b2b-731d42dde41b
-8f6acf6b-1cac-4448-9d52-641ff2167a84	e9c0aff0-dfd5-4002-a536-fc7e82c83571
+ff3c4518-d18d-4673-99f5-3a80fa1ce066	5c488c08-8cab-444a-9598-806dd0abec85
+ff3c4518-d18d-4673-99f5-3a80fa1ce066	c558c451-d4bd-4449-8f2f-a3d0bf8b7667
+ff3c4518-d18d-4673-99f5-3a80fa1ce066	57e3dca9-4ebb-4ea2-a845-405398ab73b3
+ff3c4518-d18d-4673-99f5-3a80fa1ce066	dc04a8dd-f73e-41c3-9d5a-4f96e2d59feb
+ff3c4518-d18d-4673-99f5-3a80fa1ce066	7982c131-93da-48d8-b84f-b543790ef4f7
+ff3c4518-d18d-4673-99f5-3a80fa1ce066	2428b3d3-b2ee-470c-952f-fb99b871dd08
 \.
 
 
@@ -973,7 +973,7 @@ COPY public.occurrence_evidence (occurrence_id, entity_id) FROM stdin;
 --
 
 COPY public.organism (organism_id, organism_scope, accepted_identification_id) FROM stdin;
-2d7c29f9-761b-4f0e-8e6a-982c2d0fb3af	\N	\N
+ccc3f96a-ce5f-4b90-9b37-ef2227e46aab	\N	\N
 \.
 
 
@@ -1015,11 +1015,11 @@ COPY public.taxon_identification (taxon_id, identification_id, taxon_order, taxo
 
 BEGIN;
 
-SELECT pg_catalog.lo_open('74411', 131072);
+SELECT pg_catalog.lo_open('75723', 131072);
 SELECT pg_catalog.lowrite(0, '\x62c3b8672028466167757329');
 SELECT pg_catalog.lo_close(0);
 
-SELECT pg_catalog.lo_open('74412', 131072);
+SELECT pg_catalog.lo_open('75724', 131072);
 SELECT pg_catalog.lowrite(0, '\x546f62696173204672c3b8736c6576');
 SELECT pg_catalog.lo_close(0);
 
