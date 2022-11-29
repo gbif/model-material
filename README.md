@@ -1,6 +1,9 @@
 # Data model testing: Material
 
-This repository supports the testing of the GBIF Unified Model ("UM") to better handle material and specimen data as detailed in [the open call](https://www.gbif.org/news/2ZQI4f1AtimpT5gd3qk9pd/call-for-proposals-to-help-mature-and-test-how-specimens-are-handled-in-gbifs-emerging-unified-data-model). This builds on work presented in [webinar 2](https://vimeo.com/728051381) of the data model series, and in particular as demonstrated using  [Arctos](https://arctosdb.org/) as an example shown in [this short video](https://vimeo.com/727320677).
+This repository supports the testing of the GBIF Unified Model ("UM") to better handle material and specimen data as detailed in [the open call](https://www.gbif.org/news/2ZQI4f1AtimpT5gd3qk9pd/call-for-proposals-to-help-mature-and-test-how-specimens-are-handled-in-gbifs-emerging-unified-data-model). We have recorded a [short video](https://vimeo.com/776081243/880639e819) that provides an orientation for newcomers. 
+
+
+This builds on work presented in [webinar 2](https://vimeo.com/728051381) of the data model series, and in particular as demonstrated using  [Arctos](https://arctosdb.org/) as an example shown in [this short video](https://vimeo.com/727320677).
 
 A overview of the structure of the UM is given in the figure below, which omits the [common models](https://docs.google.com/document/d/1ZTMt-V3U0D0761bqqogeN58MjuHhIs_Kisu6CRtl-uA) for readability. The "common models" allow Agents (e.g., people), Assertions (e.g., measurements), Citations, and Identifiers (e.g., other catalog numbers) to be added to any Entity below. The background work for the model is introduced in [this document](https://docs.google.com/document/d/1QpXwole_j32QZAg6ddqOrAB5OOdqVJKdoKKzz06CK-o/edit) and a PostgreSQL [database creation script](./schema.sql) is provided.
 
