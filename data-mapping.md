@@ -8,7 +8,7 @@ Your task is to populate a postgresql database using the UM structure we have pr
 
 ## General considerations
 
-In this document we will use figures to illustrate the structure of the UM. These figures take the form of Entity-Relationship (ER) diagrams. The figures do not necessarily show the full set of fields for the tables they represent, nor do they show data types and other constraints. At times we will show snippets of the schema (such as table definitions) for reference. The definitive version of the tables to populate is in [schema.sql](./schema.sql). The term names in the figures are given in lowerCamelCase (e.g., `eventType`) and correspond to their equivalents in lower_snake_case in the database (e.g., `event_type`).
+In this document we will use figures to illustrate the structure of the UM. These figures take the form of Entity-Relationship (ER) diagrams. In these diagrams, concepts (implemented as tables for this exercise) are denoted by boxes with labels in UpperCamelCase. The properties (fields) for these concepts are listed within the box for the concept they are properties of, and are in lowerCamelCase. The figures do not necessarily show the full set of fields for the tables they represent, nor do they show data types and other constraints. At times we will show snippets of the schema (such as table definitions) for reference. The definitive version of the tables to populate is in [schema.sql](./schema.sql). The term names in the figures (e.g., `eventType`) and correspond to their equivalents in lower_snake_case in the database (e.g., `event_type`).
 
 You will not be expected to parse the data in your database to make it fit into the UM, but you will be asked in some cases to provide explicit data in the UM that are only implicit in your data. It is likely that the source data won't have all tables needed and some will need to be "invented". For example, a source database may have collecting events and locations merged into a single table. This will require the table to be split to map correctly into `Event`s, `Location`s, and `Georeference`s.
 
@@ -25,7 +25,18 @@ CREATE TABLE identifier (
   PRIMARY KEY (identifier_target_id, identifier_target_type, identifier_type, identifier_value)
 );
 ```
+
 The `Identifier` and other "common model" tables are described in [GBIF Common Models document](https://docs.google.com/document/d/1ZTMt-V3U0D0761bqqogeN58MjuHhIs_Kisu6CRtl-uA/edit?usp=sharing) and will be discussed in context as we proceed through the [Suggested steps](#suggested-steps) for data mapping.
+
+Some `AgentRole`s are currently made explicit in the UM. Most of these are simply fields for the name of the `Agent` fulfilling the role (e.g., `georeferencedBy`), while others are fields for an `Agent` identifier (e.g., `recordedByID`. Following are lists of explicit `AgentRole` fields in the UM, separated by the concept they can be found in. Separate AgentRole records for these are not necessary.
+
+Assertion: `assertionByAgentName`, `assertionByAgentID`<br>
+DigitalEntity: `rightsHolder`, `creator`, `nameAccordingTo`, `taxonAuthority`, `recordedBy`, `recordedByID`<br>
+Identification: `typeDesignatedBy`, `identifiedByID`<br>
+Location: `locationAccordingTo`,  `georeferencedBy`<br>
+MaterialEntity: `institutionCode`, `institutionID`, `collectionCode`, `collectionID`, `ownerCollectionCode`, `recordedBy`, `recordedByID`, `chronometricAgeDeterminedBy`<br>
+Organism: `identifiedBy`<br>
+Taxon: `nameAccordingToID`
 
 Most of the tables in the UM have fields that benefit from using controlled vocabularies. Some of these fields MUST use values from a specific controlled vocabulary. In the database creation script these can be found as `ENUM`s where the values are in UPPER_SNAKE_CASE. Following is a simple example for the strictly controlled vocabulary for the `entity_type` field in the `entity` table (no other values are valid):
 
@@ -176,8 +187,10 @@ An Organism (same as [dwc:Organism](https://dwc.tdwg.org/terms/#organism)) is mo
 ## 6. AgentRoles, Assertions, Citations, Identifiers and ChronometricAges for MaterialEntities and their subtypes
 
 Figure 4 shows the relationships between `MaterialEntity` and associated tables, including the "common model" tables. The relationships between `MaterialEntity` and other `Entity` tables was shown in Figure 3. Each of the `Entity` tables can be connected to the common model tables. The important thing is to make sure that the connections happen at the appropriate, most specific level in the hierarchy. For example, suppose a blood sample was taken from an `Organism` and its volume was measured. The blood sample is a `MaterialEntity` (NOT an `Organism`). There should be an `EntityRelationship` showing that the subject `MaterialEntity` had the relationship `extractedFrom` the object `Organism`. The blood sample volume should result in an `Assertion` for the `MaterialEntity`, not an `Assertion` for the corresponding parent `Entity` record, nor the related `Organism` record. Specifically, the `assertionTargetID` should be the same as the `materialEntityID` for the blood sample, the `assertionTargetType` MUST be `MATERIAL_ENTITY`, the `assertionType` should be `VOLUME`, the `assertionValue` should be left empty, the `assertionValueNumeric` should have the numerical value of the volume, and the `assertionUnit` should have an appropriate SI unit (e.g., `ml`). The same principles apply to relationships to the `Citation`, `AgentRole` and `Identifier` tables - they should be associated with the correct level of the `Entity` hierarchy.
- 
+
 A `ChronometricAge`s MUST only be related directly to a `MaterialEntity`. 
+
+The following `AgentRole`s related to `MaterialEntity`s are currently made explicit in the UM, these roles do not require separate `AgentRole`s to be made: `institutionCode`, `institutionID`, `collectionCode`, `collectionID`, `ownerCollectionCode`, `recordedBy`, `recordedByID`, `chronometricAgeDeterminedBy`.
 
 <p align=center><img src="./_images/materialentities.png" alt="agents"/>
 <p align=center>Figure 4. MaterialEntities and their "common model" tables in the Unified Model
@@ -206,6 +219,8 @@ One of these, the `GENETIC_SEQUENCE` is a formal subtype of `DigitalEntity` (see
 
 The same kinds of "common model" associations shown in Figure 4 for `MaterialEntity`s can be made for `DigitalEntity`s, except that each `targetID` MUST be the same as the identifier (`digitalEntityID` or `geneticSequenceID`) for the `DigitalEntity` or `GeneticSequence` it is directly associated with. The values for the `targetType` fields MUST be `DIGITAL_ENTITY` or `GENETIC_SEQUENCE`, depending on the table they are to be directly related to.
 
+The following `AgentRole`s related to `MaterialEntity`s are currently made explicit in the UM, these roles do not require separate `AgentRole`s to be made: `rightsHolder`, `creator`, `nameAccordingTo`, `taxonAuthority`, `recordedBy`, `recordedByID`.
+  
 ## 9. EntityRelationships
 
 At this stage in the process, all of the `Entity` records will have been created, providing the prerequisite for being able to create the relationships between them. The supertype/subtype relationships between `Entity` tables were shown above in Figure 3, and should already heve been created at this point. The "common model" associations will also already have been made. Here we will concentrate on other associations, ones that should be captured in the `EntityRelationship` table, the definition of which is:
