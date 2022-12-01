@@ -2,8 +2,8 @@
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 14.2
--- Dumped by pg_dump version 14.2
+-- Dumped from database version 15.0
+-- Dumped by pg_dump version 15.1 (Homebrew)
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -685,7 +685,8 @@ CREATE TABLE public.taxon (
     subfamily text,
     genus text,
     subgenus text,
-    accepted_scientific_name text
+    accepted_scientific_name text,
+    name_according_to_id text
 );
 
 
@@ -754,6 +755,10 @@ c558c451-d4bd-4449-8f2f-a3d0bf8b7667	DIGITAL_ENTITY	https://orcid.org/0000-0003-
 2428b3d3-b2ee-470c-952f-fb99b871dd08	DIGITAL_ENTITY	https://orcid.org/0000-0003-1691-239X	Thomas Stjernegaard Jeppesen	CREATOR	\N	\N	0
 7982c131-93da-48d8-b84f-b543790ef4f7	DIGITAL_ENTITY	https://orcid.org/0000-0002-3530-013X	Tobias Frøslev	CREATOR	\N	\N	0
 ff3c4518-d18d-4673-99f5-3a80fa1ce066	OCCURRENCE	https://orcid.org/0000-0002-3530-013X	Tobias Frøslev	IDENTIFIED BY	\N	\N	0
+aadb06f5-f746-48fa-8cc2-1c70f4765f15	IDENTIFICATION	https://orcid.org/0000-0002-3530-013X	Tobias Frøslev	CREATOR	\N	\N	0
+aadb06f5-f746-48fa-8cc2-1c70f4765f15	IDENTIFICATION	https://orcid.org/0000-0003-1691-239X	Thomas Stjernegaard Jeppesen	CREATOR	\N	\N	1
+27b13f41-87f2-46f0-8c8a-93d98412ef82	IDENTIFICATION	https://orcid.org/0000-0002-3530-013X	Tobias Frøslev	CREATOR	\N	\N	0
+27b13f41-87f2-46f0-8c8a-93d98412ef82	IDENTIFICATION	https://orcid.org/0000-0003-1691-239X	Thomas Stjernegaard Jeppesen	CREATOR	\N	\N	1
 \.
 
 
@@ -896,6 +901,8 @@ COPY public.georeference (georeference_id, location_id, decimal_latitude, decima
 --
 
 COPY public.identification (identification_id, organism_id, identification_type, taxon_formula, verbatim_identification, type_status, identified_by, identified_by_id, date_identified, identification_references, identification_verification_status, identification_remarks, type_designation_type, type_designated_by) FROM stdin;
+aadb06f5-f746-48fa-8cc2-1c70f4765f15	ccc3f96a-ce5f-4b90-9b37-ef2227e46aab	VISUAL_AND_DNA	A	Cortinarius koldingensis	HOLOTYPE	Tobias Frøslev|Thomas Stjernegaard Jeppesen	https://orcid.org/0000-0002-3530-013X|https://orcid.org/0000-0003-1691-239X	2015-08-21	http://dx.doi.org/10.1007/s11557-015-1098-z	\N	\N	HOLOTYPE	Tobias Frøslev|Thomas Stjernegaard Jeppesen
+27b13f41-87f2-46f0-8c8a-93d98412ef82	ccc3f96a-ce5f-4b90-9b37-ef2227e46aab	VISUAL	A cf.	Cortinarius sulphurinus var. fageticola	\N	Tobias Frøslev	https://orcid.org/0000-0002-3530-013X	2013-10-06	\N	\N	\N	\N	\N
 \.
 
 
@@ -904,6 +911,10 @@ COPY public.identification (identification_id, organism_id, identification_type,
 --
 
 COPY public.identification_evidence (identification_id, entity_id) FROM stdin;
+aadb06f5-f746-48fa-8cc2-1c70f4765f15	57e3dca9-4ebb-4ea2-a845-405398ab73b3
+27b13f41-87f2-46f0-8c8a-93d98412ef82	5c488c08-8cab-444a-9598-806dd0abec85
+aadb06f5-f746-48fa-8cc2-1c70f4765f15	5c488c08-8cab-444a-9598-806dd0abec85
+aadb06f5-f746-48fa-8cc2-1c70f4765f15	2c79e965-273d-4b6e-945d-f62a1acd3ea5
 \.
 
 
@@ -997,7 +1008,9 @@ COPY public.reference (reference_id, reference_type, bibliographic_citation, ref
 -- Data for Name: taxon; Type: TABLE DATA; Schema: public; Owner: -
 --
 
-COPY public.taxon (taxon_id, scientific_name, scientific_name_authorship, name_according_to, taxon_rank, taxon_source, scientific_name_id, taxon_remarks, parent_taxon_id, taxonomic_status, kingdom, phylum, class, "order", family, subfamily, genus, subgenus, accepted_scientific_name) FROM stdin;
+COPY public.taxon (taxon_id, scientific_name, scientific_name_authorship, name_according_to, taxon_rank, taxon_source, scientific_name_id, taxon_remarks, parent_taxon_id, taxonomic_status, kingdom, phylum, class, "order", family, subfamily, genus, subgenus, accepted_scientific_name, name_according_to_id) FROM stdin;
+fb618748-458c-4888-aa7e-f17af64ccd4f	Cortinarius sulphurinus var. fageticola Brandrud	Brandrud	\N	\N	\N	urn:lsid:indexfungorum.org:names:259339	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	Cortinarius sulphurinus var. fageticola Brandrud	\N
+980c95f5-d2e9-4d8c-8f31-0fecc279d34b\n	Cortinarius koldingensis Frøslev & T.S.Jeppesen	Frøslev & T.S.Jeppesen\n	Frøslev, T.G., Jeppesen, T.S. & Dima, B. Cortinarius koldingensis—a new species of Cortinarius, subgenus Phlegmacium related to Cortinarius sulfurinus . Mycol Progress 14, 73 (2015). https://doi.org/10.1007/s11557-015-1098-z	\N	\N	urn:lsid:indexfungorum.org:names:812989	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	Cortinarius koldingensis Frøslev & T.S.Jeppesen	https://doi.org/10.1007/s11557-015-1098-z
 \.
 
 
@@ -1006,6 +1019,7 @@ COPY public.taxon (taxon_id, scientific_name, scientific_name_authorship, name_a
 --
 
 COPY public.taxon_identification (taxon_id, identification_id, taxon_order, taxon_authority, taxon_confidence_percent) FROM stdin;
+fb618748-458c-4888-aa7e-f17af64ccd4f	27b13f41-87f2-46f0-8c8a-93d98412ef82	0	\N	100
 \.
 
 
