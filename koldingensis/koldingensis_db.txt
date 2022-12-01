@@ -850,14 +850,12 @@ c558c451-d4bd-4449-8f2f-a3d0bf8b7667	DIGITAL_ENTITY	koldingensis	\N	\N
 COPY public.entity_relationship (entity_relationship_id, depends_on_entity_relationship_id, subject_entity_id, entity_relationship_type, object_entity_id, object_entity_iri, entity_relationship_date, entity_relationship_order) FROM stdin;
 f46aac4b-47ef-4f30-93b2-874d82ef2505	\N	57e3dca9-4ebb-4ea2-a845-405398ab73b3	SEQUENCE OF	2c79e965-273d-4b6e-945d-f62a1acd3ea5	\N	\N	0
 2e636dc0-9541-41e4-8091-52dcc8a74d45	\N	5c488c08-8cab-444a-9598-806dd0abec85	MATERIAL SAMPLE OF	ccc3f96a-ce5f-4b90-9b37-ef2227e46aab	\N	\N	0
-3044b4a0-7303-4ace-805c-d764080b6e35	\N	5c488c08-8cab-444a-9598-806dd0abec85	SOURCE MATERIAL OF	57e3dca9-4ebb-4ea2-a845-405398ab73b3	\N	\N	0
 597f2181-31a7-450d-b5d5-d90866170c7a	\N	57e3dca9-4ebb-4ea2-a845-405398ab73b3	MATERIAL SAMPLE OF	5c488c08-8cab-444a-9598-806dd0abec85	\N	\N	0
 5b43eb3f-0f9d-4a13-b7f9-4c7e0692b34d	\N	57e3dca9-4ebb-4ea2-a845-405398ab73b3	MATERIAL SAMPLE OF	ccc3f96a-ce5f-4b90-9b37-ef2227e46aab	\N	\N	0
-bd554496-0d19-42c7-b8af-7535bd5fc288	\N	c558c451-d4bd-4449-8f2f-a3d0bf8b7667	IMAGE OF	ccc3f96a-ce5f-4b90-9b37-ef2227e46aab	\N	\N	1
-2b1e1304-9404-4a50-9d6c-f5bc346543ee	\N	7982c131-93da-48d8-b84f-b543790ef4f7	IMAGE OF	ccc3f96a-ce5f-4b90-9b37-ef2227e46aab	\N	\N	3
-23b40f20-8050-4011-914c-45fc999e3571	\N	dc04a8dd-f73e-41c3-9d5a-4f96e2d59feb	IMAGE OF	ccc3f96a-ce5f-4b90-9b37-ef2227e46aab	\N	\N	0
-d7e873f1-5687-4288-b07f-fb37073f9a62	\N	2428b3d3-b2ee-470c-952f-fb99b871dd08	IMAGE OF	ccc3f96a-ce5f-4b90-9b37-ef2227e46aab	\N	\N	2
 3c572c27-9188-4640-a239-d02f4a5dd936	\N	7982c131-93da-48d8-b84f-b543790ef4f7	IMAGE OF	5c488c08-8cab-444a-9598-806dd0abec85	\N	\N	0
+23b40f20-8050-4011-914c-45fc999e3571	\N	dc04a8dd-f73e-41c3-9d5a-4f96e2d59feb	IMAGE OF	5c488c08-8cab-444a-9598-806dd0abec85	\N	\N	0
+bd554496-0d19-42c7-b8af-7535bd5fc288	\N	c558c451-d4bd-4449-8f2f-a3d0bf8b7667	IMAGE OF	5c488c08-8cab-444a-9598-806dd0abec85	\N	\N	1
+d7e873f1-5687-4288-b07f-fb37073f9a62	\N	2428b3d3-b2ee-470c-952f-fb99b871dd08	IMAGE OF	5c488c08-8cab-444a-9598-806dd0abec85	\N	\N	2
 \.
 
 
