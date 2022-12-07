@@ -1008,7 +1008,7 @@ COPY public.reference (reference_id, reference_type, bibliographic_citation, ref
 
 COPY public.taxon (taxon_id, scientific_name, scientific_name_authorship, name_according_to, taxon_rank, taxon_source, scientific_name_id, taxon_remarks, parent_taxon_id, taxonomic_status, kingdom, phylum, class, "order", family, subfamily, genus, subgenus, accepted_scientific_name, name_according_to_id) FROM stdin;
 fb618748-458c-4888-aa7e-f17af64ccd4f	Cortinarius sulphurinus var. fageticola Brandrud	Brandrud	\N	\N	\N	urn:lsid:indexfungorum.org:names:259339	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	Cortinarius sulphurinus var. fageticola Brandrud	\N
-980c95f5-d2e9-4d8c-8f31-0fecc279d34b\n	Cortinarius koldingensis Frøslev & T.S.Jeppesen	Frøslev & T.S.Jeppesen\n	Frøslev, T.G., Jeppesen, T.S. & Dima, B. Cortinarius koldingensis—a new species of Cortinarius, subgenus Phlegmacium related to Cortinarius sulfurinus . Mycol Progress 14, 73 (2015). https://doi.org/10.1007/s11557-015-1098-z	\N	\N	urn:lsid:indexfungorum.org:names:812989	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	Cortinarius koldingensis Frøslev & T.S.Jeppesen	https://doi.org/10.1007/s11557-015-1098-z
+980c95f5-d2e9-4d8c-8f31-0fecc279d34b	Cortinarius koldingensis Frøslev & T.S.Jeppesen	Frøslev & T.S.Jeppesen\n	Frøslev, T.G., Jeppesen, T.S. & Dima, B. Cortinarius koldingensis—a new species of Cortinarius, subgenus Phlegmacium related to Cortinarius sulfurinus . Mycol Progress 14, 73 (2015). https://doi.org/10.1007/s11557-015-1098-z	\N	\N	urn:lsid:indexfungorum.org:names:812989	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	Cortinarius koldingensis Frøslev & T.S.Jeppesen	https://doi.org/10.1007/s11557-015-1098-z
 \.
 
 
@@ -1018,7 +1018,7 @@ fb618748-458c-4888-aa7e-f17af64ccd4f	Cortinarius sulphurinus var. fageticola Bra
 
 COPY public.taxon_identification (taxon_id, identification_id, taxon_order, taxon_authority, taxon_confidence_percent) FROM stdin;
 fb618748-458c-4888-aa7e-f17af64ccd4f	27b13f41-87f2-46f0-8c8a-93d98412ef82	0	\N	100
-980c95f5-d2e9-4d8c-8f31-0fecc279d34b\n	aadb06f5-f746-48fa-8cc2-1c70f4765f15	0	\N	100
+980c95f5-d2e9-4d8c-8f31-0fecc279d34b	aadb06f5-f746-48fa-8cc2-1c70f4765f15	0	\N	100
 \.
 
 
