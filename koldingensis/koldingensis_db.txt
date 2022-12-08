@@ -942,7 +942,7 @@ COPY public.location (location_id, parent_location_id, higher_geography_id, high
 COPY public.material_entity (material_entity_id, material_entity_type, preparations, disposition, institution_code, institution_id, collection_code, collection_id, owner_institution_code, catalog_number, record_number, recorded_by, recorded_by_id, associated_references, associated_sequences, other_catalog_numbers) FROM stdin;
 ccc3f96a-ce5f-4b90-9b37-ef2227e46aab	ORGANISM	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N
 57e3dca9-4ebb-4ea2-a845-405398ab73b3	MATERIALSAMPLE	\N	discarded	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N
-5c488c08-8cab-444a-9598-806dd0abec85	PRESERVEDSPECIMEN	\N	in collection	C	1a69e6fc-4a8d-44d5-90a6-a7dc7a1aa7c7	F	\N	\N	DMS-640926	\N	\N	\N	\N	https://www.ncbi.nlm.nih.gov/nuccore/KT222912	TF2013-640926|C-F-100309
+5c488c08-8cab-444a-9598-806dd0abec85	PRESERVEDSPECIMEN	\N	in collection	C	1a69e6fc-4a8d-44d5-90a6-a7dc7a1aa7c7	F	\N	\N	DMS-640926	\N	Tobias Frøslev	https://orcid.org/0000-0002-3530-013X	\N	https://www.ncbi.nlm.nih.gov/nuccore/KT222912	TF2013-640926|C-F-100309
 \.
 
 
