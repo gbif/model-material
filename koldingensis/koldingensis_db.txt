@@ -864,7 +864,7 @@ d7e873f1-5687-4288-b07f-fb37073f9a62	\N	2428b3d3-b2ee-470c-952f-fb99b871dd08	IMA
 --
 
 COPY public.event (event_id, parent_event_id, dataset_id, location_id, protocol_id, event_type, event_name, field_number, event_date, year, month, day, verbatim_event_date, verbatim_locality, verbatim_elevation, verbatim_depth, verbatim_coordinates, verbatim_latitude, verbatim_longitude, verbatim_coordinate_system, verbatim_srs, habitat, protocol_description, sample_size_value, sample_size_unit, event_effort, field_notes, event_remarks) FROM stdin;
-ff3c4518-d18d-4673-99f5-3a80fa1ce066	\N	koldingensis	965a6502-4451-44d3-820b-89ee84e81352	\N	OCCURRENCE	\N	\N	06/10/2013	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	Deciduous woodland	\N	\N	\N	\N	\N	\N
+ff3c4518-d18d-4673-99f5-3a80fa1ce066	\N	koldingensis	965a6502-4451-44d3-820b-89ee84e81352	\N	OCCURRENCE	\N	TF2013-640926	06/10/2013	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	Deciduous woodland	\N	\N	\N	\N	\N	\N
 \.
 
 
@@ -959,7 +959,7 @@ COPY public.material_group (material_group_id, material_group_type) FROM stdin;
 --
 
 COPY public.occurrence (occurrence_id, organism_id, organism_quantity, organism_quantity_type, sex, life_stage, reproductive_condition, behavior, establishment_means, occurrence_status, pathway, degree_of_establishment, georeference_verification_status, occurrence_remarks, information_withheld, data_generalizations, recorded_by, recorded_by_id, associated_media, associated_occurrences, associated_taxa) FROM stdin;
-ff3c4518-d18d-4673-99f5-3a80fa1ce066	ccc3f96a-ce5f-4b90-9b37-ef2227e46aab	\N	\N	\N	\N	\N	\N	\N	PRESENT	\N	\N	\N	\N	\N	\N	75724	\N	\N	\N	75723
+ff3c4518-d18d-4673-99f5-3a80fa1ce066	ccc3f96a-ce5f-4b90-9b37-ef2227e46aab	\N	\N	\N	\N	\N	\N	\N	PRESENT	\N	\N	\N	\N	\N	\N	75724	\N	\N	\N	bøg (Fagus)
 \.
 
 
@@ -1007,8 +1007,8 @@ COPY public.reference (reference_id, reference_type, bibliographic_citation, ref
 --
 
 COPY public.taxon (taxon_id, scientific_name, scientific_name_authorship, name_according_to, taxon_rank, taxon_source, scientific_name_id, taxon_remarks, parent_taxon_id, taxonomic_status, kingdom, phylum, class, "order", family, subfamily, genus, subgenus, accepted_scientific_name, name_according_to_id) FROM stdin;
+980c95f5-d2e9-4d8c-8f31-0fecc279d34b	Cortinarius koldingensis Frøslev & T.S.Jeppesen	Frøslev & T.S.Jeppesen\n	Frøslev, T.G., Jeppesen, T.S. & Dima, B. Cortinarius koldingensis—a new species of Cortinarius, subgenus Phlegmacium related to Cortinarius sulfurinus . Mycol Progress 14, 73 (2015). https://doi.org/10.1007/s11557-015-1098-z	SPECIES	\N	urn:lsid:indexfungorum.org:names:812989	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	Cortinarius koldingensis Frøslev & T.S.Jeppesen	https://doi.org/10.1007/s11557-015-1098-z
 fb618748-458c-4888-aa7e-f17af64ccd4f	Cortinarius sulphurinus var. fageticola Brandrud	Brandrud	\N	\N	\N	urn:lsid:indexfungorum.org:names:259339	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	Cortinarius sulphurinus var. fageticola Brandrud	\N
-980c95f5-d2e9-4d8c-8f31-0fecc279d34b	Cortinarius koldingensis Frøslev & T.S.Jeppesen	Frøslev & T.S.Jeppesen\n	Frøslev, T.G., Jeppesen, T.S. & Dima, B. Cortinarius koldingensis—a new species of Cortinarius, subgenus Phlegmacium related to Cortinarius sulfurinus . Mycol Progress 14, 73 (2015). https://doi.org/10.1007/s11557-015-1098-z	\N	\N	urn:lsid:indexfungorum.org:names:812989	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	Cortinarius koldingensis Frøslev & T.S.Jeppesen	https://doi.org/10.1007/s11557-015-1098-z
 \.
 
 
