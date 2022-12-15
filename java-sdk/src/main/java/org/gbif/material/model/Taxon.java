@@ -25,6 +25,9 @@ public class Taxon {
   @Column(name = "name_according_to")
   private String nameAccordingTo;
 
+  @Column(name = "name_according_to_id")
+  private String nameAccordingToId;
+
   @Column(name = "taxon_rank")
   private String taxonRank;
 

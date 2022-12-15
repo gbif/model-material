@@ -475,6 +475,7 @@ CREATE TABLE taxon (
   scientific_name TEXT NOT NULL,
   scientific_name_authorship TEXT,
   name_according_to TEXT,
+  name_according_to_id TEXT,
   taxon_rank TEXT,
   taxon_source TEXT, -- From what taxonomic authority is the information taken
   scientific_name_id TEXT,
