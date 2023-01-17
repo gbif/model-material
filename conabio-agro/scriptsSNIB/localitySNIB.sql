@@ -19,11 +19,11 @@ SELECT
   IFNULL(l.waterbody,'') AS waterbody,
   IFNULL(l.islandgroup,'') AS islandgroup,
   IFNULL(l.island,'') AS island,
-  ro.paisoriginal,
+  rm.nombrepaismapa ,
   '' AS country_code,
-  ro.estadooriginal AS state_province,
-  ro.municipiooriginal AS county,
-  ro.niveladministrativoadicionaloriginal AS municipality,
+  rm.nombreestadomapa  AS state_province,
+  rm.nombremunicipiomapa  AS county,
+  rm.nombreniveladministrativoadicionalmapa as municipality,
   IF (lo.localidad in ('NO DISPONIBLE','NO APLICA'),'',lo.localidad) AS locality,
   IF(altitudinicialdelsitio>0 and altitudinicialdelsitio<>9999,altitudinicialdelsitio,if(altitudinicialdelsitio=0 and altitudfinaldelsitio>0,0,'')) AS minimum_elevation_in_meters,
   IF(altitudfinaldelsitio>0 and altitudfinaldelsitio<>9999,altitudfinaldelsitio,'') AS maximum_elevation_in_meters,
@@ -42,12 +42,13 @@ SELECT
   '' AS accepted_georreference_context_id
 FROM snib.ejemplar_curatorial e
 INNER JOIN snib.proyecto p ON e.llaveproyecto = p.llaveproyecto
-INNER JOIN regionsitiosig r on e.llaveregionsitiosig = r.llaveregionsitiosig
+INNER JOIN conabiogeografia cg on e.llaveregionsitiosig = cg.llaveregionsitiosig
 INNER JOIN snib.nombre n on e.llavenombre = n.llavenombre
 LEFT JOIN trabajo_SNIB.si_megt_snib4378_noborrar s on e.llaveejemplar = s.llaveejemplar
 LEFT JOIN trabajoDwC.RecuperarRegionesPablo_llaveejemplar l ON e.llaveejemplar = l.llaveejemplar
-INNER JOIN snib.geografiaoriginal go ON e.llavesitio = go.llavesitio
-INNER JOIN snib.regionoriginal ro ON go.idregionoriginal = ro.idregionoriginal
+INNER JOIN snib.regionmapa rm ON cg.idregionmapa =rm.idregionmapa 
 INNER JOIN snib.localidad lo ON e.idlocalidad = lo.idlocalidad
+INNER JOIN snib.geografiaoriginal gor on gor.llavesitio =e.llavesitio 
+inner join snib.regionmarinamapa rmm on rmm.idregionmarinamapa =cg.idregionmarinamapa 
 WHERE e.estadoregistro = ""
 AND p.proyecto in ('FY001','FZ016');
