@@ -1,4 +1,4 @@
-SELECT '' as event_id,
+SELECT if(e.numerocolecta!='NO DISPONIBLE',e.numerocolecta,'') as event_id,
 '' as parent_event_id,
 '' as dataset_id,
 '' as location_id,

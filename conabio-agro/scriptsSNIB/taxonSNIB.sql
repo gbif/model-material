@@ -1,4 +1,4 @@
-SELECT n.llavenombre as taxon_id,
+SELECT n.llavenombre  as taxon_id,
 cast(if(epitetoinfraespecifico2cat<>'',CONCAT(generocat," ",epitetoespecificocat," ",epitetoinfraespecificocat," ",epitetoinfraespecifico2cat), 
     if(epitetoespecificocat<>'',CONCAT(generocat," ",epitetoespecificocat," ",epitetoinfraespecificocat),
     if(epitetoespecificocat<>'',CONCAT(generocat," ",epitetoespecificocat),
@@ -24,6 +24,10 @@ familiacat as family,
 subfamiliacat as subfamily, 
 generocat as genus, 
 subgenerocat as subgenus, 
-cast(if(epitetoinfraespecifico2catvalido<>'',CONCAT(generocatvalido," ",epitetoespecificocatvalido," ",epitetoinfraespecificocatvalido," ",epitetoinfraespecifico2catvalido), if(epitetoespecificocatvalido<>'',CONCAT(generocatvalido," ",epitetoespecificocatvalido," ",epitetoinfraespecificocatvalido), if(epitetoespecificocatvalido<>'',CONCAT(generocatvalido," ",epitetoespecificocatvalido), if(generocatvalido<>'',generocatvalido,"")))) as char) as accepted_scientific_name
+cast(if(epitetoinfraespecifico2catvalido<>'',CONCAT(generocatvalido," ",epitetoespecificocatvalido," ",epitetoinfraespecificocatvalido," ",epitetoinfraespecifico2catvalido), if(epitetoespecificocatvalido<>'',CONCAT(generocatvalido," ",epitetoespecificocatvalido," ",epitetoinfraespecificocatvalido), if(epitetoespecificocatvalido<>'',CONCAT(generocatvalido," ",epitetoespecificocatvalido), if(generocatvalido<>'',generocatvalido,"")))) as char) as accepted_scientific_name,
+categoriainfraespeciecat as taxon_rank_infraespecificEpithet,
+epitetoinfraespecificocat as infraespecificEpithet,
+categoriainfraespecie2cat as taxon_rank_sub_infraespecificEpithet,
+epitetoinfraespecifico2cat as subinfraespecificEpithet
 FROM snib.nombre n 
 where proyecto  in ('FY001','FZ016');

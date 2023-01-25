@@ -1,4 +1,5 @@
-SELECT e.llaveejemplar as organism_id,
+SELECT '' as  identification_id,
+e.llaveejemplar as organism_id,
 'expert identification' as identification_type,
 '' as taxon_formula,
 concat(e.calificadordeterminaciongenerooriginal, e.calificadordeterminacionespecieoriginal,e.calificadordeterminacioninfraespecieoriginal,e.calificadordeterminacioninfraespecieoriginal2) as verbatim_identification,
