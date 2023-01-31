@@ -1,0 +1,28 @@
+executor: parallel
+clients:
+  SQLDump: snib_client.get_client
+tasks:
+  - source: "{{snib_folder}}/occurrenceSNIB.sql"
+    name: create-occurrences
+    class: SQLDump
+    product: "{{data_folder}}/occurrences.csv"
+  - source: "{{snib_folder}}/localitySNIB.sql"
+    name: create-locality
+    class: SQLDump
+    product: "{{data_folder}}/locality.csv"
+  - source: "{{snib_folder}}/taxonSNIB.sql"
+    name: create-taxon
+    class: SQLDump
+    product: "{{data_folder}}/taxon.csv"
+  - source: "{{snib_folder}}/identification.sql"
+    name: create-identification
+    class: SQLDump
+    product: "{{data_folder}}/identification.csv"
+  - source: "{{snib_folder}}/event.sql"
+    name: create-event
+    class: SQLDump
+    product: "{{data_folder}}/event.csv"
+  - source: "{{snib_folder}}/assertions.sql"
+    name: create-assertions
+    class: SQLDump
+    product: "{{data_folder}}/assertions.csv"
