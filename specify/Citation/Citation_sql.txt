@@ -1,0 +1,9 @@
+CREATE TABLE citation (
+  citation_target_id TEXT NOT NULL,
+  citation_target_type COMMON_TARGETS NOT NULL,
+  citation_reference_id TEXT REFERENCES reference ON DELETE CASCADE,
+  citation_type TEXT,
+  citation_page_number TEXT,
+  citation_remarks TEXT,
+  PRIMARY KEY (citation_target_id, citation_target_type,  citation_reference_id)
+);

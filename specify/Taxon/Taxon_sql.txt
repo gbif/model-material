@@ -1,0 +1,26 @@
+CREATE TABLE taxon (
+  -- common to all
+  taxon_id TEXT PRIMARY KEY,
+  scientific_name TEXT NOT NULL,
+  scientific_name_authorship TEXT,
+  name_according_to TEXT,
+  name_according_to_id TEXT,
+  taxon_rank TEXT,
+  taxon_source TEXT, -- From what taxonomic authority is the information taken
+  scientific_name_id TEXT,
+  taxon_remarks TEXT,  
+  
+  -- normalized view
+  parent_taxon_id TEXT REFERENCES taxon ON DELETE CASCADE,
+  taxonomic_status TEXT,
+
+  -- denormalized
+  kingdom TEXT,
+  phylum TEXT,
+  class TEXT,
+  "order" TEXT,
+  family TEXT,
+  subfamily TEXT,
+  genus TEXT,
+  subgenus TEXT,
+  accepted_scientific_name TEXT -- populated only when scientific name is a synonym

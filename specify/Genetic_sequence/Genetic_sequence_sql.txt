@@ -1,0 +1,4 @@
+CREATE TABLE genetic_sequence (
+  genetic_sequence_id TEXT PRIMARY KEY REFERENCES digital_entity ON DELETE CASCADE,
+  genetic_sequence_type TEXT NOT NULL,
+  sequence TEXT NOT NULL
