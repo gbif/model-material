@@ -667,7 +667,7 @@ CREATE TABLE citation (
   citation_type TEXT,
   citation_page_number TEXT,
   citation_remarks TEXT,
-  PRIMARY KEY (citation_target_id, citation_target_type,  citation_reference_id)
+  PRIMARY KEY (citation_target_id, citation_target_type, citation_reference_id, citation_type, citation_page_number, citation_remarks)
 );
 CREATE INDEX ON citation(citation_target_id, citation_reference_id);
 CREATE INDEX ON citation(citation_target_type);
