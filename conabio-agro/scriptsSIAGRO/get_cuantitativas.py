@@ -21,6 +21,7 @@ try:
                         id
                         nombre
                         valor
+                        unidad
                         nombre_corto
                         comentarios
                         metodo_id
