@@ -509,7 +509,6 @@ CREATE TABLE taxon_identification (
   identification_id TEXT REFERENCES identification ON DELETE CASCADE,
   taxon_order SMALLINT NOT NULL CHECK (taxon_order >= 0) DEFAULT 0,
   taxon_authority TEXT,
-  taxon_confidence_percent NUMERIC NOT NULL CHECK (taxon_confidence_percent BETWEEN 0 AND 100),
   PRIMARY KEY (taxon_id, identification_id, taxon_order)
 );
 
