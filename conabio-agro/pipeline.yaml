@@ -26,3 +26,11 @@ tasks:
     name: create-assertions
     class: SQLDump
     product: "{{data_folder}}/assertions.csv"
+  - source: "{{snib_folder}}/entity.sql"
+    name: create-entity
+    class: SQLDump
+    product: "{{data_folder}}/entity.csv"
+  - source: "{{snib_folder}}/material_entity.sql"
+    name: create-material-entity
+    class: SQLDump
+    product: "{{data_folder}}/material_entity.csv"
