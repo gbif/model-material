@@ -606,7 +606,7 @@ CREATE TABLE agent_role (
   agent_role_began TEXT,
   agent_role_ended TEXT,
   agent_role_order SMALLINT NOT NULL CHECK (agent_role_order >= 0) DEFAULT 0,
-  PRIMARY KEY (agent_role_target_id, agent_role_target_type, agent_role_agent_id, agent_role_agent_name, agent_role_role, agent_role_began, agent_role, ended, agent_role_order)
+  PRIMARY KEY (agent_role_target_id, agent_role_target_type, agent_role_agent_id, agent_role_agent_name, agent_role_role, agent_role_began, agent_role_ended, agent_role_order)
 );
 CREATE INDEX ON agent_role(agent_role_target_type);
 
