@@ -665,7 +665,7 @@ CREATE TABLE citation (
   citation_reference_id TEXT REFERENCES reference ON DELETE CASCADE,
   citation_type TEXT,
   citation_page_number TEXT,
-  citation_remarks TEXT,
+  citation_remarks TEXT
 );
 CREATE INDEX ON citation(citation_target_id, citation_reference_id);
 CREATE INDEX ON citation(citation_target_type);
