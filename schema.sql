@@ -605,10 +605,10 @@ CREATE TABLE agent_role (
   agent_role_role TEXT,
   agent_role_began TEXT,
   agent_role_ended TEXT,
-  agent_role_order SMALLINT NOT NULL CHECK (agent_role_order >= 0) DEFAULT 0,
-  PRIMARY KEY (agent_role_target_id, agent_role_target_type, agent_role_agent_id, agent_role_agent_name, agent_role_role, agent_role_began, agent_role_ended, agent_role_order)
+  agent_role_order SMALLINT NOT NULL CHECK (agent_role_order >= 0) DEFAULT 0
 );
 CREATE INDEX ON agent_role(agent_role_target_type);
+ALTER TABLE agent_role ADD CONSTRAINT agent_role_unique_key UNIQUE (agent_role_target_id, agent_role_target_type, agent_role_agent_id, agent_role_agent_name, agent_role_role, agent_role_began, agent_role_ended, agent_role_order);
 
 ---
 --   Assertions for all relevant content
