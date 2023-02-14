@@ -1,0 +1,1 @@
+1.  Rank ID numbers will have to be converted into text (10=Kingdom, 30=Phylum, 60=Class, 100=Order, 140=Family, 150=Subfamily, 180=Genus, 220=Species, 230=Subspecies) as post-process.  Fix for this will be added to Specify in future.

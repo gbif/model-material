@@ -1,0 +1,4 @@
+CREATE TABLE organism (
+  organism_id TEXT PRIMARY KEY REFERENCES material_entity ON DELETE CASCADE,
+  organism_scope TEXT,
+  accepted_identification_id TEXT REFERENCES identification ON DELETE SET NULL

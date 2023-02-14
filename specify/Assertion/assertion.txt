@@ -1,0 +1,5 @@
+1. Assertions are what we would call collection object attributes in Specify - length, sex, etc.  This is in a 1:1 relationship to collection objects.
+2. Each assertion would need to be extracted individually and then merged together to get a simgle assertion file.
+3. The CO attribute table does not have GUIDs so these would need to be created in post-process as elsewhere:
+
+=LOWER(CONCATENATE(DEC2HEX(RANDBETWEEN(0,4294967295),8),"-",DEC2HEX(RANDBETWEEN(0,65535),4),"-",DEC2HEX(RANDBETWEEN(0,65535),4),"-",DEC2HEX(RANDBETWEEN(0,65535),4),"-",DEC2HEX(RANDBETWEEN(0,4294967295),8),DEC2HEX(RANDBETWEEN(0,65535),4)))

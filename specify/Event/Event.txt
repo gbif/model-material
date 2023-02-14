@@ -1,0 +1,6 @@
+1. These fields are mapped to three tables - collection event, collecting event attribute.
+2. No fields or concept for parent_event_id unless this is equivalent to our collecting trip which is a group of collecting events?
+3. Presume verbatim locality, elevation, depth, etc are for collections that do not have separate tables for these?
+4. No fields for sample_size or effort
+5. Field notes have their own tables - field notebook to field notebook page to collection object linkage.  In my collection I have scans of field notes as attachments (not transcribed as yet) to the collecting event table.
+6. No fields for protocol_id, protocol_description (collection method?), event_type, event_name, sample_size_value, sample_size_unit, event_effort
