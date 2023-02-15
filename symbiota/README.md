@@ -6,7 +6,6 @@
 - `identifications_dbg.csv`
 - `measurementOrFact_dbg.csv`
 - `multimedia_dbg.csv`
-- `symbiota_neon.sql`
 
 Records were downloaded from the [Southern Rocky Mountain Herbaria portal](https://www.soroherbaria.org/portal/) in Symbiota native format. We isolated 8 specimens that had both identification and measurementOrFact data.
 
