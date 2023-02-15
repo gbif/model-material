@@ -1,0 +1,23 @@
+coreid,identifiedBy,dateIdentified,identificationQualifier,scientificName,identificationIsCurrent,scientificNameAuthorship,genus,specificEpithet,taxonRank,infraspecificEpithet,identificationReferences,identificationRemarks,recordID,modified
+3037588,Janet L. Wingate,Mar-16,,Salix bebbiana,1,Sarg.,,,,,,,urn:uuid:68a78b0f-8ac1-4f08-ac9e-9c09be31440f,3/31/2016 14:09
+3037588,unknown,unknown,,Salix bebbiana,0,Sargent,,,,,,,urn:uuid:4b744c1b-231d-4696-bf34-cf654447f30b,3/31/2016 14:09
+3037589,Gwen Kittel,Mar-19,,Salix monticola,1,Bebb,,,,,,,urn:uuid:10658dfb-a76e-431e-8bd5-11b2961efbc0,3/14/2019 17:05
+3037589,unknown,s.d.,,Salix lucida,0,Muhl.,,,,,,Annotated from Salix pseudolapponum to Salix lucida ssp caudata by Stanley Smookler (4/1999).,urn:uuid:7bb5909e-2af2-4b3e-91f2-1ac11391743b,3/14/2019 17:05
+3037590,Gwen Kittel,Mar-19,,Salix monticola,1,Bebb,,,,,,,urn:uuid:4f335be6-a043-4f50-8977-13181be69f17,3/14/2019 17:04
+3037590,unknown,s.d.,,Salix boothii,0,Dorn,,,,,,Annotated from Salix monticola to Salix boothii by Stanley Smookler (04/1999).,urn:uuid:ad7ac29a-bec7-4f2b-9721-31738bd5ce01,3/14/2019 17:04
+3037593,Gwen Kittel,Mar-19,,Salix lasiandra subsp. caudata,1,(Nutt.) E.Murray,,,,,,,urn:uuid:e1fd51a1-af27-44b8-ba43-7d5fe14e31b2,4/23/2019 12:39
+3037593,Janet L. Wingate,Apr-16,,Salix lasiandra var. caudata,0,(Nutt.) Sudw.,,,,,,,urn:uuid:4c500bb9-444f-4de6-8d83-26759387bf53,4/19/2016 15:57
+3037593,unknown,unknown,,Salix lucida,0,Muhl.,,,,,,,urn:uuid:1637cf18-013b-4e05-aedb-7c3d8bd41d37,4/19/2016 15:57
+3037594,Gwen Kittel,Mar-19,,Salix lasiandra var. caudata,1,(Nutt.) Sudw.,,,,,,,urn:uuid:310d7cfb-5e7b-475c-99d7-d5e59745e0c8,4/23/2019 12:50
+3037594,Janet L. Wingate,Apr-16,,Salix lasiandra subsp. caudata,0,(Nutt.) E.Murray,,,,,,,urn:uuid:d6e36139-d9bd-4592-a1e4-3dc5000a3075,4/23/2019 12:50
+3037594,Janet L. Wingate,Apr-16,,Salix lasiandra var. caudata,0,(Nutt.) Sudw.,,,,,,,urn:uuid:d9b50f56-d0f9-4ed5-ba61-f556495ebecd,4/19/2016 15:46
+3037594,unknown,unknown,,Salix lucida,0,Muhl.,,,,,,Annotated from Salix ligulifolia to Salix lucida ssp. lasiandra by KHD Staff (05/2006).,urn:uuid:fdbb094c-e997-4753-ad48-777ccf5674cb,4/19/2016 15:46
+3037595,Gwen Kittel,Mar-19,,Salix caudata,1,A.Heller,,,,,,,urn:uuid:1558093b-7439-41c3-8eaf-6fd3b07d7e15,5/31/2019 9:31
+3037595,unknown,s.d.,,Salix lucida,0,Muhl.,,,,,,,urn:uuid:d9c396ef-6071-44bc-becd-a12c5d3629bb,5/31/2019 9:31
+3037596,Gwen Kittel,Mar-19,,Salix lasiandra subsp. caudata,1,(Nutt.) E.Murray,,,,,,,urn:uuid:cad9d272-fc89-45f3-9d08-ea4fd327cdc2,5/31/2019 9:53
+3037596,Janet L. Wingate,4/21016,,Salix lasiandra subsp. caudata,0,(Nutt.) E.Murray,,,,,,,urn:uuid:41c489d6-637c-4d5e-b45c-92481b6e700d,5/31/2019 9:53
+3037596,Janet L. Wingate,4/21016,,Salix lasiandra var. caudata,0,(Nutt.) Sudw.,,,,,,,urn:uuid:ed16cd93-bd86-457a-b343-138d203597b0,4/19/2016 15:46
+3037596,unknown,unknown,,Salix lucida,0,Muhl.,,,,,,,urn:uuid:b1faf7d6-a2d2-4ca8-872c-bdf5988e8a82,4/19/2016 15:46
+3037597,Gwen Kittel,Mar-19,,Salix bebbiana,0,Sarg.,,,,,,Mixed specimen. Determination for branch labeled B.,urn:uuid:a9be3f9c-fd7d-4adc-9c01-09a0ac83e187,3/14/2019 17:08
+3037597,Gwen Kittel,Mar-19,,Salix caudata,1,A.Heller,,,,,,Mixed specimen. Determination for branch labeled A.,urn:uuid:f99eb7d8-8a89-4e4f-b432-c5dbfbde4264,3/14/2019 17:07
+3037597,unknown,s.d.,,Salix lucida,0,Muhl.,,,,,,,urn:uuid:33116333-4b6b-4fcb-bf40-bb35dcb14c79,3/14/2019 17:07
