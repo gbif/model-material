@@ -509,7 +509,6 @@ CREATE TABLE taxon_identification (
   identification_id TEXT REFERENCES identification ON DELETE CASCADE,
   taxon_order SMALLINT NOT NULL CHECK (taxon_order >= 0) DEFAULT 0,
   taxon_authority TEXT,
-  taxon_confidence_percent NUMERIC NOT NULL CHECK (taxon_confidence_percent BETWEEN 0 AND 100),
   PRIMARY KEY (taxon_id, identification_id, taxon_order)
 );
 
@@ -606,10 +605,10 @@ CREATE TABLE agent_role (
   agent_role_role TEXT,
   agent_role_began TEXT,
   agent_role_ended TEXT,
-  agent_role_order SMALLINT NOT NULL CHECK (agent_role_order >= 0) DEFAULT 0,
-  PRIMARY KEY (agent_role_target_id, agent_role_target_type, agent_role_agent_id, agent_role_order)
+  agent_role_order SMALLINT NOT NULL CHECK (agent_role_order >= 0) DEFAULT 0
 );
 CREATE INDEX ON agent_role(agent_role_target_type);
+ALTER TABLE agent_role ADD CONSTRAINT agent_role_unique_key UNIQUE (agent_role_target_id, agent_role_target_type, agent_role_agent_id, agent_role_agent_name, agent_role_role, agent_role_began, agent_role_ended, agent_role_order);
 
 ---
 --   Assertions for all relevant content
@@ -666,8 +665,8 @@ CREATE TABLE citation (
   citation_reference_id TEXT REFERENCES reference ON DELETE CASCADE,
   citation_type TEXT,
   citation_page_number TEXT,
-  citation_remarks TEXT,
-  PRIMARY KEY (citation_target_id, citation_target_type,  citation_reference_id)
+  citation_remarks TEXT
 );
 CREATE INDEX ON citation(citation_target_id, citation_reference_id);
 CREATE INDEX ON citation(citation_target_type);
+ALTER TABLE citation ADD CONSTRAINT citation_unique_key UNIQUE (citation_target_id, citation_target_type, citation_reference_id, citation_type, citation_page_number, citation_remarks);
