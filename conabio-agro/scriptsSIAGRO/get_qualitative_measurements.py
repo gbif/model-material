@@ -42,7 +42,7 @@ from string import Template
 from pathlib import Path
 
 # %%
-SIAGRO_URL_ENDPOINT = "https://maices-siagro.conabio.gob.mx/api/graphql/"
+SIAGRO_URL_ENDPOINT = "https://maices-siagro.conabio.gob.mx/graphql/"
 PAGE_SIZE = 5000
 
 # %%
