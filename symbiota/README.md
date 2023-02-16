@@ -11,9 +11,6 @@ Records were downloaded from the [Southern Rocky Mountain Herbaria portal](https
 
 Almost all UUIDs were generated on the fly and are not resolvable.
 
-
--------BELOW IS FROM LAURA'S MAPPING PROCEDURE. NOT APPLIED HERE YET-------
-
 ## Step-by-step
 
 Imported `occurrences_dbg.csv` into the table `symbiota_occurrences_dbg`.
