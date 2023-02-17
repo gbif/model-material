@@ -1,5 +1,6 @@
 select
-  CAST(@rownum := @rownum + 1 AS UNSIGNED) AS material_entity_id,
+  -- CAST(@rownum := @rownum + 1 AS UNSIGNED) AS material_entity_id,
+  llaveejemplar AS material_entity_id,
   procedenciadatos as material_entity_type,
   t.tipopreparacion as preparations,
   '' as dispositions,
@@ -25,10 +26,10 @@ from
   inner join snib.catinstitucion ci using (idinstitucioncat)
   inner join snib.persona p on ec.idnombrecolector = p.idpersona
   inner join snib.persona p2 on ec.idabreviadocolector = p2.idpersona
-  inner join snib.proyecto pr using (llaveproyecto),
-  (
-    SELECT
-      @rownum := 0
-  ) r
+  inner join snib.proyecto pr using (llaveproyecto) -- ,
+  -- (
+  --   SELECT
+  --     @rownum := 0
+  -- ) r
 where
   proyecto in ('FY001', 'FZ016');

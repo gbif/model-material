@@ -91,6 +91,7 @@ for i in range(0, cnt_records, PAGE_SIZE):
                      verify=False)
     records = r.json()["data"]["caracteristica_cualitativas"]
     records_df = pd.DataFrame(records)
+    records_df["assertion_target_type"] = "MATERIAL_ENTITY"
     records_df.to_csv(
         output_data_path,
         mode='a',
