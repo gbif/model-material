@@ -21,4 +21,5 @@ inner join snib.persona p on ec.idnombrecolector=p.idpersona
 inner join snib.persona p2 on ec.idabreviadocolector=p2.idpersona
 inner join snib.proyecto pr using(llaveproyecto)
 ,(SELECT @rownum:=0) r
-where proyecto in ('FY001','FZ016');
+where proyecto in ('FY001','FZ016')
+and ec.estadoregistro ='';

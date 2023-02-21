@@ -1,6 +1,6 @@
 SELECT 
   e.llaveejemplar,
-  '' AS location_id,
+  cg.llaveregionsitiosig AS location_id,
   '' AS parent_location_id,
   '' AS higher_geography_id,
   CONCAT("{\"regionMarina\":{\"nombre\":\"",
@@ -42,7 +42,7 @@ SELECT
   '' AS accepted_georreference_context_id
 FROM snib.ejemplar_curatorial e
 INNER JOIN snib.proyecto p ON e.llaveproyecto = p.llaveproyecto
-INNER JOIN conabiogeografia cg on e.llaveregionsitiosig = cg.llaveregionsitiosig
+INNER JOIN snib.conabiogeografia cg on e.llaveregionsitiosig = cg.llaveregionsitiosig
 INNER JOIN snib.nombre n on e.llavenombre = n.llavenombre
 LEFT JOIN trabajo_SNIB.si_megt_snib4378_noborrar s on e.llaveejemplar = s.llaveejemplar
 LEFT JOIN trabajoDwC.RecuperarRegionesPablo_llaveejemplar l ON e.llaveejemplar = l.llaveejemplar
@@ -50,5 +50,5 @@ INNER JOIN snib.regionmapa rm ON cg.idregionmapa =rm.idregionmapa
 INNER JOIN snib.localidad lo ON e.idlocalidad = lo.idlocalidad
 INNER JOIN snib.geografiaoriginal gor on gor.llavesitio =e.llavesitio 
 inner join snib.regionmarinamapa rmm on rmm.idregionmarinamapa =cg.idregionmarinamapa 
-WHERE e.estadoregistro = ""
-AND p.proyecto in ('FY001','FZ016');
+WHERE p.proyecto in ('FY001','FZ016')
+and e.estadoregistro = "";
