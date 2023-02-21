@@ -38,6 +38,7 @@ product = None
 import pandas as pd
 import json
 import requests
+import hashlib
 from string import Template
 from pathlib import Path
 
@@ -65,8 +66,8 @@ assertions_record_page_query = Template("""
       offset: $offset
     })
   {
-    llaveejemplar: registro_id
-    assertion_id: id
+    assertion_target_id: registro_id
+    id
     assertion_type: nombre_corto
     assertion_value_numeric: valor
     assertion_unit: unidad
@@ -93,6 +94,11 @@ for i in range(0, cnt_records, PAGE_SIZE):
     records = r.json()["data"]["caracteristica_cuantitativas"]
     records_df = pd.DataFrame(records)
     records_df["assertion_target_type"] = "MATERIAL_ENTITY"
+    records_df["assertion_id"] = (('quantitative_id_' + records_df['id'])
+                               .str
+                               .encode('utf-8')
+                               .apply(lambda x: hashlib.sha1(x).hexdigest()))
+    records_df = records_df.drop(columns=["id"])
     records_df.to_csv(
         output_data_path,
         mode='a',

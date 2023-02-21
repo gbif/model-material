@@ -22,10 +22,10 @@ tasks:
     name: create-event
     class: SQLDump
     product: "{{data_folder}}/event"
-  - source: "{{snib_folder}}/assertions.sql"
-    name: create-assertions
-    class: SQLDump
-    product: "{{data_folder}}/assertions"
+  # - source: "{{snib_folder}}/assertions.sql"
+  #   name: create-assertions
+  #   class: SQLDump
+  #   product: "{{data_folder}}/assertions"
   - source: "{{snib_folder}}/entity.sql"
     name: create-entity
     class: SQLDump
@@ -44,3 +44,8 @@ tasks:
     product:
       nb: "{{here}}/get-siagro-quantitative.ipynb"
       data: "{{data_folder}}/assertions_quantitative.csv"
+  - source: "{{siagro_folder}}/merge-assertions.py"
+    name: merge-assertions
+    product:
+      nb: "{{here}}/merge-assertions.ipynb"
+      data: "{{data_folder}}/assertions.csv"
