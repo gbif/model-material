@@ -5,6 +5,7 @@
 - `occurrences.csv`
 - `materialSample.csv`
 - `symbiota_neon.sql`
+- `symbiota_neon_seinet.sql`
 
 For the purposes of this exercise, records were downloaded from the [NEON Biorepository Symbiota portal](https://biorepo.neonscience.org/) in DwCA format. Two spreadsheets from the DwCA were used, `occurrences.csv` and `materialSample.csv`.
 
@@ -300,3 +301,5 @@ Create record in `taxon_identification` to associate taxon, identification, and 
 INSERT INTO taxon_identification (taxon_id, identification_id, taxon_order)
 VALUES ('29174bda-9e08-4ff8-a878-e64991ea1121', 'd511a9a7-4867-4083-8d10-fe223242b6d8', 1);
 ```
+
+Finally, a database dump generated the file `symbiota_neon.sql`.
