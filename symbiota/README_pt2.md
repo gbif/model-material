@@ -299,7 +299,7 @@ Add locations and georeferences. Symbiota portals do not yet support multiple ge
 ```
 
 Insert events and occurrences. Symbiota uses the occurrences-based model, so the only provided GUID is the occurrenceID.
-**Problem:** Our establishmentMeans field does not have a controlled vocabulary, so it had to be excluded from this import.
+**PROBLEM:** Our establishmentMeans field does not have a controlled vocabulary, so it had to be excluded from this import.
 
 ```postgresql
 	INSERT INTO event (event_id, dataset_id, location_id, event_type, field_number, event_date, year, month, day, verbatim_event_date, verbatim_locality, verbatim_elevation, verbatim_depth, verbatim_coordinates, habitat)
@@ -327,7 +327,7 @@ Insert events and occurrences. Symbiota uses the occurrences-based model, so the
 ```
 
 Add identifications. This was a little tricky because, currently, the occurrences file contains taxonomic information for the most recent determination, while the identifications table contains previous identifications _as well as current determinations, only for records that have more than one determination_. Therefore, we had to import identifications from the occurrences table, then de-duplicate the identifications table, then import the remaining identifications from the identifications table. Similarly, we had to add the taxa twice: once from occurrences, and once from identifications.
-**Problem:** We did not address how to indicate which is the accepted identification.
+**PROBLEM:** We did not address how to indicate which is the accepted identification.
 
 ```postgresql
 	INSERT INTO identification (identification_id, organism_id, identification_type, taxon_formula, verbatim_identification, type_status, identified_by, date_identified, identification_references, identification_remarks)
