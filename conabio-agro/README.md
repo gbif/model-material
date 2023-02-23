@@ -101,15 +101,15 @@ created in step 3. As it can be read on the assertion creation scripts.
 
 ## 7. DigitalEntities
 
-** Not applicable **
+**Not applicable**
 
 ## 8. AgentRoles, Assertions, Citations, and Identifiers for DigitalEntities
 
-** Not applicable **
+**Not applicable**
 
 ## 9. EntityRelationships
 
-** Not applicable **
+**Not applicable**
 
 ## 10. Locations, Georeferences, and GeologicalContexts
 
