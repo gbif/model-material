@@ -1,9 +1,0 @@
-CREATE TABLE entity_relationship (
-  entity_relationship_id TEXT PRIMARY KEY,
-  depends_on_entity_relationship_id TEXT REFERENCES entity_relationship ON DELETE CASCADE,
-  subject_entity_id TEXT REFERENCES entity ON DELETE CASCADE,
-  entity_relationship_type TEXT NOT NULL,
-  object_entity_id TEXT REFERENCES entity ON DELETE CASCADE,
-  object_entity_iri TEXT,
-  entity_relationship_date TEXT,
-  entity_relationship_order SMALLINT NOT NULL DEFAULT 0 CHECK (entity_relationship_order >= 0) 

@@ -1,1 +1,0 @@
-1.  Some static terms were entered into unused fields in the database.  In future queries will support static field inclusion.

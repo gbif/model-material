@@ -1,4 +1,0 @@
-1.  This complement of fields is contained in three separate tables - collecting event attribute (just depth fields), locality and geography (which is stored as a heirarchical tree).
-2. We do not have a municipality field or distance_above_surface (how do these differ from elevation?) fields
-3. Currently do not have any way of restricting codes to just country so they are entered for country and state.  These could probably be removed through post-processing.
-4. Geography GUIDs added as they are not assigned by default

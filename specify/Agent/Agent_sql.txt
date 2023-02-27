@@ -1,4 +1,0 @@
-CREATE TABLE agent (
-  agent_id TEXT PRIMARY KEY,
-  agent_type TEXT NOT NULL,
-  preferred_agent_name TEXT

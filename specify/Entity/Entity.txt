@@ -1,2 +1,0 @@
-1. GBIF dataset ID added to institution table in Specify
-2. entity_name and entity_remarks fields added

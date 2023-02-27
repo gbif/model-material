@@ -1,4 +1,0 @@
-1. Specify does not have a separate georeference table and most fields (lat, long, datum, method) are incorporated into the locality table.  There is a geocoordinate detail table that includes precision, georeferenced by, georeferenced date, remarks, etc. fields. So, there are a mix of fields from the locality and geocoordinate detail table here.  Not all localities have geocoorddetail entries so not all will have ID's.
-2.  What about latitude 2, longitude 2?
-3. Not sure what footprint fields are?
-4. Not sure what point_radius_spatial_fit field is?

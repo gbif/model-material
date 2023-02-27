@@ -1,1 +1,0 @@
-1.  Inclusion of current field in query and setting to Yes, precludes the one to many relationship between determinations and collection objects.

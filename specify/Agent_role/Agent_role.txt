@@ -1,3 +1,0 @@
-1. No fields for agent_role_role as these roles are dependant on the table they are linked to - cataloger, detereminer, collector, etc. - will need to be added in post-processing.
-2. The three files - agent_role_cataloger, agent_role_collector, agent_role_determiner will need to be merged and agent_roles inserted.
-3. Post-processing will also need to be performed on the agent_role_order field as it appears that in Specify, if only one agent exists the order number field is blank and for multiple agents the first agent is assigned zero.

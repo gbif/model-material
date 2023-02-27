@@ -1,1 +1,0 @@
-1. There is no field or concept for agent_relationship in Specify.  The closest thing is members of an agent group which has been added here.  This is represented by a number which has been edited to "collected with" here. This may be a useful thing to add to our data model in the future.

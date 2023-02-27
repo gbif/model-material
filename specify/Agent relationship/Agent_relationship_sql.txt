@@ -1,5 +1,0 @@
-CREATE TABLE agent_relationship (
-  subject_agent_id TEXT REFERENCES agent ON DELETE CASCADE,
-  relationship_to TEXT NOT NULL,
-  object_agent_id TEXT REFERENCES agent ON DELETE CASCADE,
-  PRIMARY KEY (subject_agent_id, relationship_to, object_agent_id)
