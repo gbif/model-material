@@ -12,3 +12,4 @@ General considerations
 10. There is no table linkage in the Unified model that will allow for Collecting event to media linkages.  The the Specify data model we are able to link attachments (images, PDF's) directly to the collecting event where necessary (field notebook pages that circumscribe all specimens collected at that collecting event as well as images of habitat).
 11. Geological context is held in two heirarchical trees in Specify (much like taxon and geography) - chronostratigraphy and lithostratigraphy.  I do not ue either in my fish collection but they are mappable in much the same way as other tree tables.
 12. No concept for protocol in Specify - table ignored.
+13. There is always the possibility that the Specify 7 API could be used in future to perform a lot of these functions currently being performed through the query builder.
