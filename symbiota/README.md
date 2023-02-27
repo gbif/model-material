@@ -9,6 +9,10 @@
 
 For the purposes of this exercise, records were downloaded from the [NEON Biorepository Symbiota portal](https://biorepo.neonscience.org/) in DwCA format. Two spreadsheets from the DwCA were used, `occurrences.csv` and `materialSample.csv`.
 
+Links to the data records that we used from SoRo:
+https://www.soroherbaria.org/portal/collections/individual/index.php?occid=3037588
+https://www.soroherbaria.org/portal/collections/individual/index.php?occid=3037589
+
 I was able to populate all of the tables detailed below with only the two aforementioned CSVs.
 
 Almost all UUIDs were generated on the fly and are not resolvable.
