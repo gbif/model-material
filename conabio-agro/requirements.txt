@@ -1,0 +1,5 @@
+ploomber>=0.22
+mariadb>=1.1.5
+jupyterlab>=3.5
+jupytext>=1.14
+pandas>=1.5.3
