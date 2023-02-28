@@ -36,4 +36,5 @@ cc2.unidad  as assertion_unit,
 from  (SELECT @rownum:=0) r,GBIFModel2023.Caracteristica_cuantitativas cc2
 inner join snib.ejemplar_curatorial ec on ec.llaveejemplar =cc2.registro_id 
 inner join snib.proyecto p using(llaveproyecto)
-where proyecto in ('FY001','FZ016');
+where proyecto in ('FY001','FZ016')
+and estadoregistro='';
