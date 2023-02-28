@@ -1,3 +1,8 @@
 1. Four separate files created from queries in Specify - collection object attachments, collecting event attachments, voucher sequences and tissue sequences (these two are necessary to capture all sequences from both voucher and tissue collection which are separate collections). Some sequences from tissues that we do not hold the voucher for may not relate to any entities.  Files concatenated as post-process.
 2. Entity_relationship_type added as post-process as "shown in" and "sequence of" for images and sequences respectively.
 3. Object_entity_iri, entity_relationship_date and entity_relationship order not mapped and thus added as post-process.
+4. Entity_relationship_id added in post process with the following Excel formula:
+
+=LOWER(CONCATENATE(DEC2HEX(RANDBETWEEN(0,4294967295),8),"-",DEC2HEX(RANDBETWEEN(0,65535),4),"-",DEC2HEX(RANDBETWEEN(0,65535),4),"-",DEC2HEX(RANDBETWEEN(0,65535),4),"-",DEC2HEX(RANDBETWEEN(0,4294967295),8),DEC2HEX(RANDBETWEEN(0,65535),4)))
+
+5. Entity_relationship_order entered as zero.  I do not have any way of generating an order for sequences or images.  Morphosource linkages will always be 1:1.

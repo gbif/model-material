@@ -4,3 +4,4 @@
 4. No fields for sample_size or effort
 5. Field notes have their own tables - field notebook to field notebook page to collection object linkage.  In my collection I have scans of field notes as attachments (not transcribed as yet) to the collecting event table.
 6. No fields for protocol_id, protocol_description (collection method?), event_type, event_name, sample_size_value, sample_size_unit, event_effort
+7. Events needed to be added for occurrences (from occurrence - original).

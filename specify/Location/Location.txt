@@ -2,3 +2,4 @@
 2. We do not have a municipality field or distance_above_surface (how do these differ from elevation?) fields
 3. Currently do not have any way of restricting codes to just country so they are entered for country and state.  These could probably be removed through post-processing.
 4. Geography GUIDs added as they are not assigned by default
+5. Because there are collecting event attribute fields in the mapping it creates duplicate locality_ids.  This is due to depth (and elevation) fields being in the CE attribute table and localities being reused for collecting events but with different depth entries.  Idiocyncracy of the Specify data model. Duplicate localities had to be removed in post-processing which also deletes some valuable depth data but is unavoidable at present.
