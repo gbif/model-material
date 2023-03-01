@@ -8,6 +8,7 @@ SET CONSTRAINTS ALL DEFERRED;
 \copy public.reference FROM '../specify/Reference/REFERENCE.csv' WITH DELIMITER ',' CSV HEADER;
 \copy public.entity FROM '../specify/Entity/ENTITY.csv' WITH DELIMITER ',' CSV HEADER;
 \copy public.agent FROM '../specify/Agent/AGENT.csv' WITH DELIMITER ',' CSV HEADER;
+\copy public.collection FROM '../specify/Collection/COLLECTION.csv' WITH DELIMITER ',' CSV HEADER;
 \copy public.digital_entity FROM '../specify/Digital_entity/DIGITAL_ENTITY.csv' WITH DELIMITER ',' CSV HEADER;
 \copy public.material_entity FROM '../specify/Material_entity/MATERIAL_ENTITY.csv' WITH DELIMITER ',' CSV HEADER;
 \copy public.agent_relationship FROM '../specify/Agent relationship/AGENT_RELATIONSHIP.csv' WITH DELIMITER ',' CSV HEADER;
