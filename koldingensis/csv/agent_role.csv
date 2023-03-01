@@ -1,0 +1,10 @@
+agent_role_target_id,agent_role_target_type,agent_role_agent_id,agent_role_agent_name,agent_role_role,agent_role_began,agent_role_ended,agent_role_order
+dc04a8dd-f73e-41c3-9d5a-4f96e2d59feb,DIGITAL_ENTITY,https://orcid.org/0000-0003-1691-239X,Thomas Stjernegaard Jeppesen,CREATOR,,,0
+c558c451-d4bd-4449-8f2f-a3d0bf8b7667,DIGITAL_ENTITY,https://orcid.org/0000-0003-1691-239X,Thomas Stjernegaard Jeppesen,CREATOR,,,0
+2428b3d3-b2ee-470c-952f-fb99b871dd08,DIGITAL_ENTITY,https://orcid.org/0000-0003-1691-239X,Thomas Stjernegaard Jeppesen,CREATOR,,,0
+7982c131-93da-48d8-b84f-b543790ef4f7,DIGITAL_ENTITY,https://orcid.org/0000-0002-3530-013X,Tobias Frøslev,CREATOR,,,0
+ff3c4518-d18d-4673-99f5-3a80fa1ce066,OCCURRENCE,https://orcid.org/0000-0002-3530-013X,Tobias Frøslev,IDENTIFIED BY,,,0
+aadb06f5-f746-48fa-8cc2-1c70f4765f15,IDENTIFICATION,https://orcid.org/0000-0002-3530-013X,Tobias Frøslev,CREATOR,,,0
+aadb06f5-f746-48fa-8cc2-1c70f4765f15,IDENTIFICATION,https://orcid.org/0000-0003-1691-239X,Thomas Stjernegaard Jeppesen,CREATOR,,,1
+27b13f41-87f2-46f0-8c8a-93d98412ef82,IDENTIFICATION,https://orcid.org/0000-0002-3530-013X,Tobias Frøslev,CREATOR,,,0
+27b13f41-87f2-46f0-8c8a-93d98412ef82,IDENTIFICATION,https://orcid.org/0000-0003-1691-239X,Thomas Stjernegaard Jeppesen,CREATOR,,,1

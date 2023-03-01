@@ -1,0 +1,4 @@
+taxon_id,scientific_name,scientific_name_authorship,name_according_to,taxon_rank,taxon_source,scientific_name_id,taxon_remarks,parent_taxon_id,taxonomic_status,kingdom,phylum,class,order,family,subfamily,genus,subgenus,accepted_scientific_name,name_according_to_id
+980c95f5-d2e9-4d8c-8f31-0fecc279d34b,Cortinarius koldingensis Frøslev & T.S.Jeppesen,"Frøslev & T.S.Jeppesen
+","Frøslev, T.G., Jeppesen, T.S. & Dima, B. Cortinarius koldingensis—a new species of Cortinarius, subgenus Phlegmacium related to Cortinarius sulfurinus . Mycol Progress 14, 73 (2015). https://doi.org/10.1007/s11557-015-1098-z",SPECIES,,urn:lsid:indexfungorum.org:names:812989,,,,,,,,,,,,Cortinarius koldingensis Frøslev & T.S.Jeppesen,https://doi.org/10.1007/s11557-015-1098-z
+fb618748-458c-4888-aa7e-f17af64ccd4f,Cortinarius sulphurinus var. fageticola Brandrud,Brandrud,,,,urn:lsid:indexfungorum.org:names:259339,,,,,,,,,,,,Cortinarius sulphurinus var. fageticola Brandrud,

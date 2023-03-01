@@ -1,0 +1,1 @@
+1.  Identification type and identification_formula had to be entered in post-process as there are no fields to express these in Specify.  For identification_formula, hybrids entered as A X B.  All others entered as A.

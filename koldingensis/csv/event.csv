@@ -1,0 +1,2 @@
+event_id,parent_event_id,dataset_id,location_id,protocol_id,event_type,event_name,field_number,event_date,year,month,day,verbatim_event_date,verbatim_locality,verbatim_elevation,verbatim_depth,verbatim_coordinates,verbatim_latitude,verbatim_longitude,verbatim_coordinate_system,verbatim_srs,habitat,protocol_description,sample_size_value,sample_size_unit,event_effort,field_notes,event_remarks
+ff3c4518-d18d-4673-99f5-3a80fa1ce066,,koldingensis,965a6502-4451-44d3-820b-89ee84e81352,,OCCURRENCE,,TF2013-640926,06/10/2013,,,,,,,,,,,,,Deciduous woodland,,,,,,
