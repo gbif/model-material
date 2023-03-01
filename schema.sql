@@ -3,15 +3,71 @@
 -- 
 --  To aid readability, this file is structured as:
 -- 
+--   Agent groups and agent relationships
 --   Location and support tables
 --   Event and support tables
 --   Entity, sub-entities and their relationships
 --   Identification including sequence-based identifications
---   Agent and the connections to other entities
+--   Agent connected to other entities through roles
 --   Assertions for all relevant content
 --   Identifiers for all relevant content
 --   Citations for all relevant content
 ---
+
+---
+--   Agent and the connections to other entities
+--
+-- Each Agent subtype has a foreign key to its immediate parent type, enforcing the
+-- following inheritance model:
+--
+--   Agent
+--     AgentGroup
+--     Collection
+---
+
+-- Agent (https://www.w3.org/TR/prov-o/#Agent)
+--    An agent is something that bears some form of responsibility for an activity
+--    taking place, for the existence of an entity, or for another agent's activity.
+
+CREATE TABLE agent (
+  agent_id TEXT PRIMARY KEY,
+  agent_type TEXT NOT NULL,
+  preferred_agent_name TEXT
+);
+
+-- AgentGroup
+--   A subtype of Agent
+--   A set of Agents
+
+CREATE TABLE agent_group (
+  agent_group_id TEXT PRIMARY KEY REFERENCES agent ON DELETE CASCADE DEFERRABLE,
+  agent_group_type TEXT
+);
+
+-- Collection (see Latimer Core)
+--   A subtype of Agent
+--   An organizational agent that maintains Entities.
+--   Exactly one Global Registry of Science Collections (GRSciColl) identifier.
+
+CREATE TABLE collection (
+  collection_id TEXT PRIMARY KEY REFERENCES agent ON DELETE CASCADE DEFERRABLE,
+  collection_type TEXT,
+  collection_code TEXT, -- also on MaterialEntity
+  institution_code TEXT, -- also on MaterialEntity
+  grscicoll_id UUID NOT NULL
+);
+
+-- AgentRelationship
+--   Any direct relationship between two Agents.
+--   Exactly one subject Agent
+--   Exactly one object Agent
+
+CREATE TABLE agent_relationship (
+  subject_agent_id TEXT REFERENCES agent ON DELETE CASCADE DEFERRABLE,
+  relationship_to TEXT NOT NULL,
+  object_agent_id TEXT REFERENCES agent ON DELETE CASCADE DEFERRABLE,
+  PRIMARY KEY (subject_agent_id, relationship_to, object_agent_id)
+);
 
 ---
 -- Location and support tables
@@ -257,7 +313,7 @@ CREATE TABLE material_entity (
   institution_code TEXT, -- also on Collection
   institution_id TEXT, 
   collection_code TEXT,  -- also on Collection
-  collection_id TEXT,
+  collection_id TEXT REFERENCES collection ON DELETE CASCADE DEFERRABLE,
   owner_institution_code TEXT,
   catalog_number TEXT,
   record_number TEXT,
@@ -510,62 +566,6 @@ CREATE TABLE taxon_identification (
   taxon_order SMALLINT NOT NULL CHECK (taxon_order >= 0) DEFAULT 0,
   taxon_authority TEXT,
   PRIMARY KEY (taxon_id, identification_id, taxon_order)
-);
-
-
----
---   Agent and the connections to other entities
---
--- Each Agent subtype has a foreign key to its immediate parent type, enforcing the
--- following inheritance model:
---
---   Agent
---     AgentGroup
---     Collection
----
-
--- Agent (https://www.w3.org/TR/prov-o/#Agent)
---    An agent is something that bears some form of responsibility for an activity 
---    taking place, for the existence of an entity, or for another agent's activity.
-
-CREATE TABLE agent (
-  agent_id TEXT PRIMARY KEY,
-  agent_type TEXT NOT NULL,
-  preferred_agent_name TEXT
-);
-
--- AgentGroup
---   A subtype of Agent
---   A set of Agents
-
-CREATE TABLE agent_group (
-  agent_group_id TEXT PRIMARY KEY REFERENCES agent ON DELETE CASCADE DEFERRABLE,
-  agent_group_type TEXT
-);
-
--- Collection (see Latimer Core)
---   A subtype of Agent
---   An organizational agent that maintains Entities.
---   Exactly one Global Registry of Science Collections (GRSciColl) identifier.
-
-CREATE TABLE collection (
-  collection_id TEXT PRIMARY KEY REFERENCES agent ON DELETE CASCADE DEFERRABLE,
-  collection_type TEXT,
-  collection_code TEXT, -- also on MaterialEntity
-  institution_code TEXT, -- also on MaterialEntity
-  grscicoll_id UUID NOT NULL
-);
-
--- AgentRelationship
---   Any direct relationship between two Agents.
---   Exactly one subject Agent
---   Exactly one object Agent
-
-CREATE TABLE agent_relationship (
-  subject_agent_id TEXT REFERENCES agent ON DELETE CASCADE DEFERRABLE,
-  relationship_to TEXT NOT NULL,
-  object_agent_id TEXT REFERENCES agent ON DELETE CASCADE DEFERRABLE,
-  PRIMARY KEY (subject_agent_id, relationship_to, object_agent_id)
 );
 
 -- Target types for the common tables (Assertion, Identifier etc)
