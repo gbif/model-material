@@ -1,0 +1,3 @@
+coreid,materialSampleID,sampleType,catalogNumber,sampleCondition,disposition,preservationType,preparationDetails,preparationDate,preparedBy,individualCount,sampleSize,storageLocation,remarks,recordID,concentration,concentrationMethod,dnaHybridization,dnaMeltingPoint,estimatedSize,poolDnaExtracts,purificationMethod,quality,qualityCheckDate,qualityRemarks,ratioOfAbsorbance260_230,ratioOfAbsorbance260_280,sampleDesignation,sieving,volume,weight,weightMethod
+236361,,"whole organism",D00000032533,good,"in collection","ethanol-fixed, stored in 75% ethanol","skull removed",2021-04-09,"Engasser, Emmy",,,,,
+236361,,skull,D00000032533,unchecked,"in collection",dry,,2021-04-09,"Engasser, Emmy",,,,,

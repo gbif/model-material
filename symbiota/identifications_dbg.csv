@@ -1,0 +1,5 @@
+coreid,identifiedBy,dateIdentified,identificationQualifier,scientificName,tidInterpreted,scientificNameAuthorship,genus,specificEpithet,taxonRank,infraspecificEpithet,identificationReferences,identificationRemarks,recordID,modified
+3037588,"Janet L. Wingate",3/2016,,"Salix bebbiana",,Sarg.,,,,,,,urn:uuid:68a78b0f-8ac1-4f08-ac9e-9c09be31440f,"2016-03-31 14:09:31"
+3037588,unknown,unknown,,"Salix bebbiana",,Sargent,,,,,,,urn:uuid:4b744c1b-231d-4696-bf34-cf654447f30b,"2016-03-31 14:09:31"
+3037589,"Gwen Kittel",3/2019,,"Salix monticola",,Bebb,,,,,,,urn:uuid:10658dfb-a76e-431e-8bd5-11b2961efbc0,"2019-03-14 17:05:52"
+3037589,unknown,s.d.,,"Salix lucida",,Muhl.,,,,,,"Annotated from Salix pseudolapponum to Salix lucida ssp caudata by Stanley Smookler (4/1999).",urn:uuid:7bb5909e-2af2-4b3e-91f2-1ac11391743b,"2019-03-14 17:05:52"

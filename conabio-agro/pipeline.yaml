@@ -2,38 +2,6 @@ executor: parallel
 clients:
   SQLDump: snib_client.get_client
 tasks:
-  - source: "{{snib_folder}}/occurrenceSNIB.sql"
-    name: create-occurrences
-    class: SQLDump
-    product: "{{data_folder}}/occurrences"
-  - source: "{{snib_folder}}/localitySNIB.sql"
-    name: create-locality
-    class: SQLDump
-    product: "{{data_folder}}/locality"
-  - source: "{{snib_folder}}/taxonSNIB.sql"
-    name: create-taxon
-    class: SQLDump
-    product: "{{data_folder}}/taxon"
-  - source: "{{snib_folder}}/identification.sql"
-    name: create-identification
-    class: SQLDump
-    product: "{{data_folder}}/identification"
-  - source: "{{snib_folder}}/event.sql"
-    name: create-event
-    class: SQLDump
-    product: "{{data_folder}}/event"
-  # - source: "{{snib_folder}}/assertions.sql"
-  #   name: create-assertions
-  #   class: SQLDump
-  #   product: "{{data_folder}}/assertions"
-  - source: "{{snib_folder}}/entity.sql"
-    name: create-entity
-    class: SQLDump
-    product: "{{data_folder}}/entity"
-  - source: "{{snib_folder}}/material_entity.sql"
-    name: create-material-entity
-    class: SQLDump
-    product: "{{data_folder}}/material_entity"
   - source: "{{siagro_folder}}/get_qualitative_measurements.py"
     name: get-siagro-qualitative
     product:
@@ -49,3 +17,31 @@ tasks:
     product:
       nb: "{{here}}/merge-assertions.ipynb"
       data: "{{data_folder}}/assertions.csv"
+  - source: "{{snib_folder}}/entity.sql"
+    name: create-entity
+    class: SQLDump
+    product: "{{data_folder}}/entity"
+  - source: "{{snib_folder}}/material_entity.sql"
+    name: create-material-entity
+    class: SQLDump
+    product: "{{data_folder}}/material_entity"
+  - source: "{{snib_folder}}/localitySNIB.sql"
+    name: create-locality
+    class: SQLDump
+    product: "{{data_folder}}/locality"
+  - source: "{{snib_folder}}/occurrenceSNIB.sql"
+    name: create-occurrences
+    class: SQLDump
+    product: "{{data_folder}}/occurrences"
+  - source: "{{snib_folder}}/taxonSNIB.sql"
+    name: create-taxon
+    class: SQLDump
+    product: "{{data_folder}}/taxon"
+  - source: "{{snib_folder}}/identification.sql"
+    name: create-identification
+    class: SQLDump
+    product: "{{data_folder}}/identification"
+  - source: "{{snib_folder}}/event.sql"
+    name: create-event
+    class: SQLDump
+    product: "{{data_folder}}/event"
