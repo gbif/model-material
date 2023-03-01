@@ -54,7 +54,7 @@ CREATE TABLE collection (
   collection_type TEXT,
   collection_code TEXT, -- also on MaterialEntity
   institution_code TEXT, -- also on MaterialEntity
-  grscicoll_id UUID NOT NULL
+  grscicoll_id UUID 
 );
 
 -- AgentRelationship
