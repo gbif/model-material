@@ -31,3 +31,8 @@ psql postgresql://material:<PASSWORD>@pg1.gbif-uat.org/material_model -f load-bg
 psql postgresql://material:<PASSWORD>@pg1.gbif-uat.org/material_model -f load-symbiota.sql
 ```
 
+### Koldingensis
+```
+psql postgresql://material:<PASSWORD>@pg1.gbif-uat.org/material_model -f load-koldingensis.sql
+```
+

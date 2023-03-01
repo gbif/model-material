@@ -3,7 +3,7 @@
 --
 
 -- Dumped from database version 15.1
--- Dumped by pg_dump version 15.1
+-- Dumped by pg_dump version 15.2 (Homebrew)
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -699,8 +699,6 @@ CREATE TABLE public.taxon_identification (
     identification_id text NOT NULL,
     taxon_order smallint DEFAULT 0 NOT NULL,
     taxon_authority text,
-    taxon_confidence_percent numeric NOT NULL,
-    CONSTRAINT taxon_identification_taxon_confidence_percent_check CHECK (((taxon_confidence_percent >= (0)::numeric) AND (taxon_confidence_percent <= (100)::numeric))),
     CONSTRAINT taxon_identification_taxon_order_check CHECK ((taxon_order >= 0))
 );
 
@@ -1016,9 +1014,9 @@ fb618748-458c-4888-aa7e-f17af64ccd4f	Cortinarius sulphurinus var. fageticola Bra
 -- Data for Name: taxon_identification; Type: TABLE DATA; Schema: public; Owner: -
 --
 
-COPY public.taxon_identification (taxon_id, identification_id, taxon_order, taxon_authority, taxon_confidence_percent) FROM stdin;
-fb618748-458c-4888-aa7e-f17af64ccd4f	27b13f41-87f2-46f0-8c8a-93d98412ef82	0	\N	100
-980c95f5-d2e9-4d8c-8f31-0fecc279d34b	aadb06f5-f746-48fa-8cc2-1c70f4765f15	0	\N	100
+COPY public.taxon_identification (taxon_id, identification_id, taxon_order, taxon_authority) FROM stdin;
+fb618748-458c-4888-aa7e-f17af64ccd4f	27b13f41-87f2-46f0-8c8a-93d98412ef82	0	\N
+980c95f5-d2e9-4d8c-8f31-0fecc279d34b	aadb06f5-f746-48fa-8cc2-1c70f4765f15	0	\N
 \.
 
 
