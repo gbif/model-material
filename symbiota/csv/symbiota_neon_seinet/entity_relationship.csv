@@ -1,0 +1,4 @@
+entity_relationship_id,depends_on_entity_relationship_id,subject_entity_id,entity_relationship_type,object_entity_id,object_entity_iri,entity_relationship_date,entity_relationship_order
+83d4bdec-4db2-4693-8d14-ebd9fdecf5ca,,439f7e06-49a5-4f40-9939-79a6ce85dc05,MATERIAL SAMPLE OF,cd3fdc48-8047-4edd-bb04-e2c5ba229796,,,0
+14f15dce-bd4d-4683-bec8-bbc64d0151bf,,4f6a6ac4-651b-4e8e-a1ee-45c459d29b99,shown in,urn:uuid:8855b558-aaeb-4fc5-82b4-a156bb0eedf9,,,0
+8c10f6e3-a6b8-4222-a114-7dafe0cd0e63,,d803cc65-fb2e-45f7-8b62-aabb84bf3e36,shown in,urn:uuid:26cf7abd-c6c5-4588-be7d-20d239e04d7a,,,0

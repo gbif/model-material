@@ -26,4 +26,8 @@ tar -xf ../bgbm/bgbm.tar.gz -C ../bgbm
 psql postgresql://material:<PASSWORD>@pg1.gbif-uat.org/material_model -f load-bgbm.sql
 ```
 
+### Symbiota
+```
+psql postgresql://material:<PASSWORD>@pg1.gbif-uat.org/material_model -f load-symbiota.sql
+```
 

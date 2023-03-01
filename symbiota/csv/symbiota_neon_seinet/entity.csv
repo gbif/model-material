@@ -1,0 +1,7 @@
+entity_id,entity_type,dataset_id,entity_name,entity_remarks
+cd3fdc48-8047-4edd-bb04-e2c5ba229796,MATERIAL_ENTITY,symbiota,,
+439f7e06-49a5-4f40-9939-79a6ce85dc05,MATERIAL_ENTITY,symbiota,,
+urn:uuid:8855b558-aaeb-4fc5-82b4-a156bb0eedf9,DIGITAL_ENTITY,symbiota_dbg,,
+urn:uuid:26cf7abd-c6c5-4588-be7d-20d239e04d7a,DIGITAL_ENTITY,symbiota_dbg,,
+4f6a6ac4-651b-4e8e-a1ee-45c459d29b99,MATERIAL_ENTITY,symbiota_dbg,,
+d803cc65-fb2e-45f7-8b62-aabb84bf3e36,MATERIAL_ENTITY,symbiota_dbg,,
