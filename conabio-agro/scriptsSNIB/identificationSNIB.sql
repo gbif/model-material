@@ -1,4 +1,4 @@
-SELECT @rownum:=@rownum+1  as  identification_id,
+SELECT md5(concat('identification',@rownum:=@rownum+1)) as  identification_id,
 e.llaveejemplar as organism_id,
 'expert identification' as identification_type,
 '' as taxon_formula,
@@ -19,4 +19,4 @@ INNER JOIN snib.persona ad ON e.idabreviadodeterminador = ad.idpersona
 INNER JOIN snib.nombre_taxonomia n ON e.llavenombre = n.llavenombre 
 inner join snib.tipo t using (idtipo)
 WHERE p.proyecto in ('FY001','FZ016')
-AND e.estadoregistro = "";
+AND e.estadoregistro = '';

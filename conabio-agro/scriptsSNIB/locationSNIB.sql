@@ -1,6 +1,4 @@
-SELECT 
-  e.llaveejemplar,
-  cg.llaveregionsitiosig AS location_id,
+SELECT cg.llaveregionsitiosig AS location_id,
   '' AS parent_location_id,
   '' AS higher_geography_id,
   CONCAT("{\"regionMarina\":{\"nombre\":\"",
@@ -19,7 +17,7 @@ SELECT
   IFNULL(l.waterbody,'') AS waterbody,
   IFNULL(l.islandgroup,'') AS islandgroup,
   IFNULL(l.island,'') AS island,
-  rm.nombrepaismapa ,
+  rm.nombrepaismapa as country,
   '' AS country_code,
   rm.nombreestadomapa  AS state_province,
   rm.nombremunicipiomapa  AS county,
@@ -52,3 +50,6 @@ INNER JOIN snib.geografiaoriginal gor on gor.llavesitio =e.llavesitio
 inner join snib.regionmarinamapa rmm on rmm.idregionmarinamapa =cg.idregionmarinamapa 
 WHERE p.proyecto in ('FY001','FZ016')
 and e.estadoregistro = "";
+
+
+

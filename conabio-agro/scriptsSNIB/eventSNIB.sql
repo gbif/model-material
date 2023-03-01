@@ -1,4 +1,4 @@
-SELECT if(e.numerocolecta!='NO DISPONIBLE',e.numerocolecta,'') as event_id,
+SELECT o.occurrence_id as event_id,
 '' as parent_event_id,
 e.llaveproyecto as dataset_id,
 c.llaveregionsitiosig  as location_id,
@@ -22,8 +22,8 @@ ifnull(e.mescolecta,'')  as `month`,
 ifnull(e.diacolecta,'')  as `day`,
 '' as verbatim_event_date,
 l.localidad as verbatim_locality,
-if(if(g.altitudinicialdelsitio>0,g.altitudinicialdelsitio,'')=9999,NULL,if(g.altitudinicialdelsitio>0,g.altitudinicialdelsitio,''))  as verbatim_elevation, --- aqui me quedé
-IF(if(g.altitudinicialdelsitio<0,g.altitudinicialdelsitio,'')=9999,null,if(g.altitudinicialdelsitio<0,g.altitudinicialdelsitio,'')) as verbatim_depth,
+if(if(g.altitudinicialdelsitio>0,cast(g.altitudinicialdelsitio as char),'')='9999','',if(g.altitudinicialdelsitio>0,cast(g.altitudinicialdelsitio as char),'')) as verbatim_elevation,
+if(if(g.altitudinicialdelsitio<0,cast(g.altitudinicialdelsitio as char),'')='9999','',if(g.altitudinicialdelsitio<0,cast(g.altitudinicialdelsitio as char),'')) as verbatim_depth,
 concat(if(latitudgrados is null or latitudgrados=999,'',concat(if(latitudgrados<0,latitudgrados*-1,latitudgrados),'° ',if(latitudminutos is null or latitudminutos=99,'',concat(latitudminutos,"' ")),
 if(latitudsegundos is null or latitudsegundos=99,'',concat(latitudsegundos,"'' ")),if(nortesur<>'',if(nortesur='Norte','N','S'),if(latitudgrados>0,'N ',if(latitudgrados<0,'S ',''))),
 if(latitudgradosfinal is null or latitudgradosfinal=999,'',
@@ -71,5 +71,6 @@ inner join snib.regionoriginal ro using (idregionoriginal)
 inner join snib.conabiogeografia c using(llaveregionsitiosig)
 inner join snib.regionmapa rm using(idregionmapa)
 inner join snib.metododecolecta m using(idmetododecolecta)
+inner join GBIFModel2023.occurrence o on e.llaveejemplar =o.organism_id 
 WHERE p.proyecto in ('FY001','FZ016')
 and e.estadoregistro = "";
