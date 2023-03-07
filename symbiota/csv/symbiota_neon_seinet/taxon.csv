@@ -1,6 +1,0 @@
-taxon_id,scientific_name,scientific_name_authorship,name_according_to,name_according_to_id,taxon_rank,taxon_source,scientific_name_id,taxon_remarks,parent_taxon_id,taxonomic_status,kingdom,phylum,class,order,family,subfamily,genus,subgenus,accepted_scientific_name
-29174bda-9e08-4ff8-a878-e64991ea1121,Myodes rutilus,"(Pallas, 1779)",,,Species,,,,,,Animalia,Chordata,Mammalia,Rodentia,Cricetidae,,Myodes,,
-534af7a6-44f7-4cba-b446-0753cf0dd62e,Salix bebbiana,Sargent,,,,,,,,,,,,,,,,,
-456a1afd-884c-43a8-9761-70b74c508f35,Salix lucida,Muhl.,,,,,,,,,,,,,,,,,
-3b036ae9-3baf-4131-b4f1-024f5935740c,Salix bebbiana,Sarg.,,,Species,,,,,,Plantae,Magnoliophyta,,Malpighiales,Salicaceae,,Salix,,
-7ce72840-3f2d-4262-acc3-f5244aaa4788,Salix monticola,Bebb,,,Species,,,,,,Plantae,Magnoliophyta,,Malpighiales,Salicaceae,,Salix,,

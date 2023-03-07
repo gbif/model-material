@@ -1,4 +1,0 @@
-georeference_id,location_id,decimal_latitude,decimal_longitude,geodetic_datum,coordinate_uncertainty_in_meters,coordinate_precision,point_radius_spatial_fit,footprint_wkt,footprint_srs,footprint_spatial_fit,georeferenced_by,georeferenced_date,georeference_protocol,georeference_sources,georeference_remarks,preferred_spatial_representation
-3b48f25d-60eb-4f4b-8d91-980d13f44831,,65.192017,-147.536397,WGS84,64,,,,,,,,,Geo 7X,,
-39aa1ae5-7ed1-4f5b-8aca-c65986f3901f,ab73157e-0f2c-443e-b0b3-2587312a6d73,38.789002,-104.865179,unknown,10000,,,,,,,,,Terrain Navigator,Certainty code: 6,
-95893cc9-6ba1-4b84-a0ed-083e221db63b,a0414d4f-0039-4b2c-b349-6c5acada4d8e,40.09695,-106.535125,unknown,10000,,,,,,,,,Terrain Navigator,Certainty code: 6,
