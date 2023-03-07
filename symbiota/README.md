@@ -2,7 +2,6 @@
 
 ## List of associated files
 
-- `materialSample.csv`
 - `symbiota_neon_seinet.sql`
 - `symb_combined_occurrences.csv`
 - `identifications_dbg.csv`
