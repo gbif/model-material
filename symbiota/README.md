@@ -2,26 +2,53 @@
 
 ## List of associated files
 
-- `occurrences.csv`
 - `materialSample.csv`
-- `symbiota_neon.sql`
 - `symbiota_neon_seinet.sql`
+- `symb_combined_occurrences.csv`
+- `identifications_dbg.csv`
+- `measurementOrFact_dbg.csv`
+- `multimedia_dbg.csv`
+- `materialSample.csv`
 
-For the purposes of this exercise, records were downloaded from the [NEON Biorepository Symbiota portal](https://biorepo.neonscience.org/) in DwCA format. Two spreadsheets from the DwCA were used, `occurrences.csv` and `materialSample.csv`.
+For the purposes of this exercise, records were downloaded from the [NEON Biorepository Symbiota portal](https://biorepo.neonscience.org/) and the Southern Rocky Mountain Herbaria portal](https://www.soroherbaria.org/portal/) (SoRo Portal) in DwCA format. We combined the occurrences files from both of these DwC-As, then also used `materialSample.csv` from NEON, then `identifications_dbg.csv`, `measurementOrFact_dbg.csv`, and `multimedia.dbg.csv` from the SoRo portal.
+
+The csvs that were exported from Symbiota and used as data sources for this exercise are in the `data_sources` folder.
 
 Links to the data records that we used from SoRo:
 https://www.soroherbaria.org/portal/collections/individual/index.php?occid=3037588
 https://www.soroherbaria.org/portal/collections/individual/index.php?occid=3037589
 
-I was able to populate all of the tables detailed below with only the two aforementioned CSVs.
-
 Almost all UUIDs were generated on the fly and are not resolvable.
+
+The database was dumped with all of our data: `symbiota_neon_seinet.sql`
+Selected tables were exported to csvs in the directory `exported_schema_csvs`:
+
+createdb gbif_symbiota
+psql gbif_symbiota -f symbiota_neon_seinet.sql
+
+COPY public.agent TO '/tmp/symbiota_neon_seinet/agent.csv' DELIMITER ',' CSV HEADER;
+COPY public.assertion TO '/tmp/symbiota_neon_seinet/assertion.csv' DELIMITER ',' CSV HEADER;
+COPY public.collection TO '/tmp/symbiota_neon_seinet/collection.csv' DELIMITER ',' CSV HEADER;
+COPY public.digital_entity TO '/tmp/symbiota_neon_seinet/digital_entity.csv' DELIMITER ',' CSV HEADER;
+COPY public.entity TO '/tmp/symbiota_neon_seinet/entity.csv' DELIMITER ',' CSV HEADER;
+COPY public.entity_relationship TO '/tmp/symbiota_neon_seinet/entity_relationship.csv' DELIMITER ',' CSV HEADER;
+COPY public.event TO '/tmp/symbiota_neon_seinet/event.csv' DELIMITER ',' CSV HEADER;
+COPY public.georeference TO '/tmp/symbiota_neon_seinet/georeference.csv' DELIMITER ',' CSV HEADER;
+COPY public.identification TO '/tmp/symbiota_neon_seinet/identification.csv' DELIMITER ',' CSV HEADER;
+COPY public.identifier TO '/tmp/symbiota_neon_seinet/identifier.csv' DELIMITER ',' CSV HEADER;
+COPY public.location TO '/tmp/symbiota_neon_seinet/location.csv' DELIMITER ',' CSV HEADER;
+COPY public.material_entity TO '/tmp/symbiota_neon_seinet/material_entity.csv' DELIMITER ',' CSV HEADER;
+COPY public.occurrence TO '/tmp/symbiota_neon_seinet/occurrence.csv' DELIMITER ',' CSV HEADER;
+COPY public.occurrence_evidence TO '/tmp/symbiota_neon_seinet/occurrence_evidence.csv' DELIMITER ',' CSV HEADER;
+COPY public.organism TO '/tmp/symbiota_neon_seinet/organism.csv' DELIMITER ',' CSV HEADER;
+COPY public.taxon TO '/tmp/symbiota_neon_seinet/taxon.csv' DELIMITER ',' CSV HEADER;
+COPY public.taxon_identification TO '/tmp/symbiota_neon_seinet/taxon_identification.csv' DELIMITER ',' CSV HEADER;
 
 ## Step-by-step
 
 Imported `schema.sql` to build a blank database with unified model.
 
-Imported `occurrences.csv` into the table `symbiota_occurrences` created for this purpose:
+Imported `symb_combined_occurrences.csv` into the table `symbiota_occurrences` created for this purpose:
 
 ```postgresql
   CREATE TABLE symbiota_occurrences (
