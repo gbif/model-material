@@ -3,15 +3,71 @@
 -- 
 --  To aid readability, this file is structured as:
 -- 
+--   Agent groups and agent relationships
 --   Location and support tables
 --   Event and support tables
 --   Entity, sub-entities and their relationships
 --   Identification including sequence-based identifications
---   Agent and the connections to other entities
+--   Agent connected to other entities through roles
 --   Assertions for all relevant content
 --   Identifiers for all relevant content
 --   Citations for all relevant content
 ---
+
+---
+--   Agent and the connections to other entities
+--
+-- Each Agent subtype has a foreign key to its immediate parent type, enforcing the
+-- following inheritance model:
+--
+--   Agent
+--     AgentGroup
+--     Collection
+---
+
+-- Agent (https://www.w3.org/TR/prov-o/#Agent)
+--    An agent is something that bears some form of responsibility for an activity
+--    taking place, for the existence of an entity, or for another agent's activity.
+
+CREATE TABLE agent (
+  agent_id TEXT PRIMARY KEY,
+  agent_type TEXT NOT NULL,
+  preferred_agent_name TEXT
+);
+
+-- AgentGroup
+--   A subtype of Agent
+--   A set of Agents
+
+CREATE TABLE agent_group (
+  agent_group_id TEXT PRIMARY KEY REFERENCES agent ON DELETE CASCADE DEFERRABLE,
+  agent_group_type TEXT
+);
+
+-- Collection (see Latimer Core)
+--   A subtype of Agent
+--   An organizational agent that maintains Entities.
+--   Exactly one Global Registry of Science Collections (GRSciColl) identifier.
+
+CREATE TABLE collection (
+  collection_id TEXT PRIMARY KEY REFERENCES agent ON DELETE CASCADE DEFERRABLE,
+  collection_type TEXT,
+  collection_code TEXT, -- also on MaterialEntity
+  institution_code TEXT, -- also on MaterialEntity
+  grscicoll_id UUID 
+);
+
+-- AgentRelationship
+--   Any direct relationship between two Agents.
+--   Exactly one subject Agent
+--   Exactly one object Agent
+
+CREATE TABLE agent_relationship (
+  subject_agent_id TEXT REFERENCES agent ON DELETE CASCADE DEFERRABLE,
+  relationship_to TEXT NOT NULL,
+  object_agent_id TEXT REFERENCES agent ON DELETE CASCADE DEFERRABLE,
+  PRIMARY KEY (subject_agent_id, relationship_to, object_agent_id)
+);
 
 ---
 -- Location and support tables
@@ -78,7 +134,7 @@ CREATE INDEX ON georeference(location_id);
 
 CREATE TABLE location (
   location_id TEXT PRIMARY KEY,
-  parent_location_id TEXT REFERENCES location ON DELETE CASCADE,
+  parent_location_id TEXT REFERENCES location ON DELETE CASCADE DEFERRABLE,
   higher_geography_id TEXT,
   higher_geography TEXT,
   continent TEXT,
@@ -100,13 +156,13 @@ CREATE TABLE location (
   vertical_datum TEXT,
   location_according_to TEXT,
   location_remarks TEXT,
-  accepted_georeference_id TEXT REFERENCES georeference ON DELETE SET NULL,
-  accepted_geological_context_id TEXT REFERENCES geological_context ON DELETE SET NULL
+  accepted_georeference_id TEXT REFERENCES georeference ON DELETE SET NULL DEFERRABLE,
+  accepted_geological_context_id TEXT REFERENCES geological_context ON DELETE SET NULL DEFERRABLE
 );
 CREATE INDEX ON location(parent_location_id);
 
-ALTER TABLE geological_context ADD FOREIGN KEY (location_id) REFERENCES location ON DELETE CASCADE;
-ALTER TABLE georeference ADD FOREIGN KEY (location_id) REFERENCES location ON DELETE CASCADE;
+ALTER TABLE geological_context ADD FOREIGN KEY (location_id) REFERENCES location ON DELETE CASCADE DEFERRABLE;
+ALTER TABLE georeference ADD FOREIGN KEY (location_id) REFERENCES location ON DELETE CASCADE DEFERRABLE;
 
 ---
 -- Event and support tables
@@ -134,10 +190,10 @@ CREATE TABLE protocol (
 
 CREATE TABLE event (
   event_id TEXT PRIMARY KEY,
-  parent_event_id TEXT REFERENCES event ON DELETE CASCADE,
+  parent_event_id TEXT REFERENCES event ON DELETE CASCADE DEFERRABLE,
   dataset_id TEXT NOT NULL,
-  location_id TEXT REFERENCES location ON DELETE CASCADE,
-  protocol_id TEXT REFERENCES protocol ON DELETE CASCADE,
+  location_id TEXT REFERENCES location ON DELETE CASCADE DEFERRABLE,
+  protocol_id TEXT REFERENCES protocol ON DELETE CASCADE DEFERRABLE,
   event_type TEXT NOT NULL,
   event_name TEXT,
   field_number TEXT,
@@ -215,7 +271,7 @@ CREATE TYPE DIGITAL_ENTITY_TYPE AS ENUM (
 --   An Entity that is digital in nature.
 
 CREATE TABLE digital_entity (
-  digital_entity_id TEXT PRIMARY KEY REFERENCES entity ON DELETE CASCADE,
+  digital_entity_id TEXT PRIMARY KEY REFERENCES entity ON DELETE CASCADE DEFERRABLE,
   digital_entity_type DIGITAL_ENTITY_TYPE NOT NULL,
   access_uri TEXT NOT NULL,
   web_statement TEXT,
@@ -240,7 +296,7 @@ CREATE INDEX ON digital_entity(digital_entity_type);
 --   An DigitalEntity describing a genetic sequence.
 
 CREATE TABLE genetic_sequence (
-  genetic_sequence_id TEXT PRIMARY KEY REFERENCES digital_entity ON DELETE CASCADE,
+  genetic_sequence_id TEXT PRIMARY KEY REFERENCES digital_entity ON DELETE CASCADE DEFERRABLE,
   genetic_sequence_type TEXT NOT NULL,
   sequence TEXT NOT NULL
 );
@@ -250,14 +306,14 @@ CREATE TABLE genetic_sequence (
 --   A PhysicalObject.
 
 CREATE TABLE material_entity (
-  material_entity_id TEXT PRIMARY KEY REFERENCES entity ON DELETE CASCADE,
+  material_entity_id TEXT PRIMARY KEY REFERENCES entity ON DELETE CASCADE DEFERRABLE,
   material_entity_type TEXT NOT NULL,
   preparations TEXT,
   disposition TEXT,
   institution_code TEXT, -- also on Collection
   institution_id TEXT, 
   collection_code TEXT,  -- also on Collection
-  collection_id TEXT,
+  collection_id TEXT REFERENCES collection ON DELETE CASCADE DEFERRABLE,
   owner_institution_code TEXT,
   catalog_number TEXT,
   record_number TEXT,
@@ -273,7 +329,7 @@ CREATE TABLE material_entity (
 --   A set of MaterialEntities
 
 CREATE TABLE material_group (
-  material_group_id TEXT PRIMARY KEY REFERENCES material_entity ON DELETE CASCADE,
+  material_group_id TEXT PRIMARY KEY REFERENCES material_entity ON DELETE CASCADE DEFERRABLE,
   material_group_type TEXT
 );
 
@@ -312,11 +368,11 @@ CREATE TABLE identification (
 --   Zero or one accepted_identification_id
 
 CREATE TABLE organism (
-  organism_id TEXT PRIMARY KEY REFERENCES material_entity ON DELETE CASCADE,
+  organism_id TEXT PRIMARY KEY REFERENCES material_entity ON DELETE CASCADE DEFERRABLE,
   organism_scope TEXT,
-  accepted_identification_id TEXT REFERENCES identification ON DELETE SET NULL
+  accepted_identification_id TEXT REFERENCES identification ON DELETE SET NULL DEFERRABLE
 );
-ALTER TABLE identification ADD FOREIGN KEY (organism_id) REFERENCES organism ON DELETE CASCADE;
+ALTER TABLE identification ADD FOREIGN KEY (organism_id) REFERENCES organism ON DELETE CASCADE DEFERRABLE;
 
 
 -- ChronometricAge (https://tdwg.github.io/chrono/terms/#chronometricage)
@@ -325,7 +381,7 @@ ALTER TABLE identification ADD FOREIGN KEY (organism_id) REFERENCES organism ON 
 
 CREATE TABLE chronometric_age (
   chronometric_age_id TEXT PRIMARY KEY, 
-  material_entity_id TEXT REFERENCES material_entity ON DELETE CASCADE,
+  material_entity_id TEXT REFERENCES material_entity ON DELETE CASCADE DEFERRABLE,
   verbatim_chronometric_age TEXT,
   verbatim_chronometric_age_protocol TEXT,
   uncalibrated_chronometric_age TEXT,
@@ -385,8 +441,8 @@ CREATE TYPE DEGREE_OF_ESTABLISHMENT AS ENUM (
 
 
 CREATE TABLE occurrence (
-  occurrence_id TEXT PRIMARY KEY REFERENCES event ON DELETE CASCADE,
-  organism_id TEXT REFERENCES organism ON DELETE CASCADE,
+  occurrence_id TEXT PRIMARY KEY REFERENCES event ON DELETE CASCADE DEFERRABLE,
+  organism_id TEXT REFERENCES organism ON DELETE CASCADE DEFERRABLE,
   organism_quantity TEXT,
   organism_quantity_type TEXT,
   sex TEXT,
@@ -416,8 +472,8 @@ CREATE INDEX ON occurrence(occurrence_status);
 --   Zero or more Occurrence per Entity
 
 CREATE TABLE occurrence_evidence (
-  occurrence_id TEXT REFERENCES occurrence ON DELETE CASCADE,
-  entity_id TEXT REFERENCES entity ON DELETE CASCADE,
+  occurrence_id TEXT REFERENCES occurrence ON DELETE CASCADE DEFERRABLE,
+  entity_id TEXT REFERENCES entity ON DELETE CASCADE DEFERRABLE,
   PRIMARY KEY (occurrence_id, entity_id)
 );
 
@@ -429,10 +485,10 @@ CREATE TABLE occurrence_evidence (
 
 CREATE TABLE entity_relationship (
   entity_relationship_id TEXT PRIMARY KEY,
-  depends_on_entity_relationship_id TEXT REFERENCES entity_relationship ON DELETE CASCADE,
-  subject_entity_id TEXT REFERENCES entity ON DELETE CASCADE,
+  depends_on_entity_relationship_id TEXT REFERENCES entity_relationship ON DELETE CASCADE DEFERRABLE,
+  subject_entity_id TEXT REFERENCES entity ON DELETE CASCADE DEFERRABLE,
   entity_relationship_type TEXT NOT NULL,
-  object_entity_id TEXT REFERENCES entity ON DELETE CASCADE,
+  object_entity_id TEXT REFERENCES entity ON DELETE CASCADE DEFERRABLE,
   object_entity_iri TEXT,
   entity_relationship_date TEXT,
   entity_relationship_order SMALLINT NOT NULL DEFAULT 0 CHECK (entity_relationship_order >= 0) 
@@ -459,8 +515,8 @@ CREATE TABLE reference (
 --   Zero or more Identifications per Entity
 
 CREATE TABLE identification_evidence (
-  identification_id TEXT REFERENCES identification ON DELETE CASCADE,
-  entity_id TEXT REFERENCES entity ON DELETE CASCADE,
+  identification_id TEXT REFERENCES identification ON DELETE CASCADE DEFERRABLE,
+  entity_id TEXT REFERENCES entity ON DELETE CASCADE DEFERRABLE,
   PRIMARY KEY (identification_id, entity_id)
 );
 
@@ -482,7 +538,7 @@ CREATE TABLE taxon (
   taxon_remarks TEXT,  
   
   -- normalized view
-  parent_taxon_id TEXT REFERENCES taxon ON DELETE CASCADE,
+  parent_taxon_id TEXT REFERENCES taxon ON DELETE CASCADE DEFERRABLE,
   taxonomic_status TEXT,
 
   -- denormalized
@@ -505,68 +561,11 @@ CREATE INDEX ON taxon(parent_taxon_id);
 --    Zero or more Identifications per Taxon
 
 CREATE TABLE taxon_identification (
-  taxon_id TEXT REFERENCES taxon ON DELETE CASCADE,
-  identification_id TEXT REFERENCES identification ON DELETE CASCADE,
+  taxon_id TEXT REFERENCES taxon ON DELETE CASCADE DEFERRABLE,
+  identification_id TEXT REFERENCES identification ON DELETE CASCADE DEFERRABLE,
   taxon_order SMALLINT NOT NULL CHECK (taxon_order >= 0) DEFAULT 0,
   taxon_authority TEXT,
-  taxon_confidence_percent NUMERIC NOT NULL CHECK (taxon_confidence_percent BETWEEN 0 AND 100),
   PRIMARY KEY (taxon_id, identification_id, taxon_order)
-);
-
-
----
---   Agent and the connections to other entities
---
--- Each Agent subtype has a foreign key to its immediate parent type, enforcing the
--- following inheritance model:
---
---   Agent
---     AgentGroup
---     Collection
----
-
--- Agent (https://www.w3.org/TR/prov-o/#Agent)
---    An agent is something that bears some form of responsibility for an activity 
---    taking place, for the existence of an entity, or for another agent's activity.
-
-CREATE TABLE agent (
-  agent_id TEXT PRIMARY KEY,
-  agent_type TEXT NOT NULL,
-  preferred_agent_name TEXT
-);
-
--- AgentGroup
---   A subtype of Agent
---   A set of Agents
-
-CREATE TABLE agent_group (
-  agent_group_id TEXT PRIMARY KEY REFERENCES agent ON DELETE CASCADE,
-  agent_group_type TEXT
-);
-
--- Collection (see Latimer Core)
---   A subtype of Agent
---   An organizational agent that maintains Entities.
---   Exactly one Global Registry of Science Collections (GRSciColl) identifier.
-
-CREATE TABLE collection (
-  collection_id TEXT PRIMARY KEY REFERENCES agent ON DELETE CASCADE,
-  collection_type TEXT,
-  collection_code TEXT, -- also on MaterialEntity
-  institution_code TEXT, -- also on MaterialEntity
-  grscicoll_id UUID NOT NULL
-);
-
--- AgentRelationship
---   Any direct relationship between two Agents.
---   Exactly one subject Agent
---   Exactly one object Agent
-
-CREATE TABLE agent_relationship (
-  subject_agent_id TEXT REFERENCES agent ON DELETE CASCADE,
-  relationship_to TEXT NOT NULL,
-  object_agent_id TEXT REFERENCES agent ON DELETE CASCADE,
-  PRIMARY KEY (subject_agent_id, relationship_to, object_agent_id)
 );
 
 -- Target types for the common tables (Assertion, Identifier etc)
@@ -601,15 +600,15 @@ CREATE TYPE COMMON_TARGETS AS ENUM (
 CREATE TABLE agent_role (
   agent_role_target_id TEXT NOT NULL,
   agent_role_target_type COMMON_TARGETS NOT NULL,
-  agent_role_agent_id TEXT REFERENCES agent ON DELETE CASCADE,
+  agent_role_agent_id TEXT REFERENCES agent ON DELETE CASCADE DEFERRABLE,
   agent_role_agent_name TEXT,
   agent_role_role TEXT,
   agent_role_began TEXT,
   agent_role_ended TEXT,
-  agent_role_order SMALLINT NOT NULL CHECK (agent_role_order >= 0) DEFAULT 0,
-  PRIMARY KEY (agent_role_target_id, agent_role_target_type, agent_role_agent_id, agent_role_order)
+  agent_role_order SMALLINT NOT NULL CHECK (agent_role_order >= 0) DEFAULT 0
 );
 CREATE INDEX ON agent_role(agent_role_target_type);
+ALTER TABLE agent_role ADD CONSTRAINT agent_role_unique_key UNIQUE (agent_role_target_id, agent_role_target_type, agent_role_agent_id, agent_role_agent_name, agent_role_role, agent_role_began, agent_role_ended, agent_role_order);
 
 ---
 --   Assertions for all relevant content
@@ -623,7 +622,7 @@ CREATE TABLE "assertion" (
   assertion_id TEXT PRIMARY KEY,
   assertion_target_id TEXT NOT NULL,
   assertion_target_type COMMON_TARGETS NOT NULL,
-  assertion_parent_assertion_id TEXT REFERENCES "assertion" ON DELETE CASCADE,
+  assertion_parent_assertion_id TEXT REFERENCES "assertion" ON DELETE CASCADE DEFERRABLE,
   assertion_type TEXT NOT NULL,
   assertion_made_date TEXT,
   assertion_effective_date TEXT,
@@ -631,9 +630,9 @@ CREATE TABLE "assertion" (
   assertion_value_numeric NUMERIC,
   assertion_unit TEXT,
   assertion_by_agent_name TEXT, 
-  assertion_by_agent_id TEXT REFERENCES agent ON DELETE CASCADE,
+  assertion_by_agent_id TEXT REFERENCES agent ON DELETE CASCADE DEFERRABLE,
   assertion_protocol TEXT,
-  assertion_protocol_id TEXT REFERENCES protocol ON DELETE CASCADE,
+  assertion_protocol_id TEXT REFERENCES protocol ON DELETE CASCADE DEFERRABLE,
   assertion_remarks TEXT
 );
 CREATE INDEX ON "assertion"(assertion_target_type, assertion_target_id);
@@ -663,11 +662,11 @@ CREATE INDEX ON identifier(identifier_target_type);
 CREATE TABLE citation (
   citation_target_id TEXT NOT NULL,
   citation_target_type COMMON_TARGETS NOT NULL,
-  citation_reference_id TEXT REFERENCES reference ON DELETE CASCADE,
+  citation_reference_id TEXT REFERENCES reference ON DELETE CASCADE DEFERRABLE,
   citation_type TEXT,
   citation_page_number TEXT,
-  citation_remarks TEXT,
-  PRIMARY KEY (citation_target_id, citation_target_type,  citation_reference_id)
+  citation_remarks TEXT
 );
 CREATE INDEX ON citation(citation_target_id, citation_reference_id);
 CREATE INDEX ON citation(citation_target_type);
+ALTER TABLE citation ADD CONSTRAINT citation_unique_key UNIQUE (citation_target_id, citation_target_type, citation_reference_id, citation_type, citation_page_number, citation_remarks);

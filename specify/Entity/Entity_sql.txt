@@ -1,0 +1,6 @@
+CREATE TABLE entity (
+  entity_id TEXT PRIMARY KEY,
+  entity_type ENTITY_TYPE NOT NULL,
+  dataset_id TEXT NOT NULL, -- no foreign key, just an identifier
+  entity_name TEXT,
+  entity_remarks TEXT

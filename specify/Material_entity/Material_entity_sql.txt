@@ -1,0 +1,17 @@
+CREATE TABLE material_entity (
+  material_entity_id TEXT PRIMARY KEY REFERENCES entity ON DELETE CASCADE,
+  material_entity_type TEXT NOT NULL,
+  preparations TEXT,
+  disposition TEXT,
+  institution_code TEXT, -- also on Collection
+  institution_id TEXT, 
+  collection_code TEXT,  -- also on Collection
+  collection_id TEXT,
+  owner_institution_code TEXT,
+  catalog_number TEXT,
+  record_number TEXT,
+  recorded_by TEXT,  -- also on Occurrence for Observations
+  recorded_by_id TEXT,  -- also on Occurrence for Observations
+  associated_references TEXT,
+  associated_sequences TEXT,
+  other_catalog_numbers TEXT

@@ -1,0 +1,9 @@
+identifier_target_id,identifier_target_type,identifier_type,identifier_value
+4f6a6ac4-651b-4e8e-a1ee-45c459d29b99,MATERIAL_ENTITY,local,3037588
+d803cc65-fb2e-45f7-8b62-aabb84bf3e36,MATERIAL_ENTITY,local,3037589
+urn:uuid:8855b558-aaeb-4fc5-82b4-a156bb0eedf9,DIGITAL_ENTITY,local,3037588
+urn:uuid:26cf7abd-c6c5-4588-be7d-20d239e04d7a,DIGITAL_ENTITY,local,3037589
+ab73157e-0f2c-443e-b0b3-2587312a6d73,LOCATION,local,3037588
+a0414d4f-0039-4b2c-b349-6c5acada4d8e,LOCATION,local,3037589
+81ce4a98-b8c8-4c41-8418-f7e7846a1987,OCCURRENCE,local,3037588
+d00d090b-4c83-4a9f-9ef1-a286da82d053,OCCURRENCE,local,3037589

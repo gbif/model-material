@@ -1,0 +1,15 @@
+General considerations
+
+1. All of this was done using Specify 7 as it now allows hidden fields like ID's to be added to queries.  This is not possible in Specify 6
+2.  I have tried as much as possible to map the Specify data model to the unified model as consistently and dutifully as possible without any post-processing of data.  Where this has been necessary for various reasons, I have documented this in a text file for each table.
+3. All tables have been created using the Query Builder in Specify 7 and exported from Specify 7 as csv files through the native Specify 7 export functionality in the query builder.
+4.  Static field issues - there are a number of instances where fields do not exist in the Specify data model to accommodate various static fields.  In some cases I have been able to find additional fields to enter this information temporarily to satisfy the need but Speicify is also looking at implementing an option to include static fields in a query for exactly this purpose.
+5. Column headers coming out of Specify (usually field names) have been edited to conform to those of the unified model to facilitate the postgresql process.
+6. Fields that cannot or will not be mapped through Specify have been added.
+7. A future addition to the Specify 7 query builder will allow for the addition of static fields which will facilitate some of the field mappings and contents.
+8. Some tables will need to be concatenated based on the fact that multiple queries were needed to extract all the data
+9. GUIDs were preferred over primary keys for tables so as to make them both within database and between database unique.  The only table in the Specify schema that is inolved here that does not have GUIDs is DNA sequence.
+10. There is no table linkage in the Unified model that will allow for Collecting event to media linkages.  The the Specify data model we are able to link attachments (images, PDF's) directly to the collecting event where necessary (field notebook pages that circumscribe all specimens collected at that collecting event as well as images of habitat).
+11. Geological context is held in two heirarchical trees in Specify (much like taxon and geography) - chronostratigraphy and lithostratigraphy.  I do not ue either in my fish collection but they are mappable in much the same way as other tree tables.
+12. No concept for protocol in Specify - table ignored.
+13. There is always the possibility that the Specify 7 API could be used in future to perform a lot of these functions currently being performed through the query builder.

@@ -1,0 +1,5 @@
+1. Specify does not have a separate georeference table and most fields (lat, long, datum, method) are incorporated into the locality table.  There is a geocoordinate detail table that includes precision, georeferenced by, georeferenced date, remarks, etc. fields. So, there are a mix of fields from the locality and geocoordinate detail table here.  As such there are no georeference IDs in Specify.  These were generated in post-process using the following formula in Excel:
+
+=LOWER(CONCATENATE(DEC2HEX(RANDBETWEEN(0,4294967295),8),"-",DEC2HEX(RANDBETWEEN(0,65535),4),"-",DEC2HEX(RANDBETWEEN(0,65535),4),"-",DEC2HEX(RANDBETWEEN(0,65535),4),"-",DEC2HEX(RANDBETWEEN(0,4294967295),8),DEC2HEX(RANDBETWEEN(0,65535),4)))
+
+2.  What about latitude 2, longitude 2 for transects - starting lat, ending lat specifically for trawl data in ichthyology where you have no idea exactly where any one specimen as collected?  These trawls may go for many miles.

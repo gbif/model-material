@@ -1,0 +1,18 @@
+CREATE TABLE digital_entity (
+  digital_entity_id TEXT PRIMARY KEY REFERENCES entity ON DELETE CASCADE,
+  digital_entity_type DIGITAL_ENTITY_TYPE NOT NULL,
+  access_uri TEXT NOT NULL,
+  web_statement TEXT,
+  format TEXT,
+  license TEXT,
+  rights TEXT,
+  rights_uri TEXT,
+  access_rights TEXT,
+  rights_holder TEXT,
+  source TEXT,
+  source_uri TEXT,
+  creator TEXT,
+  created TIMESTAMPTZ,
+  modified TIMESTAMPTZ,
+  language TEXT,
+  bibliographic_citation TEXT

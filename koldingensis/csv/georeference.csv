@@ -1,0 +1,2 @@
+georeference_id,location_id,decimal_latitude,decimal_longitude,geodetic_datum,coordinate_uncertainty_in_meters,coordinate_precision,point_radius_spatial_fit,footprint_wkt,footprint_srs,footprint_spatial_fit,georeferenced_by,georeferenced_date,georeference_protocol,georeference_sources,georeference_remarks,preferred_spatial_representation
+5adc62f7-7b1d-48ec-9913-8b433056b6f9,965a6502-4451-44d3-820b-89ee84e81352,55.49949,9.48942,WGS84,10.0,,,,,,,,,,,
