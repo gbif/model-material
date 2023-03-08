@@ -1,5 +1,5 @@
 entity_relationship_id,depends_on_entity_relationship_id,subject_entity_id,entity_relationship_type,object_entity_id,object_entity_iri,entity_relationship_date,entity_relationship_order
-f46aac4b-47ef-4f30-93b2-874d82ef2505,,57e3dca9-4ebb-4ea2-a845-405398ab73b3,SEQUENCE OF,2c79e965-273d-4b6e-945d-f62a1acd3ea5,,,0
+f46aac4b-47ef-4f30-93b2-874d82ef2505,,2c79e965-273d-4b6e-945d-f62a1acd3ea5,SEQUENCE OF,57e3dca9-4ebb-4ea2-a845-405398ab73b3,,,0
 2e636dc0-9541-41e4-8091-52dcc8a74d45,,5c488c08-8cab-444a-9598-806dd0abec85,MATERIAL SAMPLE OF,ccc3f96a-ce5f-4b90-9b37-ef2227e46aab,,,0
 597f2181-31a7-450d-b5d5-d90866170c7a,,57e3dca9-4ebb-4ea2-a845-405398ab73b3,MATERIAL SAMPLE OF,5c488c08-8cab-444a-9598-806dd0abec85,,,0
 5b43eb3f-0f9d-4a13-b7f9-4c7e0692b34d,,57e3dca9-4ebb-4ea2-a845-405398ab73b3,MATERIAL SAMPLE OF,ccc3f96a-ce5f-4b90-9b37-ef2227e46aab,,,0
