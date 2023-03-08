@@ -42,3 +42,8 @@ tar -xf ../arctos/arctos_gum.tar.gz -C ../arctos
 psql postgresql://material:<PASSWORD>@pg1.gbif-uat.org/material_model -f load-arctos.sql
 ```
 
+### Swisscollnet
+```
+unzip ../swisscollnet/CH_202303081049.zip -d ../swisscollnet
+psql postgresql://material:<PASSWORD>@pg1.gbif-uat.org/material_model -f load-swisscollnet.sql
+```
