@@ -65,7 +65,7 @@ select MD5(CONCAT(parent_location_id
 			  '' AS location_remarks,
 			  '' AS accepted_georreference_id,
 			  '' AS accepted_georreference_context_id
-			FROM (SELECT @rownum:=0) r,snib.ejemplar_curatorial e
+			FROM snib.ejemplar_curatorial e
 			INNER JOIN snib.proyecto p ON e.llaveproyecto = p.llaveproyecto
 			INNER JOIN snib.conabiogeografia cg on e.llaveregionsitiosig = cg.llaveregionsitiosig
 			INNER JOIN snib.nombre n on e.llavenombre = n.llavenombre

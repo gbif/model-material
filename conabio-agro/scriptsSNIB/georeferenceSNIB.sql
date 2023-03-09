@@ -15,7 +15,7 @@ g.precisionoescala as coordinate_precision,
 '' as georreference_sources,
  o.observacionescoordenadasconabio as georreference_remarks,
 '' as preferred_spatial_representation 
-from (SELECT @rownum:=0) r, snib.ejemplar_curatorial ec 
+from  snib.ejemplar_curatorial ec 
 inner join snib.conabiogeografia c using (llaveregionsitiosig)
 inner join snib.geografiaoriginal g using (llavesitio)
 inner join snib.observacionescoordenadasconabio o using (idobservacionescoordenadasconabio)
