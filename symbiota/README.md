@@ -9,7 +9,7 @@
 - `multimedia_dbg.csv`
 - `symbiota_neon_seinet.sql` (final combined dump)
 
-For the purposes of this exercise, records were downloaded from the [NEON Biorepository Symbiota portal](https://biorepo.neonscience.org/) and the [Southern Rocky Mountain Herbaria portal](https://www.soroherbaria.org/portal/) (SoRo Portal) in DwCA format. We combined the occurrences files from both of these DwC-As, then also used `materialSample.csv` from NEON, then `identifications_dbg.csv`, `measurementOrFact_dbg.csv`, and `multimedia.dbg.csv` from the SoRo portal.
+For the purposes of this exercise, records were downloaded from the [NEON Biorepository Symbiota portal](https://biorepo.neonscience.org/) and the [Southern Rocky Mountain Herbaria portal](https://www.soroherbaria.org/portal/) (SoRo Portal) in Symbiota Native format. We combined the occurrences files from both of these (modified) DwC-As, then also used `materialSample.csv` from NEON, then `identifications_dbg.csv`, `measurementOrFact_dbg.csv`, and `multimedia.dbg.csv` from the SoRo portal.
 
 The csvs that were exported from Symbiota and used as data sources for this exercise are in the `data_sources` folder.
 
@@ -628,3 +628,4 @@ Here we list particular data ingestion problems or assumptions. These are the sa
 * Our establishmentMeans field does not have a controlled vocabulary, so it had to be excluded from this import.
 * We did not address how to indicate which identification is the accepted or most current identification.
 * The Symbiota *MeasurementOrFact* file (which contains assertion/trait data) is based off of the Darwin Core [Extended Measurement or Fact Extension](https://rs.gbif.org/extension/obis/extended_measurement_or_fact.xml), which includes the fields _measurementTypeID_ and _measurementValueID_. These are useful fields for categorical variables because, in our schema, they link to ontologies or other controlled vocabularies. We could not satisfactorily map these data to the GBIF UM.
+* In the Symbiota native format, we have two fields that could be of interest to GBIF, *verbatimAttributes* and *dynamicProperties*. These fields generally contain descriptive data about the specimen and/or its traits. Data stored in *dynamicProperties* are intended to be stored in JSON format so they can be parsed algorithmically.
