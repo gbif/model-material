@@ -148,7 +148,7 @@ Imported `symb_combined_occurrences.csv` into the table `symbiota_occurrences` c
 ```
 
 ### NEON example
-~Laura Rocha Prado~
+_Laura Rocha Prado_
 
 The following steps were taken to import and map the NEON specimen and its associated material sample record.
 
@@ -339,7 +339,7 @@ VALUES ('29174bda-9e08-4ff8-a878-e64991ea1121', 'd511a9a7-4867-4083-8d10-fe22324
 
 
 ### SoRo example
-~Katie Pearson~
+_Katie Pearson_
 
 The following steps were taken to incorporate the examples from the Consortium of Southern Rocky Mountain Herbaria specimens, their identifications, their multimedia, and their measurementOrFact files. For these files, I took a more generalized approach that could be used with future Darwin Core Archives (no hard-coded data transfer).
 
