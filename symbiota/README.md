@@ -22,6 +22,7 @@ Almost all UUIDs were generated on the fly and are not resolvable.
 The database was dumped with all of our data: `symbiota_neon_seinet.sql`
 Selected tables were exported to csvs in the directory `exported_schema_csvs`:
 
+```
 createdb gbif_symbiota
 psql gbif_symbiota -f symbiota_neon_seinet.sql
 
@@ -42,6 +43,7 @@ COPY public.occurrence_evidence TO '/tmp/symbiota_neon_seinet/occurrence_evidenc
 COPY public.organism TO '/tmp/symbiota_neon_seinet/organism.csv' DELIMITER ',' CSV HEADER;
 COPY public.taxon TO '/tmp/symbiota_neon_seinet/taxon.csv' DELIMITER ',' CSV HEADER;
 COPY public.taxon_identification TO '/tmp/symbiota_neon_seinet/taxon_identification.csv' DELIMITER ',' CSV HEADER;
+```
 
 ## Step-by-step
 
