@@ -619,7 +619,7 @@ Link taxa to their identifications. This is a bit of a kludgey way of doing this
 	ON (t.scientific_name || ' ' || t.scientific_name_authorship) = i.verbatim_identification
 ```
 
-##Problems
+## Problems
 
 Here we list particular data ingestion problems or assumptions. These are the same as the ones listed in context above, but are collated here for reference.
 
