@@ -17,6 +17,5 @@ tasks:
       nb: "tasks-nb/02-entitties.ipynb"
       entity_table: "data-products/entity.csv"
       material_entity_table: "data-products/material_entity.csv"
-      organism_table: "data-products/organism.csv"
       entity_relationship_table: "data-products/entity_relationship.csv"
 

@@ -48,6 +48,9 @@ ecoab_occurrences = pd.read_csv(data_folder / "ecoab-occurrences.csv")
 ecoab_taxa = pd.read_csv(data_folder / "ecoab-occurrence-taxa.csv")
 
 # %%
+ecoab_occurrences = ecoab_occurrences.rename(columns={"collectionCode": "collection_code"})
+
+# %%
 ecoab_occurrences.head()
 
 # %%
@@ -87,3 +90,69 @@ entities = pd.concat([
 entities.to_csv(product["entity_table"], index=False)
 
 # %%
+collection_info = pd.read_csv(upstream["create-agents"]["collection_table"])
+
+# %%
+ecoab_occurrences = pd.merge(ecoab_occurrences, collection_info, on="collection_code", how="left")
+
+# %%
+ecoab_plantae.columns
+
+# %%
+material_entity = pd.DataFrame({
+    "material_entity_id": ecoab_occurrences["material_entity_id"],
+    "material_entity_type": 'ORGANISM',   
+    "preparations": None,           
+    "disposition": None,            
+    "institution_code": ecoab_occurrences["institution_code"],       
+    "institution_id": None,         
+    "collection_code": ecoab_occurrences["collection_code"],        
+    "collection_id": ecoab_occurrences["collection_id"],          
+    "owner_institution_code": None, 
+    "catalog_number": ecoab_occurrences["catalogNumber"],         
+    "record_number": None,          
+    "recorded_by": ecoab_occurrences["recordedBy"],            
+    "recorded_by_id": ecoab_occurrences["recordedByID"],         
+    "associated_references": None,  
+    "associated_sequences": None,   
+    "other_catalog_numbers": ecoab_occurrences["occurrenceID"]
+})
+
+# %%
+material_entity.head()
+
+# %%
+material_entity = pd.concat([material_entity, ecoab_plantae["material_entity_id"].to_frame()])
+
+# %%
+material_entity.to_csv(product["material_entity_table"], index=False)
+
+# %%
+interactions_data = pd.read_csv(data_folder / "ecoab-interaction-data.csv")
+
+# %%
+interactions_data = pd.merge(interactions_data, ecoab_occurrences[["material_entity_id", "occurrenceID"]], on="occurrenceID").rename(columns={"material_entity_id": "subject_entity_id"})
+
+# %%
+interactions_data = pd.merge(interactions_data, ecoab_plantae[["material_entity_id", "taxonID"]], left_on="relatedResourceID", right_on="taxonID").rename(columns={"material_entity_id": "object_entity_id"})
+
+# %%
+interactions_data.head(10)
+
+# %%
+entity_relationship = pd.DataFrame({
+    "entity_relationship_id": interactions_data["relationshipOfResourceID"],
+    "depends_on_entity_relationship_id": None,
+    "subject_entity_id": interactions_data["subject_entity_id"],
+    "entity_relationship_type": interactions_data["relationshipOfResource"],
+    "object_entity_id": interactions_data["object_entity_id"],
+    "object_entity_iri": None,
+    "entity_relationship_date": None,
+    "entity_relationship_order": None
+})
+
+# %%
+entity_relationship.head(10)
+
+# %%
+entity_relationship.to_csv(product["entity_relationship_table"], index=False)
