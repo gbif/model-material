@@ -1,0 +1,22 @@
+tasks:
+  # Add tasks here...
+  - source: tasks/01-agent.py
+    name: create-agents
+    params: 
+      data_folder: "{{cwd}}/original-data"
+    product: 
+      nb: "tasks-nb/01-agent.ipynb"
+      agent_table: "data-products/agent.csv"
+      collection_table: "data-products/collection.csv"
+  - source: tasks/02-entities.py
+    name: create-entitties
+    params: 
+      data_folder: "{{cwd}}/original-data"
+      dataset_id: null
+    product: 
+      nb: "tasks-nb/02-entitties.ipynb"
+      entity_table: "data-products/entity.csv"
+      material_entity_table: "data-products/material_entity.csv"
+      organism_table: "data-products/organism.csv"
+      entity_relationship_table: "data-products/entity_relationship.csv"
+
