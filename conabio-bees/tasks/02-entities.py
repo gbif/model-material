@@ -156,3 +156,5 @@ entity_relationship.head(10)
 
 # %%
 entity_relationship.to_csv(product["entity_relationship_table"], index=False)
+
+# %%
