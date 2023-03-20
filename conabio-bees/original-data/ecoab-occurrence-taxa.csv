@@ -1,0 +1,1017 @@
+taxonID,scientificName,taxonRank,kingdom,phylum,class,order,family,genus,verbatimScientificName
+CIRSP,Cirsium,genus,Plantae,Tracheophyta,Equisetopsida,Asterales,Asteraceae,Cirsium,
+BRAJUN,Brassica juncea,species,Plantae,Tracheophyta,Equisetopsida,Brassicales,Brassicaceae,Brassica,Brassica juncea
+CUCSP,Cucurbita,genus,Plantae,Tracheophyta,Equisetopsida,Cucurbitales,Cucurbitaceae,Cucurbita,
+TITSP,Tithonia,genus,Plantae,Tracheophyta,Equisetopsida,Asterales,Asteraceae,Tithonia,
+ANOSP,Anoda,genus,Plantae,Tracheophyta,Equisetopsida,Malvales,Malvaceae,Anoda,
+IPOSP,Ipomoea,genus,Plantae,Tracheophyta,Equisetopsida,Solanales,Convolvulaceae,Ipomoea,
+SIDSP,Sida,genus,Plantae,Tracheophyta,Equisetopsida,Malvales,Malvaceae,Sida,
+TRXSP,Trixis,genus,Plantae,Tracheophyta,Equisetopsida,Asterales,Asteraceae,Trixis,
+CALMUL,Callisia multiflora,species,Plantae,Tracheophyta,Equisetopsida,Commelinales,Commelinaceae,Callisia,Callisia multiflora
+TECSTA,Tecoma stans,species,Plantae,Tracheophyta,Equisetopsida,Lamiales,Bignoniaceae,Tecoma,Tecoma stans
+SIGAGR,Sigesbeckia agrestis,species,Plantae,Tracheophyta,Equisetopsida,Asterales,Asteraceae,Sigesbeckia,Sigesbeckia agrestis
+DAHSP,Dahlia,genus,Plantae,Tracheophyta,Equisetopsida,Asterales,Asteraceae,Dahlia,
+MUSPAR,Musa paradisiaca,species,Plantae,Tracheophyta,Equisetopsida,Zingiberales,Musaceae,Musa,Musa paradisiaca
+ZEAMAY,Zea mays,species,Plantae,Tracheophyta,Equisetopsida,Poales,Poaceae,Zea,Zea mays
+PHYSP,Physalis,genus,Plantae,Tracheophyta,Equisetopsida,Solanales,Solanaceae,Physalis,
+SALSP,Salvia,genus,Plantae,Tracheophyta,Equisetopsida,Lamiales,Lamiaceae,Salvia,
+LOGFAM,Loganiaceae,family,Plantae,Tracheophyta,Equisetopsida,Gentianales,Loganiaceae,,
+ASTFAM,Asteraceae,family,Plantae,Tracheophyta,Equisetopsida,Asterales,Asteraceae,,
+ASCCUR,Asclepias curassavica,species,Plantae,Tracheophyta,Equisetopsida,Gentianales,Apocynaceae,Asclepias,Asclepias curassavica
+MIMSP,Mimosa,genus,Plantae,Tracheophyta,Equisetopsida,Fabales,Fabaceae,Mimosa,
+PHACOC,Phaseolus coccineus,species,Plantae,Tracheophyta,Equisetopsida,Fabales,Fabaceae,Phaseolus,Phaseolus coccineus
+MELDIV,Melampodium divaricatum,species,Plantae,Tracheophyta,Equisetopsida,Asterales,Asteraceae,Melampodium,Melampodium divaricatum
+COFARA,Coffea arabica,species,Plantae,Tracheophyta,Equisetopsida,Gentianales,Rubiaceae,Coffea,Coffea arabica
+FABFAM,Fabaceae,family,Plantae,Tracheophyta,Equisetopsida,Fabales,Fabaceae,,
+ACAFAM,Acanthaceae,family,Plantae,Tracheophyta,Equisetopsida,Lamiales,Acanthaceae,,
+LAMFAM,Lamiaceae,family,Plantae,Tracheophyta,Equisetopsida,Lamiales,Lamiaceae,,
+OXASP,Oxalis,genus,Plantae,Tracheophyta,Equisetopsida,Oxalidales,Oxalidaceae,Oxalis,
+EUPSP,Euphorbia,genus,Plantae,Tracheophyta,Equisetopsida,Malpighiales,Euphorbiaceae,Euphorbia,
+TECGRA,Tectona grandis,species,Plantae,Tracheophyta,Equisetopsida,Lamiales,Lamiaceae,Tectona,Tectona grandis
+SYZSP,Syzygium,genus,Plantae,Tracheophyta,Equisetopsida,Myrtales,Myrtaceae,Syzygium,
+SACOFF,Saccharum officinarum,species,Plantae,Tracheophyta,Equisetopsida,Poales,Poaceae,Saccharum,Saccharum officinarum
+BYRCRA,Byrsonima crassifolia,species,Plantae,Tracheophyta,Equisetopsida,Malpighiales,Malpighiaceae,Byrsonima,Byrsonima crassifolia
+BIXORE,Bixa orellana,species,Plantae,Tracheophyta,Equisetopsida,Malvales,Bixaceae,Bixa,Bixa orellana
+SOLNIG,Solanum nigrescens,species,Plantae,Tracheophyta,Equisetopsida,Solanales,Solanaceae,Solanum,Solanum nigrescens
+CROLON,Crotalaria longirostrata,species,Plantae,Tracheophyta,Equisetopsida,Fabales,Fabaceae,Crotalaria,Crotalaria longirostrata
+RAPSAT,Raphanus sativus,species,Plantae,Tracheophyta,Equisetopsida,Brassicales,Brassicaceae,Raphanus,Raphanus sativus
+OXALAT,Oxalis latifolia,species,Plantae,Tracheophyta,Equisetopsida,Oxalidales,Oxalidaceae,Oxalis,Oxalis latifolia
+LUPSP,Lupinus,genus,Plantae,Tracheophyta,Equisetopsida,Fabales,Fabaceae,Lupinus,
+DAUCAR,Daucus carota,species,Plantae,Tracheophyta,Equisetopsida,Apiales,Apiaceae,Daucus,Daucus carota
+TITLON,Tithonia longiradiata,species,Plantae,Tracheophyta,Equisetopsida,Asterales,Asteraceae,Tithonia,Tithonia longiradiata
+TRIPL,Trichilia,genus,Plantae,Tracheophyta,Equisetopsida,Sapindales,Meliaceae,Trichilia,
+OPUSP,Opuntia,genus,Plantae,Tracheophyta,Equisetopsida,Caryophyllales,Cactaceae,Opuntia,
+SNESP,Senecio,genus,Plantae,Tracheophyta,Equisetopsida,Asterales,Asteraceae,Senecio,
+RHUTER,Rhus terebinthifolia,species,Plantae,Tracheophyta,Equisetopsida,Sapindales,Anacardiaceae,Rhus,Rhus terebinthifolia
+JACMIM,Jacaranda mimosifolia,species,Plantae,Tracheophyta,Equisetopsida,Lamiales,Bignoniaceae,Jacaranda,Jacaranda mimosifolia
+SOLSP,Solanum,genus,Plantae,Tracheophyta,Equisetopsida,Solanales,Solanaceae,Solanum,
+IPOTRI,Ipomoea triloba,species,Plantae,Tracheophyta,Equisetopsida,Solanales,Convolvulaceae,Ipomoea,Ipomoea triloba
+WIGURE,Wigandia urens,species,Plantae,Tracheophyta,Equisetopsida,Boraginales,Namaceae,Wigandia,Wigandia urens
+ACASP,Acacia,genus,Plantae,Tracheophyta,Equisetopsida,Fabales,Fabaceae,Acacia,
+TABROS,Tabebuia rosea,species,Plantae,Tracheophyta,Equisetopsida,Lamiales,Bignoniaceae,Tabebuia,Tabebuia rosea
+INGOER,Inga oerstediana,species,Plantae,Tracheophyta,Equisetopsida,Fabales,Fabaceae,Inga,Inga oerstediana
+GLISEP,Gliricidia sepium,species,Plantae,Tracheophyta,Equisetopsida,Fabales,Fabaceae,Gliricidia,Gliricidia sepium
+PSIGUA,Psidium guajava,species,Plantae,Tracheophyta,Equisetopsida,Myrtales,Myrtaceae,Psidium,Psidium guajava
+STESP,Stenocereus,genus,Plantae,Tracheophyta,Equisetopsida,Caryophyllales,Cactaceae,Stenocereus,
+AGASP,Agave,genus,Plantae,Tracheophyta,Equisetopsida,Asparagales,Asparagaceae,Agave,
+IPOFIS,Ipomoea fistulosa,species,Plantae,Tracheophyta,Equisetopsida,Solanales,Convolvulaceae,Ipomoea,Ipomoea fistulosa
+CROGUA,Croton guatemalensis,species,Plantae,Tracheophyta,Equisetopsida,Malpighiales,Euphorbiaceae,Croton,Croton guatemalensis
+COUHEX,Coutarea hexandra,species,Plantae,Tracheophyta,Equisetopsida,Gentianales,Rubiaceae,Coutarea,Coutarea hexandra
+TRIPRO,Tridax procumbens,species,Plantae,Tracheophyta,Equisetopsida,Asterales,Asteraceae,Tridax,Tridax procumbens
+CONFAM,Convolvulaceae,family,Plantae,Tracheophyta,Equisetopsida,Solanales,Convolvulaceae,,
+MERSP,Merremia,genus,Plantae,Tracheophyta,Equisetopsida,Solanales,Convolvulaceae,Merremia,
+SENATO,Senna atomaria,species,Plantae,Tracheophyta,Equisetopsida,Fabales,Fabaceae,Senna,Senna atomaria
+TABSP,Tabernaemontana,genus,Plantae,Tracheophyta,Equisetopsida,Gentianales,Apocynaceae,Tabernaemontana,
+POLFLO,Polygala floribunda,species,Plantae,Tracheophyta,Equisetopsida,Fabales,Polygalaceae,Polygala,Polygala floribunda
+ROSFAM,Rosaceae,family,Plantae,Tracheophyta,Equisetopsida,Rosales,Rosaceae,,
+ASTVIM,Astianthus viminalis,species,Plantae,Tracheophyta,Equisetopsida,Lamiales,Bignoniaceae,Astianthus,Astianthus viminalis
+MALSP,Malvaviscus,genus,Plantae,Tracheophyta,Equisetopsida,Malvales,Malvaceae,Malvaviscus,
+SESIND,Sesamum indicum,species,Plantae,Tracheophyta,Equisetopsida,Lamiales,Pedaliaceae,Sesamum,Sesamum indicum
+BRAFAM,Brassicaceae,family,Plantae,Tracheophyta,Equisetopsida,Brassicales,Brassicaceae,,
+RUBFAM,Rubiaceae,family,Plantae,Tracheophyta,Equisetopsida,Gentianales,Rubiaceae,,
+TRMSP,Triumfetta,genus,Plantae,Tracheophyta,Equisetopsida,Malvales,Malvaceae,Triumfetta,
+BIDPIL,Bidens pilosa,species,Plantae,Tracheophyta,Equisetopsida,Asterales,Asteraceae,Bidens,Bidens pilosa
+GONGAL,Gongora galeata,species,Plantae,Tracheophyta,Equisetopsida,Asparagales,Orchidaceae,Gongora,Gongora galeata
+EPASP,Eupatorium,genus,Plantae,Tracheophyta,Equisetopsida,Asterales,Asteraceae,Eupatorium,
+SPOSP,Spondias,genus,Plantae,Tracheophyta,Equisetopsida,Sapindales,Anacardiaceae,Spondias,
+ACACOR,Acacia cornigera,species,Plantae,Tracheophyta,Equisetopsida,Fabales,Fabaceae,Acacia,Acacia cornigera
+VERSP,Vernonia,genus,Plantae,Tracheophyta,Equisetopsida,Asterales,Asteraceae,Vernonia,
+TABDON,Tabernaemontana donnell-smithii,species,Plantae,Tracheophyta,Equisetopsida,Gentianales,Apocynaceae,Tabernaemontana,Tabernaemontana donnell-smithii
+HETLAU,Heteropterys laurifolia,species,Plantae,Tracheophyta,Equisetopsida,Malpighiales,Malpighiaceae,Heteropterys,Heteropterys laurifolia
+BEGNEL,Begonia nelumbonifolia,species,Plantae,Tracheophyta,Equisetopsida,Cucurbitales,Begoniaceae,Begonia,Begonia nelumbonifolia
+RUBSP,Rubus,genus,Plantae,Tracheophyta,Equisetopsida,Rosales,Rosaceae,Rubus,
+PORSP,Portulaca,genus,Plantae,Tracheophyta,Equisetopsida,Caryophyllales,Portulacaceae,Portulaca,
+PIPSP,Piper,genus,Plantae,Tracheophyta,Equisetopsida,Piperales,Piperaceae,Piper,
+CECSP,Cecropia,genus,Plantae,Tracheophyta,Equisetopsida,Rosales,Urticaceae,Cecropia,
+ERNSP,Eryngium,genus,Plantae,Tracheophyta,Equisetopsida,Apiales,Apiaceae,Eryngium,
+PHAVUL,Phaseolus vulgaris,species,Plantae,Tracheophyta,Equisetopsida,Fabales,Fabaceae,Phaseolus,Phaseolus vulgaris
+SENSP,Senna,genus,Plantae,Tracheophyta,Equisetopsida,Fabales,Fabaceae,Senna,
+CRAPUB,Crataegus,genus,Plantae,Tracheophyta,Equisetopsida,Rosales,Rosaceae,Crataegus,Crataegus pubescens
+BIDAUR,Bidens aurea,species,Plantae,Tracheophyta,Equisetopsida,Asterales,Asteraceae,Bidens,Bidens aurea
+DAHIMP,Dahlia imperialis,species,Plantae,Tracheophyta,Equisetopsida,Asterales,Asteraceae,Dahlia,Dahlia imperialis
+MANIND,Mangifera indica,species,Plantae,Tracheophyta,Equisetopsida,Sapindales,Anacardiaceae,Mangifera,Mangifera indica
+ACAFAR,Acacia farnesiana,species,Plantae,Tracheophyta,Equisetopsida,Fabales,Fabaceae,Acacia,Acacia farnesiana
+HYPTOM,Hyptis tomentosa,species,Plantae,Tracheophyta,Equisetopsida,Lamiales,Lamiaceae,Hyptis,Hyptis tomentosa
+MOROLE,Moringa oleifera,species,Plantae,Tracheophyta,Equisetopsida,Brassicales,Moringaceae,Moringa,Moringa oleifera
+DIPCAR,Diphysa carthagenensis,species,Plantae,Tracheophyta,Equisetopsida,Fabales,Fabaceae,Diphysa,Diphysa carthagenensis
+CUCPEP,Cucurbita pepo,species,Plantae,Tracheophyta,Equisetopsida,Cucurbitales,Cucurbitaceae,Cucurbita,Cucurbita pepo
+DOLUNG,Dolichandra unguis-cati,species,Plantae,Tracheophyta,Equisetopsida,Lamiales,Bignoniaceae,Dolichandra,Dolichandra unguis-cati
+ARDBRE,Ardisia breedlovei,species,Plantae,Tracheophyta,Equisetopsida,Ericales,Primulaceae,Ardisia,Ardisia breedlovei
+BIGFAM,Bignoniaceae,family,Plantae,Tracheophyta,Equisetopsida,Lamiales,Bignoniaceae,,
+HETSP,Heteropterys,genus,Plantae,Tracheophyta,Equisetopsida,Malpighiales,Malpighiaceae,Heteropterys,
+CROSP,Croton,genus,Plantae,Tracheophyta,Equisetopsida,Malpighiales,Euphorbiaceae,Croton,
+MACRIP,Machaerium riparium,species,Plantae,Tracheophyta,Equisetopsida,Fabales,Fabaceae,Machaerium,Machaerium riparium
+PROJUL,Prosopis juliflora,species,Plantae,Tracheophyta,Equisetopsida,Fabales,Fabaceae,Prosopis,Prosopis juliflora
+COCCAR,Coccoloba caracasana,species,Plantae,Tracheophyta,Equisetopsida,Caryophyllales,Polygonaceae,Coccoloba,Coccoloba caracasana
+SENPAL,Senna pallida,species,Plantae,Tracheophyta,Equisetopsida,Fabales,Fabaceae,Senna,Senna pallida
+MALFAM,Malvaceae,family,Plantae,Tracheophyta,Equisetopsida,Malvales,Malvaceae,,
+TRISER,Tripogandra serrulata,species,Plantae,Tracheophyta,Equisetopsida,Commelinales,Commelinaceae,Tripogandra,Tripogandra serrulata
+LEPCAN,Lepidaploa canescens,species,Plantae,Tracheophyta,Equisetopsida,Asterales,Asteraceae,Lepidaploa,Lepidaploa canescens
+PHASP,Phaseolus,genus,Plantae,Tracheophyta,Equisetopsida,Fabales,Fabaceae,Phaseolus,
+MARMIL,Mariosousa millefolia,species,Plantae,Tracheophyta,Equisetopsida,Fabales,Fabaceae,Mariosousa,Mariosousa millefolia
+COMFRU,Combretum fruticosum,species,Plantae,Tracheophyta,Equisetopsida,Myrtales,Combretaceae,Combretum,Combretum fruticosum
+VERFAM,Verbenaceae,family,Plantae,Tracheophyta,Equisetopsida,Lamiales,Verbenaceae,,
+SENNIC,Senna nicaraguensis,species,Plantae,Tracheophyta,Equisetopsida,Fabales,Fabaceae,Senna,Senna nicaraguensis
+LUDSP,Ludwigia,genus,Plantae,Tracheophyta,Equisetopsida,Myrtales,Onagraceae,Ludwigia,
+CASSP,Casearia,genus,Plantae,Tracheophyta,Equisetopsida,Malpighiales,Salicaceae,Casearia,
+HAEBRA,Haematoxylum brasiletto,species,Plantae,Tracheophyta,Equisetopsida,Fabales,Fabaceae,Haematoxylum,Haematoxylum brasiletto
+RHYSP,Rhynchosia,genus,Plantae,Tracheophyta,Equisetopsida,Fabales,Fabaceae,Rhynchosia,
+PRUPER,Prunus persica,species,Plantae,Tracheophyta,Equisetopsida,Rosales,Rosaceae,Prunus,Prunus persica
+MELSP,Melampodium,genus,Plantae,Tracheophyta,Equisetopsida,Asterales,Asteraceae,Melampodium,
+VICSP,Vicia,genus,Plantae,Tracheophyta,Equisetopsida,Fabales,Fabaceae,Vicia,
+CLESPE,Cleoserrata speciosa,species,Plantae,Tracheophyta,Equisetopsida,Brassicales,Cleomaceae,Cleoserrata,Cleoserrata speciosa
+TIBSP,Tibouchina,genus,Plantae,Tracheophyta,Equisetopsida,Myrtales,Melastomataceae,Tibouchina,
+SOLFAM,Solanaceae,family,Plantae,Tracheophyta,Equisetopsida,Solanales,Solanaceae,,
+SONOLE,Sonchus oleraceus,species,Plantae,Tracheophyta,Equisetopsida,Asterales,Asteraceae,Sonchus,Sonchus oleraceus
+CLESP,Clematis,genus,Plantae,Tracheophyta,Equisetopsida,Ranunculales,Ranunculaceae,Clematis,
+CLOSP,Cleome,genus,Plantae,Tracheophyta,Equisetopsida,Brassicales,Cleomaceae,Cleome,
+XIMSP,Ximenia,genus,Plantae,Tracheophyta,Equisetopsida,Santalales,Olacaceae,Ximenia,
+TINERE,Tinantia erecta,species,Plantae,Tracheophyta,Equisetopsida,Commelinales,Commelinaceae,Tinantia,Tinantia erecta
+CRISP,Critoniopsis,genus,Plantae,Tracheophyta,Equisetopsida,Asterales,Asteraceae,Critoniopsis,
+SERSP,Serjania,genus,Plantae,Tracheophyta,Equisetopsida,Sapindales,Sapindaceae,Serjania,
+POAFAM,Poaceae,family,Plantae,Tracheophyta,Equisetopsida,Poales,Poaceae,,
+SIDACU,Sida acuta,species,Plantae,Tracheophyta,Equisetopsida,Malvales,Malvaceae,Sida,Sida acuta
+MUNCAL,Muntingia calabura,species,Plantae,Tracheophyta,Equisetopsida,Malvales,Muntingiaceae,Muntingia,Muntingia calabura
+COSCAU,Cosmos caudatus,species,Plantae,Tracheophyta,Equisetopsida,Asterales,Asteraceae,Cosmos,Cosmos caudatus
+CORSAT,Coriandrum sativum,species,Plantae,Tracheophyta,Equisetopsida,Apiales,Apiaceae,Coriandrum,Coriandrum sativum
+ALLINT,Alloispermum integrifolium,species,Plantae,Tracheophyta,Equisetopsida,Asterales,Asteraceae,Alloispermum,Alloispermum integrifolium
+ELEIND,Eleusine indica,species,Plantae,Tracheophyta,Equisetopsida,Poales,Poaceae,Eleusine,Eleusine indica
+DESSP,Desmodium,genus,Plantae,Tracheophyta,Equisetopsida,Fabales,Fabaceae,Desmodium,
+STIRET,Stigmaphyllon retusum,species,Plantae,Tracheophyta,Equisetopsida,Malpighiales,Malpighiaceae,Stigmaphyllon,Stigmaphyllon retusum
+ALTSP,Alternanthera,genus,Plantae,Tracheophyta,Equisetopsida,Caryophyllales,Amaranthaceae,Alternanthera,
+CALTER,Calea ternifolia,species,Plantae,Tracheophyta,Equisetopsida,Asterales,Asteraceae,Calea,Calea ternifolia
+PAUSP,Paullinia,genus,Plantae,Tracheophyta,Equisetopsida,Sapindales,Sapindaceae,Paullinia,
+TAGERE,Tagetes erecta,species,Plantae,Tracheophyta,Equisetopsida,Asterales,Asteraceae,Tagetes,Tagetes erecta
+CHRSP,Chromolaena,genus,Plantae,Tracheophyta,Equisetopsida,Asterales,Asteraceae,Chromolaena,
+CONSP,Conyza,genus,Plantae,Tracheophyta,Equisetopsida,Asterales,Asteraceae,Conyza,
+HEBSP,Hebeclinium,genus,Plantae,Tracheophyta,Equisetopsida,Asterales,Asteraceae,Hebeclinium,
+TAGSP,Tagetes,genus,Plantae,Tracheophyta,Equisetopsida,Asterales,Asteraceae,Tagetes,
+VERPAT,Vernonanthura patens,species,Plantae,Tracheophyta,Equisetopsida,Asterales,Asteraceae,Vernonanthura,Vernonanthura patens
+PACSP,Pachyrhizus,genus,Plantae,Tracheophyta,Equisetopsida,Fabales,Fabaceae,Pachyrhizus,
+CLEOCC,Clethra occidentalis,species,Plantae,Tracheophyta,Equisetopsida,Ericales,Clethraceae,Clethra,Clethra occidentalis
+VEROAX,Vernonanthura oaxacana,species,Plantae,Tracheophyta,Equisetopsida,Asterales,Asteraceae,Vernonanthura,Vernonanthura oaxacana
+BACSP,Baccharis,genus,Plantae,Tracheophyta,Equisetopsida,Asterales,Asteraceae,Baccharis,
+LOBLAX,Lobelia laxiflora,species,Plantae,Tracheophyta,Equisetopsida,Asterales,Campanulaceae,Lobelia,Lobelia laxiflora
+POLSP,Polygala,genus,Plantae,Tracheophyta,Equisetopsida,Fabales,Polygalaceae,Polygala,
+LASPL,Lasianthaea,genus,Plantae,Tracheophyta,Equisetopsida,Asterales,Asteraceae,Lasianthaea,
+IRELAT,Iresine latifolia,species,Plantae,Tracheophyta,Equisetopsida,Caryophyllales,Amaranthaceae,Iresine,Iresine latifolia
+CLEHON,Clethra hondurensis,species,Plantae,Tracheophyta,Equisetopsida,Ericales,Clethraceae,Clethra,Clethra hondurensis
+EUPPUL,Euphorbia pulcherrima,species,Plantae,Tracheophyta,Equisetopsida,Malpighiales,Euphorbiaceae,Euphorbia,Euphorbia pulcherrima
+GOMPIL,Gomphrena pilosa,species,Plantae,Tracheophyta,Equisetopsida,Caryophyllales,Amaranthaceae,Gomphrena,Gomphrena pilosa
+HYMSP,Hymenostephium,genus,Plantae,Tracheophyta,Equisetopsida,Asterales,Asteraceae,Hymenostephium,
+ECHSP,Echeandia,genus,Plantae,Tracheophyta,Equisetopsida,Asparagales,Asparagaceae,Echeandia,
+LIPSP,Lippia,genus,Plantae,Tracheophyta,Equisetopsida,Lamiales,Verbenaceae,Lippia,
+SAPFAM,Sapindaceae,family,Plantae,Tracheophyta,Equisetopsida,Sapindales,Sapindaceae,,
+SYMMOR,Symphyotrichum moranense,species,Plantae,Tracheophyta,Equisetopsida,Asterales,Asteraceae,Symphyotrichum,Symphyotrichum moranense
+TIGPAV,Tigridia pavonia,species,Plantae,Tracheophyta,Equisetopsida,Asparagales,Iridaceae,Tigridia,Tigridia pavonia
+CUCFIC,Cucurbita ficifolia,species,Plantae,Tracheophyta,Equisetopsida,Cucurbitales,Cucurbitaceae,Cucurbita,Cucurbita ficifolia
+CLEVIS,Cleome viscosa,species,Plantae,Tracheophyta,Equisetopsida,Brassicales,Cleomaceae,Cleome,Cleome viscosa
+CITSIN,Citrus sinensis,species,Plantae,Tracheophyta,Equisetopsida,Sapindales,Rutaceae,Citrus,Citrus sinensis
+PHYIXO,Physalis ixocarpa,species,Plantae,Tracheophyta,Equisetopsida,Solanales,Solanaceae,Physalis,Physalis ixocarpa
+CITXAU,Citrus x aurantiifolia,species,Plantae,Tracheophyta,Equisetopsida,Sapindales,Rutaceae,Citrus,Citrus x aurantiifolia
+CHRODO,Chromolaena odorata,species,Plantae,Tracheophyta,Equisetopsida,Asterales,Asteraceae,Chromolaena,Chromolaena odorata
+VERCOR,Vernonia cordata,species,Plantae,Tracheophyta,Equisetopsida,Asterales,Asteraceae,Vernonia,Vernonia cordata
+POLFAM,Polygalaceae,family,Plantae,Tracheophyta,Equisetopsida,Fabales,Polygalaceae,,
+QUESP,Quercus,genus,Plantae,Tracheophyta,Equisetopsida,Fagales,Fagaceae,Quercus,
+MIMPUD,Mimosa pudica,species,Plantae,Tracheophyta,Equisetopsida,Fabales,Fabaceae,Mimosa,Mimosa pudica
+MALPUM,Malus pumila,species,Plantae,Tracheophyta,Equisetopsida,Rosales,Rosaceae,Malus,Malus pumila
+PSISP,Psidium,genus,Plantae,Tracheophyta,Equisetopsida,Myrtales,Myrtaceae,Psidium,
+SPOFAM,Sapotaceae,family,Plantae,Tracheophyta,Equisetopsida,Ericales,Sapotaceae,,
+SOLTOR,Solanum torvum,species,Plantae,Tracheophyta,Equisetopsida,Solanales,Solanaceae,Solanum,Solanum torvum
+SERMEX,Serjania mexicana,species,Plantae,Tracheophyta,Equisetopsida,Sapindales,Sapindaceae,Serjania,Serjania mexicana
+ACAANG,Acaciella angustissima,species,Plantae,Tracheophyta,Equisetopsida,Fabales,Fabaceae,Acaciella,Acaciella angustissima
+SONSP,Sonchus,genus,Plantae,Tracheophyta,Equisetopsida,Asterales,Asteraceae,Sonchus,
+BUNSP,Bunchosia,genus,Plantae,Tracheophyta,Equisetopsida,Malpighiales,Malpighiaceae,Bunchosia,
+CITXLI,Citrus x limon,species,Plantae,Tracheophyta,Equisetopsida,Sapindales,Rutaceae,Citrus,Citrus x limon
+BURSIM,Bursera simaruba,species,Plantae,Tracheophyta,Equisetopsida,Sapindales,Burseraceae,Bursera,Bursera simaruba
+WALIND,Waltheria indica,species,Plantae,Tracheophyta,Equisetopsida,Malvales,Malvaceae,Waltheria,Waltheria indica
+INGSP,Inga,genus,Plantae,Tracheophyta,Equisetopsida,Fabales,Fabaceae,Inga,
+LEPSP,Lepidaploa,genus,Plantae,Tracheophyta,Equisetopsida,Asterales,Asteraceae,Lepidaploa,
+COFCAN,Coffea canephora,species,Plantae,Tracheophyta,Equisetopsida,Gentianales,Rubiaceae,Coffea,Coffea canephora
+IREDIF,Iresine diffusa,species,Plantae,Tracheophyta,Equisetopsida,Caryophyllales,Amaranthaceae,Iresine,Iresine diffusa
+CANIND,Canna indica,species,Plantae,Tracheophyta,Equisetopsida,Zingiberales,Cannaceae,Canna,Canna indica
+ALLGLA,Allium glandulosum,species,Plantae,Tracheophyta,Equisetopsida,Asparagales,Amaryllidaceae,Allium,Allium glandulosum
+RHAFAM,Rhamnaceae,family,Plantae,Tracheophyta,Equisetopsida,Rosales,Rhamnaceae,,
+ODOCAL,Odontonema callistachyum,species,Plantae,Tracheophyta,Equisetopsida,Lamiales,Acanthaceae,Odontonema,Odontonema callistachyum
+PLUSP,Pluchea,genus,Plantae,Tracheophyta,Equisetopsida,Asterales,Asteraceae,Pluchea,
+BUDSP,Buddleja,genus,Plantae,Tracheophyta,Equisetopsida,Lamiales,Scrophulariaceae,Buddleja,
+URTFAM,Urticaceae,family,Plantae,Tracheophyta,Equisetopsida,Rosales,Urticaceae,,
+ENTCYC,Enterolobium cyclocarpum,species,Plantae,Tracheophyta,Equisetopsida,Fabales,Fabaceae,Enterolobium,Enterolobium cyclocarpum
+COMSP,Commelina,genus,Plantae,Tracheophyta,Equisetopsida,Commelinales,Commelinaceae,Commelina,
+CAPANN,Capsicum annuum,species,Plantae,Tracheophyta,Equisetopsida,Solanales,Solanaceae,Capsicum,Capsicum annuum
+ALLSP,Alloispermum,genus,Plantae,Tracheophyta,Equisetopsida,Asterales,Asteraceae,Alloispermum,
+AESSP,Aeschynomene,genus,Plantae,Tracheophyta,Equisetopsida,Fabales,Fabaceae,Aeschynomene,
+SMASP,Smallanthus,genus,Plantae,Tracheophyta,Equisetopsida,Asterales,Asteraceae,Smallanthus,
+BEGHER,Begonia heracleifolia,species,Plantae,Tracheophyta,Equisetopsida,Cucurbitales,Begoniaceae,Begonia,Begonia heracleifolia
+LONSP,Lonchocarpus,genus,Plantae,Tracheophyta,Equisetopsida,Fabales,Fabaceae,Lonchocarpus,
+ERYSP,Erythrina,genus,Plantae,Tracheophyta,Equisetopsida,Fabales,Fabaceae,Erythrina,
+AGECOR,Ageratum corymbosum,species,Plantae,Tracheophyta,Equisetopsida,Asterales,Asteraceae,Ageratum,Ageratum corymbosum
+MELFAM,Melastomataceae,family,Plantae,Tracheophyta,Equisetopsida,Myrtales,Melastomataceae,,
+CITSP,Citrus,genus,Plantae,Tracheophyta,Equisetopsida,Sapindales,Rutaceae,Citrus,
+CAPSP,Capsicum,genus,Plantae,Tracheophyta,Equisetopsida,Solanales,Solanaceae,Capsicum,
+HAMSP,Hamelia,genus,Plantae,Tracheophyta,Equisetopsida,Gentianales,Rubiaceae,Hamelia,
+APHSCA,Aphelandra scabra,species,Plantae,Tracheophyta,Equisetopsida,Lamiales,Acanthaceae,Aphelandra,Aphelandra scabra
+SOLLYC,Solanum lycopersicum,species,Plantae,Tracheophyta,Equisetopsida,Solanales,Solanaceae,Solanum,Solanum lycopersicum
+CARPAP,Carica papaya,species,Plantae,Tracheophyta,Equisetopsida,Brassicales,Caricaceae,Carica,Carica papaya
+SECEDU,Sechium edule,species,Plantae,Tracheophyta,Equisetopsida,Cucurbitales,Cucurbitaceae,Sechium,Sechium edule
+CYPSP,Cyperus,genus,Plantae,Tracheophyta,Equisetopsida,Poales,Cyperaceae,Cyperus,
+GALSP,Galinsoga,genus,Plantae,Tracheophyta,Equisetopsida,Asterales,Asteraceae,Galinsoga,
+DICSP,Dichorisandra,genus,Plantae,Tracheophyta,Equisetopsida,Commelinales,Commelinaceae,Dichorisandra,
+OPUFIC,Opuntia ficus-indica,species,Plantae,Tracheophyta,Equisetopsida,Caryophyllales,Cactaceae,Opuntia,Opuntia ficus-indica
+CRTSP,Crotalaria,genus,Plantae,Tracheophyta,Equisetopsida,Fabales,Fabaceae,Crotalaria,
+PISSAT,Pisum sativum,species,Plantae,Tracheophyta,Equisetopsida,Fabales,Fabaceae,Pisum,Pisum sativum
+BURSP,Bursera,genus,Plantae,Tracheophyta,Equisetopsida,Sapindales,Burseraceae,Bursera,
+TITDIV,Tithonia diversifolia,species,Plantae,Tracheophyta,Equisetopsida,Asterales,Asteraceae,Tithonia,Tithonia diversifolia
+AMPPAN,Amphilophium paniculatum,species,Plantae,Tracheophyta,Equisetopsida,Lamiales,Bignoniaceae,Amphilophium,Amphilophium paniculatum
+MEHSP,Melanthera,genus,Plantae,Tracheophyta,Equisetopsida,Asterales,Asteraceae,Melanthera,
+SECSP,Sechium,genus,Plantae,Tracheophyta,Equisetopsida,Cucurbitales,Cucurbitaceae,Sechium,
+DISTUB,Distimake tuberosus,species,Plantae,Tracheophyta,Equisetopsida,Solanales,Convolvulaceae,Distimake,Distimake tuberosus
+DICSEX,Dicliptera sexangularis,species,Plantae,Tracheophyta,Equisetopsida,Lamiales,Acanthaceae,Dicliptera,Dicliptera sexangularis
+LANCAM,Lantana camara,species,Plantae,Tracheophyta,Equisetopsida,Lamiales,Verbenaceae,Lantana,Lantana camara
+ACMSP,Acmella,genus,Plantae,Tracheophyta,Equisetopsida,Asterales,Asteraceae,Acmella,
+RYTGRA,Rytidostylis gracilis,species,Plantae,Tracheophyta,Equisetopsida,Cucurbitales,Cucurbitaceae,Rytidostylis,Rytidostylis gracilis
+JALSP,Jaltomata,genus,Plantae,Tracheophyta,Equisetopsida,Solanales,Solanaceae,Jaltomata,
+HELSP,Heliconia,genus,Plantae,Tracheophyta,Equisetopsida,Zingiberales,Heliconiaceae,Heliconia,
+SENALA,Senna alata,species,Plantae,Tracheophyta,Equisetopsida,Fabales,Fabaceae,Senna,Senna alata
+DALDOM,Dalea domingensis,species,Plantae,Tracheophyta,Equisetopsida,Fabales,Fabaceae,Dalea,Dalea domingensis
+SALARE,Salpianthus arenarius,species,Plantae,Tracheophyta,Equisetopsida,Caryophyllales,Nyctaginaceae,Salpianthus,Salpianthus arenarius
+AMAFAM,Amaranthaceae,family,Plantae,Tracheophyta,Equisetopsida,Caryophyllales,Amaranthaceae,,
+LUDOCT,Ludwigia octovalvis,species,Plantae,Tracheophyta,Equisetopsida,Myrtales,Onagraceae,Ludwigia,Ludwigia octovalvis
+ZYGFAM,Zygophyllaceae,family,Plantae,Tracheophyta,Equisetopsida,Zygophyllales,Zygophyllaceae,,
+SIMSP,Simsia,genus,Plantae,Tracheophyta,Equisetopsida,Asterales,Asteraceae,Simsia,
+ELESP,Elephantopus,genus,Plantae,Tracheophyta,Equisetopsida,Asterales,Asteraceae,Elephantopus,
+SOLTUB,Solanum tuberosum,species,Plantae,Tracheophyta,Equisetopsida,Solanales,Solanaceae,Solanum,Solanum tuberosum
+PSYSP,Psychotria,genus,Plantae,Tracheophyta,Equisetopsida,Gentianales,Rubiaceae,Psychotria,
+CPPSP,Capparis,genus,Plantae,Tracheophyta,Equisetopsida,Brassicales,Capparaceae,Capparis,
+TERCAT,Terminalia catappa,species,Plantae,Tracheophyta,Equisetopsida,Myrtales,Combretaceae,Terminalia,Terminalia catappa
+FICINS,Ficus insipida,species,Plantae,Tracheophyta,Equisetopsida,Rosales,Moraceae,Ficus,Ficus insipida
+SERTRI,Serjania triquetra,species,Plantae,Tracheophyta,Equisetopsida,Sapindales,Sapindaceae,Serjania,Serjania triquetra
+ANESP,Anemone,genus,Plantae,Tracheophyta,Equisetopsida,Ranunculales,Ranunculaceae,Anemone,
+AREFAM,Arecaceae,family,Plantae,Tracheophyta,Equisetopsida,Arecales,Arecaceae,,
+GREROB,Grevillea robusta,species,Plantae,Tracheophyta,Equisetopsida,Proteales,Proteaceae,Grevillea,Grevillea robusta
+CAJCAJ,Cajanus cajan,species,Plantae,Tracheophyta,Equisetopsida,Fabales,Fabaceae,Cajanus,Cajanus cajan
+RICCOM,Ricinus communis,species,Plantae,Tracheophyta,Equisetopsida,Malpighiales,Euphorbiaceae,Ricinus,Ricinus communis
+RIVSP,Rivina,genus,Plantae,Tracheophyta,Equisetopsida,Caryophyllales,Petiveriaceae,Rivina,
+RANSP,Randia,genus,Plantae,Tracheophyta,Equisetopsida,Gentianales,Rubiaceae,Randia,
+VICVIL,Vicia villosa,species,Plantae,Tracheophyta,Equisetopsida,Fabales,Fabaceae,Vicia,Vicia villosa
+IPOPUR,Ipomoea purpurea,species,Plantae,Tracheophyta,Equisetopsida,Solanales,Convolvulaceae,Ipomoea,Ipomoea purpurea
+ASTPUR,Astranthium purpurascens,species,Plantae,Tracheophyta,Equisetopsida,Asterales,Asteraceae,Astranthium,Astranthium purpurascens
+CUPAEQ,Cuphea aequipetala,species,Plantae,Tracheophyta,Equisetopsida,Myrtales,Lythraceae,Cuphea,Cuphea aequipetala
+DESAPA,Desmodium,genus,Plantae,Tracheophyta,Equisetopsida,Fabales,Fabaceae,Desmodium,Desmodium aparines
+ECHREF,Echeandia reflexa,species,Plantae,Tracheophyta,Equisetopsida,Asparagales,Asparagaceae,Echeandia,Echeandia reflexa
+IPOIND,Ipomoea indica,species,Plantae,Tracheophyta,Equisetopsida,Solanales,Convolvulaceae,Ipomoea,Ipomoea indica
+SALROS,Salvia rosmarinus,species,Plantae,Tracheophyta,Equisetopsida,Lamiales,Lamiaceae,Salvia,Salvia rosmarinus
+PRUVUL,Prunella vulgaris,species,Plantae,Tracheophyta,Equisetopsida,Lamiales,Lamiaceae,Prunella,Prunella vulgaris
+SMAMAC,Smallanthus maculatus,species,Plantae,Tracheophyta,Equisetopsida,Asterales,Asteraceae,Smallanthus,Smallanthus maculatus
+SIMAMP,Simsia amplexicaulis,species,Plantae,Tracheophyta,Equisetopsida,Asterales,Asteraceae,Simsia,Simsia amplexicaulis
+TITTUB,Tithonia tubaeformis,species,Plantae,Tracheophyta,Equisetopsida,Asterales,Asteraceae,Tithonia,Tithonia tubaeformis
+SOLPUB,Solanum pubigerum,species,Plantae,Tracheophyta,Equisetopsida,Solanales,Solanaceae,Solanum,Solanum pubigerum
+AGEPIC,Ageratina pichinchensis,species,Plantae,Tracheophyta,Equisetopsida,Asterales,Asteraceae,Ageratina,Ageratina pichinchensis
+BARSAL,Barkleyanthus salicifolius,species,Plantae,Tracheophyta,Equisetopsida,Asterales,Asteraceae,Barkleyanthus,Barkleyanthus salicifolius
+FLEPYC,Fleischmannia pycnocephala,species,Plantae,Tracheophyta,Equisetopsida,Asterales,Asteraceae,Fleischmannia,Fleischmannia pycnocephala
+RUTGRA,Ruta graveolens,species,Plantae,Tracheophyta,Equisetopsida,Sapindales,Rutaceae,Ruta,Ruta graveolens
+STEJOR,Stevia jorullensis,species,Plantae,Tracheophyta,Equisetopsida,Asterales,Asteraceae,Stevia,Stevia jorullensis
+RANPET,Ranunculus petiolaris,species,Plantae,Tracheophyta,Equisetopsida,Ranunculales,Ranunculaceae,Ranunculus,Ranunculus petiolaris
+FOEVUL,Foeniculum vulgare,species,Plantae,Tracheophyta,Equisetopsida,Apiales,Apiaceae,Foeniculum,Foeniculum vulgare
+ALLCEP,Allium cepa,species,Plantae,Tracheophyta,Equisetopsida,Asparagales,Amaryllidaceae,Allium,Allium cepa
+BRAOLE,Brassica oleracea,species,Plantae,Tracheophyta,Equisetopsida,Brassicales,Brassicaceae,Brassica,Brassica oleracea
+PETCRI,Petroselinum crispum,species,Plantae,Tracheophyta,Equisetopsida,Apiales,Apiaceae,Petroselinum,Petroselinum crispum
+LACSAT,Lactuca sativa,species,Plantae,Tracheophyta,Equisetopsida,Asterales,Asteraceae,Lactuca,Lactuca sativa
+CALOFF,Calendula officinalis,species,Plantae,Tracheophyta,Equisetopsida,Asterales,Asteraceae,Calendula,Calendula officinalis
+ERIKAR,Erigeron karvinskianus,species,Plantae,Tracheophyta,Equisetopsida,Asterales,Asteraceae,Erigeron,Erigeron karvinskianus
+ACHMIL,Achillea millefolium,species,Plantae,Tracheophyta,Equisetopsida,Asterales,Asteraceae,Achillea,Achillea millefolium
+SALOFF,Salvia officinalis,species,Plantae,Tracheophyta,Equisetopsida,Lamiales,Lamiaceae,Salvia,Salvia officinalis
+PHYPHI,Physalis philadelphica,species,Plantae,Tracheophyta,Equisetopsida,Solanales,Solanaceae,Physalis,Physalis philadelphica
+PERCAP,Persicaria capitata,species,Plantae,Tracheophyta,Equisetopsida,Caryophyllales,Polygonaceae,Persicaria,Persicaria capitata
+TAROFF,Taraxacum officinale,species,Plantae,Tracheophyta,Equisetopsida,Asterales,Asteraceae,Taraxacum,Taraxacum officinale
+BRARAP,Brassica rapa,species,Plantae,Tracheophyta,Equisetopsida,Brassicales,Brassicaceae,Brassica,Brassica rapa
+BACTRI,Baccharis trinervis,species,Plantae,Tracheophyta,Equisetopsida,Asterales,Asteraceae,Baccharis,Baccharis trinervis
+GALQUA,Galinsoga quadriradiata,species,Plantae,Tracheophyta,Equisetopsida,Asterales,Asteraceae,Galinsoga,Galinsoga quadriradiata
+PHALUN,Phaseolus lunatus,species,Plantae,Tracheophyta,Equisetopsida,Fabales,Fabaceae,Phaseolus,Phaseolus lunatus
+MONXAL,Monnina xalapensis,species,Plantae,Tracheophyta,Equisetopsida,Fabales,Polygalaceae,Monnina,Monnina xalapensis
+HYPURT,Hyptis urticoides,species,Plantae,Tracheophyta,Equisetopsida,Lamiales,Lamiaceae,Hyptis,Hyptis urticoides
+GAUALB,Gaudichaudia albida,species,Plantae,Tracheophyta,Equisetopsida,Malpighiales,Malpighiaceae,Gaudichaudia,Gaudichaudia albida
+VERCAR,Verbena carolina,species,Plantae,Tracheophyta,Equisetopsida,Lamiales,Verbenaceae,Verbena,Verbena carolina
+DALLEP,Dalea leporina,species,Plantae,Tracheophyta,Equisetopsida,Fabales,Fabaceae,Dalea,Dalea leporina
+SISSCA,Sisyrinchium scabrum,species,Plantae,Tracheophyta,Equisetopsida,Asparagales,Iridaceae,Sisyrinchium,Sisyrinchium scabrum
+TRIINU,Trixis inula,species,Plantae,Tracheophyta,Equisetopsida,Asterales,Asteraceae,Trixis,Trixis inula
+ERUVES,Eruca vesicaria,species,Plantae,Tracheophyta,Equisetopsida,Brassicales,Brassicaceae,Eruca,Eruca vesicaria
+MALDOM,Malus domestica,species,Plantae,Tracheophyta,Equisetopsida,Rosales,Rosaceae,Malus,Malus domestica
+BOROFF,Borago officinalis,species,Plantae,Tracheophyta,Equisetopsida,Boraginales,Boraginaceae,Borago,Borago officinalis
+CITXLA,Citrus x latifolia,species,Plantae,Tracheophyta,Equisetopsida,Sapindales,Rutaceae,Citrus,Citrus x latifolia
+SOLROS,Solanum rostratum,species,Plantae,Tracheophyta,Equisetopsida,Solanales,Solanaceae,Solanum,Solanum rostratum
+ERYMEX,Erythrostemon mexicanus,species,Plantae,Tracheophyta,Equisetopsida,Fabales,Fabaceae,Erythrostemon,Erythrostemon mexicanus
+CASEQU,Casuarina equisetifolia,species,Plantae,Tracheophyta,Equisetopsida,Fagales,Casuarinaceae,Casuarina,Casuarina equisetifolia
+VIGDEN,Viguiera dentata,species,Plantae,Tracheophyta,Equisetopsida,Asterales,Asteraceae,Viguiera,Viguiera dentata
+PISPIS,Piscidia piscipula,species,Plantae,Tracheophyta,Equisetopsida,Fabales,Fabaceae,Piscidia,Piscidia piscipula
+CARSP,Carduus,genus,Plantae,Tracheophyta,Equisetopsida,Asterales,Asteraceae,Carduus,Carduus sp
+ZINFAM,Zingiberaceae,family,Plantae,Tracheophyta,Equisetopsida,Zingiberales,Zingiberaceae,,
+CRYINT,Cryptantha intermedia,species,Plantae,Tracheophyta,Equisetopsida,Boraginales,Boraginaceae,Cryptantha,Cryptantha intermedia
+CENMAC,Centrosema macrocarpum,species,Plantae,Tracheophyta,Equisetopsida,Fabales,Fabaceae,Centrosema,Centrosema macrocarpum
+THODEC,Thouinidium decandrum,species,Plantae,Tracheophyta,Equisetopsida,Sapindales,Sapindaceae,Thouinidium,Thouinidium decandrum
+BAUOLI,Bauhinia uleana,species,Plantae,Tracheophyta,Equisetopsida,Fabales,Fabaceae,Bauhinia,Bauhinia uleana
+BOMWES,Bombus weisi,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Bombus,Bombus weisi
+BOMMED,Bombus medius,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Bombus,Bombus medius
+BOMPUL,Bombus pullatus,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Bombus,Bombus pullatus
+BOMMEX,Bombus mexicanus,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Bombus,Bombus mexicanus
+BOMEPH,Bombus ephippiatus,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Bombus,Bombus ephippiatus
+ANDDIS,Andrena discreta,species,Animalia,Arthropoda,Insecta,Hymenoptera,Andrenidae,Andrena,Andrena discreta
+ANDBAR,Andrena barberi,species,Animalia,Arthropoda,Insecta,Hymenoptera,Andrenidae,Andrena,Andrena barberi
+CALSP01,Calliopsis,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Andrenidae,Calliopsis,Calliopsis sp. 01
+EXASMA,Exaerete smaragdina,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Exaerete,Exaerete smaragdina
+TRIFUL,Trigona fulviventris,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Trigona,Trigona fulviventris
+PARCAL,Paratetrapedia calcarata,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Paratetrapedia,Paratetrapedia calcarata
+AUGNIG,Augochlora nigrocyanea,species,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Augochlora,Augochlora nigrocyanea
+AUGSID,Augochlora sidaefoliae,species,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Augochlora,Augochlora sidaefoliae
+LASEVY,Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,
+LASDIA3GMC,Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum green metalic carinate
+PERCAU,Augochlorella semiaurata,species,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Augochlorella,Augochlorella semiaurata
+MELSOL,Melipona solani,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Melipona,Melipona solani
+MELBEE,Melipona beecheii,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Melipona,Melipona beecheii
+EXOANA,Exomalopsis analis,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Exomalopsis,Exomalopsis analis
+LOPAPI,Lophopedia apicalis,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Lophopedia,Lophopedia apicalis
+EXOSIM,Exomalopsis similis,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Exomalopsis,Exomalopsis similis
+EUGVAR,Euglossa variabilis,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Euglossa,Euglossa variabilis
+TRICOR,Trigona corvina,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Trigona,Trigona corvina
+PARBIL,Partamona bilineata,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Partamona,Partamona bilineata
+EUGSP,Euglossa,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Euglossa,
+TRISP,Triepeolus,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Triepeolus,
+EXOSP,Exomalopsis,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Exomalopsis,
+MEGCAN,Megachile candida,species,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Megachile,Megachile candida
+LASDIA3GMA,Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum green metalic acarinate 
+LASDIATEG,Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum “tegulare” group
+AUGLSP,Augochlorella,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Augochlorella,
+PSEGRA,Pseudaugochlora graminea,species,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Pseudaugochlora,Pseudaugochlora graminea
+MEGPTISP1TG,Megachile,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Megachile,Megachile sp.1-TG
+PARALB,Paratetrapedia albilabris,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Paratetrapedia,Paratetrapedia albilabris
+CERVIR,Ceratina viridicincta,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Ceratina,Ceratina viridicincta
+CERSP,Ceratina,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Ceratina,Ceratina sp
+AUGAUG,Augochlora,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Augochlora,Augochlora sp. 
+TETMAY,Tetragona mayarum,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Tetragona,Tetragona mayarum
+LASDIA,Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,
+CALHON,Calliopsis hondurasica,species,Animalia,Arthropoda,Insecta,Hymenoptera,Andrenidae,Calliopsis,Calliopsis hondurasica
+MEISP,Melitoma,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Melitoma,Melitoma sp. 
+MELMAR,Melitoma marginella,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Melitoma,Melitoma marginella
+MELISSP,Melissodes,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Melissodes,
+AUGSMA,Augochlora smaragdina,species,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Augochlora,Augochlora smaragdina
+AUGMET,Augochloropsis metallica,species,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Augochloropsis,Augochloropsis metallica
+AUGOXY,Augochlora,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Augochlora,Augochlora sp. 
+HALLIG,Halictus ligatus,species,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Halictus,Halictus ligatus
+EUGIMP,Euglossa imperialis,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Euglossa,Euglossa imperialis
+FLOCON,Florilegus condignus,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Florilegus,Florilegus condignus
+PEPUTA,Peponapis utahensis,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Peponapis,Peponapis utahensis
+ANCAPI,Ancyloscelis apiformis,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Ancyloscelis,Ancyloscelis apiformis
+LASSP,Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,
+CENANA,Centris analis,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Centris,Centris analis
+CENNIT,Centris nitida,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Centris,Centris nitida
+PEPLIM,Peponapis limitaris,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Peponapis,Peponapis limitaris
+AGANAS,Agapostemon nasutus,species,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Agapostemon,Agapostemon nasutus
+MEGLIT,Megachile,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Megachile,
+CENTER,Centris terminata,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Centris,Centris terminata
+CENSP04M,Centris,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Centris,Centris sp. 04M
+EPIELE,Epicharis elegans,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Epicharis,Epicharis elegans
+CENAET,Centris aethyctera,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Centris,Centris aethyctera
+CENADA,Centris adani,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Centris,Centris adani
+APIMEL,Apis mellifera,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Apis,Apis mellifera
+EUGMIX,Euglossa mixta,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Euglossa,Euglossa mixta
+AUGNEG,Augochlorella neglectula,species,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Augochlorella,Augochlorella neglectula
+PROASP,Protandrena,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Andrenidae,Protandrena,Protandrena asperatus
+XYLGUAL,Xylocopa gualanensis,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Xylocopa,Xylocopa gualanensis
+BOMPEN,Bombus pensylvanicus,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Bombus,Bombus pensylvanicus
+PARCOE,Paragapostemon coelestinus (sensu lato),species,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Paragapostemon,Paragapostemon coelestinus (sensu lato)
+OSMAZT,Osmia azteca,species,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Osmia,Osmia azteca
+THYSP,Thygater,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Thygater,
+PEPPRU,Peponapis pruinosa,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Peponapis,Peponapis pruinosa
+LASDES,Lasioglossum desertum,species,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum desertum
+BOMPEND,Bombus pensylvanicus D sp. nov. ,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Bombus,Bombus pensylvanicus D sp. nov. 
+SPHSP,Sphecodes,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Sphecodes,
+HYLSP18M,Hylaeus,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Colletidae,Hylaeus,Hylaeus sp. 18M
+PAROPA,Paratrigona opaca,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Paratrigona,Paratrigona opaca
+TRIFUS,Trigona fuscipennis,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Trigona,Trigona fuscipennis
+EULPOL,Eulaema polychroma,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Eulaema,Eulaema polychroma
+HETSP21F,Protandrena,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Andrenidae,Protandrena,Protandrena sp.21F
+EUFSP,Eufriesea,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Eufriesea,
+NANPER,Nannotrigona perilampoides,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Nannotrigona,Nannotrigona perilampoides
+PTESP01,Protandrena,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Andrenidae,Protandrena,Protandrena sp.01
+DIAAUS,Diadasia australis,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Diadasia,Diadasia australis
+PTESP02,Protandrena,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Andrenidae,Protandrena,Protandrena sp.02
+HETSP07,Protandrena,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Andrenidae,Protandrena,Protandrena sp.07
+FRINIG,Frieseomelitta nigra,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Frieseomelitta,Frieseomelitta nigra
+XYLTAB,Xylocopa tabaniformis,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Xylocopa,Xylocopa tabaniformis
+XYLVAR,Xylocopa sonorina,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Xylocopa,Xylocopa sonorina
+CENVAR,Centris varia,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Centris,Centris varia
+MESBIC,Mesocheira bicolor,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Mesocheira,Mesocheira bicolor
+CENTRA,Centris transversa,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Centris,Centris transversa
+EPIALB,Epicharis albofasciata,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Epicharis,Epicharis albofasciata
+XYLGUA,Xylocopa guatemalensis,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Xylocopa,Xylocopa guatemalensis
+DIASP,Diadasia,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Diadasia,
+AGATEX,Agapostemon texanus,species,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Agapostemon,Agapostemon texanus
+DIAOPUNR,Diadasia nr. opuntiae,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Diadasia,Diadasia nr. opuntiae
+DIAPIE,Diadasia piercei,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Diadasia,Diadasia piercei
+LITLIT,Lithurgopsis littoralis,species,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Lithurgopsis,Lithurgopsis littoralis
+EXOMEL,Exomalopsis mellipes,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Exomalopsis,Exomalopsis mellipes
+CENNIG,Centris nigrocaerulea,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Centris,Centris nigrocaerulea
+EPILUN,Epicharis lunulata,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Epicharis,Epicharis lunulata
+EPIMAC,Epicharis maculata,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Epicharis,Epicharis maculata
+XYLNEO,Xylocopa,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Xylocopa,
+AUGIGN,Augochloropsis ignita,species,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Augochloropsis,Augochloropsis ignita
+CENFUS,Centris fuscata,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Centris,Centris fuscata
+CENFLA,Centris flavifrons,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Centris,Centris flavifrons
+SCAHEL,Scaptotrigona hellwegeri,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Scaptotrigona,Scaptotrigona hellwegeri
+MEGCHI,Megachile chichimeca,species,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Megachile,Megachile chichimeca
+CENMEX,Centris mexicana,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Centris,Centris mexicana
+CENATR,Centris atripes,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Centris,Centris atripes
+ANTMON,Anthophora montana,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Anthophora,Anthophora montana
+MEGZAP,Megachile zapoteca,species,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Megachile,Megachile zapoteca
+MELGIL,Melissodes gilensis,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Melissodes,Melissodes gilensis
+MELTEP,Melissodes tepaneca,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Melissodes,Melissodes tepaneca
+MEGREF,Megachile reflexa,species,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Megachile,Megachile reflexa
+MEGQUA,Megachile quadridentata,species,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Megachile,Megachile quadridentata
+CERZAD,Ceratina,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Ceratina,
+LASDIA2GMA,Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum 2sm green metallic acarinate
+HALLUT,Halictus lutescens,species,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Halictus,Halictus lutescens
+SCAMEX,Scaptotrigona mexicana,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Scaptotrigona,Scaptotrigona mexicana
+PARATSP,Paratetrapedia,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Paratetrapedia,
+MEGTOL,Megachile toluca,species,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Megachile,Megachile toluca
+MESRUF,Mesoplia rufipes,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Mesoplia,Mesoplia rufipes
+THYANA,Thygater analis,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Thygater,Thygater analis
+MEGALB,Megachile albitarsis,species,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Megachile,Megachile albitarsis
+HALHES,Halictus hesperus,species,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Halictus,Halictus hesperus
+CENXOC,Centris xochipillii,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Centris,Centris xochipillii
+CENTRI,Centris trigonoides,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Centris,Centris trigonoides
+GAEEXU,Gaesischia exul,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Gaesischia,Gaesischia exul
+MEGOTO,Megachile otomita,species,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Megachile,Megachile otomita
+SCAPEC,Scaptotrigona pectoralis,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Scaptotrigona,Scaptotrigona pectoralis
+PLEFRO,Plebeia frontalis,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Plebeia,Plebeia frontalis
+PSEUSP06,Pseudopanurgus,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Andrenidae,Pseudopanurgus,Pseudopanurgus sp.06
+XYLFRO,Xylocopa frontalis,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Xylocopa,Xylocopa frontalis
+XYLBAR,Xylocopa barbatella,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Xylocopa,Xylocopa barbatella
+CEPZEX,Cephalotrigona zexmeniae,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Cephalotrigona,Cephalotrigona zexmeniae
+COLSP09,Colletes,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Colletidae,Colletes,Colletes sp. 09
+TRINIG,Trigona nigerrima,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Trigona,Trigona nigerrima
+CAEGEM,Caenaugochlora gemmella,species,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Caenaugochlora,Caenaugochlora gemmella
+XAN1SPNOV,Xanthopedia,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Xanthopedia,Xanthopedia sp1 sp.nov.
+LASJUB,Lasioglossum jubatum,species,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum jubatum
+EULCIN,Eulaema cingulata,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Eulaema,Eulaema cingulata
+PSEUSP07,Pseudopanurgus,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Andrenidae,Pseudopanurgus,Pseudopanurgus sp.07
+PSECRE,Pseudopanurgus crenulatus,species,Animalia,Arthropoda,Insecta,Hymenoptera,Andrenidae,Pseudopanurgus,Pseudopanurgus crenulatus
+MELMARSEG,Melitoma marginella/segemntaria ?,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Melitoma,Melitoma marginella/segemntaria ?
+PSESP,Pseudopanurgus,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Andrenidae,Pseudopanurgus,
+TRIANG,Tetragonisca angustula,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Tetragonisca,Tetragonisca angustula
+ANCSP02M,Ancyloscelis,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Ancyloscelis,Ancyloscelis sp. 02
+ANCSP01M,Ancyloscelis,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Ancyloscelis,Ancyloscelis sp. 01M
+ANCSP02F,Ancyloscelis,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Ancyloscelis,Ancyloscelis sp. 02
+ANCSP,Ancyloscelis,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Ancyloscelis,
+ANCSP03B,Ancyloscelis,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Ancyloscelis,Ancyloscelis sp. 03B
+ANCWHE,Ancyloscelis wheeleri,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Ancyloscelis,Ancyloscelis wheeleri
+ANCSP03A,Ancyloscelis,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Ancyloscelis,Ancyloscelis sp. 03A
+MEGAXY,Megachile axyx,species,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Megachile,Megachile axyx
+XYLSPNOV2,Xylocopa,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Xylocopa,Xylocopa spnov2
+ANTSQU,Anthophora squammulosa,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Anthophora,Anthophora squammulosa
+CHIPOL,Chilicola polita,species,Animalia,Arthropoda,Insecta,Hymenoptera,Colletidae,Chilicola,Chilicola polita
+LASASP,Lasioglossum aspasia,species,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum aspasia
+EUGCYAN,Euglossa cyanura,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Euglossa,Euglossa cyanura
+MEGAFFAZT,Megachile aff. azteca,species,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Megachile,Megachile aff. azteca
+MEGAZT,Megachile azteca,species,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Megachile,Megachile azteca
+MEGLEP,Megachile,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Megachile,
+HYLHYO,Hylaeus,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Colletidae,Hylaeus,
+CENSP,Centris,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Centris,
+AUGFLA,Augochloropsis flammea,species,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Augochloropsis,Augochloropsis flammea
+ANTMAR,Anthophora marginata,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Anthophora,Anthophora marginata
+LASSPH6,Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum sp6
+HYPOSP01,Hypanthidioides,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Hypanthidioides,Hypanthidioides sp. 01
+MYDSAU,Mydrosoma saussurei,species,Animalia,Arthropoda,Insecta,Hymenoptera,Colletidae,Mydrosoma,Mydrosoma saussurei
+MEGCOE,Megachile coelioxoides,species,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Megachile,Megachile coelioxoides
+MEGSP,Megachile,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Megachile,
+MEGTEP,Megachile tepaneca,species,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Megachile,Megachile tepaneca
+MEGTOT,Megachile nigripennis,species,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Megachile,Megachile nigripennis
+CERBEL,Ceratina belizensis,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Ceratina,Ceratina belizensis
+PARORI,Partamona orizabaensis,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Partamona,Partamona orizabaensis
+EXOTEP,Exomalopsis tepaneca,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Exomalopsis,Exomalopsis tepaneca
+PEPCRA,Peponapis crassidentata,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Peponapis,Peponapis crassidentata
+XYLLAT,Xylocopa lateralis,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Xylocopa,Xylocopa lateralis
+CERZAD10F,Ceratina sp.10 nr. capitosa,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Ceratina,Ceratina sp.10 nr. capitosa
+ANDSP,Andrena,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Andrenidae,Andrena,
+LASSPH1,Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum sp1
+LASDIA3BMC,Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum blue metal carinate
+LITPLA,Lithurgopsis planifrons,species,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Lithurgopsis,Lithurgopsis planifrons
+CERNAU,Ceratina nautlana,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Ceratina,Ceratina nautlana
+CENDEN,Centris dentata,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Centris,Centris dentata
+MEGZEX,Megachile zexmeniae,species,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Megachile,Megachile zexmeniae
+MEGZAPT,Megachile zaptlana,species,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Megachile,Megachile zaptlana
+EXOSP03MSPNOV,Exomalopsis,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Exomalopsis,Exomalopsis sp. 03 sp. nov. 
+CERSP04,Ceratina,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Ceratina,Ceratina sp. 04 Ecosur
+XYLFIM,Xylocopa fimbriata,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Xylocopa,Xylocopa fimbriata
+HYPMEX,Hypanthidium mexicanum,species,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Hypanthidium,Hypanthidium mexicanum
+MEGMON,Megachile montezuma,species,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Megachile,Megachile montezuma
+CERSP29M,Ceratina,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Ceratina,Ceratina sp. 29M
+XYLSP08F,Xylocopa,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Xylocopa,Xylocopa sp. 08F
+CERMEX,Ceratina mexicana,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Ceratina,Ceratina mexicana
+AUGCOR,Augochlora cordiaefloris,species,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Augochlora,Augochlora cordiaefloris
+LASDIA3NMA,Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum non-metallic acarinate
+MEGANU,Megachile angusta,species,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Megachile,Megachile angusta
+MEGABA,Megachile abacula,species,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Megachile,Megachile abacula
+HERBRU,Heriades bruneri,species,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Heriades,Heriades bruneri
+EPICHASP1,Epicharis,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Epicharis,Epicharis sp1 nr. elegans
+CEREXI,Ceratina eximia,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Ceratina,Ceratina eximia
+CENAGI,Centris agilis,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Centris,Centris agilis
+CRALUC,Crawfordapis luctuosa,species,Animalia,Arthropoda,Insecta,Hymenoptera,Colletidae,Crawfordapis,Crawfordapis luctuosa
+PEPAPI,Peponapis apiculata,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Peponapis,Peponapis apiculata
+BOMWIL,Bombus wilmattae,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Bombus,Bombus wilmattae
+HYLHYA,Hylaeus,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Colletidae,Hylaeus,
+COLSP,Colletes,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Colletidae,Colletes,
+AGALEU,Agapostemon leunculus,species,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Agapostemon,Agapostemon leunculus
+COEPRA,Coelioxys pratti,species,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Coelioxys,Coelioxys pratti
+LASDIA3GOMC,Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum golden metalic carinate
+CENFLAVO,Centris flavofasciata,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Centris,Centris flavofasciata
+CENVIT,Centris vittata,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Centris,Centris vittata
+BOMVAR,Bombus variabilis,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Bombus,Bombus variabilis
+CENTRAC,Centris,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Centris,
+CERIGN,Ceratina ignara,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Ceratina,Ceratina ignara
+CERSP44M,Ceratina,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Ceratina,Ceratina sp. 44M
+CERSAP,Ceratina,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Ceratina,Ceratina sapphira
+CERSP14,Ceratina,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Ceratina,Ceratina sp. 14
+CERSP12,Ceratina,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Ceratina,Ceratina sp. 12 Ecosur
+CERSP07A,Ceratina,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Ceratina,Ceratina sp. 07A
+CERSP42F,Ceratina,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Ceratina,Ceratina sp. 42F
+CERSP07DF,Ceratina,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Ceratina,Ceratina sp. 07DF
+CERSP07CF,Ceratina,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Ceratina,Ceratina sp. 07CF
+CERSP57,Ceratina,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Ceratina,Ceratina sp. 57
+CERZADSPNOV11,Ceratina,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Ceratina,Ceratina spnov11 Flórez
+CERSPC02,Ceratina,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Ceratina,Ceratina sp. C02
+CERSP07,Ceratina,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Ceratina,Ceratina sp. 07 Ecosur
+CERSP25F,Ceratina,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Ceratina,Ceratina sp. 25F Ecosur
+CERSPC04,Ceratina,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Ceratina,Ceratina sp. C04
+CERSP08,Ceratina,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Ceratina,Ceratina sp. 08 Ecosur
+CERSP09,Ceratina,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Ceratina,Ceratina sp. 09M Ecosur
+CERSP08F,Ceratina,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Ceratina,Ceratina sp. 08F Ecosur
+CERSP06,Ceratina,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Ceratina,Ceratina sp. 06 Ecosur
+CERDIM,Ceratina dimidiata,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Ceratina,Ceratina dimidiata
+CERIND,Ceratina,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Ceratina,Ceratina indigovirens
+DELSP05F,Deltoptila,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Deltoptila,Deltoptila sp. 05F Ecosur
+DELSP,Deltoptila,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Deltoptila,
+EXOLIM,Exomalopsis limata,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Exomalopsis,Exomalopsis limata
+EXOSP05,Exomalopsis,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Exomalopsis,Exomalopsis sp. 05 Ecosur
+ANTGUA,Anthodioctes gualanensis,species,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Anthodioctes,Anthodioctes gualanensis
+COECIS,Coelioxys cisnerosi,species,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Coelioxys,Coelioxys cisnerosi
+MEGAFFHAB,Megachile cf. habilis,species,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Megachile,Megachile cf. habilis
+MELNUD,Melitoma nudicauda,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Melitoma,Melitoma nudicauda
+CERAUR,Ceratina auriviridis,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Ceratina,Ceratina auriviridis
+PEPAZT,Peponapis azteca,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Peponapis,Peponapis azteca
+PEPSMI,Peponapis smithi,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Peponapis,Peponapis smithi
+PARMOE,Paratetrapedia moesta,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Paratetrapedia,Paratetrapedia moesta
+MEISP03,Melitoma,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Melitoma,Melitoma sp. 03
+PARPARSP02,Paranthidium,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Paranthidium,Paranthidium sp. 02 Ecosur
+COEAZT,Coelioxys aztecus,species,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Coelioxys,Coelioxys aztecus
+ANDSP21,Andrena sp. 21 nr. vidalesi,species,Animalia,Arthropoda,Insecta,Hymenoptera,Andrenidae,Andrena,Andrena sp. 21 nr. vidalesi
+AUGCOM,Augochlorella comis,species,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Augochlorella,Augochlorella comis
+MEGEXA,Megachile exaltata,species,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Megachile,Megachile exaltata
+MELSEG,Melitoma segmentaria,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Melitoma,Melitoma segmentaria
+CAEINE,Caenaugochlora inermis,species,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Caenaugochlora,Caenaugochlora inermis
+EXOSP02,Exomalopsis,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Exomalopsis,Exomalopsis sp. 02
+NEOCRI,Neocorynura cribrita,species,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Neocorynura,Neocorynura cribrita
+HYLSP04,Hylaeus,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Colletidae,Hylaeus,Hylaeus sp. 04
+MEGVIA,Megachile viator,species,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Megachile,Megachile viator
+COLMAC,Colletes macconnelli,species,Animalia,Arthropoda,Insecta,Hymenoptera,Colletidae,Colletes,Colletes macconnelli
+HYLSP02,Hylaeus,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Colletidae,Hylaeus,Hylaeus sp. 02
+COLAZT,Colletes aztekus,species,Animalia,Arthropoda,Insecta,Hymenoptera,Colletidae,Colletes,Colletes aztekus
+ANTAPI,Anthidiellum apicale,species,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Anthidiellum,Anthidiellum apicale
+PLELLO,Plebeia llorentei,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Plebeia,Plebeia llorentei
+GAEMEX,Gaesischia mexicana,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Gaesischia,Gaesischia mexicana
+MEGSP08,Megachile,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Megachile,Megachile sp. 08
+PSEMEX,Pseudopanurgus mexicanus,species,Animalia,Arthropoda,Insecta,Hymenoptera,Andrenidae,Pseudopanurgus,Pseudopanurgus mexicanus
+MEGCLA,Megachile clara,species,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Megachile,Megachile clara
+CAHSP01,Caenohalictus,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Caenohalictus,Caenohalictus sp. 01
+COLPUN,Colletes punctipennis,species,Animalia,Arthropoda,Insecta,Hymenoptera,Colletidae,Colletes,Colletes punctipennis
+TRICAM,Triepeolus cameroni,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Triepeolus,Triepeolus cameroni
+CENLUT,Centris lutea,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Centris,Centris lutea
+LASCOS,Lasioglossum costale,species,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum costale
+NEOLIG,Neocorynura lignys,species,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Neocorynura,Neocorynura lignys
+XANFLA,Xanthopedia flavopicta,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Xanthopedia,Xanthopedia flavopicta
+ANTHO3,Anthodioctes,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Anthodioctes,Anthodioctes sp. 03
+MEGELO,Megachile elongata,species,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Megachile,Megachile elongata
+AUGPOM,Augochlorella pomoniella,species,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Augochlorella,Augochlorella pomoniella
+STECOST,Stelis costaricensis,species,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Stelis,Stelis costaricensis
+XYLSTE,Xylocopa,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Xylocopa,
+AUGSP01,Augochloropsis,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Augochloropsis,Augochloropsis sp. 01
+TRIMIX,Trigonisca mixteca,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Trigonisca,Trigonisca mixteca
+ASHSP02,Ashmeadiella,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Ashmeadiella,Ashmeadiella sp. 02
+TETDON,Tetraloniella donata,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Tetraloniella,Tetraloniella donata
+MEGFLA,Megachile flavihirsuta,species,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Megachile,Megachile flavihirsuta
+ANTROD,Anthidium rodriguezi,species,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Anthidium,Anthidium rodriguezi
+MELOTO,Melissoptila otomita,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Melissoptila,Melissoptila otomita
+SVAALB,Svastra albocollaris,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Svastra,Svastra albocollaris
+HETSP06SPNOV,Protandrena,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Andrenidae,Protandrena,Protandrena sp.06 Ecosur sp. nov. 
+SCAARG,Scaura argyrea,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Scaura,Scaura argyrea
+MEGPTISP2TG,Megachile,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Megachile,Megachile sp. 2-TG
+LASASA,Lasioglossum asaphes,species,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum asaphes
+LASNYC,Lasioglossum nyctere,species,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum nyctere
+PARPARSP06,Paranthidium,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Paranthidium,Paranthidium sp. 06 Ecosur
+EPESP01,Epeolus,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Epeolus,Epeolus sp. 01
+MELTHE,Melissodes thelypodii,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Melissodes,Melissodes thelypodii
+TELSP,Tetraloniella,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Tetraloniella,
+EUGATR,Euglossa atroveneta,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Euglossa,Euglossa atroveneta
+EUGDIL,Euglossa dilemma,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Euglossa,Euglossa dilemma
+EUGTOW,Euglossa townsendi,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Euglossa,Euglossa townsendi
+EULLUT,Eulaema luteola,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Eulaema,Eulaema luteola
+EXOBOH,Exomalopsis boharti,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Exomalopsis,Exomalopsis boharti
+EXOOTO,Exomalopsis otomita,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Exomalopsis,Exomalopsis otomita
+EXOSP08,Exomalopsis,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Exomalopsis,Exomalopsis sp. 08
+MELSPC02,Melissodes,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Melissodes,Melissodes sp. C02
+LOPPYG,Lophopedia pygmaea,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Lophopedia,Lophopedia pygmaea
+MELISSP03,Melissodes,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Melissodes,Melissodes sp. 03
+MELRAP,Melissodes raphaelis,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Melissodes,Melissodes raphaelis
+MELEUM,Melissodes,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Melissodes,
+MELISSP01,Melissodes,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Melissodes,Melissodes sp. 01
+MELISSP12,Melissodes,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Melissodes,Melissodes sp. 12
+MELISSP14,Melissodes,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Melissodes,Melissodes sp. 14
+PLEPUL,Plebeia pulchra,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Plebeia,Plebeia pulchra
+PLEMOU,Plebeia moureana,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Plebeia,Plebeia moureana
+COLSP26M,Colletes,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Colletidae,Colletes,Colletes sp. 26M Ecosur
+COLSP02FECOTAP,Colletes,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Colletidae,Colletes,Colletes sp. 02
+COLSP27FECOSUR,Colletes,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Colletidae,Colletes,Colletes sp. 27F Ecosur
+MELISSP05,Melissodes,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Melissodes,Melissodes sp. 05
+MELISSP07,Melissodes,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Melissodes,Melissodes sp. 07
+MELISSP13,Melissodes,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Melissodes,Melissodes sp. 13
+TELSP04,Tetraloniella,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Tetraloniella,"Tetraloniella sp. 04
+"
+COLSP25FECOSUR,Colletes,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Colletidae,Colletes,Colletes sp. 25F Ecosur
+COLSP06FECOSUR,Colletes,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Colletidae,Colletes,Colletes sp. 06F Ecosur
+TELSP02,Tetraloniella,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Tetraloniella,Tetraloniella sp. 02
+MELISSP18,Melissodes,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Melissodes,Melissodes sp. 18
+TETSP02,Tetrapedia,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Tetrapedia,Tetrapedia sp. 02
+CERSP11,Ceratina,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Ceratina,Ceratina sp. 11 Ecosur
+CERSP05,Ceratina,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Ceratina,Ceratina sp. 05 Ecosur
+TETSP01,Tetrapedia,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Tetrapedia,Tetrapedia sp. 01
+COLAFFAZT,Colletes aff. aztekus (Griswold),species,Animalia,Arthropoda,Insecta,Hymenoptera,Colletidae,Colletes,Colletes aff. aztekus (Griswold)
+THYCOC,Thygater cockerelli,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Thygater,Thygater cockerelli
+MELPER,Melissodes persimilis,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Melissodes,Melissodes persimilis
+MELISSP38,Melissodes,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Melissodes,Melissodes sp. 38
+THYSP05,Thygater,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Thygater,Thygater sp. 05
+THYSP03,Thygater,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Thygater,Thygater sp. 03
+MELISSP20,Melissodes,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Melissodes,Melissodes sp. 20
+MELISSP31,Melissodes,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Melissodes,Melissodes sp. 31
+CERSP13F,Ceratina,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Ceratina,Ceratina sp. 13F Ecosur
+MELISSP27,Melissodes,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Melissodes,Melissodes sp. 27
+MELISSP25,Melissodes,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Melissodes,Melissodes sp. 25
+COLCHI,Colletes chiapensis,species,Animalia,Arthropoda,Insecta,Hymenoptera,Colletidae,Colletes,Colletes chiapensis
+COLSP24M,Colletes,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Colletidae,Colletes,Colletes sp. 24M Ecosur
+COLSP20F,Colletes,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Colletidae,Colletes,Colletes sp. 20F Ecosur
+COLSP10,Colletes,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Colletidae,Colletes,Colletes sp. 10Ecosur
+SYNEXQ,Syntrichalonia exquisita,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Syntrichalonia,Syntrichalonia exquisita
+THYSP01,Thygater,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Thygater,Thygater sp. 01
+THYMON,Thygater montezuma,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Thygater,Thygater montezuma
+"TRICOR
+",Trigona corvina,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Trigona,Trigona corvina
+XYLWIL,Xylocopa wilmattae,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Xylocopa,Xylocopa wilmattae
+XYLSP11M,Xylocopa,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Xylocopa,Xylocopa sp. 11M
+XYLSP09F,Xylocopa,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Xylocopa,Xylocopa sp. 09F
+XYLSP06F,Xylocopa,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Xylocopa,Xylocopa sp. 06F
+XYLSTR,Xylocopa strandi,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Xylocopa,Xylocopa strandi
+XYLSUB,Xylocopa subvirescens,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Xylocopa,Xylocopa subvirescens
+XYLVIR,Xylocopa viridis,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Xylocopa,Xylocopa viridis
+XYLLOR,Xylocopa loripes,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Xylocopa,Xylocopa loripes
+XYLSYL,Xylocopa tabaniformis,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Xylocopa,Xylocopa tabaniformis
+XYLILL,Xylocopa tabaniformis,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Xylocopa,Xylocopa tabaniformis
+NEOPUB,Neocorynura pubescens,species,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Neocorynura,Neocorynura pubescens
+NOMSP01,Nomada,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Nomada,Nomada sp. 01
+TRIPIP,Trigonisca pipioli,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Trigonisca,Trigonisca pipioli
+HYLSP14M,Hylaeus,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Colletidae,Hylaeus,Hylaeus sp. 14
+HYLSP08,Hylaeus,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Colletidae,Hylaeus,Hylaeus sp. 08
+HYLSP01,Hylaeus sp. 01 nr. aztecus,species,Animalia,Arthropoda,Insecta,Hymenoptera,Colletidae,Hylaeus,Hylaeus sp. 01 nr. aztecus
+HYLSP13,Hylaeus,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Colletidae,Hylaeus,Hylaeus sp. 13
+AUGAUR,Augochlora aurifera,species,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Augochlora,Augochlora aurifera
+AUCSPC01,Augochlora,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Augochlora,Augochlora sp. C01
+AUASP07,Augochlora,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Augochlora,Augochlora sp. 07
+AUGNOM,Augochlora nominata,species,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Augochlora,Augochlora nominata
+AUASP15,Augochlora,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Augochlora,Augochlora sp. 15
+AUASP,Augochlora,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Augochlora,
+AUGNIGC,Augochlora nigrocyanea C,species,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Augochlora,Augochlora nigrocyanea C
+AUGQUI,Augochlora quiriguensis,species,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Augochlora,Augochlora quiriguensis
+AUASP06,Augochlora,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Augochlora,Augochlora sp. 06
+AUGALB,Augochlora albiceps,species,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Augochlora,Augochlora albiceps
+AUASP10A,Augochlora,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Augochlora,Augochlora sp. 10A
+AUASP05,Augochlora,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Augochlora,Augochlora sp. 05
+AUASP12,Augochlora,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Augochlora,Augochlora sp. 12
+AUASP04,Augochlora,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Augochlora,Augochlora sp. 04
+AUASP02,Augochlora,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Augochlora,Augochlora sp. 02
+AUASP01,Augochlora,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Augochlora,Augochlora sp. 01
+AUASP29M,Augochlora,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Augochlora,Augochlora sp. 29M Ecosur
+AUASP28M,Augochlora,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Augochlora,Augochlora sp. 28M Ecosur
+AUASP27F,Augochlora,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Augochlora,Augochlora sp. 27F Ecosur
+AUGSP08F,Augochloropsis,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Augochloropsis,Augochloropsis sp. 08Fecotap
+AUGSP07,Augochloropsis,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Augochloropsis,Augochloropsis sp. 07
+AUGSP02,Augochloropsis,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Augochloropsis,Augochloropsis sp. 02
+LASSP34,Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum sp. 34
+LASSP109,Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum sp. 109
+LASSP11,Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum sp. 11
+LASSP12,Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum sp. 12
+LASSP12B,Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum sp. 12B
+LASSP12C,Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum sp. 12C
+LASSP13,Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum sp. 13
+LASSP14,Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum sp. 14
+LASSP15M,Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum sp. 15M
+LASSP16,Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum sp. 16
+LASSP17,Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum sp. 17
+LASSP19,Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum sp. 19
+LASSP20,Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum sp. 20
+LASSP20B,Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum sp. 20B
+CAECUP,Caenaugochlora cupriventris,species,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Caenaugochlora,Caenaugochlora cupriventris
+CAETON,Caenaugochlora tonsilis,species,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Caenaugochlora,Caenaugochlora tonsilis
+CAESP10,Caenaugochlora sp. 10 nr tonsilis,species,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Caenaugochlora,Caenaugochlora sp. 10 nr tonsilis
+LASSP29,Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum sp. 29
+LASSP82,Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum sp. 82
+LASSP97,Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum sp. 97
+LASSP23,Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum sp. 23
+LASSP15F,Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum sp. 15F
+LASSP25,Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum sp. 25
+LASSP27,Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum sp. 27
+LASSP24,Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum sp. 24
+LASSP03,Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum sp. 03
+LASSPH4,Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum sp4
+LASHEM1,Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum sp1
+LASHEM5,Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum sp5
+LASSP06,Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum sp. 06
+LASSP08,Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum sp. 08
+LASSP09,Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum sp. 09
+LASSP09C,Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum sp. 09C
+LASSP10,Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum sp. 10
+"LASSP10
+",Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum sp. 10
+LASDIA2GM,Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum 2sm green metallic
+LASSP106,Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum sp. 106
+LASSP07,Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum sp. 07
+LASSP79,Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum sp. 79
+LASSP92,Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum sp. 92
+LASSP96,Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum sp. 96
+LASSP21,Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum sp. 21
+LASSP88,Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum sp. 88
+LASSP80,Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum sp. 80
+LASSP73,Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum sp. 73
+LASEVY1,Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum sp1
+LASSP28,Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum sp. 28
+LASSP45,Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum sp. 45
+LASLAS,Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,
+LASSP04,Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum sp. 04
+LASUYA,Lasioglossum uyacicola,species,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum uyacicola
+LASSP53,Lasioglossum sp. 53 nr. costale,species,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum sp. 53 nr. costale
+LASSP58,Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum sp. 58 ecosur
+MEXVER,Mexalictus,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Mexalictus,Mexalictus verdazulus
+PSESOR,Pseudaugochlora sordicutis,species,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Pseudaugochlora,Pseudaugochlora sordicutis
+COETOL,Coelioxys tolteca,species,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Coelioxys,Coelioxys tolteca
+HERSP02,Heriades,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Heriades,Heriades sp. 02
+HERSP05F,Heriades,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Heriades,Heriades sp. 05F
+HERSP03,Heriades,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Heriades,Heriades sp. 03
+HOPBIV,Hoplostelis bivittata,species,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Hoplostelis,Hoplostelis bivittata
+LITBIT,Lithurgopsis bitorulosa,species,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Lithurgopsis,Lithurgopsis bitorulosa
+MEGSP02,Megachile,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Megachile,Megachile sp. 02
+MEGSP55F,Megachile,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Megachile,Megachile sp. 55F Ecosur
+MEGABA/SP06,Megachile abacula/sp6 sp.novTG,species,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Megachile,Megachile abacula/sp6 sp.novTG
+MEGLEPSP2TG,Megachile,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Megachile,Megachile sp. 2 Leptorachis TG
+MEGSP42F,Megachile,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Megachile,Megachile sp. 42
+MEGSP56MECOSUR,Megachile,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Megachile,Megachile sp. 56M Ecosur
+MEGASY,Megachile asymmetrica,species,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Megachile,Megachile asymmetrica
+MEGMOUSP1TG,Megachile,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Megachile,Megachile sp. 1 Moureapis TG
+MEGSP43,Megachile,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Megachile,Megachile sp. 43M Ecosur
+MEGSP47MECOSUR,Megachile,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Megachile,Megachile sp. 47M Ecosur
+MEGLEPSP9TG,Megachile,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Megachile,Megachile sp. 9 Leptorachis TG
+OSMGEO,Osmia georgica,species,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Osmia,Osmia georgica
+CHIASH,Chilicola ashmeadi,species,Animalia,Arthropoda,Insecta,Hymenoptera,Colletidae,Chilicola,Chilicola ashmeadi
+LASSP18,Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum sp. 18
+LASTSL,Lasioglossum tessellatosum,species,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum tessellatosum
+LASAUR,Lasioglossum aurora,species,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum aurora
+ANTHSP,Anthophora,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Anthophora,
+MEGAUSSP3TG,Megachile,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Megachile,Megachile megaus sp. 3 TG
+MEGSP11M,Megachile,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Megachile,Megachile sp. 11M Ecosur
+TRISCH,Trigonisca schulthessi,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Trigonisca,Trigonisca schulthessi
+ANDSP02F,Andrena,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Andrenidae,Andrena,Andrena sp. 02F
+ANDSP23,Andrena,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Andrenidae,Andrena,Andrena sp. 23
+ANDMIC,Andrena micheneriana,species,Animalia,Arthropoda,Insecta,Hymenoptera,Andrenidae,Andrena,Andrena micheneriana
+ANDSP23F,Andrena,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Andrenidae,Andrena,Andrena sp. 23F
+PROBAK,Protandrena,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Andrenidae,Protandrena,Protandrena bakeri
+PSEUSP01,Pseudopanurgus,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Andrenidae,Pseudopanurgus,Pseudopanurgus sp.01
+PSEFULV,Pseudopanurgus fulvicornis,species,Animalia,Arthropoda,Insecta,Hymenoptera,Andrenidae,Pseudopanurgus,Pseudopanurgus fulvicornis
+CENBIC,Centris bicornuta,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Centris,Centris bicornuta
+CERCOB,Ceratina cobaltina,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Ceratina,Ceratina cobaltina
+CERSP02,Ceratina,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Ceratina,Ceratina sp. 02 Ecosur sp. nov. 
+CERSP32,Ceratina,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Ceratina,Ceratina sp. 32F Ecosur
+CERSP34F,Ceratina,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Ceratina,Ceratina sp. 34F ecotap
+EPESP03,Epeolus,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Epeolus,Epeolus sp. 03
+MELMONT,Melissodes montanus,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Melissodes,Melissodes montanus
+EXAFRO,Exaerete frontalis,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Exaerete,Exaerete frontalis
+EXOBYE,Exomalopsis byersi,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Exomalopsis,Exomalopsis byersi
+EXOARIMOD,Exomalopsis arida/modesta,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Exomalopsis,Exomalopsis arida/modesta
+EXOSNO,Exomalopsis snowi,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Exomalopsis,Exomalopsis snowi
+MELFLE,Melissodes flexus,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Melissodes,Melissodes flexus
+MONSP01,Monoeca,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Monoeca,Monoeca sp. 01
+MONSP02,Monoeca,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Monoeca,Monoeca sp. 02
+MESSP01SPNOV,Mesoplia,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Mesoplia,Mesoplia sp. 01 Ecosur sp. nov. 
+NOMSP03,Nomada,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Nomada,Nomada sp. 03
+TETFUL,Tetraloniella fulvotecta,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Tetraloniella,Tetraloniella fulvotecta
+TETSP05,Tetrapedia,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Tetrapedia,Tetrapedia sp. 05
+TELSP03SP.NOV.,Tetraloniella,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Tetraloniella,Tetraloniella sp. 03 sp. nov. 
+TETSP06,Tetrapedia,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Tetrapedia,Tetrapedia sp. 06
+COLSOL,Colletes solari,species,Animalia,Arthropoda,Insecta,Hymenoptera,Colletidae,Colletes,Colletes solari
+COLJOB,Colletes jobeli,species,Animalia,Arthropoda,Insecta,Hymenoptera,Colletidae,Colletes,Colletes jobeli
+HYLSP05,Hylaeus,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Colletidae,Hylaeus,Hylaeus sp. 05
+HYLSP16M,Hylaeus,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Colletidae,Hylaeus,Hylaeus sp. 16M
+HYLSP17M,Hylaeus,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Colletidae,Hylaeus,Hylaeus sp. 17M
+XYLSP11F,Xylocopa,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Xylocopa,Xylocopa sp. 11F
+XENGAB,Xenoglossa gabbii,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Xenoglossa,Xenoglossa gabbii
+TRISP03,Triepeolus,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Triepeolus,Triepeolus sp. 03
+TRIPAR,Triepeolus parkeri,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Triepeolus,Triepeolus parkeri
+AUGSIDB,Augochlora,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Augochlora,Augochlora sidaefolia B
+AUASP13,Augochlora,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Augochlora,Augochlora sp. 13
+AUASP03,Augochlora,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Augochlora,Augochlora sp. 03
+AUASP17,Augochlora,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Augochlora,Augochlora sp. 17
+AUASP08ME,Augochlora,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Augochlora,Augochlora sp.08M Engel
+AUGMETA,Augochloropsis metallica A,species,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Augochloropsis,Augochloropsis metallica A
+AUASP10,Augochlora,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Augochlora,Augochlora sp. 10
+CAESP24F,Caenaugochlora sp. 24F nr tonsilis,species,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Caenaugochlora,Caenaugochlora sp. 24F nr tonsilis
+LASCIR,Lasioglossum circinatum,species,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum circinatum
+CAEFLA,Caenaugochlora flagrans,species,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Caenaugochlora,Caenaugochlora flagrans
+LASCRO,Lasioglossum crocoturum,species,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum crocoturum
+CAESP04,Caenaugochlora sp. 04 nr. gemmella,species,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Caenaugochlora,Caenaugochlora sp. 04 nr. gemmella
+CAESP05,Caenaugochlora,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Caenaugochlora,Caenaugochlora sp. 05
+CAHSP02,Caenohalictus,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Caenohalictus,Caenohalictus sp. 02
+LASSP83,Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum sp. 83
+LASSP86,Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum sp. 86
+LASORP,Lasioglossum orphnaeum,species,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum orphnaeum
+LASSP102,Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum sp. 102
+LASSP103,Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum sp. 103
+LASSPH8,Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum sp8
+NEOSP13,Neocorynura sp. 13 nr. lignys,species,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Neocorynura,Neocorynura sp. 13 nr. lignys
+LASSP30,Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum sp. 30
+NEORUB,Neocorynura rubida,species,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Neocorynura,Neocorynura rubida
+NEOSP02M,Neocorynura,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Neocorynura,Neocorynura sp. 02M Ecosur
+NEOSP03M,Neocorynura,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Neocorynura,Neocorynura sp. 03M Ecosur
+MEGAFFVES,Megachile aff. vestis,species,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Megachile,Megachile aff. vestis
+MEGSP07,Megachile,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Megachile,Megachile sp. 07
+MEGPOL,Megachile policaris,species,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Megachile,Megachile policaris
+MEGSP06,Megachile,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Megachile,Megachile sp. 06 nov. sp. TG
+MEGAFFIN,Megachile aff. inscita,species,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Megachile,Megachile aff. inscita
+ANTHON,Anthidiellum hondurasicum,species,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Anthidiellum,Anthidiellum hondurasicum
+ASHSP01,Ashmeadiella,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Ashmeadiella,Ashmeadiella sp. 01 (Aseemadiella)
+ANTMAC,Anthidium maculifrons,species,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Anthidium,Anthidium maculifrons
+ANTHAL,Anthidium hallinani,species,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Anthidium,Anthidium hallinani
+ANTHO1,Anthodioctes,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Anthodioctes,Anthodioctes sp. 01
+ANTHO2,Anthodioctes,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Anthodioctes,Anthodioctes sp. 02
+BOMHUN,Bombus huntii,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Bombus,Bombus huntii
+COEOTO,Coelioxys otomita,species,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Coelioxys,Coelioxys otomita
+COESAN,Coelioxys sanguinicollis,species,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Coelioxys,Coelioxys sanguinicollis
+COEZAP,Coelioxys zapoteca,species,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Coelioxys,Coelioxys zapoteca
+COETOT,Coelioxys totonacus,species,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Coelioxys,Coelioxys totonacus
+COEGON,Coelioxys gonaspis,species,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Coelioxys,Coelioxys gonaspis
+COEMEX,Coelioxys mexicana,species,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Coelioxys,Coelioxys mexicana
+COESIM,Coelioxys simillimus,species,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Coelioxys,Coelioxys simillimus
+COESP23,Coelioxys,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Coelioxys,Coelioxys sp. 23
+MEGCON,Megachile concinna,species,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Megachile,Megachile concinna
+MEGSP16,Megachile,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Megachile,Megachile sp. 16
+MEGLON,Megachile longuisetosa,species,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Megachile,Megachile longuisetosa
+MEGFRU,Megachile frugalis,species,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Megachile,Megachile frugalis
+STESP01,Stelis,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Stelis,Stelis 01 Ecosur sp. nov. 
+BOMMAC,Bombus macgregori,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Bombus,Bombus macgregori
+EUGVIR,Euglossa viridissima,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Euglossa,Euglossa viridissima
+AUASP38F,Augochlora,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Augochlora,Augochlora sp. 38F
+CAESP,Caenaugochlora,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Caenaugochlora,
+PROTPTE,Protandrena,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Andrenidae,Protandrena,
+LASSP89,Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum sp. 89
+LASSP108,Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum sp. 108
+LASEIC,Lasioglossum eickworti,species,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum eickworti
+ANTMACU,Anthidium maculosum,species,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Anthidium,Anthidium maculosum
+ANTSP01,Anthidiellum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Anthidiellum,Anthidiellum sp. 01
+HYLSP,Hylaeus,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Colletidae,Hylaeus,
+CERZADSP3,Ceratina,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Ceratina,Ceratina spnov3 Flórez
+BOMBRA,Bombus brachycephalus,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Bombus,Bombus brachycephalus
+XYLSCH,Xylocopa,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Xylocopa,
+BOMMLP,Bombus melanopygus,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Bombus,Bombus melanopygus
+PTISP,Ptiloglossa,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Colletidae,Ptiloglossa,
+TRIFLA,Triepeolus flavigradus,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Triepeolus,Triepeolus flavigradus
+MEGINI,Megachile inimica,species,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Megachile,Megachile inimica
+COESP31M,Coelioxys sp. 31 nr. hunteri,species,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Coelioxys,Coelioxys sp. 31 nr. hunteri
+OSMALI,Osmia aliciae,species,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Osmia,Osmia aliciae
+TETTET,Tetraloniella,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Tetraloniella,
+CENEIS,Centris eisenii,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Centris,Centris eisenii
+XYLSP,Xylocopa,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Xylocopa,
+XYLTEN,Xylocopa tenuata,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Xylocopa,Xylocopa tenuata
+XYLCYA,Xylocopa cyanea,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Xylocopa,Xylocopa cyanea
+XYLSP14F,Xylocopa,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Xylocopa,Xylocopa sp. 14F
+BOMNIG,Bombus nigrodorsalis,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Bombus,Bombus nigrodorsalis
+BOMDIL,Bombus diligens,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Bombus,Bombus diligens
+BOMSTE,Bombus steindachneri,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Bombus,Bombus steindachneri
+BOMTRI,Bombus trinominatus,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Bombus,Bombus trinominatus
+EUGOBR,Euglossa obrima,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Euglossa,Euglossa obrima
+PLEMEL,Plebeia melanica,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Plebeia,Plebeia melanica
+GEOACA,Geotrigona acapulconis,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Geotrigona,Geotrigona acapulconis
+XYLAZT,Xylocopa tabaniformis,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Xylocopa,Xylocopa tabaniformis
+XYLMEL,Xylocopa tabaniformis,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Xylocopa,Xylocopa tabaniformis
+MEGSP74F,Megachile,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Megachile,Megachile sp. 74F
+PLEFUL,Plebeia fulvopilosa,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Plebeia,Plebeia fulvopilosa
+AUGNRFUL,Augochloropsis,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Augochloropsis,Augochloropsis nr. fulvofimbriata sensu Engels
+MEGSP85F,Megachile,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Megachile,Megachile sp. 85F
+CENSP01,Centris,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Centris,Centris sp. 01
+LASDIA-I,Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum sp. I
+LASDIA-D,Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum sp. D
+HERSP04F,Heriades,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Heriades,Heriades sp. 04F
+COLSP28F,Colletes,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Colletidae,Colletes,Colletes sp. 28F
+LASDIA-C,Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum sp. C
+AUGAURSP,Augochlora,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Augochlora,Augochlora “group aurifera”
+AUGNRQUI,Augochlora nr. quiriguensis,species,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Augochlora,Augochlora nr. quiriguensis
+LASDIA-H,Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum sp. H
+LASDIA-A,Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum sp. A
+AUGAUG”C”,Augochlora,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Augochlora,Augochlora sp. “C”
+AUGAUG”B”,Augochlora,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Augochlora,Augochlora sp. “B”
+XYLNRLAT,Xylocopa lateralis nr. ,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Xylocopa,Xylocopa lateralis nr. 
+CENHEI,Centris heithausi,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Centris,Centris heithausi
+TRISIL,Trigona silvestriana,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Trigona,Trigona silvestriana
+CERSP65F NR.EXIMIA,Ceratina sp. 65F nr. eximia,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Ceratina,Ceratina sp. 65F nr. eximia
+MELMEL,Melissodes,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Melissodes,
+CERMEXGR,Ceratina mexicana group,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Ceratina,Ceratina mexicana group
+HYPSP05,Hypanthidium,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Hypanthidium,Hypanthidium sp. 05
+SCALUT,Scaptotrigona luteipennis,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Scaptotrigona,Scaptotrigona luteipennis
+FRIPAU,Frieseomelitta paupera,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Frieseomelitta,Frieseomelitta paupera
+NEODIS,Neocorynura discolor,species,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Neocorynura,Neocorynura discolor
+CAHSP,Caenohalictus,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Caenohalictus,
+MEGMOU,Megachile,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Megachile,
+CERNAUSL,Ceratina nautlana sensu lato,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Ceratina,Ceratina nautlana sensu lato
+HOPTRI,Hoplitis tristis,species,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Hoplitis,Hoplitis tristis
+EUGSPC01,Euglossa,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Euglossa,Euglossa sp. C01
+ANCSPC01,Ancyloscelis,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Ancyloscelis,Ancyloscelis sp. C01
+EXOSPC09,Exomalopsis,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Exomalopsis,Exomalopsis sp. C09
+EXOSPC02,Exomalopsis,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Exomalopsis,Exomalopsis sp. C02
+CENSPC01,Centris,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Centris,Centris sp. C01
+EXOSPC01,Exomalopsis,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Exomalopsis,Exomalopsis sp. C01
+EXOSPC06,Exomalopsis,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Exomalopsis,Exomalopsis sp. C06
+MEGSPC05,Megachile,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Megachile,Megachile sp. C05
+EXOSPC03,Exomalopsis,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Exomalopsis,Exomalopsis sp. C03
+LASSPC01,Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum sp. C01
+CERSPC01,Ceratina,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Ceratina,Ceratina sp. C01
+COLSPC01,Colletes,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Colletidae,Colletes,Colletes sp. C01
+LASSPC02,Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum sp. C02
+HYLSPC04,Hylaeus,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Colletidae,Hylaeus,Hylaeus sp. C04
+HYLSPC02,Hylaeus,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Colletidae,Hylaeus,Hylaeus sp. C02
+MEGSPC03,Megachile,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Megachile,Megachile sp. C03
+MEGSPC15,Megachile,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Megachile,Megachile sp. C15
+MEGSPC13,Megachile,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Megachile,Megachile sp. C13
+CENCAE,Centris caesalpiniae,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Centris,Centris caesalpiniae
+CENSPC03,Centris,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Centris,Centris sp. C03
+MEGSPC12,Megachile,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Megachile,Megachile sp. C12
+TETCAC,Tetraloniella cacuminis,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Tetraloniella,Tetraloniella cacuminis
+ANHSPC01,Anthidiellum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Anthidiellum,Anthidiellum sp. C01
+EXOSPC10,Exomalopsis,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Exomalopsis,Exomalopsis sp. C10
+EXOSPC07,Exomalopsis,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Exomalopsis,Exomalopsis sp. C07
+MELYUC,Melipona yucatanica,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Melipona,Melipona yucatanica
+HERSPC01,Heriades,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Heriades,Heriades sp. C01
+LASSPC04,Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum sp. C04
+HYLSPC01,Hylaeus,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Colletidae,Hylaeus,Hylaeus sp. C01
+PARSPC01,Paratetrapedia,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Paratetrapedia,Paratetrapedia sp. C01
+XYLMUS,Xylocopa muscaria,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Xylocopa,Xylocopa muscaria
+MEGSPC09,Megachile,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Megachile,Megachile sp. C09
+PTIEXI,Ptiloglossa eximia,species,Animalia,Arthropoda,Insecta,Hymenoptera,Colletidae,Ptiloglossa,Ptiloglossa eximia
+CERSPC03,Ceratina,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Ceratina,Ceratina sp. C03
+MEGINS,Megachile instita,species,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Megachile,Megachile instita
+COESPC02,Coelioxys,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Coelioxys,Coelioxys sp. C02
+PARSPC02,Paratetrapedia,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Paratetrapedia,Paratetrapedia sp. C02
+PARSPC03,Paratetrapedia,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Paratetrapedia,Paratetrapedia sp. C03
+CENSPC04,Centris,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Centris,Centris sp. C04
+CENSPC02,Centris,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Centris,Centris sp. C02
+COESPC03,Coelioxys,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Coelioxys,Coelioxys sp. C03
+HERSPC02,Heriades,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Heriades,Heriades sp. C02
+MEGSPC17,Megachile,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Megachile,Megachile sp. C17
+COEPUN,Coelioxoides punctipennis,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Coelioxoides,Coelioxoides punctipennis
+TETSPC01,Tetrapedia,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Tetrapedia,Tetrapedia sp. C01
+PEPSP,Peponapis,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Peponapis,
+TRIMEX,Triepeolus mexicanus,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Triepeolus,Triepeolus mexicanus
+CAESPC01,Caenaugochlora,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Caenaugochlora,Caenaugochlora sp. C01
+LASSPC05,Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum sp. C05
+MEGSPC04,Megachile,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Megachile,Megachile sp. C04
+PEPSPC01,Peponapis,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Peponapis,Peponapis sp. C01
+LASSPC03,Lasioglossum,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Lasioglossum,Lasioglossum sp. C03
+PSEUSPC01,Pseudopanurgus,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Andrenidae,Pseudopanurgus,Pseudopanurgus sp. C01
+HYLSPC05,Hylaeus,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Colletidae,Hylaeus,Hylaeus sp. C05
+ANCSPC02,Ancyloscelis,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Ancyloscelis,Ancyloscelis sp. C02
+COLSPC02,Colletes,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Colletidae,Colletes,Colletes sp. C02
+CAESPC03,Caenaugochlora,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Caenaugochlora,Caenaugochlora sp. C03
+CERSPC05,Ceratina,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Ceratina,Ceratina sp. C05
+MEGSP28,Megachile,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Megachile,Megachile sp. 28
+MEGSPC07,Megachile,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Megachile,Megachile sp. C07
+CAESPC02,Caenaugochlora,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Caenaugochlora,Caenaugochlora sp. C02
+EPESPC01,Epeolus,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Epeolus,Epeolus sp. C01
+NOMSPC02,Nomada,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Nomada,Nomada sp. C02
+MEGSPC06,Megachile,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Megachile,Megachile sp. C06
+TRISPC02,Triepeolus,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Triepeolus,Triepeolus sp. C02
+HYLSPC03ECOTAP,Hylaeus,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Colletidae,Hylaeus,Hylaeus sp. C03
+ANTSPC01,Anthophora,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Anthophora,Anthophora sp. C01
+TRASPC01,Trachusa,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Trachusa,Trachusa sp. C01
+PAASPC01,Paranthidium,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Paranthidium,Paranthidium sp. C01
+AUGSPC01,Augochlorella,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Halictidae,Augochlorella,Augochlorella sp. C01
+ANDSPC01,Andrena,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Andrenidae,Andrena,Andrena sp. C01
+PSEUSPC02,Pseudopanurgus,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Andrenidae,Pseudopanurgus,Pseudopanurgus sp. C02
+CALSPC02,Calliopsis,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Andrenidae,Calliopsis,Calliopsis sp. C02
+MELSPC03,Melissodes,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Melissodes,Melissodes sp. C03
+MEGSPC16,Megachile,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Megachilidae,Megachile,Megachile sp. C16
+CEPSP,Cephalotrigona,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Cephalotrigona,
+PLEPAR,Plebeia parkeri,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Plebeia,Plebeia parkeri
+EXOSPC04,Exomalopsis,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Exomalopsis,Exomalopsis sp. C04
+CALSPC01,Calliopsis,genus,Animalia,Arthropoda,Insecta,Hymenoptera,Andrenidae,Calliopsis,Calliopsis sp. C01
+CENGEL,Centris gelida,species,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Centris,Centris gelida

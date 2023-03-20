@@ -1,7 +1,7 @@
-SELECT if(e.numerocolecta!='NO DISPONIBLE',e.numerocolecta,'') as event_id,
+SELECT o.occurrence_id as event_id,
 '' as parent_event_id,
-'' as dataset_id,
-'' as location_id,
+e.llaveproyecto as dataset_id,
+al.location_id  as location_id,
 '' as protocol_id,
 '' as event_type,
 '' as event_name,
@@ -22,9 +22,19 @@ ifnull(e.mescolecta,'')  as `month`,
 ifnull(e.diacolecta,'')  as `day`,
 '' as verbatim_event_date,
 l.localidad as verbatim_locality,
-if(g.altitudinicialdelsitio>0,g.altitudinicialdelsitio,'')  as verbatim_elevation,
-if(g.altitudinicialdelsitio<0,g.altitudinicialdelsitio,'') as verbatim_depth,
-g.latitudgrados  as verbatim_coordinates,
+if(if(g.altitudinicialdelsitio>0,cast(g.altitudinicialdelsitio as char),'')='9999','',if(g.altitudinicialdelsitio>0,cast(g.altitudinicialdelsitio as char),'')) as verbatim_elevation,
+if(if(g.altitudinicialdelsitio<0,cast(g.altitudinicialdelsitio as char),'')='9999','',if(g.altitudinicialdelsitio<0,cast(g.altitudinicialdelsitio as char),'')) as verbatim_depth,
+concat(if(latitudgrados is null or latitudgrados=999,'',concat(if(latitudgrados<0,latitudgrados*-1,latitudgrados),'° ',if(latitudminutos is null or latitudminutos=99,'',concat(latitudminutos,"' ")),
+if(latitudsegundos is null or latitudsegundos=99,'',concat(latitudsegundos,"'' ")),if(nortesur<>'',if(nortesur='Norte','N','S'),if(latitudgrados>0,'N ',if(latitudgrados<0,'S ',''))),
+if(latitudgradosfinal is null or latitudgradosfinal=999,'',
+concat('| ',if(latitudgradosfinal<0,latitudgradosfinal*-1,latitudgradosfinal),'° ',if(latitudminutosfinal is null or latitudminutosfinal=99,'',concat(latitudminutosfinal,"' ")),
+if(latitudsegundosfinal is null or latitudsegundosfinal=99,'',concat(latitudsegundosfinal,"'' ")),if(latitudgradosfinal>0,'N ',if(latitudgradosfinal<0,'S ',''))))
+)),' ,',if(longitudgrados is null or longitudgrados=999,'',concat(if(longitudgrados<0,longitudgrados*-1,longitudgrados),'° ',if(longitudminutos is null or longitudminutos=99,'',concat(longitudminutos,"' ")),
+if(longitudsegundos is null or longitudsegundos=99,'',concat(longitudsegundos,"'' ")),if(esteoeste<>'',if(esteoeste='Oeste','W','E'),if(longitudgrados>0,'E ',if(longitudgrados<0,'W ',''))),
+if(longitudgradosfinal is null or longitudgradosfinal=999,'',
+concat('| ',if(longitudgradosfinal<0,longitudgradosfinal*-1,longitudgradosfinal),'° ',if(longitudminutosfinal is null or longitudminutosfinal=99,'',concat(longitudminutosfinal,"' ")),
+if(longitudsegundosfinal is null or longitudsegundosfinal=99,'',concat(longitudsegundosfinal,"'' ")),if(longitudgradosfinal>0,'E ',if(longitudgradosfinal<0,'W ',''))))
+)) )  as verbatim_coordinates,
 if(latitudgrados is null or latitudgrados=999,'',concat(if(latitudgrados<0,latitudgrados*-1,latitudgrados),'° ',if(latitudminutos is null or latitudminutos=99,'',concat(latitudminutos,"' ")),
 if(latitudsegundos is null or latitudsegundos=99,'',concat(latitudsegundos,"'' ")),if(nortesur<>'',if(nortesur='Norte','N','S'),if(latitudgrados>0,'N ',if(latitudgrados<0,'S ',''))),
 if(latitudgradosfinal is null or latitudgradosfinal=999,'',
@@ -41,7 +51,7 @@ if((longitudsegundos<>99 or latitudsegundos<>99) and (longitudgrados<>999 or lat
 if((longitudminutos<>99 or latitudminutos<>99) and (longitudgrados<>999 or latitudgrados<>99),'grados minutos o decimal de minutos',
 if(longitudgrados<>999 or latitudgrados<>99,'grados',''))) as verbatim_coordinate_system,
 '' as verbatim_srs,
-h.habitat  as habitat,
+if(h.habitat !='',concat(h.habitat,' | ',n.ambientenombre),n.ambientenombre ) as habitat,
 m.metododecolecta  as protocol_description,
 '' as sample_size_value,
 '' as sample_size_unit,
@@ -61,5 +71,9 @@ inner join snib.regionoriginal ro using (idregionoriginal)
 inner join snib.conabiogeografia c using(llaveregionsitiosig)
 inner join snib.regionmapa rm using(idregionmapa)
 inner join snib.metododecolecta m using(idmetododecolecta)
-WHERE e.estadoregistro = ""
-AND p.proyecto in ('FY001','FZ016');
+inner join GBIFModel2023.occurrence o on e.llaveejemplar =o.organism_id 
+inner join GBIFModel2023.agrupado_location al on e.llaveejemplar =al.llaveejemplar 
+WHERE p.proyecto in ('FY001','FZ016')
+and e.estadoregistro = "";
+
+drop table GBIFModel2023.agrupado_location ;

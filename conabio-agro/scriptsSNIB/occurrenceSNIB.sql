@@ -1,4 +1,5 @@
-SELECT e.llaveejemplar as occurrence_id, '' as organism_id,
+SELECT md5(CONCAT('occurrence',@rownum:=@rownum+1)) as occurrence_id,
+e.llaveejemplar as organism_id,
 ifnull(organismQuantity,'')as organism_quantity,
 ifnull(organismQuantityType,'')as organism_quantity_type,
 s.sexo as sex, d.edad as life_stage, ifnull(reproductiveCondition,'')as reproductive_condition,
@@ -20,13 +21,13 @@ CONCAT('{','"validacionGeografica":{', '"country":{"tipo":"',i.tipocountry,'",',
         if(go.tipositio like "%linea%" or go.tipositio like "%pol%gono%","NO PROCESADO",cg.validacionlocalidad)),'"', '},', '"environment":{', '"tipo":"',n.ambientenombre,'",', '"resultadoValidacion":"',e.validacionambientegeneral,'"', '"tolerancia":"',
         if(bf.bufferporambiente<>"",'true','false'),'",', '}', '}') as georeference_verification_status, 
 if(observacionesejemplar='NO DISPONIBLE','',observacionesejemplar) as occurrence_remarks, 
-re.tiporestriccion as information_withheld,
+if (re.tiporestriccion='Libre acceso','',re.tiporestriccion) as information_withheld,
 '' as data_generalizations, 
 if(nc.persona not in('','NO DISPONIBLE'), nc.persona, IF(ac.persona='NO DISPONIBLE','',ac.persona)) as recorded_by,
 if(nc.persona not in('','NO DISPONIBLE'), e.idnombrecolector, e.idabreviadocolector) as recorded_by_id, 
 '' as associated_media, 
 '' as associated_occurrence, ifnull(at.associatedTaxa,'') as associated_taxa 
-FROM snib.ejemplar_curatorial e 
+FROM (SELECT @rownum:=0) r,snib.ejemplar_curatorial e 
 INNER JOIN snib.proyecto p ON e.llaveproyecto = p.llaveproyecto 
 INNER JOIN snib.sexo s ON e.idsexo = s.idsexo 
 INNER JOIN snib.edad d ON e.idedad = d.idedad 

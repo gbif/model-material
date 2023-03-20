@@ -1,4 +1,4 @@
-SELECT '' as  identification_id,
+SELECT md5(concat('identification',@rownum:=@rownum+1)) as  identification_id,
 e.llaveejemplar as organism_id,
 'expert identification' as identification_type,
 '' as taxon_formula,
@@ -12,11 +12,11 @@ concat(e.diadeterminacion,'/' ,e.mesdeterminacion,'/' ,e.aniodeterminacion ) as 
 '' as identification_remarks,
 '' type_designation_type,
 '' type_designated_by
-FROM snib.ejemplar_curatorial e 
+FROM (SELECT @rownum:=0) r,snib.ejemplar_curatorial e 
 INNER JOIN snib.proyecto p ON e.llaveproyecto = p.llaveproyecto 
 INNER JOIN snib.persona nd ON e.idnombredeterminador = nd.idpersona 
 INNER JOIN snib.persona ad ON e.idabreviadodeterminador = ad.idpersona
 INNER JOIN snib.nombre_taxonomia n ON e.llavenombre = n.llavenombre 
 inner join snib.tipo t using (idtipo)
-WHERE e.estadoregistro = ""
-AND p.proyecto in ('FY001','FZ016');
+WHERE p.proyecto in ('FY001','FZ016')
+AND e.estadoregistro = '';
