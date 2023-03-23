@@ -52,17 +52,14 @@ ecoab_occurrences["material_entity_id"] = ecoab_occurrences.apply(lambda x: sha1
 ecoab_occurrences["location_id"] = ecoab_occurrences.apply(lambda x: sha1(x["locationID"].encode("utf-8")).hexdigest(), axis=1)
 
 # %%
-ecoab_occurrences.columns
-
-# %%
-ecoab_occurrences["event_id"] = ecoab_occurrences["locationID"] + '|' + ecoab_occurrences["eventDate"]
+ecoab_occurrences["event_id"] = ecoab_occurrences["locationID"] + '|' + ecoab_occurrences["eventDate"] + "|" + ecoab_occurrences["occurrenceID"]
 ecoab_occurrences["event_id"] = ecoab_occurrences.apply(lambda x: sha1(x["event_id"].encode("utf-8")).hexdigest(), axis=1)
 
 # %%
 events = pd.DataFrame({
     "event_id": ecoab_occurrences["event_id"],
     "parent_event_id": None,
-    "dataset_id": None,
+    "dataset_id": dataset_id,
     "location_id": ecoab_occurrences["location_id"],
     "protocol_id": None,
     "event_type": "OCCURRENCE",
@@ -91,52 +88,49 @@ events = pd.DataFrame({
 })
 
 # %%
-events = events.drop_duplicates()
-
-# %%
 events.to_csv(product["events_table"], index=False)
 
 # %%
-occurrence_evidence = (
-    pd.merge(resource_relationship, ecoab_occurrences, left_on="subject_entity_id", right_on="material_entity_id", how="left")[["object_entity_id", "event_id"]]
-)
-occurrence_evidence = occurrence_evidence.rename(columns={"object_entity_id": "material_entity_id"})
-
-# %%
-occurrence_evidence = pd.concat([occurrence_evidence, ecoab_occurrences[["material_entity_id", "event_id"]]])
-
-# %%
-occurrence = occurrence_evidence.groupby("event_id")["material_entity_id"].count().reset_index().rename(columns={"event_id":"occurrence_id", "material_entity_id": "organism_quantity"})
-
-# %%
 occurrence = pd.DataFrame({
-    "occurrence_id": occurrence["occurrence_id"],
-    "organism_id": None,
-    "organism_quantity": occurrence["organism_quantity"],
-    "organism_quantity_type": None,
-    "sex": None,
+    "occurrence_id": ecoab_occurrences["event_id"],
+    "organism_id": ecoab_occurrences["material_entity_id"],
+    "organism_quantity": 1,
+    "organism_quantity_type": "individuals",
+    "sex": ecoab_occurrences["sex"],
     "life_stage": None,
     "reproductive_condition": None,
     "behavior": None,
     "establishment_means": None,
-    "occurrence_status": None,
+    "occurrence_status": "PRESENT",
     "pathway": None,
     "degree_of_establishment": None,
     "georeference_verification_status": None,
     "occurrence_remarks": None,
     "information_withheld": None,
     "data_generalizations": None,
-    "recorded_by": None,
-    "recorded_by_id": None,
+    "recorded_by": ecoab_occurrences["recordedBy"],            
+    "recorded_by_id": ecoab_occurrences["recordedByID"], 
     "associated_media": None,
     "associated_occurrences": None,
     "associated_taxa": None
 })
 
 # %%
+occurrence.head()
+
+# %%
 occurrence.to_csv(product["occurrence_table"], index=False)
 
 # %%
-occurrence_evidence.rename(columns={"material_entity_id": "entity_id", "event_id": "occurrence_id"})[["occurrence_id", "entity_id"]].to_csv(product["occurrence_evidence"], index=False)
+occurrence_evidence = pd.DataFrame({
+    "occurrence_id": ecoab_occurrences["event_id"],
+    "entity_id": ecoab_occurrences["material_entity_id"]
+})
+
+# %%
+occurrence_evidence.head()
+
+# %%
+occurrence_evidence.to_csv(product["occurrence_evidence"], index=False)
 
 # %%

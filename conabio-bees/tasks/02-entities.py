@@ -51,7 +51,13 @@ ecoab_taxa = pd.read_csv(data_folder / "ecoab-occurrence-taxa.csv")
 ecoab_occurrences = ecoab_occurrences.rename(columns={"collectionCode": "collection_code"})
 
 # %%
+interactions_data = pd.read_csv(data_folder / "ecoab-interaction-data.csv")
+
+# %%
 ecoab_occurrences.head()
+
+# %%
+interactions_data
 
 # %%
 ecoab_taxa.head()
@@ -126,9 +132,6 @@ material_entity = pd.concat([material_entity, ecoab_plantae["material_entity_id"
 
 # %%
 material_entity.to_csv(product["material_entity_table"], index=False)
-
-# %%
-interactions_data = pd.read_csv(data_folder / "ecoab-interaction-data.csv")
 
 # %%
 interactions_data = pd.merge(interactions_data, ecoab_occurrences[["material_entity_id", "occurrenceID"]], on="occurrenceID").rename(columns={"material_entity_id": "subject_entity_id"})
