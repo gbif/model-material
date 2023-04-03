@@ -1,7 +1,7 @@
 SELECT o.occurrence_id as event_id,
 '' as parent_event_id,
 e.llaveproyecto as dataset_id,
-al.location_id  as location_id,
+lo.location_id  as location_id,
 '' as protocol_id,
 '' as event_type,
 '' as event_name,
@@ -72,8 +72,6 @@ inner join snib.conabiogeografia c using(llaveregionsitiosig)
 inner join snib.regionmapa rm using(idregionmapa)
 inner join snib.metododecolecta m using(idmetododecolecta)
 inner join GBIFModel2023.occurrence o on e.llaveejemplar =o.organism_id 
-inner join GBIFModel2023.agrupado_location al on e.llaveejemplar =al.llaveejemplar 
+inner join GBIFModel2023.location lo on o.occurrence_id =lo.event_id 
 WHERE p.proyecto in ('FY001','FZ016')
 and e.estadoregistro = "";
-
-drop table GBIFModel2023.agrupado_location ;

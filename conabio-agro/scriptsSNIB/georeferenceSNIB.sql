@@ -1,5 +1,5 @@
-SELECT md5(CONCAT('georeference',@rownum:=@rownum+1)) as georreference_id,
-c.llaveregionsitiosig as location_id,
+SELECT distinct llaveregionsitiosig as georreference_id,
+lo.location_id as location_id,
 c.latitudconabio as decimal_latitude,
 c.longitudconabio as decimal_longitude,
 c.datumconabio as geodetic_datum,
@@ -20,5 +20,7 @@ inner join snib.conabiogeografia c using (llaveregionsitiosig)
 inner join snib.geografiaoriginal g using (llavesitio)
 inner join snib.observacionescoordenadasconabio o using (idobservacionescoordenadasconabio)
 inner join snib.proyecto p using(llaveproyecto)
+inner join GBIFModel2023.occurrence o on ec.llaveejemplar =o.organism_id 
+inner join GBIFModel2023.location lo on o.occurrence_id =lo.event_id
 WHERE p.proyecto in ('FY001','FZ016')
 and ec.estadoregistro = "";
