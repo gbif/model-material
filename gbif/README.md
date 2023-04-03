@@ -47,3 +47,8 @@ psql postgresql://material:<PASSWORD>@pg1.gbif-uat.org/material_model -f load-ar
 unzip ../swisscollnet/CH_202303081049.zip -d ../swisscollnet
 psql postgresql://material:<PASSWORD>@pg1.gbif-uat.org/material_model -f load-swisscollnet.sql
 ```
+
+### Cameroon-onana
+```
+psql postgresql://material:<PASSWORD>@pg1.gbif-uat.org/material_model -f load-cameroon.sql
+```
