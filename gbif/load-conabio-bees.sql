@@ -5,7 +5,7 @@ SET CONSTRAINTS ALL DEFERRED;
 -- psql requires the following meta commands to be presented on a single line
 \copy public.agent FROM '../conabio-bees/data-products/agent.csv' WITH DELIMITER ',' CSV HEADER;
 \copy public.collection FROM '../conabio-bees/data-products/collection.csv' WITH DELIMITER ',' CSV HEADER;
--- \copy public.entity_relationship FROM '../conabio-bees/data-products/entity_relationship.csv' WITH DELIMITER ',' CSV HEADER;
+\copy public.entity_relationship FROM '../conabio-bees/data-products/entity_relationship.csv' WITH DELIMITER ',' CSV HEADER;
 \copy public.entity FROM '../conabio-bees/data-products/entity.csv' WITH DELIMITER ',' CSV HEADER;
 \copy public.event FROM '../conabio-bees/data-products/event.csv' WITH DELIMITER ',' CSV HEADER;
 \copy public.georeference FROM '../conabio-bees/data-products/georeference.csv' WITH DELIMITER ',' CSV HEADER;
