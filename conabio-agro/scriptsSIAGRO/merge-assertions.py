@@ -48,6 +48,34 @@ qualitative_assertions.head()
 quantitative_assertions.head()
 
 # %%
-pd.concat([qualitative_assertions, quantitative_assertions]).to_csv(product["data"], index=False)
+# pd.concat([qualitative_assertions, quantitative_assertions]).to_csv(product["data"], index=False)
+
+# %%
+siagro = pd.concat([qualitative_assertions, quantitative_assertions])
+
+# %%
+data = pd.DataFrame({
+    "assertion_id": siagro["assertion_id"],                                                                                                                                                                                                   
+    "assertion_target_id": siagro["assertion_target_id"],                                                                                                                                                                                            
+    "assertion_target_type": siagro["assertion_target_type"],                                                                                                                                                                                          
+    "assertion_parent_assertion_id": None,                                                                                                                                                                                  
+    "assertion_type": siagro["assertion_type"],                                                                                                                                                                                                 
+    "assertion_made_date": None,                                                                                                                                                                                            
+    "assertion_effective_date": None,                                                                                                                                                                                       
+    "assertion_value": siagro["assertion_value"],                                                                                                                                                                                                
+    "assertion_value_numeric": siagro["assertion_value_numeric"],                                                                                                                                                                                        
+    "assertion_unit": siagro["assertion_unit"],                                                                                                                                                                                                 
+    "assertion_by_agent_name": None,                                                                                                                                                                                        
+    "assertion_by_agent_id": None,                                                                                                                                                                                          
+    "assertion_protocol": None,                                                                                                                                                                                             
+    "assertion_protocol_id": None,                                                                                                                                                                                          
+    "assertion_remarks": None
+})
+
+# %%
+data.head()
+
+# %%
+data.to_csv(product["data"], index=False)
 
 # %%

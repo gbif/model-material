@@ -1,31 +1,5 @@
-create table agrupado_location 
-select MD5(CONCAT(parent_location_id
-		,higher_geography_id
-		,higher_geography
-		,continent
-		,waterbody
-		,islandgroup
-		,island
-		,country
-		,country_code
-		,state_province
-		,county
-		,municipality
-		,locality
-		,minimum_elevation_in_meters
-		,maximum_elevation_in_meters
-		,minimum_distance_above_surface_in_meters
-		,maximum_distance_above_surface_in_meters
-		,minimum_depth_in_meters
-		,maximum_depth_in_meters
-		,vertical_datum
-		,location_according_to
-		,location_remarks
-		,accepted_georreference_id
-		,accepted_georreference_context_id)) as location_id, a.*  
-				from(
-			SELECT  
-			e.llaveejemplar,
+SELECT  md5(CONCAT('location',@rownum:=@rownum+1)) as location_id,
+				o.occurrence_id as event_id,
 			  '' AS parent_location_id,
 			  '' AS higher_geography_id,
 			  CONCAT("{\"regionMarina\":{\"nombre\":\"",
@@ -65,7 +39,7 @@ select MD5(CONCAT(parent_location_id
 			  '' AS location_remarks,
 			  '' AS accepted_georreference_id,
 			  '' AS accepted_georreference_context_id
-			FROM snib.ejemplar_curatorial e
+			FROM (SELECT @rownum:=0) r,snib.ejemplar_curatorial e
 			INNER JOIN snib.proyecto p ON e.llaveproyecto = p.llaveproyecto
 			INNER JOIN snib.conabiogeografia cg on e.llaveregionsitiosig = cg.llaveregionsitiosig
 			INNER JOIN snib.nombre n on e.llavenombre = n.llavenombre
@@ -75,40 +49,6 @@ select MD5(CONCAT(parent_location_id
 			INNER JOIN snib.localidad lo ON e.idlocalidad = lo.idlocalidad
 			INNER JOIN snib.geografiaoriginal gor on gor.llavesitio =e.llavesitio 
 			inner join snib.regionmarinamapa rmm on rmm.idregionmarinamapa =cg.idregionmarinamapa 
+			inner join GBIFModel2023.occurrence o on o.organism_id =e.llaveejemplar 
 			WHERE p.proyecto in ('FY001','FZ016')
-			and e.estadoregistro = ""
-			) as a;
-
-CREATE INDEX agrupado_location_llaveejemplar_IDX USING BTREE ON GBIFModel2023.agrupado_location (llaveejemplar);
-
-
-
-/* ******************************************************************************************************************** */
-
-create table GBIFModel2023.location
-select distinct location_id,
-		parent_location_id
-		,higher_geography_id
-		,higher_geography
-		,continent
-		,waterbody
-		,islandgroup
-		,island
-		,country
-		,country_code
-		,state_province
-		,county
-		,municipality
-		,locality
-		,minimum_elevation_in_meters
-		,maximum_elevation_in_meters
-		,minimum_distance_above_surface_in_meters
-		,maximum_distance_above_surface_in_meters
-		,minimum_depth_in_meters
-		,maximum_depth_in_meters
-		,vertical_datum
-		,location_according_to
-		,location_remarks
-		,accepted_georreference_id
-		,accepted_georreference_context_id 
-from GBIFModel2023.agrupado_location al;
+			and e.estadoregistro = "";
