@@ -28,7 +28,7 @@
 # %% tags=["parameters"]
 # If this task has dependencies, list them them here
 # (e.g. upstream = ['some_task']), otherwise leave as None.
-upstream = ["create-entitties"]
+upstream = ["create-entities"]
 
 # This is a placeholder, leave it as None
 product = None
@@ -45,7 +45,7 @@ data_folder = Path(data_folder)
 
 # %%
 ecoab_occurrences = pd.read_csv(data_folder / "ecoab-occurrences.csv")
-resource_relationship = pd.read_csv(upstream["create-entitties"]["entity_relationship_table"])
+resource_relationship = pd.read_csv(upstream["create-entities"]["entity_relationship_table"])
 
 # %%
 ecoab_occurrences["material_entity_id"] = ecoab_occurrences.apply(lambda x: sha1(x["occurrenceID"].encode("utf-8")).hexdigest(), axis=1)
@@ -86,6 +86,9 @@ events = pd.DataFrame({
     "field_notes": None,
     "event_remarks": None
 })
+
+# %%
+events.head()
 
 # %%
 events.to_csv(product["events_table"], index=False)
@@ -129,6 +132,9 @@ occurrence_evidence = pd.DataFrame({
 
 # %%
 occurrence_evidence.head()
+
+# %%
+occurrence_evidence["entity_id"].is_unique
 
 # %%
 occurrence_evidence.to_csv(product["occurrence_evidence"], index=False)

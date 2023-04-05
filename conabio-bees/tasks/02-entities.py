@@ -125,7 +125,7 @@ material_entity = pd.DataFrame({
 })
 
 # %%
-material_entity.head()
+material_entity = material_entity.astype({'catalog_number': 'Int64'})
 
 # %%
 material_entity = pd.concat([material_entity, ecoab_plantae["material_entity_id"].to_frame()])
@@ -143,15 +143,19 @@ interactions_data = pd.merge(interactions_data, ecoab_plantae[["material_entity_
 interactions_data.head(10)
 
 # %%
+interactions_data['entity_relationship_id'] = 'relationship:' + interactions_data.index.astype("str")
+interactions_data['entity_relationship_id'] = interactions_data.apply(lambda x: sha1(x['entity_relationship_id'].encode()).hexdigest(), axis=1)
+
+# %%
 entity_relationship = pd.DataFrame({
-    "entity_relationship_id": interactions_data["relationshipOfResourceID"],
+    "entity_relationship_id": interactions_data["entity_relationship_id"],
     "depends_on_entity_relationship_id": None,
     "subject_entity_id": interactions_data["subject_entity_id"],
     "entity_relationship_type": interactions_data["relationshipOfResource"],
     "object_entity_id": interactions_data["object_entity_id"],
     "object_entity_iri": None,
     "entity_relationship_date": None,
-    "entity_relationship_order": None
+    "entity_relationship_order": 0
 })
 
 # %%

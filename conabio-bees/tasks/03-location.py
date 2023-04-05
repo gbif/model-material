@@ -110,7 +110,7 @@ georeference = pd.DataFrame({
     "location_id": ecoab_occurrences["location_id"],
     "decimal_latitude": ecoab_occurrences["decimalLatitude"],
     "decimal_longitude": ecoab_occurrences["decimalLongitude"],
-    "geodetic_datum": None,
+    "geodetic_datum": "EPSG:4326",
     "coordinate_uncertainty_in_meters": None,
     "coordinate_precision": None,
     "point_radius_spatial_fit": None,
