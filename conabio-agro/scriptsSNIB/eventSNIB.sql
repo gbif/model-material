@@ -1,6 +1,7 @@
 SELECT o.occurrence_id as event_id,
 '' as parent_event_id,
-e.llaveproyecto as dataset_id,
+-- e.llaveproyecto as dataset_id,
+'conabio_agro' as dataset_id,
 lo.location_id  as location_id,
 '' as protocol_id,
 '' as event_type,

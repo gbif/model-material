@@ -41,6 +41,7 @@ import requests
 import hashlib
 from string import Template
 from pathlib import Path
+from hashlib import sha1
 
 # %%
 SIAGRO_URL_ENDPOINT = "https://maices-siagro.conabio.gob.mx/graphql/"
