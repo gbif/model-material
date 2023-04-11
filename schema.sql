@@ -504,7 +504,7 @@ CREATE TABLE reference (
   reference_id TEXT PRIMARY KEY,
   reference_type TEXT NOT NULL,
   bibliographic_citation TEXT,
-  reference_year SMALLINT CHECK (reference_year BETWEEN 1600 AND 2022),
+  reference_year SMALLINT CHECK (reference_year BETWEEN 1600 AND 2023),
   reference_iri TEXT,
   is_peer_reviewed BOOLEAN
 );
