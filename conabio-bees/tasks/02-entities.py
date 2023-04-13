@@ -107,7 +107,7 @@ ecoab_plantae.columns
 # %%
 material_entity = pd.DataFrame({
     "material_entity_id": ecoab_occurrences["material_entity_id"],
-    "material_entity_type": 'ORGANISM',   
+    "material_entity_type": None,
     "preparations": None,           
     "disposition": None,            
     "institution_code": ecoab_occurrences["institution_code"],       
@@ -129,6 +129,9 @@ material_entity = material_entity.astype({'catalog_number': 'Int64'})
 
 # %%
 material_entity = pd.concat([material_entity, ecoab_plantae["material_entity_id"].to_frame()])
+
+# %%
+material_entity["material_entity_type"] = "ORGANISM"
 
 # %%
 material_entity.to_csv(product["material_entity_table"], index=False)
