@@ -37,3 +37,20 @@ tasks:
       occurrence_table: "data-products/occurrence.csv"
       occurrence_evidence: "data-products/occurrence_evidence.csv"
 
+  - source: tasks/05-taxa.py
+    name: create-taxa
+    params: 
+      data_folder: "{{cwd}}/original-data"
+    product: 
+      nb: "tasks-nb/05-taxa.ipynb"
+      taxon_table: "data-products/taxon.csv"
+
+  - source: tasks/06-organism-identification.py
+    name: set-identification
+    params: 
+      data_folder: "{{cwd}}/original-data"
+    product: 
+      nb: "tasks-nb/06-organism-identification.ipynb"
+      organism_table: "data-products/organism.csv"
+      identification_table: "data-products/identification.csv"
+      taxon_identification_table: "data-products/taxon_identification.csv"
