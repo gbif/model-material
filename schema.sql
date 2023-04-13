@@ -346,7 +346,7 @@ CREATE TABLE material_group (
 CREATE TABLE identification (
   identification_id TEXT PRIMARY KEY,
   organism_id TEXT, -- foreign key declared after organism table
-  identification_type TEXT NOT NULL,
+  identification_type TEXT,
   taxon_formula TEXT NOT NULL,
   verbatim_identification TEXT,
   type_status TEXT,
