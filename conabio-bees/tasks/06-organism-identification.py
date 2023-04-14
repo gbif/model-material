@@ -86,8 +86,8 @@ ecoab_plantae.head()
 # %%
 identification = pd.DataFrame({
     "organism_id": flat_data["material_entity_id"], 
-    "identification_type": None, 
-    "taxon_formula": None, 
+    "identification_type": "features", 
+    "taxon_formula": "A", 
     "verbatim_identification": None, 
     "type_status": None, 
     "identified_by": flat_data["identifiedBy"], 
@@ -108,8 +108,8 @@ identification = pd.concat([
     identification, 
     pd.DataFrame({
         "organism_id": ecoab_plantae["material_entity_id"], 
-        "identification_type": None, 
-        "taxon_formula": None, 
+        "identification_type": "revised taxonomy", 
+        "taxon_formula": "A", 
         "verbatim_identification": None, 
         "type_status": None, 
         "identified_by": None, 
@@ -122,6 +122,9 @@ identification = pd.concat([
         "type_designated_by": None 
     })
 ])
+
+# %%
+identification.reset_index(inplace=True)
 
 # %%
 identification.insert(0, "identification_id", "identification:" + identification.index.astype("str"))
