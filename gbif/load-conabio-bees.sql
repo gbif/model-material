@@ -9,9 +9,12 @@ SET CONSTRAINTS ALL DEFERRED;
 \copy public.entity FROM '../conabio-bees/data-products/entity.csv' WITH DELIMITER ',' CSV HEADER;
 \copy public.event FROM '../conabio-bees/data-products/event.csv' WITH DELIMITER ',' CSV HEADER;
 \copy public.georeference FROM '../conabio-bees/data-products/georeference.csv' WITH DELIMITER ',' CSV HEADER;
+\copy public.identification FROM '../conabio-bees/data-products/identification.csv' WITH DELIMITER ',' CSV HEADER;
 \copy public.location FROM '../conabio-bees/data-products/location.csv' WITH DELIMITER ',' CSV HEADER;
 \copy public.material_entity FROM '../conabio-bees/data-products/material_entity.csv' WITH DELIMITER ',' CSV HEADER;
-\copy public.occurrence FROM '../conabio-bees/data-products/occurrence.csv' WITH DELIMITER ',' CSV HEADER;
 \copy public.occurrence_evidence FROM '../conabio-bees/data-products/occurrence_evidence.csv' WITH DELIMITER ',' CSV HEADER;
-
+\copy public.occurrence FROM '../conabio-bees/data-products/occurrence.csv' WITH DELIMITER ',' CSV HEADER;
+\copy public.organism FROM '../conabio-bees/data-products/organism.csv' WITH DELIMITER ',' CSV HEADER;
+\copy public.taxon_identification FROM '../conabio-bees/data-products/taxon_identification.csv' WITH DELIMITER ',' CSV HEADER;
+\copy public.taxon FROM '../conabio-bees/data-products/taxon.csv' WITH DELIMITER ',' CSV HEADER;
 COMMIT;
