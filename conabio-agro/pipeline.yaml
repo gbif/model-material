@@ -1,22 +1,22 @@
 executor: parallel
-clients:
-  SQLDump: snib_client.get_client
+# clients:
+#   SQLDump: snib_client.get_client
 tasks:
   - source: "{{siagro_folder}}/get_qualitative_measurements.py"
     name: get-siagro-qualitative
     product:
       nb: "{{here}}/get-siagro-qualitative.ipynb"
-      data: "{{data_folder}}/assertions_qualitative.csv"
+      data: "{{data_folder}}/assertions_qualitative.tsv"
   - source: "{{siagro_folder}}/get_quantitative_measurements.py"
     name: get-siagro-quantitative
     product:
       nb: "{{here}}/get-siagro-quantitative.ipynb"
-      data: "{{data_folder}}/assertions_quantitative.csv"
+      data: "{{data_folder}}/assertions_quantitative.tsv"
   - source: "{{siagro_folder}}/merge-assertions.py"
     name: merge-assertions
     product:
       nb: "{{here}}/merge-assertions.ipynb"
-      data: "{{data_folder}}/assertion.csv"
+      data: "{{data_folder}}/assertion.tsv"
   # - source: "{{snib_folder}}/entity.sql"
   #   name: create-entity
   #   class: SQLDump
