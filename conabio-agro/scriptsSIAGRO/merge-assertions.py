@@ -38,20 +38,29 @@ product = None
 import pandas as pd
 
 # %%
-qualitative_assertions = pd.read_csv(upstream["get-siagro-qualitative"]["data"])
-quantitative_assertions = pd.read_csv(upstream["get-siagro-quantitative"]["data"], low_memory=False)
+qualitative_assertions = pd.read_csv(upstream["get-siagro-qualitative"]["data"], sep='\t')
+quantitative_assertions = pd.read_csv(upstream["get-siagro-quantitative"]["data"], low_memory=False, sep='\t')
 
 # %%
 qualitative_assertions.head()
 
 # %%
+qualitative_assertions[pd.isna(qualitative_assertions["assertion_target_id"])].head()
+
+# %%
 quantitative_assertions.head()
+
+# %%
+quantitative_assertions[pd.isna(quantitative_assertions["assertion_target_id"])].head()
 
 # %%
 # pd.concat([qualitative_assertions, quantitative_assertions]).to_csv(product["data"], index=False)
 
 # %%
 siagro = pd.concat([qualitative_assertions, quantitative_assertions])
+
+# %%
+siagro[pd.isna(siagro["assertion_target_id"])].head()
 
 # %%
 data = pd.DataFrame({
@@ -76,6 +85,9 @@ data = pd.DataFrame({
 data.head()
 
 # %%
-data.to_csv(product["data"], index=False)
+data[pd.isna(data["assertion_target_id"])]
+
+# %%
+data.to_csv(product["data"], index=False, sep='\t')
 
 # %%

@@ -134,6 +134,9 @@ identification["identification_id"] = identification.apply(lambda x: sha1(x["ide
 identification.head()
 
 # %%
+identification.drop(columns=["index"], inplace=True)
+
+# %%
 identification.to_csv(product["identification_table"], index=False)
 
 # %%

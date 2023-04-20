@@ -64,6 +64,9 @@ assertions_record_page_query = Template("""
     pagination: {
       limit: $page_size
       offset: $offset
+    }
+    search: {
+        field:registro_id value:null operator:ne
     })
   {
     assertion_target_id: registro_id
@@ -102,6 +105,7 @@ for i in range(0, cnt_records, PAGE_SIZE):
     records_df.to_csv(
         output_data_path,
         mode='a',
+        sep='\t',
         header=not output_data_path.exists(),
         index=False
     )
