@@ -83,14 +83,8 @@ def gbif_references_for_methods(metodos):
     all_pairs = []
 
     for i, row in metodos.iterrows():
-    # clean two common errors in refs and links
-        #ref = row['referencias'][0].replace('; Proyecto Global de', '::Proyecto Global de')
-        #link = row['link_referencias'][0].replace(".pdf\r", '.pdf')
         ref = row['referencias']
         link = row['link_referencias']
-        # split
-        #ref = ref.split('::')
-        #link = link.split('::')
 
         # pair references and links as tuples in a new column
         # only proceed when number of references matches number of links
