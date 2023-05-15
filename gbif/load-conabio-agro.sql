@@ -5,9 +5,9 @@ SET CONSTRAINTS ALL DEFERRED;
 -- psql requires the following meta commands to be presented on a single line
 \copy public.assertion FROM '../conabio-agro/data/assertion.tsv' WITH DELIMITER E'\t' CSV HEADER;
 \copy public.entity FROM '../conabio-agro/data/entity.tsv' WITH DELIMITER E'\t' CSV HEADER;
---\copy public.event FROM '../conabio-agro/data/event.tsv' WITH DELIMITER E'\t' QUOTE '"' CSV HEADER;
---\copy public.georeference FROM '../conabio-agro/data/georreference.tsv' WITH DELIMITER E'\t' CSV HEADER;
---\copy public.identification FROM '../conabio-agro/data/identification.tsv' WITH DELIMITER E'\t' CSV HEADER;
+\copy public.event FROM '../conabio-agro/data/event.tsv' WITH DELIMITER E'\t' QUOTE '"' CSV HEADER;
+\copy public.georeference FROM '../conabio-agro/data/georreference.tsv' WITH DELIMITER E'\t' CSV HEADER;
+\copy public.identification FROM '../conabio-agro/data/identification.tsv' WITH DELIMITER E'\t' CSV HEADER;
 \copy public.location FROM '../conabio-agro/data/location.tsv' WITH DELIMITER E'\t' CSV HEADER;
 \copy public.material_entity FROM '../conabio-agro/data/material_entity.tsv' WITH DELIMITER ';' CSV HEADER;
 \copy public.occurrence_evidence FROM '../conabio-agro/data/occurrence_evidence.tsv' WITH DELIMITER E'\t' CSV HEADER;
