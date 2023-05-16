@@ -1,0 +1,12 @@
+gbif-model=# \copy protocol FROM './data/protocol.tsv' WITH (FORMAT csv, DELIMITER E'\t', HEADER true)
+COPY 300
+gbif-model=# \copy assertion FROM './data/assertion.tsv' WITH (FORMAT csv, DELIMITER E'\t', HEADER true)
+COPY 119686
+gbif-model=# \copy reference FROM './data/reference.tsv' WITH (FORMAT csv, DELIMITER E'\t', HEADER true)
+COPY 21
+gbif-model=# \copy citation FROM './data/citation.tsv' WITH (FORMAT csv, DELIMITER E'\t', HEADER true)
+COPY 514
+gbif-model=# \copy entity FROM './data/entity.tsv' WITH (FORMAT csv, DELIMITER E'\t', HEADER true)
+COPY 21146
+gbif-model=# \copy material_entity FROM './data/material_entity.tsv' WITH (FORMAT csv, DELIMITER E'\t', HEADER true)
+COPY 21146

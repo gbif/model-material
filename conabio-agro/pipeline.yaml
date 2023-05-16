@@ -1,6 +1,6 @@
 executor: parallel
-# clients:
-#   SQLDump: snib_client.get_client
+clients:
+  SQLDump: snib_client.get_client
 tasks:
   - source: "{{siagro_folder}}/get_qualitative_measurements.py"
     name: get-siagro-qualitative
@@ -24,14 +24,16 @@ tasks:
       protocol_data: "{{data_folder}}/protocol.tsv"
       references_data: "{{data_folder}}/reference.tsv"
       citations_data: "{{data_folder}}/citation.tsv"
-  # - source: "{{snib_folder}}/entity.sql"
-  #   name: create-entity
-  #   class: SQLDump
-  #   product: "{{data_folder}}/entity"
-  # - source: "{{snib_folder}}/material_entity.sql"
-  #   name: create-material-entity
-  #   class: SQLDump
-  #   product: "{{data_folder}}/material_entity"
+  - source: "{{snib_folder}}/entitySNIB.sql"
+    name: create-entity
+    class: SQLDump
+    chunksize: null
+    product: "{{data_folder}}/csv/entity.csv"
+  - source: "{{snib_folder}}/material_entitySNIB.sql"
+    name: create-material-entity
+    class: SQLDump
+    chunksize: null
+    product: "{{data_folder}}/csv/material_entity.csv"
   # - source: "{{snib_folder}}/localitySNIB.sql"
   #   name: create-locality
   #   class: SQLDump
@@ -52,3 +54,10 @@ tasks:
   #   name: create-event
   #   class: SQLDump
   #   product: "{{data_folder}}/event"
+  - source: "script/process_sql.py"
+    name: process-sql-outputs
+    params:
+      data_folder: "{{data_folder}}"
+    product:
+      nb: "{{here}}/process_sql.ipynb"
+      log: "processed_steps.txt"
