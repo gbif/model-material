@@ -17,6 +17,13 @@ tasks:
     product:
       nb: "{{here}}/merge-assertions.ipynb"
       data: "{{data_folder}}/assertion.tsv"
+  - source: "{{siagro_folder}}/create-protocols.py"
+    name: get-protocols 
+    product:
+      nb: "{{here}}/create-protocols.ipynb"
+      protocol_data: "{{data_folder}}/protocol.tsv"
+      references_data: "{{data_folder}}/reference.tsv"
+      citations_data: "{{data_folder}}/citation.tsv"
   # - source: "{{snib_folder}}/entity.sql"
   #   name: create-entity
   #   class: SQLDump
