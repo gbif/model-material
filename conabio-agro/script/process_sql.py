@@ -28,7 +28,7 @@
 # %% tags=["parameters"]
 # If this task has dependencies, list them them here
 # (e.g. upstream = ['some_task']), otherwise leave as None.
-upstream = ["create-entity", 'create-material-entity', 'create-location']
+upstream = ["create-entity", 'create-material-entity', 'create-location', 'create-georeference']
 
 # This is a placeholder, leave it as None
 product = None

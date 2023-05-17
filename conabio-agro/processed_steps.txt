@@ -1,3 +1,4 @@
 create-location
-create-entity
 create-material-entity
+create-georeference
+create-entity

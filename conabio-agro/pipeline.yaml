@@ -39,6 +39,11 @@ tasks:
     class: SQLDump
     chunksize: null
     product: "{{data_folder}}/csv/location.csv"
+  - source: "{{snib_folder}}/georeferenceSNIB.sql"
+    name: create-georeference
+    class: SQLDump
+    chunksize: null
+    product: "{{data_folder}}/csv/georeference.csv"
   # - source: "{{snib_folder}}/occurrenceSNIB.sql"
   #   name: create-occurrences
   #   class: SQLDump
