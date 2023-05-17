@@ -28,7 +28,7 @@
 # %% tags=["parameters"]
 # If this task has dependencies, list them them here
 # (e.g. upstream = ['some_task']), otherwise leave as None.
-upstream = ["create-entity", 'create-material-entity', 'create-location', 'create-georeference']
+upstream = ["create-entity", 'create-material-entity', 'create-location', 'create-georeference', 'create-event']
 
 # This is a placeholder, leave it as None
 product = None
@@ -45,12 +45,21 @@ def convert_csv_to_tsv(csv_file_path, output_path):
     fn = Path(csv_file_path).with_suffix('.tsv').name
     path = Path(output_path)
     df.to_csv(path / fn, sep='\t', index=False)
+    return path / fn
 
 
 # %%
 with open(product['log'], 'w') as f:
     for step, outfile in upstream.items():
-        convert_csv_to_tsv(outfile, data_folder)
+        outfile = convert_csv_to_tsv(outfile, data_folder)
+        if step == 'create-event':
+            data = pd.read_csv(outfile, sep='\t')
+            data = data.astype({
+                'year': 'Int64',
+                'month': 'Int64',
+                'day': 'Int64'
+            })
+            data.to_csv(outfile, sep='\t', index=False)
         f.write(f'{step}\n')
 
 # %%

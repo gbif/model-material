@@ -14,3 +14,5 @@ gbif-model=# \copy location FROM './data/location.tsv' WITH (FORMAT csv, DELIMIT
 COPY 7095
 gbif-model=# \copy georeference FROM './data/georeference.tsv' WITH (FORMAT csv, DELIMITER E'\t', HEADER true)
 COPY 8553
+gbif-model=# \copy event FROM './data/event.tsv' WITH (FORMAT csv, DELIMITER E'\t', HEADER true)
+COPY 21146
