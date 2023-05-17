@@ -10,3 +10,5 @@ gbif-model=# \copy entity FROM './data/entity.tsv' WITH (FORMAT csv, DELIMITER E
 COPY 21146
 gbif-model=# \copy material_entity FROM './data/material_entity.tsv' WITH (FORMAT csv, DELIMITER E'\t', HEADER true)
 COPY 21146
+gbif-model=# \copy location FROM './data/location.tsv' WITH (FORMAT csv, DELIMITER E'\t', HEADER true)
+COPY 21146
