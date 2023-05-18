@@ -1,33 +1,135 @@
-SELECT n.llavenombre  as taxon_id,
-cast(if(epitetoinfraespecifico2cat<>'',CONCAT(generocat," ",epitetoespecificocat," ",epitetoinfraespecificocat," ",epitetoinfraespecifico2cat), 
-    if(epitetoespecificocat<>'',CONCAT(generocat," ",epitetoespecificocat," ",epitetoinfraespecificocat),
-    if(epitetoespecificocat<>'',CONCAT(generocat," ",epitetoespecificocat),
-    if(generocat<>'',generocat,"")))) as char) as scientific_name, 
-cast(if(autoranioinfraespecie2cat<>'',autoranioinfraespecie2cat, 
-    if(autoranioinfraespeciecat<>'',autoranioinfraespeciecat, if(autoranioespeciecat<>'',autoranioespeciecat, 
-    if(autoraniogenerocat<>'',autoraniogenerocat,"")))) as char) as scientific_name_authorship, 
-cast(if(catdiccinfraespecie2cat<>'',catdiccinfraespecie2cat, if(catdiccinfraespeciecat<>'',catdiccinfraespeciecat, 
-    if(catdiccespeciecat<>'',catdiccespeciecat, if(sistemaclasificaciongenerocat<>'',sistemaclasificaciongenerocat, 
-    if(sistemaclasificacionfamiliacat<>'',sistemaclasificacionfamiliacat, if(sistemaclasificacionordencat<>'',sistemaclasificacionordencat, 
-    if(sistemaclasificacionclasecat<>'',sistemaclasificacionclasecat, 
-    if(sistemaclasificaciondivisionphylumcat<>'',sistemaclasificaciondivisionphylumcat,sistemaclasificacionreinocat)))))))) as char) as name_according_to, 
-cattaxcat as taxon_rank, '' as taxon_source,
-idnombrecat as scientific_name_id, anotaciontaxonoriginal as taxon_remarks,
-'' as parent_taxon_id, 
-cast(if(estatusinfraespecie2cat<>'',estatusinfraespecie2cat, if(estatusinfraespeciecat<>'',estatusinfraespeciecat, 
-    if(estatusespeciecat<>'',estatusespeciecat, if(estatusgenerocat<>'',estatusgenerocat,"")))) as char) as taxonomic_status,
-reinocat as kingdom,
-divisionphylumcat as phylum,
-clasecat as class,
-ordencat as _order,
-familiacat as family,
-subfamiliacat as subfamily, 
-generocat as genus, 
-subgenerocat as subgenus, 
-cast(if(epitetoinfraespecifico2catvalido<>'',CONCAT(generocatvalido," ",epitetoespecificocatvalido," ",epitetoinfraespecificocatvalido," ",epitetoinfraespecifico2catvalido), if(epitetoespecificocatvalido<>'',CONCAT(generocatvalido," ",epitetoespecificocatvalido," ",epitetoinfraespecificocatvalido), if(epitetoespecificocatvalido<>'',CONCAT(generocatvalido," ",epitetoespecificocatvalido), if(generocatvalido<>'',generocatvalido,"")))) as char) as accepted_scientific_name,
-categoriainfraespeciecat as taxon_rank_infraespecificEpithet,
-epitetoinfraespecificocat as infraespecificEpithet,
-categoriainfraespecie2cat as taxon_rank_sub_infraespecificEpithet,
-epitetoinfraespecifico2cat as subinfraespecificEpithet
-FROM snib.nombre n 
-where proyecto  in ('FY001','FZ016');
+SELECT
+n.llavenombre AS taxon_id,
+IF (
+    categoriainfraespecieoriginal <> '',
+    CASE categoriainfraespecieoriginal
+        WHEN 'subespecie' THEN CONCAT_WS(' ',generooriginal, epitetoespecificooriginal, 'ssp.', epitetoinfraespecificooriginal)
+        WHEN 'variedad' THEN CONCAT_WS(' ',generooriginal, epitetoespecificooriginal, 'var.', epitetoinfraespecificooriginal)
+        ELSE CONCAT_WS(' ',generooriginal, epitetoespecificooriginal, epitetoinfraespecificooriginal)
+    END,
+    IF (
+        epitetoespecificooriginal <> '',
+        CONCAT_WS(' ', generooriginal, epitetoespecificooriginal),
+        IF (
+            generooriginal <> '',
+            generooriginal,
+            NULL
+        )
+    )
+) AS scientificName,
+IF (
+    autoranioinfraespecie2cat <> '',
+    autoranioinfraespecie2cat,
+    IF (
+        autoranioinfraespeciecat <> '',
+        autoranioinfraespeciecat,
+        IF (
+            autoranioespeciecat <> '',
+            autoranioespeciecat,
+            IF (
+                autoraniogenerocat <> '',
+                autoraniogenerocat,
+                NULL
+            )
+        )
+    )
+) AS scientific_name_authorship,
+IF (
+    catdiccinfraespecie2cat <> '',
+    catdiccinfraespecie2cat,
+    IF (
+        catdiccinfraespeciecat <> '',
+        catdiccinfraespeciecat,
+        IF (
+            catdiccespeciecat <> '',
+            catdiccespeciecat,
+            IF (
+                sistemaclasificaciongenerocat <> '',
+                sistemaclasificaciongenerocat,
+                IF (
+                    sistemaclasificacionfamiliacat <> '',
+                    sistemaclasificacionfamiliacat,
+                    IF (
+                        sistemaclasificacionordencat <> '',
+                        sistemaclasificacionordencat,
+                        IF (
+                            sistemaclasificacionclasecat <> '',
+                            sistemaclasificacionclasecat,
+                            IF (
+                                sistemaclasificaciondivisionphylumcat <> '',
+                                sistemaclasificaciondivisionphylumcat,
+                                sistemaclasificacionreinocat
+                            )
+                        )
+                    )
+                )
+            )
+        )
+    )
+) AS name_according_to,
+NULL AS name_according_to_id,
+-- IF (
+--     categoriainfraespecieoriginal2 <> '',
+--     IF (
+--         categoriainfraespecieoriginal2 = 'raza',
+--         'race',
+--         categoriainfraespecieoriginal2
+--     ),
+IF (
+    categoriainfraespecieoriginal <> '',
+    CASE categoriainfraespecieoriginal
+        WHEN 'subespecie' THEN 'subspecies'
+        WHEN 'variedad' THEN 'variety'
+        ELSE categoriainfraespecieoriginal
+    END,
+    IF (
+        epitetoespecificooriginal <> '',
+        'species',
+        IF (
+            subgenerooriginal <> '',
+            'subgenus',
+            IF (
+                generooriginal <> '',
+                'genus',
+                NULL
+            )
+        )
+    )
+--     )
+) AS taxon_rank,
+NULL AS taxon_source,
+NULL AS scientific_name_id,
+IF(categoriainfraespecieoriginal2 <> '', CONCAT_WS(' ', IF(categoriainfraespecieoriginal2 = 'raza', 'race:', NULL), epitetoinfraespecificooriginal2) , NULL) AS taxon_remarks,
+NULL AS parent_taxon_id,
+IF (
+    estatusinfraespecie2cat <> '',
+    estatusinfraespecie2cat,
+    IF (
+        estatusinfraespeciecat <> '',
+        estatusinfraespeciecat,
+        IF (
+            estatusespeciecat <> '',
+            estatusespeciecat,
+            IF (
+                estatusgenerocat <> '',
+                estatusgenerocat,
+                NULL
+            )
+        )
+    )
+) AS taxonomic_status,
+    reinocat AS kingdom,
+    divisionphylumcat AS phylum,
+    clasecat AS class,
+    ordencat AS 'order',
+    familiacat AS family,
+    subfamiliacat AS subfamily,
+    generocat AS genus,
+    IF(subgenerocat='', NULL, subgenerocat) AS subgenus,
+    NULL AS accepted_scientific_name
+FROM
+    snib.nombre n
+WHERE
+    proyecto IN (
+        'FY001', 'FZ016'
+    );

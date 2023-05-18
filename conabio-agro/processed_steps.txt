@@ -1,5 +1,11 @@
-create-location
-create-georeference
-create-entity
 create-material-entity
+create-occurrence-evidence
+create-location
+create-identification
+create-georeference
+create-taxon-identification
+create-taxon
+create-entity
+create-organism
+create-occurrence
 create-event

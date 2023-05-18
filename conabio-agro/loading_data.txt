@@ -16,3 +16,21 @@ gbif-model=# \copy georeference FROM './data/georeference.tsv' WITH (FORMAT csv,
 COPY 8553
 gbif-model=# \copy event FROM './data/event.tsv' WITH (FORMAT csv, DELIMITER E'\t', HEADER true)
 COPY 21146
+gbif-model=# BEGIN;
+BEGIN
+gbif-model=*# SET CONSTRAINTS ALL DEFERRED;
+SET CONSTRAINTS
+gbif-model=*# \copy identification FROM './data/identification.tsv' WITH (FORMAT csv, DELIMITER E'\t', HEADER true)
+COPY 21146
+gbif-model=*# \copy organism FROM './data/organism.tsv' WITH (FORMAT csv, DELIMITER E'\t', HEADER true)
+COPY 21146
+gbif-model=*# COMMIT;
+COMMIT
+gbif-model=# \copy occurrence FROM './data/occurrence.tsv' WITH (FORMAT csv, DELIMITER E'\t', HEADER true)
+COPY 21146
+gbif-model=# \copy occurrence_evidence FROM './data/occurrence_evidence.tsv' WITH (FORMAT csv, DELIMITER E'\t', HEADER true)
+COPY 21146
+gbif-model=# \copy taxon FROM './data/taxon.tsv' WITH (FORMAT csv, DELIMITER E'\t', HEADER true)
+COPY 223
+gbif-model=# \copy taxon_identification FROM './data/taxon_identification.tsv' WITH (FORMAT csv, DELIMITER E'\t', HEADER true)
+COPY 21146

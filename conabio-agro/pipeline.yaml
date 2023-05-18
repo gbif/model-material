@@ -49,6 +49,36 @@ tasks:
     class: SQLDump
     chunksize: null
     product: "{{data_folder}}/csv/event.csv"
+  - source: "{{snib_folder}}/identificationSNIB.sql"
+    name: create-identification
+    class: SQLDump
+    chunksize: null
+    product: "{{data_folder}}/csv/identification.csv"
+  - source: "{{snib_folder}}/organismSNIB.sql"
+    name: create-organism
+    class: SQLDump
+    chunksize: null
+    product: "{{data_folder}}/csv/organism.csv"
+  - source: "{{snib_folder}}/occurrenceSNIB.sql"
+    name: create-occurrence
+    class: SQLDump
+    chunksize: null
+    product: "{{data_folder}}/csv/occurrence.csv"
+  - source: "{{snib_folder}}/occurrence_evidenceSNIB.sql"
+    name: create-occurrence-evidence
+    class: SQLDump
+    chunksize: null
+    product: "{{data_folder}}/csv/occurrence_evidence.csv"
+  - source: "{{snib_folder}}/taxonSNIB.sql"
+    name: create-taxon
+    class: SQLDump
+    chunksize: null
+    product: "{{data_folder}}/csv/taxon.csv"
+  - source: "{{snib_folder}}/taxon_identificationSNIB.sql"
+    name: create-taxon-identification
+    class: SQLDump
+    chunksize: null
+    product: "{{data_folder}}/csv/taxon_identification.csv"
   # - source: "{{snib_folder}}/occurrenceSNIB.sql"
   #   name: create-occurrences
   #   class: SQLDump
