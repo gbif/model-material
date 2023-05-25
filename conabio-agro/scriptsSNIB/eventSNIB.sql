@@ -1,78 +1,171 @@
-SELECT o.occurrence_id as event_id,
-'' as parent_event_id,
--- e.llaveproyecto as dataset_id,
-'conabio_agro' as dataset_id,
-lo.location_id  as location_id,
-'' as protocol_id,
-'' as event_type,
-'' as event_name,
-'' as field_number,
-concat(case when aniocolecta is not null then concat(aniocolecta,
-case when mescolecta not between 1 and 12 or mescolecta is null then '' else
-concat('-',case when mescolecta < 10 then concat('0',mescolecta) else mescolecta end,
-case when diacolecta not between 1 and 31 or diacolecta is null then '' else concat('-',
-case when diacolecta < 10 then concat('0',diacolecta) else diacolecta end) end) end) else '' end,
-case when aniofinalcolecta is not null then
-concat('/',aniofinalcolecta,
-case when mesfinalcolecta not between 1 and 12 or mesfinalcolecta is null then '' else
-concat('-',case when mesfinalcolecta < 10 then concat('0',mesfinalcolecta) else mesfinalcolecta end,
-case when diafinalcolecta not between 1 and 31 or diafinalcolecta is null then '' else concat('-',
-case when diafinalcolecta < 10 then concat('0',diafinalcolecta) else diafinalcolecta end) end) end)else '' end) as event_date,
-ifnull(e.aniocolecta,'')  as `year`,
-ifnull(e.mescolecta,'')  as `month`, 
-ifnull(e.diacolecta,'')  as `day`,
-'' as verbatim_event_date,
-l.localidad as verbatim_locality,
-if(if(g.altitudinicialdelsitio>0,cast(g.altitudinicialdelsitio as char),'')='9999','',if(g.altitudinicialdelsitio>0,cast(g.altitudinicialdelsitio as char),'')) as verbatim_elevation,
-if(if(g.altitudinicialdelsitio<0,cast(g.altitudinicialdelsitio as char),'')='9999','',if(g.altitudinicialdelsitio<0,cast(g.altitudinicialdelsitio as char),'')) as verbatim_depth,
-concat(if(latitudgrados is null or latitudgrados=999,'',concat(if(latitudgrados<0,latitudgrados*-1,latitudgrados),'° ',if(latitudminutos is null or latitudminutos=99,'',concat(latitudminutos,"' ")),
-if(latitudsegundos is null or latitudsegundos=99,'',concat(latitudsegundos,"'' ")),if(nortesur<>'',if(nortesur='Norte','N','S'),if(latitudgrados>0,'N ',if(latitudgrados<0,'S ',''))),
-if(latitudgradosfinal is null or latitudgradosfinal=999,'',
-concat('| ',if(latitudgradosfinal<0,latitudgradosfinal*-1,latitudgradosfinal),'° ',if(latitudminutosfinal is null or latitudminutosfinal=99,'',concat(latitudminutosfinal,"' ")),
-if(latitudsegundosfinal is null or latitudsegundosfinal=99,'',concat(latitudsegundosfinal,"'' ")),if(latitudgradosfinal>0,'N ',if(latitudgradosfinal<0,'S ',''))))
-)),' ,',if(longitudgrados is null or longitudgrados=999,'',concat(if(longitudgrados<0,longitudgrados*-1,longitudgrados),'° ',if(longitudminutos is null or longitudminutos=99,'',concat(longitudminutos,"' ")),
-if(longitudsegundos is null or longitudsegundos=99,'',concat(longitudsegundos,"'' ")),if(esteoeste<>'',if(esteoeste='Oeste','W','E'),if(longitudgrados>0,'E ',if(longitudgrados<0,'W ',''))),
-if(longitudgradosfinal is null or longitudgradosfinal=999,'',
-concat('| ',if(longitudgradosfinal<0,longitudgradosfinal*-1,longitudgradosfinal),'° ',if(longitudminutosfinal is null or longitudminutosfinal=99,'',concat(longitudminutosfinal,"' ")),
-if(longitudsegundosfinal is null or longitudsegundosfinal=99,'',concat(longitudsegundosfinal,"'' ")),if(longitudgradosfinal>0,'E ',if(longitudgradosfinal<0,'W ',''))))
-)) )  as verbatim_coordinates,
-if(latitudgrados is null or latitudgrados=999,'',concat(if(latitudgrados<0,latitudgrados*-1,latitudgrados),'° ',if(latitudminutos is null or latitudminutos=99,'',concat(latitudminutos,"' ")),
-if(latitudsegundos is null or latitudsegundos=99,'',concat(latitudsegundos,"'' ")),if(nortesur<>'',if(nortesur='Norte','N','S'),if(latitudgrados>0,'N ',if(latitudgrados<0,'S ',''))),
-if(latitudgradosfinal is null or latitudgradosfinal=999,'',
-concat('| ',if(latitudgradosfinal<0,latitudgradosfinal*-1,latitudgradosfinal),'° ',if(latitudminutosfinal is null or latitudminutosfinal=99,'',concat(latitudminutosfinal,"' ")),
-if(latitudsegundosfinal is null or latitudsegundosfinal=99,'',concat(latitudsegundosfinal,"'' ")),if(latitudgradosfinal>0,'N ',if(latitudgradosfinal<0,'S ',''))))
-)) as verbatim_latitude,
-if(longitudgrados is null or longitudgrados=999,'',concat(if(longitudgrados<0,longitudgrados*-1,longitudgrados),'° ',if(longitudminutos is null or longitudminutos=99,'',concat(longitudminutos,"' ")),
-if(longitudsegundos is null or longitudsegundos=99,'',concat(longitudsegundos,"'' ")),if(esteoeste<>'',if(esteoeste='Oeste','W','E'),if(longitudgrados>0,'E ',if(longitudgrados<0,'W ',''))),
-if(longitudgradosfinal is null or longitudgradosfinal=999,'',
-concat('| ',if(longitudgradosfinal<0,longitudgradosfinal*-1,longitudgradosfinal),'° ',if(longitudminutosfinal is null or longitudminutosfinal=99,'',concat(longitudminutosfinal,"' ")),
-if(longitudsegundosfinal is null or longitudsegundosfinal=99,'',concat(longitudsegundosfinal,"'' ")),if(longitudgradosfinal>0,'E ',if(longitudgradosfinal<0,'W ',''))))
-)) as verbatim_longitude,
-if((longitudsegundos<>99 or latitudsegundos<>99) and (longitudgrados<>999 or latitudgrados<>99),'grados minutos segundos  o decimal de segundos',
-if((longitudminutos<>99 or latitudminutos<>99) and (longitudgrados<>999 or latitudgrados<>99),'grados minutos o decimal de minutos',
-if(longitudgrados<>999 or latitudgrados<>99,'grados',''))) as verbatim_coordinate_system,
-'' as verbatim_srs,
-if(h.habitat !='',concat(h.habitat,' | ',n.ambientenombre),n.ambientenombre ) as habitat,
-m.metododecolecta  as protocol_description,
-'' as sample_size_value,
-'' as sample_size_unit,
-'' as event_effort,
-'' as field_notes,
-'' as event_remarks
-FROM snib.ejemplar_curatorial e 
-INNER JOIN snib.proyecto p ON e.llaveproyecto = p.llaveproyecto 
-INNER JOIN snib.persona nc ON e.idnombrecolector  = nc.idpersona 
-INNER JOIN snib.persona ac ON e.idabreviadocolector  = ac.idpersona
-INNER JOIN snib.nombre_taxonomia n ON e.llavenombre = n.llavenombre 
-inner join snib.habitat h using(idhabitat)
-inner join snib.localidad l using(idlocalidad)
-inner join snib.tipo t using (idtipo)
-inner join snib.geografiaoriginal g using(llavesitio)
-inner join snib.regionoriginal ro using (idregionoriginal)
-inner join snib.conabiogeografia c using(llaveregionsitiosig)
-inner join snib.regionmapa rm using(idregionmapa)
-inner join snib.metododecolecta m using(idmetododecolecta)
-inner join GBIFModel2023.occurrence o on e.llaveejemplar =o.organism_id 
-inner join GBIFModel2023.location lo on o.occurrence_id =lo.event_id 
-WHERE p.proyecto in ('FY001','FZ016')
-and e.estadoregistro = "";
+SELECT
+    MD5(
+        CONCAT(e.idlocalidad , '-',
+concat(CASE WHEN aniocolecta IS NOT NULL THEN concat(aniocolecta,
+CASE WHEN mescolecta NOT BETWEEN 1 AND 12 OR mescolecta IS NULL THEN '' ELSE
+concat('-', CASE WHEN mescolecta < 10 THEN concat('0', mescolecta) ELSE mescolecta END,
+CASE WHEN diacolecta NOT BETWEEN 1 AND 31 OR diacolecta IS NULL THEN '' ELSE concat('-',
+CASE WHEN diacolecta < 10 THEN concat('0', diacolecta) ELSE diacolecta END) END) END) ELSE '' END,
+CASE WHEN aniofinalcolecta IS NOT NULL THEN
+concat('/', aniofinalcolecta,
+CASE WHEN mesfinalcolecta NOT BETWEEN 1 AND 12 OR mesfinalcolecta IS NULL THEN '' ELSE
+concat('-', CASE WHEN mesfinalcolecta < 10 THEN concat('0', mesfinalcolecta) ELSE mesfinalcolecta END,
+CASE WHEN diafinalcolecta NOT BETWEEN 1 AND 31 OR diafinalcolecta IS NULL THEN '' ELSE concat('-',
+CASE WHEN diafinalcolecta < 10 THEN concat('0', diafinalcolecta) ELSE diafinalcolecta END) END) END)ELSE '' END)
+, '-', e.llaveejemplar)
+    ) AS event_id,
+    NULL AS parent_event_id,
+    'conabio_agro' AS dataset_id,
+    MD5(
+        CONCAT(rm.llaveregionmapa , '-', l.idlocalidad)
+    ) AS location_id,
+    NULL AS protocol_id,
+    'OCCURRENCE' AS event_type,
+    NULL AS event_name,
+    NULL AS field_number,
+    concat(CASE WHEN aniocolecta IS NOT NULL THEN concat(aniocolecta,
+CASE WHEN mescolecta NOT BETWEEN 1 AND 12 OR mescolecta IS NULL THEN '' ELSE
+concat('-', CASE WHEN mescolecta < 10 THEN concat('0', mescolecta) ELSE mescolecta END,
+CASE WHEN diacolecta NOT BETWEEN 1 AND 31 OR diacolecta IS NULL THEN '' ELSE concat('-',
+CASE WHEN diacolecta < 10 THEN concat('0', diacolecta) ELSE diacolecta END) END) END) ELSE '' END,
+CASE WHEN aniofinalcolecta IS NOT NULL THEN
+concat('/', aniofinalcolecta,
+CASE WHEN mesfinalcolecta NOT BETWEEN 1 AND 12 OR mesfinalcolecta IS NULL THEN '' ELSE
+concat('-', CASE WHEN mesfinalcolecta < 10 THEN concat('0', mesfinalcolecta) ELSE mesfinalcolecta END,
+CASE WHEN diafinalcolecta NOT BETWEEN 1 AND 31 OR diafinalcolecta IS NULL THEN '' ELSE concat('-',
+CASE WHEN diafinalcolecta < 10 THEN concat('0', diafinalcolecta) ELSE diafinalcolecta END) END) END)ELSE '' END) AS event_date,
+    ifnull(e.aniocolecta, '') AS `year`,
+    ifnull(e.mescolecta, '') AS `month`,
+    ifnull(e.diacolecta, '') AS `day`,
+    '' AS verbatim_event_date,
+    l.localidad AS verbatim_locality,
+    IF(
+        IF(
+            g.altitudinicialdelsitio>0,
+            CAST(g.altitudinicialdelsitio AS char),
+            ''
+        )= '9999',
+        '',
+        IF(
+            g.altitudinicialdelsitio>0,
+            CAST(g.altitudinicialdelsitio AS char),
+            ''
+        )
+    ) AS verbatim_elevation,
+    IF(
+        IF(
+            g.altitudinicialdelsitio<0,
+            CAST(g.altitudinicialdelsitio AS char),
+            ''
+        )= '9999',
+        '',
+        IF(
+            g.altitudinicialdelsitio<0,
+            CAST(g.altitudinicialdelsitio AS char),
+            ''
+        )
+    ) AS verbatim_depth,
+    concat(IF(latitudgrados IS NULL OR latitudgrados = 999, '', concat(IF(latitudgrados<0, latitudgrados *-1, latitudgrados), '° ', IF(latitudminutos IS NULL OR latitudminutos = 99, '', concat(latitudminutos, "' ")),
+IF(latitudsegundos IS NULL OR latitudsegundos = 99, '', concat(latitudsegundos, "'' ")), IF(nortesur <> '', IF(nortesur = 'Norte', 'N', 'S'), IF(latitudgrados>0, 'N ', IF(latitudgrados<0, 'S ', ''))),
+IF(latitudgradosfinal IS NULL OR latitudgradosfinal = 999, '',
+concat('| ', IF(latitudgradosfinal<0, latitudgradosfinal *-1, latitudgradosfinal), '° ', IF(latitudminutosfinal IS NULL OR latitudminutosfinal = 99, '', concat(latitudminutosfinal, "' ")),
+IF(latitudsegundosfinal IS NULL OR latitudsegundosfinal = 99, '', concat(latitudsegundosfinal, "'' ")), IF(latitudgradosfinal>0, 'N ', IF(latitudgradosfinal<0, 'S ', ''))))
+)), ' ,', IF(longitudgrados IS NULL OR longitudgrados = 999, '', concat(IF(longitudgrados<0, longitudgrados *-1, longitudgrados), '° ', IF(longitudminutos IS NULL OR longitudminutos = 99, '', concat(longitudminutos, "' ")),
+IF(longitudsegundos IS NULL OR longitudsegundos = 99, '', concat(longitudsegundos, "'' ")), IF(esteoeste <> '', IF(esteoeste = 'Oeste', 'W', 'E'), IF(longitudgrados>0, 'E ', IF(longitudgrados<0, 'W ', ''))),
+IF(longitudgradosfinal IS NULL OR longitudgradosfinal = 999, '',
+concat('| ', IF(longitudgradosfinal<0, longitudgradosfinal *-1, longitudgradosfinal), '° ', IF(longitudminutosfinal IS NULL OR longitudminutosfinal = 99, '', concat(longitudminutosfinal, "' ")),
+IF(longitudsegundosfinal IS NULL OR longitudsegundosfinal = 99, '', concat(longitudsegundosfinal, "'' ")), IF(longitudgradosfinal>0, 'E ', IF(longitudgradosfinal<0, 'W ', ''))))
+)) ) AS verbatim_coordinates,
+    IF(
+        latitudgrados IS NULL
+        OR latitudgrados = 999,
+        '',
+        concat(IF(latitudgrados<0, latitudgrados *-1, latitudgrados), '° ', IF(latitudminutos IS NULL OR latitudminutos = 99, '', concat(latitudminutos, "' ")),
+IF(latitudsegundos IS NULL OR latitudsegundos = 99, '', concat(latitudsegundos, "'' ")), IF(nortesur <> '', IF(nortesur = 'Norte', 'N', 'S'), IF(latitudgrados>0, 'N ', IF(latitudgrados<0, 'S ', ''))),
+IF(latitudgradosfinal IS NULL OR latitudgradosfinal = 999, '',
+concat('| ', IF(latitudgradosfinal<0, latitudgradosfinal *-1, latitudgradosfinal), '° ', IF(latitudminutosfinal IS NULL OR latitudminutosfinal = 99, '', concat(latitudminutosfinal, "' ")),
+IF(latitudsegundosfinal IS NULL OR latitudsegundosfinal = 99, '', concat(latitudsegundosfinal, "'' ")), IF(latitudgradosfinal>0, 'N ', IF(latitudgradosfinal<0, 'S ', ''))))
+)
+    ) AS verbatim_latitude,
+    IF(
+        longitudgrados IS NULL
+        OR longitudgrados = 999,
+        '',
+        concat(IF(longitudgrados<0, longitudgrados *-1, longitudgrados), '° ', IF(longitudminutos IS NULL OR longitudminutos = 99, '', concat(longitudminutos, "' ")),
+IF(longitudsegundos IS NULL OR longitudsegundos = 99, '', concat(longitudsegundos, "'' ")), IF(esteoeste <> '', IF(esteoeste = 'Oeste', 'W', 'E'), IF(longitudgrados>0, 'E ', IF(longitudgrados<0, 'W ', ''))),
+IF(longitudgradosfinal IS NULL OR longitudgradosfinal = 999, '',
+concat('| ', IF(longitudgradosfinal<0, longitudgradosfinal *-1, longitudgradosfinal), '° ', IF(longitudminutosfinal IS NULL OR longitudminutosfinal = 99, '', concat(longitudminutosfinal, "' ")),
+IF(longitudsegundosfinal IS NULL OR longitudsegundosfinal = 99, '', concat(longitudsegundosfinal, "'' ")), IF(longitudgradosfinal>0, 'E ', IF(longitudgradosfinal<0, 'W ', ''))))
+)
+    ) AS verbatim_longitude,
+    IF(
+        (
+            longitudsegundos <> 99
+            OR latitudsegundos <> 99
+        )
+        AND (
+            longitudgrados <> 999
+            OR latitudgrados <> 99
+        ),
+        'grados minutos segundos  o decimal de segundos',
+        IF(
+            (
+                longitudminutos <> 99
+                OR latitudminutos <> 99
+            )
+            AND (
+                longitudgrados <> 999
+                OR latitudgrados <> 99
+            ),
+            'grados minutos o decimal de minutos',
+            IF(
+                longitudgrados <> 999
+                OR latitudgrados <> 99,
+                'grados',
+                ''
+            )
+        )
+    ) AS verbatim_coordinate_system,
+    '' AS verbatim_srs,
+    IF(
+        h.habitat != '',
+        concat(h.habitat, ' | ', n.ambientenombre),
+        n.ambientenombre
+    ) AS habitat,
+    m.metododecolecta AS protocol_description,
+    NULL AS sample_size_value,
+    NULL AS sample_size_unit,
+    NULL AS event_effort,
+    NULL AS field_notes,
+    NULL AS event_remarks
+FROM
+    snib.ejemplar_curatorial e
+INNER JOIN snib.proyecto p ON
+    e.llaveproyecto = p.llaveproyecto
+INNER JOIN snib.persona nc ON
+    e.idnombrecolector = nc.idpersona
+INNER JOIN snib.persona ac ON
+    e.idabreviadocolector = ac.idpersona
+INNER JOIN snib.nombre_taxonomia n ON
+    e.llavenombre = n.llavenombre
+INNER JOIN snib.habitat h
+        USING(idhabitat)
+INNER JOIN snib.localidad l
+        USING(idlocalidad)
+INNER JOIN snib.tipo t
+        USING (idtipo)
+INNER JOIN snib.geografiaoriginal g
+        USING(llavesitio)
+INNER JOIN snib.regionoriginal ro
+        USING (idregionoriginal)
+INNER JOIN snib.conabiogeografia c
+        USING(llaveregionsitiosig)
+INNER JOIN snib.regionmapa rm
+        USING(idregionmapa)
+INNER JOIN snib.metododecolecta m
+        USING(idmetododecolecta)
+WHERE
+    p.proyecto IN (
+        'FY001', 'FZ016'
+    )
+    AND e.estadoregistro = "";

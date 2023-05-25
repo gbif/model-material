@@ -77,7 +77,7 @@ data = pd.DataFrame({
     "assertion_by_agent_name": None,                                                                                                                                                                                        
     "assertion_by_agent_id": None,                                                                                                                                                                                          
     "assertion_protocol": None,                                                                                                                                                                                             
-    "assertion_protocol_id": None,                                                                                                                                                                                          
+    "assertion_protocol_id": siagro['protocol_id'],                                                                                                                                                                                          
     "assertion_remarks": None
 })
 

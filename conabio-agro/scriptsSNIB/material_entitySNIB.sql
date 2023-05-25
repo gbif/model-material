@@ -1,26 +1,42 @@
-select ec.llaveejemplar AS material_entity_id,
-procedenciadatos as material_entity_type,
-t.tipopreparacion as preparations,
-'' as dispositions,
-ci.siglasinstitucion as institution_code,
-'' as institution_id,
-cc.siglascoleccion  as collection_code,
-'' as collection_id,
-'' as owner_institution_code,
-ec.numerocatalogo as catalog_number,
-if (ec.numerocolecta='NO DISPONIBLE','',ec.numerocolecta) as record_number,
-IF(if(p.persona='',p2.persona,p.persona) IN ('NO DISPONIBLE','NO APLICA'),'',if(p.persona='',p2.persona,p.persona)) as recorder_by,
-'' as recorder_by_id,
-'' as associated_references,
-'' as associated_secuences,
-'' as other_catalog_numbers,
-ec.llaveejemplar as organism_id
-from snib.ejemplar_curatorial ec
-inner join snib.tipopreparacion t using(idtipopreparacion)
-inner join snib.catcoleccion cc using(idcoleccioncat)
-inner join snib.catinstitucion ci using(idinstitucioncat)
-inner join snib.persona p on ec.idnombrecolector=p.idpersona
-inner join snib.persona p2 on ec.idabreviadocolector=p2.idpersona
-inner join snib.proyecto pr using(llaveproyecto)
-where proyecto in ('FY001','FZ016')
-and estadoregistro='';
+SELECT
+	ec.llaveejemplar AS material_entity_id,
+	-- procedenciadatos AS material_entity_type,
+	'ORGANISM' AS material_entity_type,
+	t.tipopreparacion AS preparations,
+	NULL AS dispositions,
+	ci.siglasinstitucion AS institution_code,
+	NULL AS institution_id,
+	cc.siglascoleccion AS collection_code,
+	NULL AS collection_id,
+	NULL  AS owner_institution_code,
+	ec.numerocatalogo AS catalog_number,
+	IF (ec.numerocolecta = 'NO DISPONIBLE',
+		NULL,
+		ec.numerocolecta) AS record_number,
+	IF (
+		IF (p.persona = '',
+			p2.persona,
+			p.persona) IN ('NO DISPONIBLE', 'NO APLICA'), 
+		NULL, IF(p.persona = '', p2.persona, p.persona)
+	) AS recorder_by,
+	NULL AS recorder_by_id,
+	NULL AS associated_references,
+	NULL AS associated_secuences,
+	NULL AS other_catalog_numbers
+FROM
+	snib.ejemplar_curatorial ec
+INNER JOIN snib.tipopreparacion t
+		USING(idtipopreparacion)
+INNER JOIN snib.catcoleccion cc
+		USING(idcoleccioncat)
+INNER JOIN snib.catinstitucion ci
+		USING(idinstitucioncat)
+INNER JOIN snib.persona p ON
+	ec.idnombrecolector = p.idpersona
+INNER JOIN snib.persona p2 ON
+	ec.idabreviadocolector = p2.idpersona
+INNER JOIN snib.proyecto pr
+		USING(llaveproyecto)
+WHERE
+	proyecto IN ('FY001', 'FZ016')
+	AND estadoregistro = '';

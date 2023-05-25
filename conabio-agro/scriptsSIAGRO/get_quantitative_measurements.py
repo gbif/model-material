@@ -43,6 +43,10 @@ from string import Template
 from pathlib import Path
 
 # %%
+import urllib3
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+
+# %%
 SIAGRO_URL_ENDPOINT = "https://maices-siagro.conabio.gob.mx/graphql/"
 PAGE_SIZE = 5000
 
@@ -75,6 +79,7 @@ assertions_record_page_query = Template("""
     assertion_value_numeric: valor
     assertion_unit: unidad
     assertion_remarks: comentarios
+    metodo_id
   }
 }
 """)
@@ -85,6 +90,9 @@ r = requests.post(SIAGRO_URL_ENDPOINT, json={"query": total_records_query}, veri
 # %%
 cnt_records = r.json()["data"]["countCaracteristica_cuantitativas"]
 print(f"There are {cnt_records} records")
+
+# %%
+record_pages = []
 
 # %%
 for i in range(0, cnt_records, PAGE_SIZE):
@@ -101,13 +109,36 @@ for i in range(0, cnt_records, PAGE_SIZE):
                                .str
                                .encode('utf-8')
                                .apply(lambda x: hashlib.sha1(x).hexdigest()))
-    records_df = records_df.drop(columns=["id"])
-    records_df.to_csv(
-        output_data_path,
-        mode='a',
-        sep='\t',
-        header=not output_data_path.exists(),
-        index=False
+    records_df.loc[pd.notna(records_df["metodo_id"]), "protocol_id"] = (
+        records_df.loc[pd.notna(records_df["metodo_id"]), "metodo_id"]
+        .str
+        .encode("utf-8")
+        .apply(lambda x: hashlib.sha1(x).hexdigest())
     )
+    try:
+        records_df[['id_x', 'proyecto']] = (records_df['metodo_id']
+                                            .str
+                                            .split('_', n=1, expand=True))
+    except ValueError:
+        print('Hubo un error en el split')
+        pass
+    record_pages.append(records_df)
+    # records_df = records_df.drop(columns=["id"])
+    # records_df.to_csv(
+    #     output_data_path,
+    #     mode='a',
+    #     sep='\t',
+    #     header=not output_data_path.exists(),
+    #     index=False
+    # )
+
+# %%
+records_df = pd.concat(record_pages, ignore_index=True)
+
+# %%
+records_selected = records_df.loc[(records_df['proyecto'] == 'FZ001') |  records_df['proyecto'].str.contains('FZ016'), ]
+
+# %%
+records_selected.to_csv(product['data'], index=False, sep='\t')
 
 # %%
