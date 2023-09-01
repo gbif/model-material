@@ -24,3 +24,5 @@ Model Questions resulting from mapping work:
 4. Not exactly sure where to map data about sample type? We keep a primary, secondary, tertiary hierarchical vocabulary along with a verbatim value for sample type.  We are not sure how to map that information.  Mapped it to material_entity_type. 
 
 5.  It wasn’t completely clear if occurrence table recorded_by field is equivalent to collector.  We have imbedded collector into that field but also included agent and agent_role records for Collector associated with event records. 
+
+6.  We have a field for archipelago in our db but that was missing in location table.  Where would you suggest that data go?
