@@ -1,0 +1,4 @@
+georeference_id,location_id,decimal_latitude,decimal_longitude,geodetic_datum,coordinate_uncertainty_in_meters,coordinate_precision,point_radius_spatial_fit,footprint_wkt,footprint_srs,footprint_spatial_fit,georeferenced_by,georeferenced_date,georeference_sources,georeference_protocl,,preferred_spatial_representation,,,,,,,,,
+georeference_id_CE12072473,USGSCENOLOC_19050,44.5,-124.1,WGS84,450,0.1,,,,,Curt Breckenridge,11 March 2020,GeoLocate,"Guide to Best Practices for Georeferencing. BioGeomancer Consortium, August 2006.",,,,,,,,,,,
+USNM-GeoRefID-CES10746121,location_id_CES10746121,12.08,-68.90,,,,,,,,,,Google Earth,,,,,,,,,,,,
+USNM-GeoRefID-CES11700700,location_id_CES11700700,12.08,-68.90,,,,,,,,,,,,,,,,,,,,,,
