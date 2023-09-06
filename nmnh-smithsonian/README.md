@@ -1,9 +1,16 @@
-Our data set includes the following:
+# National Museum of Natural History, Smithsonian Institution, Washington DC USA
+
+## Contributors
+   - Holly Little, Informatics Specialist, Paleobiology Department, https://orcid.org/0000-0001-7909-4166
+   - Beth Gamble, Senior Systems Analyst, Informatics and Data Science Center - Digital Stewardship Team
+   - Ducky Nguyen, Data Analyst, Informatics and Data Science Center - Digital Stewardshipt Team
+  
+## Our data set includes the following:
    -	Paleobiology specimens (special thanks to Holly for her work as it helped us tremendously with other data)
    -	A single collecting event that resulted in specimens and genetic samples owned by different departments
    -	Locality records with historical data, multiple locations, qualifiers, etc.
 
-Model Questions resulting from mapping work: 
+## Model Questions resulting from mapping work: 
 
 1. In Taxon table why wouldn’t accepted_scientific_name be an accepted_taxon_id and have it link to a taxon record? 
 
