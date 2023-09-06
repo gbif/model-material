@@ -3,7 +3,7 @@
 ## Contributors
    - Holly Little, Informatics Specialist, Paleobiology Department, https://orcid.org/0000-0001-7909-4166
    - Beth Gamble, Senior Systems Analyst, Informatics and Data Science Center - Digital Stewardship Team
-   - Ducky Nguyen, Data Analyst, Informatics and Data Science Center - Digital Stewardshipt Team
+   - Ducky Nguyen, Data Analyst, Informatics and Data Science Center - Digital Stewardship Team
   
 ## Our data set includes the following:
    -	Paleobiology specimens (special thanks to Holly for her work as it helped us tremendously with other data)
