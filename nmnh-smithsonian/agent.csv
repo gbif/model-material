@@ -1,21 +1,28 @@
-agent_id,agent_type,preferred_agent_name,,,,,,,,,,,,,,,,,,,,,,,
-https://www.wikidata.org/wiki/Q84708760,PERSON,Ellen James Moore,,,,,,,,,,,,,,,,,,,,,,,
-https://orcid.org/0009-0003-2162-8964,PERSON,Curt Breckenridge,,,,,,,,,,,,,,,,,,,,,,,
-https://orcid.org/0000-0003-0581-2414,PERSON,Alex Cano,,,,,,,,,,,,,,,,,,,,,,,
-https://orcid.org/0000-0001-7909-4166,PERSON,Holly Little,,,,,,,,,,,,,,,,,,,,,,,
-parties_ID_10003511,PERSON,David Kohls,,,,,,,,,,,,,,,,,,,,,,,
-parties_ID_10155661,PERSON,Louis J. Pribyl,,,,,,,,,,,,,,,,,,,,,,,
-parties_ID_10122764,PERSON,Finnegan Marsh,,,,,,,,,,,,,,,,,,,,,,,
-parties_ID_10176854,PERSON,Andrej V. Gorochov,,,,,,,,,,,,,,,,,,,,,,,
-agent_id_Parties10135382,PERSON,"Baldwin, Carole, (NMNH), Smithsonian Institution - National Museum of Natural History (UNITED STATES)",,,,,,,,,,,,,,,,,,,,,,,
-agent_id_Parties10135381,PERSON,"Brandt, Bruce",,,,,,,,,,,,,,,,,,,,,,,
-agent_id_Parties5018487,PERSON,"Baldwin, Carole C.",,,,,,,,,,,,,,,,,,,,,,,
-agent_id_Parties10137391,PERSON,"Brandt, Bruce",,,,,,,,,,,,,,,,,,,,,,,
-agent_id_Parties10137388,PERSON,"Schrier, Adriaan",,,,,,,,,,,,,,,,,,,,,,,
-agent_id_Parties10005151,PERSON,"Schrier, Adriaan, Curacao Public Aquarium N.V. (NETHERLANDS ANTILLES)",,,,,,,,,,,,,,,,,,,,,,,
-agent_id_Parties9107838,PERSON,"Wagner, W.",,,,,,,,,,,,,,,,,,,,,,,
-agent_id_Parties2024070,PERSON,"Gallatly, G.",,,,,,,,,,,,,,,,,,,,,,,
-agent_id_Parties2026154,PERSON,"Imshaug, H. A.",,,,,,,,,,,,,,,,,,,,,,,
-agent_id_Parties7000084,PERSON,"Mearns, E. A.",,,,,,,,,,,,,,,,,,,,,,,
-agent_id_Parties7000377,PERSON,"Holzner, F. X.",,,,,,,,,,,,,,,,,,,,,,,
-agent_id_Parties4000004,ORGANIZATION,Collector Unknown,,,,,,,,,,,,,,,,,,,,,,,
+agent_id,agent_type,preferred_agent_name
+https://www.wikidata.org/wiki/Q84708760,PERSON,Ellen James Moore
+https://orcid.org/0009-0003-2162-8964,PERSON,Curt Breckenridge
+https://orcid.org/0000-0003-0581-2414,PERSON,Alex Cano
+https://orcid.org/0000-0001-7909-4166,PERSON,Holly Little
+agent_ID_10003511,PERSON,David Kohls
+agent_ID_10155661,PERSON,Louis J. Pribyl
+agent_ID_10122764,PERSON,Finnegan Marsh
+agent_ID_10176854,PERSON,Andrej V. Gorochov
+agent_id_Parties10135382,PERSON,"Baldwin, Carole, (NMNH), Smithsonian Institution - National Museum of Natural History (UNITED STATES)"
+agent_id_Parties10135381,PERSON,"Brandt, Bruce"
+agent_id_Parties5018487,PERSON,"Baldwin, Carole C."
+agent_id_Parties10137391,PERSON,"Brandt, Bruce"
+agent_id_Parties10137388,PERSON,"Schrier, Adriaan"
+agent_id_Parties10005151,PERSON,"Schrier, Adriaan, Curacao Public Aquarium N.V. (NETHERLANDS ANTILLES)"
+agent_id_Parties9107838,PERSON,"Wagner, W."
+agent_id_Parties2024070,PERSON,"Gallatly, G."
+agent_id_Parties2026154,PERSON,"Imshaug, H. A."
+agent_id_Parties7000084,PERSON,"Mearns, E. A."
+agent_id_Parties7000377,PERSON,"Holzner, F. X."
+agent_id_Parties4000004,ORGANIZATION,Collector Unknown
+urn:uuid:ce595e88-ceba-42c0-a3ff-cd55b694fac,COLLECTION,Paleobiology (USNM)
+urn:uuid:09c9cf5f-f5d3-48cc-b5c8-cd9b9fbd631f,COLLECTION,"Vertebrate Zoology, Fishes (USNM)"
+urn:uuid:f14c21a9-8cbf-4c8b-817f-d19d427e2dd6,COLLECTION,Invertebrate Zoology (USNM)
+urn:uuid:18e3cd08-a962-4f0a-b72c-9a0b3600c5ad,COLLECTION,Entomology (USNM)
+urn:uuid:60e28f81-e634-4869-aa3e-732caed713c8,COLLECTION,Herbarium - Smithsonian Institution
+urn:uuid:59e56a59-8615-4e0c-841d-eb88f3876b22,COLLECTION,"Vertebrate Zoology, Mammals (USNM)"
+urn:uuid:73d83e23-1999-42cd-b38a-c06a7d32d893,COLLECTION,"Vertebrate Zoology, Birds (USNM)"

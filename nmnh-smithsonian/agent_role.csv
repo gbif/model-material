@@ -1,93 +1,93 @@
-agent_role_target_id,agent_role_target_type,agent_role_agent_id,agent_role_agent_name,agent_role_role,agent_role_began,agent_role_ended,agent_role_order,,,,,,,,,,,,,,,,,,
-USGSCENOLOC_19050_19540900,EVENT,https://www.wikidata.org/wiki/Q84708760,Ellen James Moore,Collector,,,1,,,,,,,,,,,,,,,,,,
-https://n2t.net/ark:/65665/34753f84c-cdd4-44a6-80b7-1b118133ac0c,MATERIAL_ENTITY,https://orcid.org/0000-0001-7909-4166,Holly Little,Cataloger,,,1,,,,,,,,,,,,,,,,,,
-https://n2t.net/ark:/65665/30e746282-73bd-4c66-ab75-c6ec5d922dfd,MATERIAL_ENTITY,https://orcid.org/0000-0001-7909-4166,Holly Little,Cataloger,,,1,,,,,,,,,,,,,,,,,,
-https://n2t.net/ark:/65665/341353620-708c-4987-aa2e-91696748b071,MATERIAL_ENTITY,https://orcid.org/0000-0001-7909-4166,Holly Little,Cataloger,,,,,,,,,,,,,,,,,,,,,
-https://n2t.net/ark:/65665/30c64d7c7-5d15-42d6-b911-9895addb1545,MATERIAL_ENTITY,https://orcid.org/0000-0001-7909-4166,Holly Little,Cataloger,,,,,,,,,,,,,,,,,,,,,
-https://n2t.net/ark:/65665/35a3f612b-e674-4824-ba65-288f6af81b58,MATERIAL_ENTITY,https://orcid.org/0000-0001-7909-4166,Holly Little,Cataloger,,,,,,,,,,,,,,,,,,,,,
-https://n2t.net/ark:/65665/3a57efeb6-442a-4f34-ade7-87ca844ccd0f,MATERIAL_ENTITY,https://orcid.org/0000-0001-7909-4166,Holly Little,Cataloger,,,,,,,,,,,,,,,,,,,,,
-https://n2t.net/ark:/65665/3e4d68a9c-55d2-4310-96ec-2a71e1336d8b,MATERIAL_ENTITY,https://orcid.org/0000-0001-7909-4166,Holly Little,Cataloger,,,,,,,,,,,,,,,,,,,,,
-https://n2t.net/ark:/65665/3e382442a-b4e5-4618-b7f6-7119fc146d81,MATERIAL_ENTITY,https://orcid.org/0000-0001-7909-4166,Holly Little,Cataloger,,,,,,,,,,,,,,,,,,,,,
-https://n2t.net/ark:/65665/3274798f1-d0f4-4c59-8d8e-0a14b06f8c93,MATERIAL_ENTITY,https://orcid.org/0000-0001-7909-4166,Holly Little,Cataloger,,,,,,,,,,,,,,,,,,,,,
-https://n2t.net/ark:/65665/319198e92-16a0-4ee0-b6aa-6fc39c0c2394,MATERIAL_ENTITY,https://orcid.org/0000-0001-7909-4166,Holly Little,Cataloger,,,,,,,,,,,,,,,,,,,,,
-https://n2t.net/ark:/65665/32e4b358e-91f9-4dec-9437-96a3c14da107,MATERIAL_ENTITY,https://orcid.org/0000-0001-7909-4166,Holly Little,Cataloger,,,,,,,,,,,,,,,,,,,,,
-https://n2t.net/ark:/65665/3713f444d-9e74-4706-b6c7-1b315538223c,MATERIAL_ENTITY,https://orcid.org/0000-0001-7909-4166,Holly Little,Cataloger,,,,,,,,,,,,,,,,,,,,,
-https://n2t.net/ark:/65665/3068a5c66-c823-479d-a29d-43ba6de4c30f,MATERIAL_ENTITY,https://orcid.org/0000-0001-7909-4166,Holly Little,Cataloger,,,,,,,,,,,,,,,,,,,,,
-https://n2t.net/ark:/65665/3c4dd14f8-0198-4db5-9c18-a37727b2d2ea,MATERIAL_ENTITY,https://orcid.org/0000-0001-7909-4166,Holly Little,Cataloger,,,,,,,,,,,,,,,,,,,,,
-https://n2t.net/ark:/65665/3ce0ad528-92fc-4b8d-a074-54edc2a50ef5,MATERIAL_ENTITY,https://orcid.org/0000-0001-7909-4166,Holly Little,Cataloger,,,,,,,,,,,,,,,,,,,,,
-https://n2t.net/ark:/65665/33746cd02-ee05-4dd8-913a-c81feb391b5b,MATERIAL_ENTITY,https://orcid.org/0000-0001-7909-4166,Holly Little,Cataloger,,,,,,,,,,,,,,,,,,,,,
-https://n2t.net/ark:/65665/3bdb5fff7-4901-40ca-8fcb-5e0a11423d36,MATERIAL_ENTITY,https://orcid.org/0000-0001-7909-4166,Holly Little,Cataloger,,,,,,,,,,,,,,,,,,,,,
-https://n2t.net/ark:/65665/399adfb6a-49d4-45e7-b56c-33fb3716c54a,MATERIAL_ENTITY,https://orcid.org/0000-0001-7909-4166,Holly Little,Cataloger,,,,,,,,,,,,,,,,,,,,,
-https://n2t.net/ark:/65665/375cdb939-fe15-42ef-8a88-3a18573757e7,MATERIAL_ENTITY,https://orcid.org/0000-0001-7909-4166,Holly Little,Cataloger,,,,,,,,,,,,,,,,,,,,,
-https://n2t.net/ark:/65665/3cc15dcd2-986d-4707-88b3-65f2507ef2bc,MATERIAL_ENTITY,https://orcid.org/0000-0001-7909-4166,Holly Little,Cataloger,,,,,,,,,,,,,,,,,,,,,
-https://n2t.net/ark:/65665/3d1f55a1e-b6b5-479d-b131-d2d8c494440a,MATERIAL_ENTITY,https://orcid.org/0000-0001-7909-4166,Holly Little,Cataloger,,,,,,,,,,,,,,,,,,,,,
-https://n2t.net/ark:/65665/3f5c9051b-7e17-47e4-8ae1-07f79317ee80,MATERIAL_ENTITY,https://orcid.org/0000-0001-7909-4166,Holly Little,Cataloger,,,,,,,,,,,,,,,,,,,,,
-https://n2t.net/ark:/65665/m35b4ac3b5-5c89-4f15-9ae3-a3c601320e6f,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,,,,,,,,,,,,,,,,,,,
-https://n2t.net/ark:/65665/m3c60ca1b2-7bdc-4813-b3e2-e7d8efe06672,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,,,,,,,,,,,,,,,,,,,
-https://n2t.net/ark:/65665/m3f12be550-8c5c-402e-a723-8210fcad9b1b,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,,,,,,,,,,,,,,,,,,,
-https://n2t.net/ark:/65665/m3d377d437-ad0e-46c1-987b-55678fe762d8,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,,,,,,,,,,,,,,,,,,,
-https://n2t.net/ark:/65665/m3e8e2bd1a-9e80-42dc-a07e-66ddf861b70d,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,,,,,,,,,,,,,,,,,,,
-https://n2t.net/ark:/65665/m35d5de452-eed5-43e4-a015-5e777d0d7108,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,,,,,,,,,,,,,,,,,,,
-https://n2t.net/ark:/65665/m34ea4ba19-6824-4713-8dd7-a519c15237e9,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,,,,,,,,,,,,,,,,,,,
-https://n2t.net/ark:/65665/m3ed6e1cb9-9138-4b14-85b3-d728bea41c4b,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,,,,,,,,,,,,,,,,,,,
-https://n2t.net/ark:/65665/m30f52e113-d941-437c-8ce5-fd915fda206b,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,,,,,,,,,,,,,,,,,,,
-https://n2t.net/ark:/65665/m38ac53157-cb22-496a-a627-5cc998e09ab9,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,,,,,,,,,,,,,,,,,,,
-https://n2t.net/ark:/65665/m37e49c49a-fd7b-429c-869d-a9acfb329d3f,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,,,,,,,,,,,,,,,,,,,
-https://n2t.net/ark:/65665/m312e6c554-6692-4977-9979-46e414de526a,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,,,,,,,,,,,,,,,,,,,
-https://n2t.net/ark:/65665/m389230955-76b1-4832-ada0-7a869a47533e,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,,,,,,,,,,,,,,,,,,,
-https://n2t.net/ark:/65665/m34e026d7a-a7b7-4256-87dd-6a1fa880fb37,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,,,,,,,,,,,,,,,,,,,
-https://n2t.net/ark:/65665/m3c8b052a6-7c17-447c-b550-31a7855235b1,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,,,,,,,,,,,,,,,,,,,
-https://n2t.net/ark:/65665/m32ff8146f-c75f-4e54-9fc6-6caca3f2272a,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,,,,,,,,,,,,,,,,,,,
-https://n2t.net/ark:/65665/m3751eb7f9-1cd9-4da4-aec9-b168fcd246ca,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,,,,,,,,,,,,,,,,,,,
-https://n2t.net/ark:/65665/m35cf34a97-5335-4ef2-bfce-56f0683476fb,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,,,,,,,,,,,,,,,,,,,
-https://n2t.net/ark:/65665/m3d39385dc-cc6d-4fd4-921b-3e75ee5a5993,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,,,,,,,,,,,,,,,,,,,
-https://n2t.net/ark:/65665/m3c94cf647-4a15-4c54-8696-58a31b74e87d,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,,,,,,,,,,,,,,,,,,,
-https://n2t.net/ark:/65665/m3e531827b-e596-4b16-917d-6ab91b70516b,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,,,,,,,,,,,,,,,,,,,
-https://n2t.net/ark:/65665/m39d34e702-c686-4734-b3fe-9636f8eb125e,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,,,,,,,,,,,,,,,,,,,
-https://n2t.net/ark:/65665/m35f4517e3-7dc7-4a7f-b2fa-79b28f627417,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,,,,,,,,,,,,,,,,,,,
-https://n2t.net/ark:/65665/m3c1ee9650-b31b-4277-8b49-0a1fd0ac213a,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,,,,,,,,,,,,,,,,,,,
-https://n2t.net/ark:/65665/m3a534ab84-a5f7-46d9-a3fa-635007d9712c,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,,,,,,,,,,,,,,,,,,,
-https://n2t.net/ark:/65665/m369904eef-8433-4d40-a9ae-effbf990680c,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,,,,,,,,,,,,,,,,,,,
-https://n2t.net/ark:/65665/m375c9acb3-00c1-4536-8efc-aaeb7c0aa62b,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,,,,,,,,,,,,,,,,,,,
-https://n2t.net/ark:/65665/m351d42e71-e7ce-4902-b75b-472076148865,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,,,,,,,,,,,,,,,,,,,
-https://n2t.net/ark:/65665/m3ece967c7-1400-4275-9d95-4c783ff010ea,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,,,,,,,,,,,,,,,,,,,
-https://n2t.net/ark:/65665/m30e54949d-9044-4e85-9d0f-bc1de87a56cd,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,,,,,,,,,,,,,,,,,,,
-https://n2t.net/ark:/65665/m3be21231a-7c4c-408e-93cb-5c261736fdf2,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,,,,,,,,,,,,,,,,,,,
-https://n2t.net/ark:/65665/m365cda4a0-53b9-48f4-a19b-ef16aa329604,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,,,,,,,,,,,,,,,,,,,
-https://n2t.net/ark:/65665/m3cba8ebd6-8566-46cb-81dc-ce8cc6d3333c,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,,,,,,,,,,,,,,,,,,,
-https://n2t.net/ark:/65665/m3f6ef0d21-1cb1-4147-a467-cbb4ad756479,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,,,,,,,,,,,,,,,,,,,
-https://n2t.net/ark:/65665/m3d71a7910-19b1-4190-9a7d-43f144c093b1,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,,,,,,,,,,,,,,,,,,,
-https://n2t.net/ark:/65665/m3e58e7e1b-1d74-4cdf-a5f7-d6e520ca2a49,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,,,,,,,,,,,,,,,,,,,
-https://n2t.net/ark:/65665/m3f5579e9c-25a7-4d89-b3ec-cc4152d056e9,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,,,,,,,,,,,,,,,,,,,
-https://n2t.net/ark:/65665/m3817a43f0-c14b-416f-979f-6785bc80abca,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,,,,,,,,,,,,,,,,,,,
-https://n2t.net/ark:/65665/m331ef51f5-c484-4584-b9a2-fe28a35c028b,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,,,,,,,,,,,,,,,,,,,
-https://n2t.net/ark:/65665/m37cd0baaf-880f-48cb-8cb9-f15da5c4335b,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,,,,,,,,,,,,,,,,,,,
-https://n2t.net/ark:/65665/m31206c5f4-19b1-4563-949a-6765e5332d8a,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,,,,,,,,,,,,,,,,,,,
-https://n2t.net/ark:/65665/m3b9e1b4db-1104-48f3-afa7-fcf573bdae95,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,,,,,,,,,,,,,,,,,,,
-https://n2t.net/ark:/65665/m31f4476ec-bf87-478f-9b35-b38ff3bfbfed,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,,,,,,,,,,,,,,,,,,,
-https://n2t.net/ark:/65665/m333fabbf7-35c1-40f2-a86c-116faa5d2d00,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,,,,,,,,,,,,,,,,,,,
-https://n2t.net/ark:/65665/m301acceba-562e-4ea4-8b93-c1ec8a4dea86,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,,,,,,,,,,,,,,,,,,,
-https://n2t.net/ark:/65665/m3eabff115-6b74-4e70-9b83-53f16a8626ab,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,,,,,,,,,,,,,,,,,,,
-https://n2t.net/ark:/65665/m36628417d-e5c6-4cfa-a8ba-7393283c2920,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,,,,,,,,,,,,,,,,,,,
-https://n2t.net/ark:/65665/m32400ee46-fb8b-4231-bba1-df497ffe7f12,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,,,,,,,,,,,,,,,,,,,
-https://n2t.net/ark:/65665/m307c80001-fc8a-40f7-9031-5f2e03cc6c54,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,,,,,,,,,,,,,,,,,,,
-https://n2t.net/ark:/65665/m33ce3845a-b192-42db-80ab-dfa8fb9cbd0f,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,,,,,,,,,,,,,,,,,,,
-https://n2t.net/ark:/65665/m3b9a9bc12-adac-48dc-916a-68eddcedb5c9,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,,,,,,,,,,,,,,,,,,,
-https://n2t.net/ark:/65665/m3ba01170a-db6b-4689-926d-e5a0bd8b92c9,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,,,,,,,,,,,,,,,,,,,
-https://n2t.net/ark:/65665/m3b7e1d98a-56c9-4f34-b405-2edc1dadf5ef,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,,,,,,,,,,,,,,,,,,,
-USNMLOC_41679_1999,EVENT,,David Kohls,Collector,,,,,,,,,,,,,,,,,,,,,
-USNMLOC_41679_1999,EVENT,,Louis J. Pribyl,Collector,,,,,,,,,,,,,,,,,,,,,
-https://n2t.net/ark:/65665/39f53b18e-9607-4c1d-919c-647e772a354f,MATERIAL_ENTITY,,Finnegan Marsh,Cataloger,,,,,,,,,,,,,,,,,,,,,
-https://n2t.net/ark:/65665/38f108bb6-3d98-4ab5-9e5f-df39f54bd5a6,MATERIAL_ENTITY,,Finnegan Marsh,Cataloger,,,,,,,,,,,,,,,,,,,,,
-USNM-EventID-CES11700700,EVENT,agent_id_Parties10135382,"Baldwin, Carole, (NMNH), Smithsonian Institution - National Museum of Natural History (UNITED STATES)",Collector,,,,,,,,,,,,,,,,,,,,,
-USNM-EventID-CES11700700,EVENT,agent_id_Parties10135381,"Brandt, Bruce",Collector,,,,,,,,,,,,,,,,,,,,,
-USNM-EventID-CES10746121,EVENT,agent_id_Parties5018487,"Baldwin, Carole C.",Collector,,,,,,,,,,,,,,,,,,,,,
-USNM-EventID-CES10746121,EVENT,agent_id_Parties10137391,"Brandt, Bruce",Collector,,,,,,,,,,,,,,,,,,,,,
-USNM-EventID-CES10746121,EVENT,agent_id_Parties10137388,"Schrier, Adriaan",Collector,,,,,,,,,,,,,,,,,,,,,
-USNM-EventID-CES11700700,EVENT,agent_id_Parties10005151,"Schrier, Adriaan, Curacao Public Aquarium N.V. (NETHERLANDS ANTILLES)",Collector,,,,,,,,,,,,,,,,,,,,,
-USNM-EventID-CES9131234,EVENT,agent_id_Parties9107838,"Wagner, W.",Primary Collector,,,,,,,,,,,,,,,,,,,,,
-USNM-EventID-CES10139823,EVENT,agent_id_Parties2024070,"Gallatly, G.",Primary Collector,,,,,,,,,,,,,,,,,,,,,
-USNM-EventID-CES2305452,EVENT,agent_id_Parties2026154,"Imshaug, H. A.",Primary Collector,,,,,,,,,,,,,,,,,,,,,
-USNM-EventID-CES7102315,EVENT,agent_id_Parties7000084,"Mearns, E. A.",Primary Collector,,,,,,,,,,,,,,,,,,,,,
-USNM-EventID-CES7102315,EVENT,agent_id_Parties7000377,"Holzner, F. X.",Collector,,,,,,,,,,,,,,,,,,,,,
-USNM-EventID-CES4818564,EVENT,agent_id_Parties4000004,Collector Unknown,Primary Collector,,,,,,,,,,,,,,,,,,,,,
+agent_role_target_id,agent_role_target_type,agent_role_agent_id,agent_role_agent_name,agent_role_role,agent_role_began,agent_role_ended,agent_role_order
+USGSCENOLOC_19050_19540900,EVENT,https://www.wikidata.org/wiki/Q84708760,Ellen James Moore,Collector,,,1
+https://n2t.net/ark:/65665/34753f84c-cdd4-44a6-80b7-1b118133ac0c,MATERIAL_ENTITY,https://orcid.org/0000-0001-7909-4166,Holly Little,Cataloger,,,1
+https://n2t.net/ark:/65665/30e746282-73bd-4c66-ab75-c6ec5d922dfd,MATERIAL_ENTITY,https://orcid.org/0000-0001-7909-4166,Holly Little,Cataloger,,,1
+https://n2t.net/ark:/65665/341353620-708c-4987-aa2e-91696748b071,MATERIAL_ENTITY,https://orcid.org/0000-0001-7909-4166,Holly Little,Cataloger,,,1
+https://n2t.net/ark:/65665/30c64d7c7-5d15-42d6-b911-9895addb1545,MATERIAL_ENTITY,https://orcid.org/0000-0001-7909-4166,Holly Little,Cataloger,,,1
+https://n2t.net/ark:/65665/35a3f612b-e674-4824-ba65-288f6af81b58,MATERIAL_ENTITY,https://orcid.org/0000-0001-7909-4166,Holly Little,Cataloger,,,1
+https://n2t.net/ark:/65665/3a57efeb6-442a-4f34-ade7-87ca844ccd0f,MATERIAL_ENTITY,https://orcid.org/0000-0001-7909-4166,Holly Little,Cataloger,,,1
+https://n2t.net/ark:/65665/3e4d68a9c-55d2-4310-96ec-2a71e1336d8b,MATERIAL_ENTITY,https://orcid.org/0000-0001-7909-4166,Holly Little,Cataloger,,,1
+https://n2t.net/ark:/65665/3e382442a-b4e5-4618-b7f6-7119fc146d81,MATERIAL_ENTITY,https://orcid.org/0000-0001-7909-4166,Holly Little,Cataloger,,,1
+https://n2t.net/ark:/65665/3274798f1-d0f4-4c59-8d8e-0a14b06f8c93,MATERIAL_ENTITY,https://orcid.org/0000-0001-7909-4166,Holly Little,Cataloger,,,1
+https://n2t.net/ark:/65665/319198e92-16a0-4ee0-b6aa-6fc39c0c2394,MATERIAL_ENTITY,https://orcid.org/0000-0001-7909-4166,Holly Little,Cataloger,,,1
+https://n2t.net/ark:/65665/32e4b358e-91f9-4dec-9437-96a3c14da107,MATERIAL_ENTITY,https://orcid.org/0000-0001-7909-4166,Holly Little,Cataloger,,,1
+https://n2t.net/ark:/65665/3713f444d-9e74-4706-b6c7-1b315538223c,MATERIAL_ENTITY,https://orcid.org/0000-0001-7909-4166,Holly Little,Cataloger,,,1
+https://n2t.net/ark:/65665/3068a5c66-c823-479d-a29d-43ba6de4c30f,MATERIAL_ENTITY,https://orcid.org/0000-0001-7909-4166,Holly Little,Cataloger,,,1
+https://n2t.net/ark:/65665/3c4dd14f8-0198-4db5-9c18-a37727b2d2ea,MATERIAL_ENTITY,https://orcid.org/0000-0001-7909-4166,Holly Little,Cataloger,,,1
+https://n2t.net/ark:/65665/3ce0ad528-92fc-4b8d-a074-54edc2a50ef5,MATERIAL_ENTITY,https://orcid.org/0000-0001-7909-4166,Holly Little,Cataloger,,,1
+https://n2t.net/ark:/65665/33746cd02-ee05-4dd8-913a-c81feb391b5b,MATERIAL_ENTITY,https://orcid.org/0000-0001-7909-4166,Holly Little,Cataloger,,,1
+https://n2t.net/ark:/65665/3bdb5fff7-4901-40ca-8fcb-5e0a11423d36,MATERIAL_ENTITY,https://orcid.org/0000-0001-7909-4166,Holly Little,Cataloger,,,1
+https://n2t.net/ark:/65665/399adfb6a-49d4-45e7-b56c-33fb3716c54a,MATERIAL_ENTITY,https://orcid.org/0000-0001-7909-4166,Holly Little,Cataloger,,,1
+https://n2t.net/ark:/65665/375cdb939-fe15-42ef-8a88-3a18573757e7,MATERIAL_ENTITY,https://orcid.org/0000-0001-7909-4166,Holly Little,Cataloger,,,1
+https://n2t.net/ark:/65665/3cc15dcd2-986d-4707-88b3-65f2507ef2bc,MATERIAL_ENTITY,https://orcid.org/0000-0001-7909-4166,Holly Little,Cataloger,,,1
+https://n2t.net/ark:/65665/3d1f55a1e-b6b5-479d-b131-d2d8c494440a,MATERIAL_ENTITY,https://orcid.org/0000-0001-7909-4166,Holly Little,Cataloger,,,1
+https://n2t.net/ark:/65665/3f5c9051b-7e17-47e4-8ae1-07f79317ee80,MATERIAL_ENTITY,https://orcid.org/0000-0001-7909-4166,Holly Little,Cataloger,,,1
+https://n2t.net/ark:/65665/m35b4ac3b5-5c89-4f15-9ae3-a3c601320e6f,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,1
+https://n2t.net/ark:/65665/m3c60ca1b2-7bdc-4813-b3e2-e7d8efe06672,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,1
+https://n2t.net/ark:/65665/m3f12be550-8c5c-402e-a723-8210fcad9b1b,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,1
+https://n2t.net/ark:/65665/m3d377d437-ad0e-46c1-987b-55678fe762d8,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,1
+https://n2t.net/ark:/65665/m3e8e2bd1a-9e80-42dc-a07e-66ddf861b70d,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,1
+https://n2t.net/ark:/65665/m35d5de452-eed5-43e4-a015-5e777d0d7108,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,1
+https://n2t.net/ark:/65665/m34ea4ba19-6824-4713-8dd7-a519c15237e9,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,1
+https://n2t.net/ark:/65665/m3ed6e1cb9-9138-4b14-85b3-d728bea41c4b,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,1
+https://n2t.net/ark:/65665/m30f52e113-d941-437c-8ce5-fd915fda206b,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,1
+https://n2t.net/ark:/65665/m38ac53157-cb22-496a-a627-5cc998e09ab9,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,1
+https://n2t.net/ark:/65665/m37e49c49a-fd7b-429c-869d-a9acfb329d3f,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,1
+https://n2t.net/ark:/65665/m312e6c554-6692-4977-9979-46e414de526a,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,1
+https://n2t.net/ark:/65665/m389230955-76b1-4832-ada0-7a869a47533e,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,1
+https://n2t.net/ark:/65665/m34e026d7a-a7b7-4256-87dd-6a1fa880fb37,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,1
+https://n2t.net/ark:/65665/m3c8b052a6-7c17-447c-b550-31a7855235b1,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,1
+https://n2t.net/ark:/65665/m32ff8146f-c75f-4e54-9fc6-6caca3f2272a,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,1
+https://n2t.net/ark:/65665/m3751eb7f9-1cd9-4da4-aec9-b168fcd246ca,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,1
+https://n2t.net/ark:/65665/m35cf34a97-5335-4ef2-bfce-56f0683476fb,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,1
+https://n2t.net/ark:/65665/m3d39385dc-cc6d-4fd4-921b-3e75ee5a5993,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,1
+https://n2t.net/ark:/65665/m3c94cf647-4a15-4c54-8696-58a31b74e87d,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,1
+https://n2t.net/ark:/65665/m3e531827b-e596-4b16-917d-6ab91b70516b,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,1
+https://n2t.net/ark:/65665/m39d34e702-c686-4734-b3fe-9636f8eb125e,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,1
+https://n2t.net/ark:/65665/m35f4517e3-7dc7-4a7f-b2fa-79b28f627417,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,1
+https://n2t.net/ark:/65665/m3c1ee9650-b31b-4277-8b49-0a1fd0ac213a,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,1
+https://n2t.net/ark:/65665/m3a534ab84-a5f7-46d9-a3fa-635007d9712c,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,1
+https://n2t.net/ark:/65665/m369904eef-8433-4d40-a9ae-effbf990680c,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,1
+https://n2t.net/ark:/65665/m375c9acb3-00c1-4536-8efc-aaeb7c0aa62b,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,1
+https://n2t.net/ark:/65665/m351d42e71-e7ce-4902-b75b-472076148865,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,1
+https://n2t.net/ark:/65665/m3ece967c7-1400-4275-9d95-4c783ff010ea,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,1
+https://n2t.net/ark:/65665/m30e54949d-9044-4e85-9d0f-bc1de87a56cd,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,1
+https://n2t.net/ark:/65665/m3be21231a-7c4c-408e-93cb-5c261736fdf2,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,1
+https://n2t.net/ark:/65665/m365cda4a0-53b9-48f4-a19b-ef16aa329604,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,1
+https://n2t.net/ark:/65665/m3cba8ebd6-8566-46cb-81dc-ce8cc6d3333c,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,1
+https://n2t.net/ark:/65665/m3f6ef0d21-1cb1-4147-a467-cbb4ad756479,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,1
+https://n2t.net/ark:/65665/m3d71a7910-19b1-4190-9a7d-43f144c093b1,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,1
+https://n2t.net/ark:/65665/m3e58e7e1b-1d74-4cdf-a5f7-d6e520ca2a49,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,1
+https://n2t.net/ark:/65665/m3f5579e9c-25a7-4d89-b3ec-cc4152d056e9,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,1
+https://n2t.net/ark:/65665/m3817a43f0-c14b-416f-979f-6785bc80abca,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,1
+https://n2t.net/ark:/65665/m331ef51f5-c484-4584-b9a2-fe28a35c028b,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,1
+https://n2t.net/ark:/65665/m37cd0baaf-880f-48cb-8cb9-f15da5c4335b,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,1
+https://n2t.net/ark:/65665/m31206c5f4-19b1-4563-949a-6765e5332d8a,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,1
+https://n2t.net/ark:/65665/m3b9e1b4db-1104-48f3-afa7-fcf573bdae95,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,1
+https://n2t.net/ark:/65665/m31f4476ec-bf87-478f-9b35-b38ff3bfbfed,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,1
+https://n2t.net/ark:/65665/m333fabbf7-35c1-40f2-a86c-116faa5d2d00,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,1
+https://n2t.net/ark:/65665/m301acceba-562e-4ea4-8b93-c1ec8a4dea86,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,1
+https://n2t.net/ark:/65665/m3eabff115-6b74-4e70-9b83-53f16a8626ab,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,1
+https://n2t.net/ark:/65665/m36628417d-e5c6-4cfa-a8ba-7393283c2920,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,1
+https://n2t.net/ark:/65665/m32400ee46-fb8b-4231-bba1-df497ffe7f12,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,1
+https://n2t.net/ark:/65665/m307c80001-fc8a-40f7-9031-5f2e03cc6c54,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,1
+https://n2t.net/ark:/65665/m33ce3845a-b192-42db-80ab-dfa8fb9cbd0f,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,1
+https://n2t.net/ark:/65665/m3b9a9bc12-adac-48dc-916a-68eddcedb5c9,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,1
+https://n2t.net/ark:/65665/m3ba01170a-db6b-4689-926d-e5a0bd8b92c9,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,1
+https://n2t.net/ark:/65665/m3b7e1d98a-56c9-4f34-b405-2edc1dadf5ef,DIGITAL_ENTITY,https://orcid.org/0000-0003-0581-2414,Alex Cano,Cataloger,,,1
+USNMLOC_41679_1999,EVENT,agent_ID_10003511,David Kohls,Collector,,,1
+USNMLOC_41679_1999,EVENT,agent_ID_10155661,Louis J. Pribyl,Collector,,,2
+https://n2t.net/ark:/65665/39f53b18e-9607-4c1d-919c-647e772a354f,MATERIAL_ENTITY,agent_ID_10122764,Finnegan Marsh,Cataloger,,,1
+https://n2t.net/ark:/65665/38f108bb6-3d98-4ab5-9e5f-df39f54bd5a6,MATERIAL_ENTITY,agent_ID_10122764,Finnegan Marsh,Cataloger,,,1
+USNM-EventID-CES11700700,EVENT,agent_id_Parties10135382,"Baldwin, Carole, (NMNH), Smithsonian Institution - National Museum of Natural History (UNITED STATES)",Collector,,,1
+USNM-EventID-CES11700700,EVENT,agent_id_Parties10135381,"Brandt, Bruce",Collector,,,2
+USNM-EventID-CES10746121,EVENT,agent_id_Parties5018487,"Baldwin, Carole C.",Collector,,,1
+USNM-EventID-CES10746121,EVENT,agent_id_Parties10137391,"Brandt, Bruce",Collector,,,2
+USNM-EventID-CES10746121,EVENT,agent_id_Parties10137388,"Schrier, Adriaan",Collector,,,3
+USNM-EventID-CES11700700,EVENT,agent_id_Parties10005151,"Schrier, Adriaan, Curacao Public Aquarium N.V. (NETHERLANDS ANTILLES)",Collector,,,3
+USNM-EventID-CES9131234,EVENT,agent_id_Parties9107838,"Wagner, W.",Primary Collector,,,1
+USNM-EventID-CES10139823,EVENT,agent_id_Parties2024070,"Gallatly, G.",Primary Collector,,,1
+USNM-EventID-CES2305452,EVENT,agent_id_Parties2026154,"Imshaug, H. A.",Primary Collector,,,1
+USNM-EventID-CES7102315,EVENT,agent_id_Parties7000084,"Mearns, E. A.",Primary Collector,,,1
+USNM-EventID-CES7102315,EVENT,agent_id_Parties7000377,"Holzner, F. X.",Collector,,,2
+USNM-EventID-CES4818564,EVENT,agent_id_Parties4000004,Collector Unknown,Primary Collector,,,1
