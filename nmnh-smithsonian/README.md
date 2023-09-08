@@ -41,4 +41,6 @@
 9.  Since we combine sites and collecting events, can the event ID and location ID be the same? assess where the human readable vs. GUID like ID would go?
 
 10.  Unclear on how to map use of qualifiers with identifications (where is dwc:identificationQualifier equivalant? and/or where would I put that information across the given tables?)
+
+11.  In attempting to load the occurrence table data we ran into an issue.  Would it be wiser to have the primary key on the occurrence table be the combination of occurrence_id and  organism_id?  If we keep occurrence_id the same as event_id then we have to create multiple duplicate event_id records for each organism that was found at that event.  That seems very redundant.  Our occurrence data table did not validate based on this issue.
     
