@@ -1,0 +1,8 @@
+agent_id,agent_type,preferred_agent_name
+https://orcid.org/0000-0002-7586-5645,PERSON,Fernando W. T. Leivas
+https://orcid.org/0000-0003-4989-2014,PERSON,Maxwell Barclay 
+,PERSON,Thierry de Fontaine de Resbecq Deuve
+urn:uuid:bdea34c8-80b1-42c7-8910-ce306ba8d7e4,ORGANIZATION,Muséum national d'Histoire naturelle
+urn:uuid:ec6a93cb-54b1-47a6-8a68-2ec936bc9e6f,ORGANIZATION,British Museum of Natural History
+urn:uuid:9ced35c0-ef78-4702-a89b-759a2ffe68e5,COLLECTION,BMNH(E)
+urn:uuid:3efe33df-78cd-4def-9ee8-a0541587a6be,COLLECTION,EC 
