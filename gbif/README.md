@@ -57,3 +57,8 @@ psql postgresql://material:<PASSWORD>@pg1.gbif-uat.org/material_model -f load-ca
 ```
 psql postgresql://material:<PASSWORD>@pg1.gbif-uat.org/material_model -f load-conabio-bees.sql
 ```
+
+### Smithisonian
+```
+psql postgresql://material:<PASSWORD>@pg1.gbif-uat.org/material_model -f load-smithsonian.sql
+```
